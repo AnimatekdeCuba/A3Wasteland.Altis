@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 
+█████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████
+
+  Do not bother submitting translations to the A3W GitHub repo, the strings below are only a tiny fraction of all messages used in the mission.
+
+█████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████
+-->
+<Project name="Wasteland">
+	<Package name="General">
+		<Key ID="STR_WL_Gen_TeamWEST">
+			<English>BLUFOR</English>
+		</Key>
+		<Key ID="STR_WL_Gen_TeamWEST_2">
+			<English>BLUFOR</English>
+		</Key>
+		<Key ID="STR_WL_Gen_TeamEAST">
+			<English>OPFOR</English>
+		</Key>
+		<Key ID="STR_WL_Gen_TeamEAST_2">
+			<English>OPFOR</English>
+		</Key>
+		<Key ID="STR_WL_Gen_TeamGUER">
+			<English>Independent</English>
+		</Key>
+		<Key ID="STR_WL_Gen_TeamGUER_2">
+			<English>Independent</English>
+		</Key>
+	</Package>
+	<Package name="TeamLock">
+		<Key ID="STR_WL_Punish_Teamkiller">
+			<English>Castigado por matar a un compañero durante esta sesión. Tu inventario ha sido eliminado y reasignado a jugar como Independiente. Bajanda!.</English>
+		</Key>
+		<Key ID="STR_WL_Loading_Teamkiller">
+			<English>Estás restringido a jugar como Independiente, dado que has matado a 2 o más compañeros de equipo durante esta sesión.</English>
+		</Key>
+		<Key ID="STR_WL_Loading_Teamswitched">
+			<English>Has jugado como %1 por mucho tiempo y no puedes cambiarte al otro equipo. Puedes, sin embargo, jugar como Independiente. (Si te urge, pídele a un admin que te desbloquée) </English>
+		</Key>
+	</Package>
+	<Package name="WelcomeMessage">
+		<Key ID="STR_WL_WelcomeToWasteland">
+			<English>&lt;t color='#FF8000' size='2.5' &gt;AC A3Wasteland Altis v1.4D.0.2 &lt;/t&gt;</English>
+		</Key>
+		<Key ID="STR_WL_YouAreInTeam">
+			<English>&lt;t color='#FFFFFF' size='1.5' &gt;* Eres &lt;img size="1.5" image="%1"/&gt; &lt;t color="%2"&gt;%3&lt;/t&gt;.&lt;br/&gt;* Robar a otro %4 está &lt;t color="#FF1111"&gt;PROHIBIDO&lt;/t&gt;&lt;br/&gt;* &lt;t color="#FF1111"&gt;No use el CANAL GLOBAL&lt;/t&gt;&lt;br/&gt;* Reglas en el menú del Mapa.&lt;br/&gt;* El servidor se reinicia a voluntad de la Admón.&lt;br/&gt;* Serás bloqueado en este equipo pasados 3 minutos.&lt;/t&gt;</English>
+		</Key>
+		<Key ID="STR_WL_YouAreInFFA">
+			<English>&lt;t color='#FFFFFF' size='1.5' &gt;* Eres &lt;img size="1.5" image="%1"/&gt; &lt;t color="%2"&gt;%3&lt;/t&gt;.&lt;br/&gt;* Eres &lt;t color="#00aa00"&gt;LIBRE DE MATAR A TODOS&lt;/t&gt;&lt;br/&gt;* &lt;t color="#FF1111"&gt;No use el CANAL GLOBAL ni el de BANDO &lt;/t&gt;&lt;br/&gt;* Reglas en el menú del Mapa.&lt;br/&gt;* El servidor se reinicia a voluntad de la Admón.&lt;/t&gt;</English>
+		</Key>
+		<Key ID="STR_WL_MapMoreInfo">
+			<English>&lt;t color='#FFFFFF' size='1.5' &gt;Toda la Info en el menú del MAPA&lt;br/&gt;</English>
+			<!-- &lt;br/&gt;&lt;/t&gt;&lt;t size='1.3'&gt;[Update X]&lt;/t&gt;&lt;br/&gt; -->
+		</Key>
+	</Package>
+	<Package name="TeamKillWarningMessage">
+		<Key ID="STR_TK_MESSAGE">
+			<English>&lt;t size='2' color='#ff0000'&gt;Matar a un compañero es contra las REGLAS!&lt;/t&gt;&lt;br/&gt;Si cometiste un error, discúlpate; de otro modo te castigarán y serás kickeado del servidor.</English>
+		</Key>
+	</Package>
+	<Package name="Diary">
+		<Key ID="STR_WL_Diary_RulesContent">
+			<English>&lt;br/&gt;    1. Mantengan las malas palabras al mínimo. Si tienes problemas con un jugador, hablen por directo.&lt;br/&gt;    2. NO USAR el canal GLOBAL!.&lt;br/&gt;    3. Matar a un compañero siendo BLUFOR u OPFOR está prohibido y es castigable. Juega como independiente si quieres un Free-for-All.&lt;br/&gt;    4. Revelar información sobre tu (ex)equipo a otros es patético y se desprecia&lt;br/&gt;    5. No haga exploit o aprovecharse de los bugs del R3F u otros addons, o serás baneado.&lt;br/&gt;    6. Si spamea, trollea o molesta con textos, acciones, ruidos, etc, a otros jugadores, sean aliados o no, será motivo de ban permanente</English>
+		</Key>
+	</Package>
+	<Package name="ShopDescriptions">
+		<Key ID="STR_WL_ShopDescriptions_Water">
+			<English>Greece is a hot place! Drink plenty!</English>
+		</Key>
+		<Key ID="STR_WL_ShopDescriptions_Camo">
+			<English>Un techo improvisado, 4 palos y una manta!</English>
+		</Key>
+		<Key ID="STR_WL_ShopDescriptions_CanFood">
+			<English>The Greek wastelands may get you hungry!</English>
+		</Key>
+		<Key ID="STR_WL_ShopDescriptions_RepairKit">
+			<English>With this kit, you won't need an engineer!</English>
+		</Key>
+		<Key ID="STR_WL_ShopDescriptions_MedKit">
+			<English>With this kit, you won't need a medic!</English>
+		</Key>
+		<Key ID="STR_WL_ShopDescriptions_fuelFull">
+			<English>25 litros de pura gasolina sin plomo!</English>
+		</Key>
+		<Key ID="STR_WL_ShopDescriptions_fuelEmpty">
+			<English>Empty fuel can. You can refill it!</English>
+		</Key>
+		<Key ID="STR_WL_ShopDescriptions_spawnBeacon">
+			<English>Escoge donde aparecer. Advertencia: Este producto no garantiza una entrega libre de riesgos.</English>
+		</Key>
+		<Key ID="STR_WL_ShopDescriptions_SyphonHose">
+			<English>Por si necesitas sacarle gasolina a un vehículo ¿Quién sabe?</English>
+		</Key>
+		<Key ID="STR_WL_ShopDescriptions_Energy_Drink">
+			<English>Allows you to sprint continuously for 5 minutes.</English>
+		</Key>
+		<Key ID="STR_WL_ShopDescriptions_Warchest">
+			<English>Para guardar el dinero de tu equipo.</English>
+		</Key>
+	</Package>
+	<Package name="Dialogs">
+		<Key ID="STR_WL_dialog_TeamkillText">
+			<English>Te ha matado un compañero: %2 .%1&lt;br/&gt;&lt;br/&gt;Si fue un accidente perdónalo, no obstante, exígele una explicación.&lt;br/&gt;&lt;br/&gt;Si no se disculpa, castígalo.</English>
+		</Key>
+	</Package>
+	<Package name="Errors">
+		<Key ID="STR_WL_Errors_InProgress">
+			<English>You are already performing another action!</English>
+		</Key>
+		<Key ID="STR_WL_Errors_InVehicle">
+			<English>You are currently busy!</English>
+		</Key>
+		<Key ID="STR_WL_Errors_BeaconActive">
+			<English>You already have an active spawn beacon!</English>
+		</Key>
+		<Key ID="STR_WL_Errors_BeaconInVehicle">
+			<English>You cannot enter a vehicle while placing a spawn beacon!</English>
+		</Key>
+		<Key ID="STR_WL_Errors_BeaconTooMany">
+			<English>No puedes tener más Spawn Beacons!</English>
+		</Key>
+	</Package>
+</Project>

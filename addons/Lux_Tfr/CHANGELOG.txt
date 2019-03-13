@@ -1,0 +1,16 @@
+Ver 1.0
+
+mission start .... :-)
+
+Ver 1.1
+
+-Added adjustable distance for each volume (low/mid/high);
+-Added the possibility to select the percentage of possibility to fully alert the AI;
+-AI in "RED" combat mode will not allerted;
+-AI in "CARELESS" behaviour will not allerted;
+-Some minor bug fix
+
+Ver 1.2
+
+-The recognition of the enemy faction is now automatic and must no longer be specified in the "call"
+-Now you can alert the allied faction
