@@ -27,8 +27,8 @@ X_JIP = false;
 
 CHVD_allowNoGrass = false;
 CHVD_allowTerrain = false; // terrain option has been disabled out from the menu due to terrible code, this variable has currently no effect
-CHVD_maxView = 3500; // Set maximum view distance (default: 12000)
-CHVD_maxObj = 3500; // Set maximimum object view distance (default: 12000)
+CHVD_maxView = 4000; // Set maximum view distance (default: 12000)
+CHVD_maxObj = 4000; // Set maximimum object view distance (default: 12000)
 
 if (isServer) then { X_Server = true };
 if (!isDedicated) then { X_Client = true };
@@ -105,7 +105,7 @@ if (hasInterface || isServer) then
 	[] execVM "addons\bounty\init.sqf";
 	[] execVM "addons\proving_ground\init.sqf";
 	[] execVM "addons\Crater_Cleaner\cratercleaner.sqf";
-	[] execVM "addons\VCOMAI\init.sqf";
+	//[] execVM "addons\VCOMAI\init.sqf";
 	[] execVM "addons\scripts\intro.sqf";						// Show intro text
 	[] execVM "addons\HvT\HvT.sqf"; 							// High Value Target
 	[] execVM "addons\statusBar\statusbar.sqf"; 				// Status Bar

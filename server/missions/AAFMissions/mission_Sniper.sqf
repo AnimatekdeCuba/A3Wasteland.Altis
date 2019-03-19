@@ -4,7 +4,7 @@
 //	@file Name: mission_Sniper.sqf
 //	@file Author: JoSchaap, AgentRev, LouD, GMG_Monkey
 
-if (!isServer && hasinterface) exitWith {};
+// if (!isServer && hasinterface) exitWith {};
 #include "AAFMissionDefines.sqf";
 private _box1 = "";
 private _box2 = "";

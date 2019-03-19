@@ -14,6 +14,5 @@ _player addRating 1e11;
 [] execVM "addons\Bos\init.sqf";     // Baselocker script
 [] execVM "addons\vPin\init.sqf";    // Vehicle Pinlock script
 [] execVM "addons\Safe\init.sqf";	 // Safe script
-
 _player groupChat "Wasteland - Initialization Complete";
 playerSetupComplete = true;

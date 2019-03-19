@@ -4,7 +4,7 @@
 //	@file Name: mission_HostileJet.sqf
 //	@file Author: JoSchaap, AgentRev, LouD, GMG_Monkey
 
-if (!isServer && hasinterface) exitWith {};
+// if (!isServer && hasinterface) exitWith {};
 #include "NATOMissionDefines.sqf";
 
 private ["_planeChoices", "_convoyVeh", "_veh1", "_vehicles", "_leader", "_speedMode", "_waypoint", "_vehicleName", "_numWaypoints", "_cash", "_Boxes1", "_currBox1", "_Boxes2", "_currBox2", "_Box1", "_Box2"];
@@ -102,7 +102,7 @@ _successExec =
 	for "_i" from 1 to 7 do
 	{
 		private _tier = selectrandom ["2","3","4","5"];
-		private _maxmoney = random 10000;
+		private _maxmoney = ceil (random 10000);
 		private _box = [_lootPos, "NATO", _tier, 0, _maxmoney] call createrandomlootcrate;
 		_box setVariable ["moveable", true, true];
 	};

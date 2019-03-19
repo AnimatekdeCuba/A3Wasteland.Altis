@@ -7,7 +7,7 @@
 //	@file Created: 02/09/2013 11:29
 //	@file Args: none
 
-if (!isServer && hasinterface) exitWith {};
+// if (!isServer && hasinterface) exitWith {};
 #include "CSATMissionDefines.sqf"
 
 private [ "_veh1", "_veh2", "_veh3", "_vehicles", "_leader", "_speedMode", "_waypoint", "_vehicleName", "_vehicleName2", "_numWaypoints", "_box1", "_box2", "_box3"];
@@ -27,9 +27,9 @@ _setupObjects =
 	_veh2types = "O_Boat_Armed_01_hmg_F";
 	_veh3types = "O_Boat_Armed_01_hmg_F";
 
-	_veh1 = [_veh1types, _starts select 0,1,1,0,"NONE",1] call createMissionVehicle;
-	_veh2 = [_veh2types, _starts select 0,1,1,0,"NONE",1] call createMissionVehicle;
-	_veh3 = [_veh3types, _starts select 0,1,1,0,"NONE",1] call createMissionVehicle;
+	_veh1 = [_veh1types, _starts select 0,1,1,0,0,1] call createMissionVehicle;
+	_veh2 = [_veh2types, _starts select 0,1,1,0,0,1] call createMissionVehicle;
+	_veh3 = [_veh3types, _starts select 0,1,1,0,0,1] call createMissionVehicle;
 	_vehicles = [_veh1, _veh2, _veh3];
 
 	_aiGroup1 = createGroup CIVILIAN;
@@ -117,7 +117,7 @@ _successExec =
 	for "_i" from 1 to 4 do
 	{
 		private _tier = selectrandom ["1","2","3"];
-		private _maxmoney = random 15000;
+		private _maxmoney =ceil (random 15000);
 		private _box = [_lootPos, "CSAT", _tier, 0, _maxmoney] call createrandomlootcrate;
 		_box setVariable ["moveable", true, true];
 	};

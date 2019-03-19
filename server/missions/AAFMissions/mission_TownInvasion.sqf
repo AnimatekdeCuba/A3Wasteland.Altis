@@ -5,7 +5,7 @@
 //	@file Author: [404] Deadbeat, [404] Costlyy, JoSchaap, AgentRev, Zenophon, GMG_Monkey
 //  @file Information: JoSchaap's Lite version of 'Infantry Occupy House' Original was made by: Zenophon
 
-if (!isServer && hasinterface) exitWith {};
+// if (!isServer && hasinterface) exitWith {};
 
 #include "AAFMissionDefines.sqf"
 

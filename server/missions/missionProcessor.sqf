@@ -4,18 +4,17 @@
 //	@file Name: missionProcessor.sqf
 //	@file Author: AgentRev, GMG_Monkey
 
-if (!isServer && hasinterface) exitWith {};
+// if (!isServer && hasinterface) exitWith {};
 
 #define MISSION_LOCATION_COOLDOWN (10*60)
 #define MISSION_TIMER_EXTENSION (15*60)
 
-private ["_controllerSuffix", "_missionTimeout", "_availableLocations", "_missionLocation", "_leader", "_marker", "_failed", "_complete", "_startTime", "_oldAiCount", "_leaderTemp", "_leaderTemp1","_leaderTemp2","_leaderTemp3","_leaderTemp4", "_newAiCount", "_newAiCount1", "_newAiCount2", "_newAiCount3", "_newAiCount4", "_adjustTime", "_lastPos", "_floorHeight", "_startAiCount", "_reinforcementsCalled", "_reinforceChanceRoll", "_reinforcementsToCall"];
+private ["_controllerSuffix", "_missionTimeout", "_availableLocations", "_missionLocation", "_leader", "_marker", "_failed", "_complete", "_startTime", "_oldAiCount", "_leaderTemp1","_leaderTemp2","_leaderTemp3","_leaderTemp4", "_newAiCount", "_adjustTime", "_lastPos", "_floorHeight", "_startAiCount", "_reinforcementsCalled", "_reinforceChanceRoll", "_reinforcementsToCall"];
 
 // Variables that can be defined in the mission script :
-private ["_missionType", "_locationsArray", "_aiGroup", "_aiGroup1", "_aiGroup2", "_aiGroup3", "_aiGroup4", "_missionPos", "_missionPicture", "_missionHintText", "_successHintMessage", "_failedHintMessage", "_reinforceChance", "_minReinforceGroups","_maxReinforceGroups"];
+private ["_missionType", "_locationsArray", "_aiGroup1", "_aiGroup2", "_aiGroup3", "_aiGroup4", "_missionPos", "_missionPicture", "_missionHintText", "_successHintMessage", "_failedHintMessage", "_reinforceChance", "_minReinforceGroups","_maxReinforceGroups"];
 
 _controllerSuffix = param [0, "", [""]];
-_aiGroup = grpNull;
 _aiGroup1 = grpNull;
 _aiGroup2 = grpNull;
 _aiGroup3 = grpNull;
@@ -45,9 +44,9 @@ if (!isNil "_locationsArray") then
 
 if (!isNil "_setupObjects") then { call _setupObjects };
 
-_leader = leader _aiGroup;
+_leader = leader _aiGroup1;
 _marker = [_missionType, _missionPos] call createMissionMarker;
-_aiGroup setVariable ["A3W_missionMarkerName", _marker, true];
+_aiGroup1 setVariable ["A3W_missionMarkerName", _marker, true];
 
 if (isNil "_missionPicture") then { _missionPicture = "" };
 
@@ -73,22 +72,12 @@ waitUntil
 {
 	uiSleep 1;
 
-	_leaderTemp = leader _aiGroup;
 	_leaderTemp1 = leader _aiGroup1;
 	_leaderTemp2 = leader _aiGroup2;
 	_leaderTemp3 = leader _aiGroup3;
 	_leaderTemp4 = leader _aiGroup4;
+
 	// Force immediate leader change if current one is dead
-	if (!alive _leaderTemp) then
-	{
-		{
-			if (alive _x) exitWith
-			{
-				_aiGroup selectLeader _x;
-				_leaderTemp = _x;
-			};
-		} forEach units _aiGroup;
-	};
 	if (!alive _leaderTemp1) then
 	{
 		{
@@ -99,7 +88,6 @@ waitUntil
 			};
 		} forEach units _aiGroup1;
 	};
-
 	if (!alive _leaderTemp2) then
 	{
 		{
@@ -131,49 +119,41 @@ waitUntil
 		} forEach units _aiGroup4;
 	};
 
-	_newAiCount = count units _aiGroup;
 	_newAiCount1 = count units _aiGroup1;
 	_newAiCount2 = count units _aiGroup2;
 	_newAiCount3 = count units _aiGroup3;
 	_newAiCount4 = count units _aiGroup4;
 	_AICount = (_newAiCount1 + _newAiCount2 + _newAiCount3 + _newAiCount4);
 
-	if (_newAiCount < _oldAiCount) then
+	if (_AICount < _oldAiCount) then
 	{
 		// some units were killed, mission expiry will be reset to 15 mins if it's currently lower than that
 		_adjustTime = if (_missionTimeout < MISSION_TIMER_EXTENSION) then { MISSION_TIMER_EXTENSION - _missionTimeout } else { 0 };
 		_startTime = _startTime max (diag_tickTime - ((MISSION_TIMER_EXTENSION - _adjustTime) max 0));
 	};
-	_oldAiCount = _newAiCount;
-
-	if (!isNull _leaderTemp) then // Update current leader
-	{
-		_leader = _leaderTemp 
+	_oldAiCount = _AICount;
+	// Update current leader
+	if (!isNull _leaderTemp1) then 
+	{ 
+		_leader = _leaderTemp1 
 	}
 	else
 	{
-		if (!isNull _leaderTemp1) then 
-		{ 
-			_leader = _leaderTemp1 
+		if (!isNull _leaderTemp2) then
+		{
+			_leader = _leaderTemp2
 		}
 		else
 		{
-			if (!isNull _leaderTemp2) then
+			if (!isNull _leaderTemp3) then
 			{
-			_leader = _leaderTemp2
+				_leader = _leaderTemp3
 			}
 			else
 			{
-				if (!isNull _leaderTemp3) then
+				if (!isNull _leaderTemp4) then
 				{
-				_leader = _leaderTemp3
-				}
-				else
-				{
-					if (!isNull _leaderTemp4) then
-					{
 					_leader = _leaderTemp4
-					};
 				};
 			};
 		};
@@ -190,14 +170,13 @@ waitUntil
 		_complete = true;
 	};
 
-	(_failed || _complete || (!_ignoreAiDeaths && {alive _x} count units _aiGroup == 0)&& ({alive _x} count units _aiGroup1 == 0) && ({alive _x} count units _aiGroup2 == 0) && ({alive _x} count units _aiGroup3 == 0) && ({alive _x} count units _aiGroup4 == 0))
+	(_failed || _complete || (!_ignoreAiDeaths && ({alive _x} count units _aiGroup1 == 0) && ({alive _x} count units _aiGroup2 == 0) && ({alive _x} count units _aiGroup3 == 0) && ({alive _x} count units _aiGroup4 == 0)))
 };
 
 if (_failed) then
 {
 	// Mission failed
 
-	{ moveOut _x; deleteVehicle _x } forEach units _aiGroup;
 	{ moveOut _x; deleteVehicle _x } forEach units _aiGroup1;
 	{ moveOut _x; deleteVehicle _x } forEach units _aiGroup2;
 	{ moveOut _x; deleteVehicle _x } forEach units _aiGroup3;
@@ -259,32 +238,21 @@ else
 	if (!isNil "_vehicle" && {typeName _vehicle == "OBJECT"}) then
 	{
 		_vehicle setVariable ["R3F_LOG_disabled", false, true];
-		_vehicle setVariable ["A3W_missionVehicle", true, true];
-		_vehicle setVariable ["A3W_lockpickDisabled", nil, true];
 
-		if (!isNil "fn_manualVehicleSave" && !(_vehicle getVariable ["A3W_skipAutoSave", false])) then
+		if (!isNil "fn_manualVehicleSave") then
 		{
 			_vehicle call fn_manualVehicleSave;
 		};
 	};
-
-	private _convoyAutoSave = ["A3W_missionVehicleSaving"] call isConfigOn;
 
 	if (!isNil "_vehicles" && {typeName _vehicles == "ARRAY"}) then
 	{
 		{
 			if (!isNil "_x" && {typeName _x == "OBJECT"}) then
 			{
-				if (!_convoyAutoSave) then
-				{
-					_x setVariable ["A3W_skipAutoSave", true, true];
-				};
-
 				_x setVariable ["R3F_LOG_disabled", false, true];
-				_x setVariable ["A3W_missionVehicle", true, true];
-				_x setVariable ["A3W_lockpickDisabled", nil, true];
 
-				if (!isNil "fn_manualVehicleSave" && !(_x getVariable ["A3W_skipAutoSave", false])) then
+				if (!isNil "fn_manualVehicleSave") then
 				{
 					_x call fn_manualVehicleSave;
 				};
@@ -310,10 +278,8 @@ else
 	call missionHint;
 
 	diag_log format ["WASTELAND SERVER - %1 Mission%2 complete: %3", MISSION_PROC_TYPE_NAME, _controllerSuffix, _missionType];
-
 };
 
-deleteGroup _aiGroup;
 deleteGroup _aiGroup1;
 deleteGroup _aiGroup2;
 deleteGroup _aiGroup3;

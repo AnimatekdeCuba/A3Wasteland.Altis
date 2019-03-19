@@ -4,7 +4,7 @@
 //	@file Name: mission_Roadblock.sqf
 //	@file Author: JoSchaap, AgentRev, LouD, GMG_Monkey
 
-if (!isServer && hasinterface) exitWith {};
+// if (!isServer && hasinterface) exitWith {};
 #include "CSATMissionDefines.sqf";
 
 private [ "_box1", "_barGate", "_bunker1","_bunker2","_obj1","_obj2"];
@@ -70,7 +70,7 @@ _successExec =
 	for "_i" from 1 to 1 do
 	{
 		private _tier = selectrandom ["1","2","3"];
-		private _maxmoney = random 10000;
+		private _maxmoney = ceil (random 10000);
 		private _box = [_lootPos, "CSAT", _tier, 0, _maxmoney] call createrandomlootcrate;
 		_box setVariable ["moveable", true, true];
 	};

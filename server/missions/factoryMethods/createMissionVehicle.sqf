@@ -3,10 +3,10 @@
 // ******************************************************************************************
 //	@file Version: 1.0
 //	@file Name: createMissionVehicle.sqf
-//	@file Author: [404] Deadbeat, AgentRev
+//	@file Author: [404] Deadbeat, AgentRev, GMG_Monkey
 //	@file Created: 26/1/2013 15:19
 
- if (!isServer && hasinterface) exitWith {};
+// if (!isServer && hasinterface) exitWith {};
 
 private ["_class", "_pos", "_fuel", "_ammo", "_damage", "_variant", "_veh"];
 
@@ -34,7 +34,7 @@ if (_SpawnHeight >= 500) then
 };
 if (_variant != "") then
 {
-	_veh setVariable ["A3W_vehicleVariant", _variant, true];
+	_veh setVariable ["A3W_vehVariant", _variant, true];
 };
 [_veh] call vehicleSetup;
 
@@ -46,7 +46,7 @@ _veh confirmSensorTarget [east, true];
 _veh confirmSensorTarget [resistance, true];
 
 _veh setVelocity [0,0,0.01];
-_veh setPosATL [_pos select 0, _pos select 1, 0.3];
+_veh setdir (random 360);
 if (_fuel != 1) then { _veh setFuel _fuel };
 if (_ammo != 1) then { _veh setVehicleAmmo _ammo };
 _veh setDamage _damage;

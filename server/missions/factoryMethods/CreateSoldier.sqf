@@ -7,7 +7,7 @@
  * Creates a random Soldier.
  */
 
-if (!isServer && hasinterface) exitWith {};
+// if (!isServer && hasinterface) exitWith {};
 private _group = _this select 0;
 private _position = _this select 1;
 private _faction = _this select 2;

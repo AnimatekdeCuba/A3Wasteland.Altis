@@ -6,7 +6,7 @@
 //	@file Author: [404] Deadbeat, [404] Costlyy, JoSchaap, AgentRev, GMG_Monkey
 //	@file Created: 08/12/2012 15:19
 
-if (!isServer && hasinterface) exitWith {};
+// if (!isServer && hasinterface) exitWith {};
 #include "CSATMissionDefines.sqf";
 
 private ["_vehicle", "_vehicleName", "_vehDeterminer", "_minefield"];

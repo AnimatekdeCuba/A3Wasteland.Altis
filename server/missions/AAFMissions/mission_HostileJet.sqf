@@ -4,7 +4,7 @@
 //	@file Name: mission_HostileJet.sqf
 //	@file Author: JoSchaap, AgentRev, LouD, GMG_Monkey
 
-if (!isServer && hasinterface) exitWith {};
+// if (!isServer && hasinterface) exitWith {};
 #include "AAFMissionDefines.sqf";
 
 private ["_planeChoices", "_convoyVeh", "_veh1", "_vehicles", "_leader", "_speedMode", "_waypoint", "_vehicleName", "_numWaypoints", "_cash", "_Boxes1", "_currBox1", "_Boxes2", "_currBox2", "_Box1", "_Box2"];

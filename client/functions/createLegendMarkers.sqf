@@ -13,9 +13,8 @@ _markers =
 	["VS - Vehicle Store", "mil_dot", "ColorOrange", [1,1]],
 	["RP - Re-Supply Point", "mil_dot", "ColorGreen", [1,1]],
 	["BS - Base Parts Store", "mil_dot", "ColorRed", [1,1]]
-	//["CVN-83 - USS Freedom", "mil_dot", "ColorKhaki", [1,1]]
+	//["CVN-83 - USS Freedom", "mil_dot", "ColorKhaki", [1,1]] // si se descomenta, no olvidar añadir la coma al final de la anterior línea
 ];
-
 
 if (["A3W_privateParking"] call isConfigOn) then
 {

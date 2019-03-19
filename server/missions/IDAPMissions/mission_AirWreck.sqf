@@ -6,7 +6,7 @@
 //	@file Author: [404] Deadbeat, [404] Costlyy, AgentRev, GMG_Monkey
 //	@file Created: 08/12/2012 15:19
 
-if (!isServer && hasinterface) exitWith {};
+// if (!isServer && hasinterface) exitWith {};
 #include "IDAPMissionDefines.sqf"
 
 private _wreckPos = "";

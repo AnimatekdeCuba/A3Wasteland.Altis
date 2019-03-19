@@ -3,7 +3,7 @@
 // ******************************************************************************************
 //	@file Name: playerSetupGear.sqf
 //	@file Author: [GoT] JoSchaap, AgentRev
-//      @file Modifications to LOADOUTS: [BC]CeccaTTo
+//  @file Modifications to LOADOUTS: [BC]CeccaTTo
 
 private ["_player", "_bmoney", "_playerScore", "_uniform", "_headgear"];
 _player = _this;
@@ -398,35 +398,11 @@ switch (true) do {
 	{
 		_player removeItem "FirstAidKit";
 		//_player addItem "Medikit";
-		/*_player addItem "ACE_elasticBandage";
-		_player addItem "ACE_elasticBandage";
-		_player addItem "ACE_elasticBandage";
-		_player addItem "ACE_elasticBandage";
-		_player addItem "ACE_elasticBandage";
-		_player addItem "ACE_morphine";
-		_player addItem "ACE_morphine";
-		_player addItem "ACE_morphine";
-		_player addItem "ACE_morphine";
-		_player addItem "ACE_morphine";
-		_player addItem "ACE_epinephrine";
-		_player addItem "ACE_epinephrine";
-		_player addItem "ACE_epinephrine";
-		_player addItem "ACE_epinephrine";
-		_player addItem "ACE_epinephrine";
-		_player addItem "ACE_bloodIV_250";
-		_player addItem "ACE_bloodIV_250";
-		_player addItem "ACE_bloodIV_250";
-		_player addItem "ACE_packingBandage";
-		_player addItem "ACE_packingBandage";
-		_player addItem "ACE_packingBandage";
-		_player addItem "ACE_packingBandage";
-		_player addItem "ACE_packingBandage";
-		_player addItem "ACE_surgicalKit";*/
 		{ ([player] + _x) call zade_boc_fnc_addItemToChestpack } forEach
 		[
-			["ACE_packingBandage",10],
-			["ACE_morphine",5],
-			["ACE_epinephrine",5],
+			["ACE_packingBandage",15],
+			["ACE_morphine",10],
+			["ACE_epinephrine",10],
 			["ACE_bloodIV_250",3]
 		];
 	};

@@ -30,7 +30,7 @@ BoS_open =
 		case (_uid != _owner):
 		{
 			execVM "addons\BoS\password_enter.sqf";
-			hint "Bienvenido";
+			hint "Bienvenido, compañero";
 		};
 	/*	case (isNil _uid || isNull _uid):
 		{

@@ -17,10 +17,11 @@
 	Exsample:
 	["fuelDepot_us", 0, getpos player] execVM "Createcomposition.sqf";
 */
-private ["_fileName", "_dir", "_pos", "_objList", "_objs", "_class", "_relPos", "_relDir", "_fuel", "_damage", "_init"];
+private ["_fileName", "_dir", "_pos", "_objList","_obj", "_objs", "_class", "_relPos", "_relDir", "_fuel", "_damage", "_init"];
 _fileName = _this select 0;
 _pos = _this select 1;
 _dir = _this select 2;
+_faction = _this select 3;
 
 _objList = call compile preprocessFileLineNumbers format ["server\missions\outposts\%1.sqf", _fileName];
 _objs = [];
@@ -30,11 +31,47 @@ _objs = [];
 	_relPos = _x select 1;
 	_relDir = _x select 2;
 	_init = _x param [3, nil];
+	private _LootTier = "1";
+	switch (_faction) do
+	{
+		case "NATO":
+		{
+			_LootTier = selectrandom ["2", "3", "4"];
+		};
+		case "CSAT":
+		{
+			_LootTier = selectrandom ["2", "3", "4"];
+		};
+		case "AAF":
+		{
+			_LootTier = selectrandom ["2", "3", "4"];
+		};
+		case "GEN":
+		{
+			_LootTier = selectrandom ["1", "2"];
+		};
+		case "IDAP":
+		{
+			_LootTier = selectrandom ["1", "2"];
+		};
+		case "SYN":
+		{
+			_LootTier = selectrandom ["1", "2"];
+		};
+	};
 
 	if (count _relPos == 2) then { _relPos set [2, 0] };
 
 	_finalPos = _pos vectorAdd ([_relPos, -(_dir)] call BIS_fnc_rotateVector2D);
+	
+	if (_class == "Loot Crate") then 
+	{
+		_obj = [_finalPos, _faction, _LootTier, 0, 0] call createrandomlootcrate
+	}
+	else
+	{
 		_obj = createVehicle [_class, _finalPos, [], 0, "None"];
+	};
 	_obj setDir (_dir + _relDir);
 	_obj setPos _finalPos;
 	_obj setPosATL _finalPos;

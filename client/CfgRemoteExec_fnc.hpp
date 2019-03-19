@@ -17,7 +17,7 @@ class BIS_fnc_objectVar {};
 // A3W vanilla
 class A3W_fnc_adminMenuLog { allowedTargets = 2; };
 class A3W_fnc_artilleryStrike { allowedTargets = 2; };
-class A3W_fnc_StatictLockPoss { allowedTargets = 2; };
+//class A3W_fnc_StatictLockPoss { allowedTargets = 2; };
 class A3W_fnc_chatBroadcast {};
 class A3W_fnc_checkHackedVehicles { allowedTargets = 2; };
 class A3W_fnc_checkPlayerFlag { allowedTargets = 2; };
@@ -75,10 +75,10 @@ class APOC_srv_startAirdrop { allowedTargets = 2; };
 class JTS_FNC_SENT {};
 
 //Advanced Ropes
-class AR_Client_Rappel_From_Heli {};
-class AR_Enable_Rappelling_Animation { allowedTargets=2; };
+class AR_Client_Rappel_From_Heli { allowedTargets=0; };
+class AR_Hint { allowedTargets=1; };
 class AR_Hide_Object_Global { allowedTargets=2; };
-class AR_Hint {};
+class AR_Enable_Rappelling_Animation { allowedTargets=2; };
 class AR_Play_Rappelling_Sounds_Global { allowedTargets=2; };
 class AR_Rappel_All_Cargo {};
 class AR_Rappel_From_Heli { allowedTargets=2; };
@@ -137,6 +137,12 @@ class Verification_Ace_Activer{};
 class Verification_Objet_Accrocher_Compatible{};
 class Verification_Objet_Est_Attacher{};
 
-//GMG Stuff
+// VCOM Stuffs
+class vcm_serverask { allowedTargets = 0;jip = 1; };
+class VCM_PublicScript { allowedTargets = 0;jip = 1; };
+class SpawnScript { allowedTargets = 0;jip = 1; };
+class enableSimulationGlobal { allowedTargets = 0;jip = 1; };
+class VCM_fnc_KnowAbout { allowedTargets = 0;jip = 1; };
 
+//GMG Stuff
 class GMG_fnc_AttachObject { allowwedTargets=0; };

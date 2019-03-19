@@ -18,9 +18,7 @@ if (!hasInterface) exitWith {};
 #define CENTER_POS(OBJ) (OBJ modelToWorldVisual [0,0,0])
 
 if (isNil "showPlayerNames") then { showPlayerNames = false };
-
 if (isNil "brightPlayerIcons") then { brightPlayerIcons = true };
-
 hudPlayerIcon_uiScale = (0.55 / (getResolution select 5)) * ICON_sizeScale; // 0.55 = Interface size "Small"
 drawPlayerIcons_array = [];
 
@@ -95,6 +93,7 @@ drawPlayerIcons_thread = [] spawn
 				{
 					_simulation = getText (configFile >> "CfgVehicles" >> typeOf _unit >> "simulation");
 					_isUavUnit = (_simulation == "UAVPilot");
+
 
 					_posCode = ([1,2] select _isUavUnit) call drawPlayerIcons_posCode;
 					_pos = _unit call _posCode;

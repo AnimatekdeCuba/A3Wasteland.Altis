@@ -41,7 +41,17 @@ else
 		};
 		case "Hunger": { hungerLevel = _value };
 		case "Thirst": { thirstLevel = _value };
-		case "Money": { [player, _value, true] call A3W_fnc_setCMoney };
+		case "Money":
+		{
+			if (_value > _maxMoney) then
+			{
+				[player, _maxMoney, true] call A3W_fnc_setCMoney;
+			}
+			else
+			{
+				[player, _value, true] call A3W_fnc_setCMoney;
+			};
+		};
 		/*case "Position":
 		{
 			if (count _value == 3) then

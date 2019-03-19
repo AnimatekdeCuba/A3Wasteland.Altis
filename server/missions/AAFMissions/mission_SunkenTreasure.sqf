@@ -7,7 +7,7 @@
 //	@file Created: 08/12/2012 15:19
 //	@file Args:
 
-if (!isServer && hasinterface) exitWith {};
+// if (!isServer && hasinterface) exitWith {};
 #include "AAFMissionDefines.sqf";
 
 private ["_box1", "_boxPos", "_vehicleClass", "_vehicle"];
@@ -29,7 +29,7 @@ _setupObjects =
 	// Vehicle Class, Position, Fuel, Ammo, Damage, Special
 	_aiGroup1 = createGroup CIVILIAN;
 	_aiGroup2 = createGroup CIVILIAN;
-	_veh1 = [_vehicleClass, _missionPos,1,1,0,"NONE",1] call createMissionVehicle;
+	_veh1 = [_vehicleClass, _missionPos,1,1,0,0,1] call createMissionVehicle;
 	_vehicles = [_veh1];
 	{
 		private _vehicle = _x;

@@ -1,7 +1,7 @@
 //	@file Version:
 //	@file Name:
 //	@file Author: Cael817, all credit to A3W
-// Edited By: BIB Monkey
+// Edited By: GMG Monkey
 //	@file Created:
 
 #define BoS_Menu_option 17001

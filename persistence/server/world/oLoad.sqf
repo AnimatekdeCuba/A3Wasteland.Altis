@@ -166,12 +166,6 @@ _objectsArray = [];
 			_obj setVariable [_var, _value, true];
 		} forEach _variables;
 		
-		// Base locker lights
-		if (_obj getVariable ["lights",""] == "off") then
-		{
-		_obj setHit ["light_1_hit", 0.97];
-		};
-
 		if (unitIsUAV _obj) then 
 		{ 
 			[_obj, _uavSide, false, _uavAuto] spawn fn_createCrewUAV; 

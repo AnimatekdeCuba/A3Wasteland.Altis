@@ -4,7 +4,7 @@
 //	@file Name: mission_SunkenSupplies.sqf
 //	@file Author: JoSchaap, AgentRev, GMG_Monkey
 
-if (!isServer && hasinterface) exitWith {};
+// if (!isServer && hasinterface) exitWith {};
 #include "CSATMissionDefines.sqf"
 
 private ["_box1", "_box2", "_boxPos"];

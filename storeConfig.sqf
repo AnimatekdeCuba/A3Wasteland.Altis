@@ -11,7 +11,7 @@
 currentOwnerName = "";
 
 // Gunstore Weapon List - Gun Store Base List
-// Text name,classname,buy cost
+// Text name, classname, buy cost
 
 // empty name = name is extracted from class config
 

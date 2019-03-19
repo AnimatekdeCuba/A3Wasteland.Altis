@@ -62,7 +62,7 @@ switch (true) do
 	case (_vehClass isKindOf "Man"):
 	{
 		_time = 5;
-		_money = ceil random  1000;
+		_money = ceil random  500;
 	};
 	default // Everything else
 	{
@@ -82,5 +82,5 @@ if (_success) then
 	deleteVehicle _vehicle;
 	// player setVariable ["cmoney", (player getVariable ["cmoney", 0]) + _money, true];
 	[player, _money] call A3W_fnc_setCMoney;
-	[format ["Muerte Confirmada: $%1 de premio", [_money] call fn_numbersText], 5] call mf_notify_client;
+	[format ["Muerte Confirmada: $%1 de recompensa", [_money] call fn_numbersText], 5] call mf_notify_client;
 };

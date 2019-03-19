@@ -4,8 +4,8 @@
 //	@file Name: mission_HostileHelicopter.sqf
 //	@file Author: JoSchaap, AgentRev
 
-if (!isServer && hasinterface) exitWith {};
-#include "sideMissionDefines.sqf"
+// if (!isServer && hasinterface) exitWith {};
+//#include "sideMissionDefines.sqf"
 
 private ["_vehicleClass", "_vehicle", "createMissionVehicle", "_vehicles", "_leader", "_speedMode", "_waypoint", "_vehicleName", "_numWaypoints", "_box1", "_box2", "_callLocation", "_callLocationPos","_heliDirection","_heliDistance", "_flyHeight","_heliTypes"];
 

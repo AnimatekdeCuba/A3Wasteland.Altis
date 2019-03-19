@@ -81,9 +81,9 @@ briefing = 0; // if 0, skip Continue button
 #include "addons\GOM\dialogs\GOM_dialog_parents.hpp"
 #include "addons\GOM\dialogs\GOM_dialog_controls.hpp"
 #include "addons\Safe\dialog\Safe_mainMenu.hpp"
-#include "addons\VCOMAI\defines.hpp"
-#include "addons\VCOMAI\DialogDefines.hpp"
-#include "addons\VCOMAI\dialogs.hpp"
+//#include "addons\VCOMAI\defines.hpp"
+//#include "addons\VCOMAI\DialogDefines.hpp"
+//#include "addons\VCOMAI\dialogs.hpp"
 #include "addons\TOParmaInfo\dialog\TOParmaInfo_dialog.hpp"
 #include "addons\JTS_PM\PM_Compact.hpp"
 #include "addons\UniformPainter\dialog\UniformPainter_mainMenu.hpp"
@@ -96,12 +96,6 @@ class CfgDebriefing
 		title = "Reiniciando...";
 		subtitle = "Gracias por jugar AC A3Wasteland";
 		description = "El servidor salvará todo y reiniciará para optimizar su desempeño. El servidor estará restringido mientras tanto.";
-	};
-	class TeamBalance
-	{
-		title = "Team balance";
-		subtitle = "Has sido cambiado de equipo para equilibrar la partida";
-		description = "El equipo al que intentas entrar tiene ya muchos jugadores. Por favor, escoja otro bando.";
 	};
 	class ReservedSlots
 	{
@@ -154,8 +148,15 @@ class CfgFunctions
 			class intercettato {};
 		};		
 	};
+	#include "addons\vcom\cfgFunctions.hpp"
 };
-
+class Extended_PreInit_EventHandlers 
+{
+	class VCM_CBASettings 
+	{
+		init = "call VCM_fnc_CBA_Settings";
+	};
+};
 class CfgNotifications
 {
 	#include "client\CfgNotifications.hpp"

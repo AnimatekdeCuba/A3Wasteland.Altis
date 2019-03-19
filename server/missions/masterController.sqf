@@ -6,15 +6,6 @@
 
 _ctrlTypes =
 [
-	"mainMission",
-	"moneyMission",
-	"sideMission",
-	"extraMission",
-	"patrolMission",
-	"vehicleMission",
-	"aquaticMission",
-	"hostileairMission",
-	"PrimaryMission",
 	"NATOMission",
 	"CSATMission",
 	"GENMission",

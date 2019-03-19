@@ -6,7 +6,7 @@
 //	@file Author: [404] Deadbeat, AgentRev
 //	@file Created: 26/1/2013 15:19
 
- if (!isServer && hasinterface) exitWith {};
+// if (!isServer && hasinterface) exitWith {};
 
 private ["_validLocations", "_selectedMarker", "_markerIndex"];
 

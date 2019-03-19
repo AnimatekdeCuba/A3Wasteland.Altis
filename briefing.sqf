@@ -65,7 +65,7 @@ player createDiaryRecord ["changelog",
 
 player createDiaryRecord ["changelog",
 [
-"v1.4D",
+"v1.4c",
 "
 <br/>[Added] Tanks DLC
 <br/>[Added] 3rd column in vehicle store for parts

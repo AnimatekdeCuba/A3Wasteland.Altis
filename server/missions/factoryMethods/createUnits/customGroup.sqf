@@ -99,7 +99,6 @@ for "_i" from 1 to _nbUnits do
 	_unit spawn addMilCap;
 	_unit spawn refillPrimaryAmmo;
 	_unit call setMissionSkill;
-	_unit triggerDynamicSimulation true;
 	_unit addEventHandler ["Killed", server_playerDied];
 };
 

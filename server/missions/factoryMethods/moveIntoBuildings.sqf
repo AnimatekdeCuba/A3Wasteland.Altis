@@ -1,12 +1,12 @@
 // ******************************************************************************************
 // * This project is licensed under the GNU Affero GPL v3. Copyright © 2014 A3Wasteland.com *
 // ******************************************************************************************
-//	@file Name: moveIntoBuildings.sqf
+//	@file Name: customGroup2.sqf
 //	@file Author: Zenophon, JoSchaap
 //  @file Information: Function called as:  [_units, _missionPos, _buildingRadius, _fillEvenly, _putOnRoof] call moveIntoBuildings;
 //  @file Information: example call: [_CivGrp1, [333.33,3.33,444.44], 300, true, false] call moveIntoBuildings;
 
-if (!isServer && hasinterface) exitWith {};
+// if (!isServer && hasinterface) exitWith {};
 
 #define I(X) X = X + 1;
 #define EYE_HEIGHT 1.53
@@ -151,4 +151,3 @@ for [{_j = 0}, {(_unitIndex < count _units) && {(count _buildingPosArray > 0)}},
 			};
 		};
 	};
-	

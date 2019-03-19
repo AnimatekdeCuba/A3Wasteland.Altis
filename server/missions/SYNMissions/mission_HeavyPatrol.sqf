@@ -4,7 +4,7 @@
 //	@file Name: mission_altisPatrol.sqf
 //	@file Author: JoSchaap, AgentRev, LouD, GMG_Monkey
 
-if (!isServer && hasinterface) exitWith {};
+// if (!isServer && hasinterface) exitWith {};
 #include "SYNMissionDefines.sqf";
 
 private ["_convoyVeh","_veh1","_veh2","_veh3","_veh4","_veh5","_pos","_rad","_vPos1","_vPos2","_vPos3","_vehiclePos1","_vehiclePos2","_vehiclePos3","_vehiclePos4","_vehicles","_leader","_speedMode","_waypoint","_vehicleName","_numWaypoints","_box1","_box2","_box3","_box4"];
@@ -143,7 +143,7 @@ _lootPos = getMarkerPos _marker;
 	for "_i" from 1 to 9 do
 	{
 		private _tier = selectrandom ["1","2"];
-		private _maxmoney = random 20000;
+		private _maxmoney = ceil (random 20000);
 		private _box = [_lootPos, "SYN", _tier, 0, _maxmoney] call createrandomlootcrate;
 		_box setVariable ["moveable", true, true];
 	};

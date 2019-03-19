@@ -3,7 +3,7 @@
 // ******************************************************************************************
 //@file Version: 1.1
 //@file Name: init.sqf
-//@file Author: [404] Deadbeat, [GoT] JoSchaap, AgentRev, [KoS] Bewilderbeest
+//@file Author: [404] Deadbeat, [GoT] JoSchaap, AgentRev, [KoS] Bewilderbeest, GMG_Monkey
 //@file Created: 20/11/2012 05:19
 //@file Description: The client init.
 
@@ -50,9 +50,6 @@ if !(playerSide in [BLUFOR,OPFOR,INDEPENDENT]) exitWith
 {
 	endMission "LOSER";
 };
-
-// Teambalancer
-call compile preprocessFileLineNumbers "client\functions\teamBalance.sqf";
 
 //Setup player events.
 if (!isNil "client_initEH") then { player removeEventHandler ["Respawn", client_initEH] };

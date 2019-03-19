@@ -8,7 +8,7 @@ class EditorData
 	toggles=514;
 	class ItemIDProvider
 	{
-		nextID=16009;
+		nextID=16024;
 	};
 	class MarkerIDProvider
 	{
@@ -16,14 +16,14 @@ class EditorData
 	};
 	class LayerIndexProvider
 	{
-		nextID=276;
+		nextID=284;
 	};
 	class Camera
 	{
-		pos[]={11884.22,18.041256,9466.7168};
-		dir[]={-0.0091389511,-0.56937063,0.82203257};
-		up[]={-0.0063296608,0.82207924,0.56933892};
-		aside[]={0.99994266,1.5410478e-008,0.01111693};
+		pos[]={22241.863,27.173685,14535.468};
+		dir[]={-0.62522125,-0.3721253,0.68604147};
+		up[]={-0.25066251,0.92817926,0.27504647};
+		aside[]={0.73911959,-4.4808257e-007,0.67359406};
 	};
 };
 binarizationWanted=0;
@@ -291,7 +291,7 @@ randomSeed=3783014;
 class ScenarioData
 {
 	author="Animatek's Team";
-	showGPS = 0;
+	showGPS=0;
 	disabledAI=1;
 	class Header
 	{
@@ -11089,7 +11089,7 @@ class Mission
 						angles[]={0,2.5787754,0};
 					};
 					side="Civilian";
-					flags=3;
+					flags=7;
 					class Attributes
 					{
 						init="[this] spawn A3W_fnc_setupStoreNPC";
@@ -11097,14 +11097,14 @@ class Mission
 					};
 					id=205;
 					type="C_man_1_1_F";
-					atlOffset=0.35717964;
+					atlOffset=0.063081741;
 				};
 			};
 			class Attributes
 			{
 			};
 			id=204;
-			atlOffset=0.35717964;
+			atlOffset=0.063081741;
 		};
 		class Item39
 		{
@@ -13096,7 +13096,7 @@ class Mission
 			name="RoadBlock_10";
 			type="Empty";
 			colorName="ColorOrange";
-			angle=220.19374;
+			angle=220.19371;
 			id=586;
 		};
 		class Item237
@@ -14130,7 +14130,7 @@ class Mission
 			flags=4;
 			class Attributes
 			{
-				init="this call A3W_fnc_setupMissionObject;" \n "this addAction [""<img image='client\icons\money.paa'/> Sell bin contents"", ""client\systems\selling\sellCrateItems.sqf"", [true], 1, false, false, """", STORE_ACTION_CONDITION + "" && "" + SELL_BIN_CONDITION];";
+				init="call{this addAction [""<img image='client\icons\money.paa'/> Sell bin contents"", ""client\systems\selling\sellCrateItems.sqf"", [true], 1, false, false, """", STORE_ACTION_CONDITION + "" && "" + SELL_BIN_CONDITION];}";
 				disableSimulation=1;
 				dynamicSimulation=1;
 			};
@@ -14523,7 +14523,7 @@ class Mission
 						angles[]={0,0.84789842,0};
 					};
 					side="Civilian";
-					flags=2;
+					flags=6;
 					class Attributes
 					{
 						init="[this] spawn A3W_fnc_setupStoreNPC";
@@ -14531,7 +14531,7 @@ class Mission
 					};
 					id=2313;
 					type="C_man_1_1_F";
-					atlOffset=0.56100464;
+					atlOffset=0.00082397461;
 					class CustomAttributes
 					{
 						class Attribute0
@@ -14580,7 +14580,7 @@ class Mission
 			{
 			};
 			id=2303;
-			atlOffset=0.56100464;
+			atlOffset=0.00082397461;
 		};
 		class Item282
 		{
@@ -14710,12 +14710,11 @@ class Mission
 		class Item284
 		{
 			dataType="Marker";
-			position[]={22150.01,0,14474.849};
+			position[]={22209.996,4.1163063,14562.467};
 			name="BaseStore2_objSpawn";
 			type="Empty";
 			colorName="ColorBlack";
 			id=2317;
-			atlOffset=-3.163584;
 		};
 		class Item285
 		{
@@ -14976,8 +14975,8 @@ class Mission
 			dataType="Object";
 			class PositionInfo
 			{
-				position[]={22240.848,5.2204757,14587};
-				angles[]={0.01733112,2.9688051,6.2631841};
+				position[]={22231.666,5.4740705,14579.454};
+				angles[]={0,2.7152028,0};
 			};
 			side="Empty";
 			flags=4;
@@ -15081,7 +15080,7 @@ class Mission
 			dataType="Object";
 			class PositionInfo
 			{
-				position[]={22235.232,8.0984221,14571.497};
+				position[]={22235.232,8.0874224,14571.497};
 				angles[]={0,5.994874,0};
 			};
 			side="Empty";
@@ -15093,7 +15092,6 @@ class Mission
 			};
 			id=2361;
 			type="Land_LampShabby_F";
-			atlOffset=0.011000156;
 			class CustomAttributes
 			{
 				class Attribute0
@@ -15123,8 +15121,8 @@ class Mission
 			dataType="Object";
 			class PositionInfo
 			{
-				position[]={22236.004,6.5604734,14517.431};
-				angles[]={0,6.1390738,0};
+				position[]={22243.725,5.2934599,14595.775};
+				angles[]={0,4.6348495,0};
 			};
 			side="Empty";
 			flags=5;
@@ -15135,7 +15133,6 @@ class Mission
 			};
 			id=2369;
 			type="Land_u_Shed_Ind_F";
-			atlOffset=-4.7683716e-007;
 			class CustomAttributes
 			{
 				class Attribute0
@@ -15165,8 +15162,8 @@ class Mission
 			dataType="Object";
 			class PositionInfo
 			{
-				position[]={22243.021,23.308367,14531.482};
-				angles[]={0,1.4039778,0};
+				position[]={22233.691,22.328012,14588.311};
+				angles[]={0,0.73105204,0};
 			};
 			side="Empty";
 			flags=5;
@@ -15177,7 +15174,6 @@ class Mission
 			};
 			id=2370;
 			type="Land_Crane_F";
-			atlOffset=-4.7683716e-007;
 			class CustomAttributes
 			{
 				class Attribute0
@@ -18028,48 +18024,6 @@ class Mission
 		};
 		class Item453
 		{
-			dataType="Object";
-			class PositionInfo
-			{
-				position[]={22104.131,17.906513,14467.773};
-				angles[]={0,0.77609545,0};
-			};
-			side="Empty";
-			flags=1;
-			class Attributes
-			{
-				init="this call A3W_fnc_setupMissionObject; this setVariable ['persistent', true];";
-				disableSimulation=1;
-			};
-			id=15325;
-			type="Land_LampAirport_F";
-			atlOffset=1.0250001;
-			class CustomAttributes
-			{
-				class Attribute0
-				{
-					property="allowDamage";
-					expression="_this allowdamage _value;";
-					class Value
-					{
-						class data
-						{
-							class type
-							{
-								type[]=
-								{
-									"BOOL"
-								};
-							};
-							value=0;
-						};
-					};
-				};
-				nAttributes=1;
-			};
-		};
-		class Item454
-		{
 			dataType="Group";
 			side="West";
 			class Entities
@@ -18516,7 +18470,7 @@ class Mission
 			};
 			id=0;
 		};
-		class Item455
+		class Item454
 		{
 			dataType="Group";
 			side="West";
@@ -18943,7 +18897,7 @@ class Mission
 			};
 			id=5;
 		};
-		class Item456
+		class Item455
 		{
 			dataType="Group";
 			side="West";
@@ -19374,7 +19328,7 @@ class Mission
 				nAttributes=1;
 			};
 		};
-		class Item457
+		class Item456
 		{
 			dataType="Group";
 			side="West";
@@ -19782,7 +19736,7 @@ class Mission
 			};
 			id=20;
 		};
-		class Item458
+		class Item457
 		{
 			dataType="Group";
 			side="West";
@@ -20214,7 +20168,7 @@ class Mission
 				nAttributes=1;
 			};
 		};
-		class Item459
+		class Item458
 		{
 			dataType="Group";
 			side="West";
@@ -20622,7 +20576,7 @@ class Mission
 			};
 			id=30;
 		};
-		class Item460
+		class Item459
 		{
 			dataType="Group";
 			side="West";
@@ -21054,7 +21008,7 @@ class Mission
 				nAttributes=1;
 			};
 		};
-		class Item461
+		class Item460
 		{
 			dataType="Group";
 			side="West";
@@ -21500,7 +21454,7 @@ class Mission
 			};
 			id=40;
 		};
-		class Item462
+		class Item461
 		{
 			dataType="Group";
 			side="West";
@@ -21931,7 +21885,7 @@ class Mission
 				nAttributes=1;
 			};
 		};
-		class Item463
+		class Item462
 		{
 			dataType="Group";
 			side="West";
@@ -22377,7 +22331,7 @@ class Mission
 			};
 			id=50;
 		};
-		class Item464
+		class Item463
 		{
 			dataType="Group";
 			side="West";
@@ -22808,7 +22762,7 @@ class Mission
 				nAttributes=1;
 			};
 		};
-		class Item465
+		class Item464
 		{
 			dataType="Object";
 			class PositionInfo
@@ -22824,7 +22778,7 @@ class Mission
 			id=15917;
 			type="ProtectionZone_Invisible_F";
 		};
-		class Item466
+		class Item465
 		{
 			dataType="Object";
 			class PositionInfo
@@ -22836,7 +22790,7 @@ class Mission
 			flags=4;
 			class Attributes
 			{
-				init="call{this call A3W_fnc_setupResupplyPoint}";
+				init="this call A3W_fnc_setupResupplyPoint";
 				disableSimulation=1;
 			};
 			id=15919;
@@ -22904,7 +22858,7 @@ class Mission
 				nAttributes=3;
 			};
 		};
-		class Item467
+		class Item466
 		{
 			dataType="Object";
 			class PositionInfo
@@ -22916,10 +22870,89 @@ class Mission
 			flags=4;
 			class Attributes
 			{
-				init="call{this call A3W_fnc_setupResupplyPoint}";
+				init="this call A3W_fnc_setupResupplyPoint";
 				disableSimulation=1;
 			};
 			id=15920;
+			type="Land_FuelStation_01_pump_malevil_F";
+			class CustomAttributes
+			{
+				class Attribute0
+				{
+					property="allowDamage";
+					expression="_this allowdamage _value;";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"BOOL"
+								};
+							};
+							value=0;
+						};
+					};
+				};
+				class Attribute1
+				{
+					property="ace_refuel_fuelCargo";
+					expression="if (_value != (if (isNumber (configFile >> 'CfgVehicles' >> typeOf _this >> ""ace_refuel_fuelCargo"")) then {getNumber (configFile >> 'CfgVehicles' >> typeOf _this >> ""ace_refuel_fuelCargo"")} else {-1})) then {[_this, _value] call ace_refuel_fnc_makeSource}";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"SCALAR"
+								};
+							};
+							value=-1;
+						};
+					};
+				};
+				class Attribute2
+				{
+					property="ace_cargo_size";
+					expression="[_this,_value] call ace_cargo_fnc_setSize;";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"SCALAR"
+								};
+							};
+							value=-1;
+						};
+					};
+				};
+				nAttributes=3;
+			};
+		};
+		class Item467
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={22987.576,5.6559844,18887.549};
+				angles[]={0,4.1247263,0};
+			};
+			side="Empty";
+			flags=4;
+			class Attributes
+			{
+				init="this call A3W_fnc_setupResupplyPoint";
+				disableSimulation=1;
+			};
+			id=15921;
 			type="Land_FuelStation_01_pump_malevil_F";
 			class CustomAttributes
 			{
@@ -22988,85 +23021,6 @@ class Mission
 			dataType="Object";
 			class PositionInfo
 			{
-				position[]={22987.576,5.6559844,18887.549};
-				angles[]={0,4.1247263,0};
-			};
-			side="Empty";
-			flags=4;
-			class Attributes
-			{
-				init="call{this call A3W_fnc_setupResupplyPoint}";
-				disableSimulation=1;
-			};
-			id=15921;
-			type="Land_FuelStation_01_pump_malevil_F";
-			class CustomAttributes
-			{
-				class Attribute0
-				{
-					property="allowDamage";
-					expression="_this allowdamage _value;";
-					class Value
-					{
-						class data
-						{
-							class type
-							{
-								type[]=
-								{
-									"BOOL"
-								};
-							};
-							value=0;
-						};
-					};
-				};
-				class Attribute1
-				{
-					property="ace_refuel_fuelCargo";
-					expression="if (_value != (if (isNumber (configFile >> 'CfgVehicles' >> typeOf _this >> ""ace_refuel_fuelCargo"")) then {getNumber (configFile >> 'CfgVehicles' >> typeOf _this >> ""ace_refuel_fuelCargo"")} else {-1})) then {[_this, _value] call ace_refuel_fnc_makeSource}";
-					class Value
-					{
-						class data
-						{
-							class type
-							{
-								type[]=
-								{
-									"SCALAR"
-								};
-							};
-							value=-1;
-						};
-					};
-				};
-				class Attribute2
-				{
-					property="ace_cargo_size";
-					expression="[_this,_value] call ace_cargo_fnc_setSize;";
-					class Value
-					{
-						class data
-						{
-							class type
-							{
-								type[]=
-								{
-									"SCALAR"
-								};
-							};
-							value=-1;
-						};
-					};
-				};
-				nAttributes=3;
-			};
-		};
-		class Item469
-		{
-			dataType="Object";
-			class PositionInfo
-			{
 				position[]={20808.107,30.380421,7199.6836};
 				angles[]={0,5.6654553,0};
 			};
@@ -23074,7 +23028,7 @@ class Mission
 			flags=4;
 			class Attributes
 			{
-				init="call{this call A3W_fnc_setupResupplyPoint}";
+				init="this call A3W_fnc_setupResupplyPoint";
 				disableSimulation=1;
 			};
 			id=15922;
@@ -23142,7 +23096,7 @@ class Mission
 				nAttributes=3;
 			};
 		};
-		class Item470
+		class Item469
 		{
 			dataType="Object";
 			class PositionInfo
@@ -23154,7 +23108,7 @@ class Mission
 			flags=4;
 			class Attributes
 			{
-				init="call{this call A3W_fnc_setupResupplyPoint}";
+				init="this call A3W_fnc_setupResupplyPoint";
 				disableSimulation=1;
 			};
 			id=15923;
@@ -23221,7 +23175,7 @@ class Mission
 				nAttributes=3;
 			};
 		};
-		class Item471
+		class Item470
 		{
 			dataType="Object";
 			class PositionInfo
@@ -23233,7 +23187,7 @@ class Mission
 			flags=4;
 			class Attributes
 			{
-				init="call{this call A3W_fnc_setupResupplyPoint}";
+				init="this call A3W_fnc_setupResupplyPoint";
 				disableSimulation=1;
 			};
 			id=15924;
@@ -23301,7 +23255,7 @@ class Mission
 				nAttributes=3;
 			};
 		};
-		class Item472
+		class Item471
 		{
 			dataType="Object";
 			class PositionInfo
@@ -23313,10 +23267,89 @@ class Mission
 			flags=4;
 			class Attributes
 			{
-				init="call{this call A3W_fnc_setupResupplyPoint}";
+				init="this call A3W_fnc_setupResupplyPoint";
 				disableSimulation=1;
 			};
 			id=15925;
+			type="Land_FuelStation_01_pump_malevil_F";
+			class CustomAttributes
+			{
+				class Attribute0
+				{
+					property="allowDamage";
+					expression="_this allowdamage _value;";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"BOOL"
+								};
+							};
+							value=0;
+						};
+					};
+				};
+				class Attribute1
+				{
+					property="ace_refuel_fuelCargo";
+					expression="if (_value != (if (isNumber (configFile >> 'CfgVehicles' >> typeOf _this >> ""ace_refuel_fuelCargo"")) then {getNumber (configFile >> 'CfgVehicles' >> typeOf _this >> ""ace_refuel_fuelCargo"")} else {-1})) then {[_this, _value] call ace_refuel_fnc_makeSource}";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"SCALAR"
+								};
+							};
+							value=-1;
+						};
+					};
+				};
+				class Attribute2
+				{
+					property="ace_cargo_size";
+					expression="[_this,_value] call ace_cargo_fnc_setSize;";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"SCALAR"
+								};
+							};
+							value=-1;
+						};
+					};
+				};
+				nAttributes=3;
+			};
+		};
+		class Item472
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={3689.5447,9.0386305,13400.198};
+				angles[]={0,5.4163675,0};
+			};
+			side="Empty";
+			flags=4;
+			class Attributes
+			{
+				init="this call A3W_fnc_setupResupplyPoint";
+				disableSimulation=1;
+			};
+			id=15926;
 			type="Land_FuelStation_01_pump_malevil_F";
 			class CustomAttributes
 			{
@@ -23385,85 +23418,6 @@ class Mission
 			dataType="Object";
 			class PositionInfo
 			{
-				position[]={3689.5447,9.0386305,13400.198};
-				angles[]={0,5.4163675,0};
-			};
-			side="Empty";
-			flags=4;
-			class Attributes
-			{
-				init="call{this call A3W_fnc_setupResupplyPoint}";
-				disableSimulation=1;
-			};
-			id=15926;
-			type="Land_FuelStation_01_pump_malevil_F";
-			class CustomAttributes
-			{
-				class Attribute0
-				{
-					property="allowDamage";
-					expression="_this allowdamage _value;";
-					class Value
-					{
-						class data
-						{
-							class type
-							{
-								type[]=
-								{
-									"BOOL"
-								};
-							};
-							value=0;
-						};
-					};
-				};
-				class Attribute1
-				{
-					property="ace_refuel_fuelCargo";
-					expression="if (_value != (if (isNumber (configFile >> 'CfgVehicles' >> typeOf _this >> ""ace_refuel_fuelCargo"")) then {getNumber (configFile >> 'CfgVehicles' >> typeOf _this >> ""ace_refuel_fuelCargo"")} else {-1})) then {[_this, _value] call ace_refuel_fnc_makeSource}";
-					class Value
-					{
-						class data
-						{
-							class type
-							{
-								type[]=
-								{
-									"SCALAR"
-								};
-							};
-							value=-1;
-						};
-					};
-				};
-				class Attribute2
-				{
-					property="ace_cargo_size";
-					expression="[_this,_value] call ace_cargo_fnc_setSize;";
-					class Value
-					{
-						class data
-						{
-							class type
-							{
-								type[]=
-								{
-									"SCALAR"
-								};
-							};
-							value=-1;
-						};
-					};
-				};
-				nAttributes=3;
-			};
-		};
-		class Item474
-		{
-			dataType="Object";
-			class PositionInfo
-			{
 				position[]={9538.7881,128.49838,15092.501};
 				angles[]={0,5.52843,0};
 			};
@@ -23471,7 +23425,7 @@ class Mission
 			flags=4;
 			class Attributes
 			{
-				init="call{this call A3W_fnc_setupResupplyPoint}";
+				init="this call A3W_fnc_setupResupplyPoint";
 				disableSimulation=1;
 			};
 			id=15927;
@@ -23538,7 +23492,7 @@ class Mission
 				nAttributes=3;
 			};
 		};
-		class Item475
+		class Item474
 		{
 			dataType="Marker";
 			position[]={6292.0156,96.022583,12925.732};
@@ -23551,7 +23505,7 @@ class Mission
 			id=15928;
 			atlOffset=-67.065308;
 		};
-		class Item476
+		class Item475
 		{
 			dataType="Object";
 			class PositionInfo
@@ -23629,7 +23583,7 @@ class Mission
 				nAttributes=3;
 			};
 		};
-		class Item477
+		class Item476
 		{
 			dataType="Logic";
 			class PositionInfo
@@ -23777,7 +23731,7 @@ class Mission
 				nAttributes=7;
 			};
 		};
-		class Item478
+		class Item477
 		{
 			dataType="Logic";
 			class PositionInfo
@@ -23924,7 +23878,7 @@ class Mission
 				nAttributes=7;
 			};
 		};
-		class Item479
+		class Item478
 		{
 			dataType="Logic";
 			class PositionInfo
@@ -24071,7 +24025,7 @@ class Mission
 				nAttributes=7;
 			};
 		};
-		class Item480
+		class Item479
 		{
 			dataType="Logic";
 			class PositionInfo
@@ -24218,13 +24172,13 @@ class Mission
 				nAttributes=7;
 			};
 		};
-		class Item481
+		class Item480
 		{
 			dataType="Object";
 			class PositionInfo
 			{
-				position[]={22242.721,5.1146269,14595.23};
-				angles[]={0.014660765,3.039037,6.2685246};
+				position[]={22229.998,4.9853487,14584.967};
+				angles[]={0,2.730098,0};
 			};
 			side="Empty";
 			flags=4;
@@ -24234,6 +24188,7 @@ class Mission
 			};
 			id=2360;
 			type="Land_Cargo20_grey_F";
+			atlOffset=-0.47896338;
 			class CustomAttributes
 			{
 				class Attribute0
@@ -24303,7 +24258,7 @@ class Mission
 				nAttributes=1;
 			};
 		};
-		class Item482
+		class Item481
 		{
 			dataType="Object";
 			class PositionInfo
@@ -24322,6 +24277,47 @@ class Mission
 			id=2336;
 			type="Land_Camping_Light_F";
 			atlOffset=0.00010490417;
+			class CustomAttributes
+			{
+				class Attribute0
+				{
+					property="allowDamage";
+					expression="_this allowdamage _value;";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"BOOL"
+								};
+							};
+							value=0;
+						};
+					};
+				};
+				nAttributes=1;
+			};
+		};
+		class Item482
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={22247.824,6.8229294,14576.503};
+				angles[]={0,6.1217055,0};
+			};
+			side="Empty";
+			flags=4;
+			class Attributes
+			{
+				init="this call A3W_fnc_setupMissionObject; this setVariable ['persistent', true];";
+				disableSimulation=1;
+			};
+			id=16023;
+			type="Land_LampHarbour_F";
 			class CustomAttributes
 			{
 				class Attribute0

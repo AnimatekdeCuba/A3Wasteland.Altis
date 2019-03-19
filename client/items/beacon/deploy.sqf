@@ -10,13 +10,13 @@
 
 
 #define ANIM "AinvPknlMstpSlayWrflDnon_medic"
-#define ERR_CANCELLED "Action Cancelled"
-#define ERR_TOO_CLOSE "Another owned beacon too close"
-#define ERR_IN_WATER "Action Failed! You can only place a spawn beacon on terra firma"
-#define ERR_IN_VEHICLE "Action Failed! You can't do this in a vehicle"
-#define ERR_IN_BUILDING "Action Failed! You cannot place a beacon in a building"
-#define ERR_IN_ROCK "Action Failed! You cannot place a beacon in a Rock or Object"
-#define MAX_BEACONS format ["You cannot deploy more then %1 spawnbeacons", [_MaxSpawnbeacons]]
+#define ERR_CANCELLED "Cancelado"
+#define ERR_TOO_CLOSE "Ya hay un Spawn Beacon tuyo a menos de 2Km"
+#define ERR_IN_WATER "Error! Solo puedes poner el Spawn Beacon en tierra firme"
+#define ERR_IN_VEHICLE "Error! No puedes hacer eso en un vehículo"
+#define ERR_IN_BUILDING "Error! No pudes poner el Spawn Beacon en una edificación"
+#define ERR_IN_ROCK "Error! No pudes poner el Spawn Beacon en una piedra u objeto"
+#define MAX_BEACONS format ["No puedes poner más de %1 Spawn Beacons", [_MaxSpawnbeacons]]
 _MaxSpawnbeacons = ceil (["A3W_maxSpawnBeacons", 5] call getPublicVar);
 
 private _PosPlayer = getPos player;
@@ -68,7 +68,7 @@ private _hasFailed =
 		case (_TooClose): {_text = ERR_TOO_CLOSE};
 		case (surfaceIsWater position player): {_text = ERR_IN_WATER};
 		default {
-			_text = format["Spawn Beacon %1%2 Deployed", round(_progress*100), "%"];
+			_text = format["Desplegando al %1%2 su Spawn Beacon", round(_progress*100), "%"];
 			_failed = false;
 		};
 	};
