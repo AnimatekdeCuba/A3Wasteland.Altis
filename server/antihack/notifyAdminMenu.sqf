@@ -28,9 +28,9 @@ switch (toLower _action) do
 	{
 		if (_value == "On") then
 		{
-		_message = format ["[NOTICE] %1 ha usado el menú de administrador para ACTIVAR el modo DIOS", name player];
+		_message = format ["[NOTICE] %1 ha usado el menú de administrador para ACTIVARSE el modo DIOS", name player];
 		}else{
-		_message = format ["[NOTICE] %1 ha usado el menú de administrador para DESACTIVAR el modo DIOS", name player];
+		_message = format ["[NOTICE] %1 ha usado el menú de administrador para DESACTIVARSE el modo DIOS", name player];
 		};
 	};
 	case "teleport":

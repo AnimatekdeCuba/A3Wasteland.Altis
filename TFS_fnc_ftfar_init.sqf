@@ -22,12 +22,12 @@ if !(isClass (configFile >> "CfgPatches" >> "task_force_radio")) exitWith
 		//Kick player after disaplying TFAR Not found warning.
 		disableUserInput true;
 		disableUserInput true;
-		private _message = "TaskForceRadio was not launched with ArmA 3!\nPlease restart you game with TaskForceRadio enabled!";
+		private _message = "TaskForceRadio no está activado en ArmA 3!\nPor favor, reinicie el juego con TaskForceRadio activado!";
 		
 		private _timer = ftfar_wait_for_action_time;
 		while {_timer > 0} do
 		{
-			cutText [format["%1\n%2", _message, format["You will be returned to the lobby in %1 second/s.", _timer]], "BLACK FADED", 999];
+			cutText [format["%1\n%2", _message, format["Regresarás al lobby en %1 segundo/s.", _timer]], "BLACK FADED", 999];
 			uiSleep 1;
 			_timer = _timer - 1;
 		};
@@ -103,7 +103,7 @@ while {true} do
 				private _timer = ftfar_wait_for_action_time;
 				while {_timer > 0} do
 				{
-					cutText [format["%1\n%2", _message, format["Te quedan %1 segundos para ser expulsado!", _timer]], "BLACK FADED", 999];
+					cutText [format["%1\n%2", _message, format["Te quedan %1 segundo/s para ser expulsado (Kickeado)!", _timer]], "BLACK FADED", 999];
 					uiSleep 1;
 					_timer = _timer - 1;
 					if (call _checkFunction) exitWith {};

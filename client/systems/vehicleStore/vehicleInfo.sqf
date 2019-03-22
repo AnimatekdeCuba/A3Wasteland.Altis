@@ -165,14 +165,15 @@ else // new vehicle
 {
 	_animSources = _animSources apply { [configName _x, getNumber (_x >> "initPhase")] };
 
-// animationList initPhase override
+	// animationList initPhase override
 	_animList = getArray (_vehCfg >> "animationList");
-		for "_i" from 0 to (count _animList - 1) step 2 do
+	for "_i" from 0 to (count _animList - 1) step 2 do
 	{
 		_initOdds = _animList select (_i+1);
 		[_animSources, _animList select _i, round _initOdds] call fn_setToPairs;
 	};
 };
+
 _parts = [];
 
 {

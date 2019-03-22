@@ -3,7 +3,7 @@
 // ******************************************************************************************
 //	@file Version: 1.0
 //	@file Name: vehicleSetup.sqf
-//	@file Author: AgentRev Edited by: GMG_Monkey
+//	@file Author: AgentRev, GMG_Monkey
 //	@file Created: 15/06/2013 19:57
 
 if (!isServer) exitWith {};
@@ -18,16 +18,12 @@ clearMagazineCargoGlobal _vehicle;
 clearWeaponCargoGlobal _vehicle;
 clearItemCargoGlobal _vehicle;
 
+
 if !(_class isKindOf "AllVehicles") exitWith {}; // if not actual vehicle, finish here
 
 clearBackpackCargoGlobal _vehicle;
 
-// Disable thermal on all manned vehicles
-if (!unitIsUAV _vehicle) then
-{
-	_vehicle disableTIEquipment true;
-};
-
+//Remove This?
 if ({_vehicle isKindOf _x} count ["StaticMGWeapon","StaticGrenadeLauncher","StaticMortar"] > 0) then
 {
 	_vehicle enableWeaponDisassembly false;
@@ -51,29 +47,17 @@ if ({_class isKindOf _x} count ["Air","UGV_01_base_F"] > 0) then
 	_vehicle remoteExec ["A3W_fnc_setupAntiExplode", 0, _vehicle];
 };
 
-//Recon Drones
-if ({_vehicle iskindof _x} count 
-	[
-		"O_UAV_02_F",
-		"I_UAV_02_F",
-		"B_UAV_02_F"
-	]>0)
-Then
-{
-	_vehicle animate ["hideweapons",1];
-	_vehicle removeweapon "missiles_SCALPEL";
-};
-
-if (_vehicle getVariable ["A3W_resupplyTruck", false] || getNumber (configFile >> "CfgVehicles" >> _class >> "transportAmmo") > 0) then
-{
-	[_vehicle] remoteExecCall ["A3W_fnc_setupResupplyTruck", 0, _vehicle];
-};
-
 [_vehicle, _brandNew] call A3W_fnc_setVehicleLoadout;
 
 // Vehicle customization
 switch (true) do
 {
+	//Recon Drones
+	case ({_vehicle iskindof _x} count [ "O_UAV_02_F",  "I_UAV_02_F", "B_UAV_02_F" ]>0):
+	{ 
+	_vehicle animate ["hideweapons",1]; 
+	_vehicle removeweapon "missiles_SCALPEL"; 
+	}; 
 	case (_class isKindOf "SUV_01_base_F"):
 	{
 		// Lower SUV center of mass to prevent rollovers
@@ -88,12 +72,7 @@ switch (true) do
 		_centerOfMass set [2, (_centerOfMass select 2) - 0.1]; // cannot be static number like SUV due to different values for each variant
 		_vehicle setCenterOfMass _centerOfMass;
 	};
-	case (_class isKindOf "Offroad_01_repair_base_F"):
-	{
-		_vehicle animate ["HideServices", 0];
-	};
-
-	case ({_class isKindOf _x} count ["B_Heli_Light_01_F", "B_Heli_Light_01_armed_F"] > 0):
+	case (_class isKindOf "Heli_Light_01_base_F"):
 	{
 		// Add flares to poor MH-9's
 		_vehicle removeWeaponTurret ["CMFlareLauncher", [-1]];
@@ -126,23 +105,25 @@ switch (true) do
 			_vehicle addWeaponTurret ["SmokeLauncher", _x];
 		} forEach [[-1],[0]];
 
-		// Convert lousy-ass 8-10x 200Rnd_762x51_Belt to 1x 2000Rnd_762x51_Belt, wtf Bohemia
+		// Convert lousy-ass 200Rnd_762x51_Belt mags to 1000Rnd_762x51_Belt, wtf Bohemia
 		private _lmgCoaxes = (_vehicle weaponsTurret [0]) arrayIntersect ["LMG_coax","LMG_coax_ext"];
 
 		if !(_lmgCoaxes isEqualTo []) then
 		{
 			private _200rndMags = (_vehicle magazinesTurret [0]) select {_x select [0,18] == "200Rnd_762x51_Belt"};
+			private _magCount = count _200rndMags;
+			if (_magCount > 3 && _magCount < 10) then { _magCount = (ceil (_magCount / 5)) * 5 }; // ceil to next multiple of 5
 
 			{ _vehicle removeWeaponTurret [_x,[0]] } forEach _lmgCoaxes;
 
-			if (_brandNew && count _200rndMags >= 8) then
+			if (_brandNew && _magCount >= 5) then
 			{
 				{ _vehicle removeMagazinesTurret [_x,[0]] } forEach (_200rndMags arrayIntersect _200rndMags); // X arrayIntersect X = filter unique values, forEach 3x faster
 
 				private "_i";
-				for "_i" from 1 to floor (count _200rndMags / 8) do
+				for "_i" from 1 to floor (_magCount / 5) do
 				{
-					_vehicle addMagazineTurret ["2000" + (_200rndMags select 0 select [3]), [0]];
+					_vehicle addMagazineTurret ["1000" + (_200rndMags select 0 select [3]), [0]];
 				};
 			};
 

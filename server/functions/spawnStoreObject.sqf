@@ -3,7 +3,7 @@
 // ******************************************************************************************
 //	@file Version: 1.0
 //	@file Name: spawnStoreObject.sqf
-//	@file Author: AgentRev Edited By: GMG_Monkey
+//	@file Author: AgentRev Edited By: GMG_Monkey 
 //	@file Created: 11/10/2013 22:17
 //	@file Args:
 
@@ -16,7 +16,8 @@ _itemEntrySent params [["_class","",[""]]];
 _isGenStore = ["GenStore", _npcName] call fn_startsWith;
 _isGunStore = ["GunStore", _npcName] call fn_startsWith;
 _isVehStore = ["VehStore", _npcName] call fn_startsWith;
-_isBaseStore = ["BaseStore", _npcName] call fn_startsWith;
+_isBaseStore = ["BaseStore", _npcName] call fn_startsWith; 
+
 private _storeNPC = missionNamespace getVariable [_npcName, objNull];
 private _marker = _npcName;
 
@@ -110,7 +111,12 @@ if (_key != "" && _player isKindOf "Man" && {_isGenStore || _isGunStore || _isVe
 			}
 			else // normal spawn
 			{
-				_safePos = _markerPos findEmptyPosition [0, 50, [_class, "B_Truck_01_transport_F"] select (!surfaceIsWater _markerPos && _seaSpawn)]; // use HEMTT in findEmptyPosition for boats on lands 
+				private _water = 0; 
+				if (_seaSpawn) then 
+				{ 
+					_water = 1; 
+				}; 
+				_safePos = [_markerPos, 0, 25, 5,_water,0,0] call findSafePos; 
 				if (count _safePos == 0) then { _safePos = _markerPos };
 				_spawnPosAGL = _safePos;
 				if (_seaSpawn) then { _safePos vectorAdd [0,0,0.05] };
@@ -124,7 +130,7 @@ if (_key != "" && _player isKindOf "Man" && {_isGenStore || _isGunStore || _isVe
 			} forEach nearestObjects [_spawnPosAGL, ["LandVehicle","Air","Ship"], 25 max sizeOf _class];
 			if (_player getVariable [_timeoutKey, true]) then { breakOut "spawnStoreObject" }; // Timeout
 			_object = createVehicle [_class, _safePos, [], 0, "NONE"];
-			_object setVariable ["moveable", true, true];
+			_object setVariable ["moveable", true, true]; 
 			if (_waterNonBoat) then
 			{
 				private _posSurf = getPos _object;
@@ -149,7 +155,6 @@ if (_key != "" && _player isKindOf "Man" && {_isGenStore || _isGunStore || _isVe
 				_object setVariable ["A3W_vehicleVariant", _variant select [8], true];
 			};
 			private _isUAV = (round getNumber (configFile >> "CfgVehicles" >> _class >> "isUav") > 0);
-			//assign AI to the vehicle so it can actually be used
 			if (_isUAV) then
 			{
 				createVehicleCrew _object;
@@ -198,6 +203,7 @@ if (_key != "" && _player isKindOf "Man" && {_isGenStore || _isGunStore || _isVe
 			_object allowDamage _isDamageable;
 			_object setVariable ["allowDamage", _isDamageable, true];
 			clearBackpackCargoGlobal _object;
+
 			if ({_object iskindof _x} count 
 			[
 				"Box_NATO_AmmoVeh_F",
@@ -304,7 +310,7 @@ if (_key != "" && _player isKindOf "Man" && {_isGenStore || _isGunStore || _isVe
 					};
 				} foreach _RepairResourcesMax;
 			};
-			
+
 			// give diving gear to RHIB, Speedboat, and SDV
 			if ({_object isKindOf _x} count ["Boat_Transport_02_base_F","Boat_Armed_01_base_F","SDV_01_base_F"] > 0) then
 			{
@@ -326,7 +332,6 @@ if (_key != "" && _player isKindOf "Man" && {_isGenStore || _isGunStore || _isVe
 						_object addItemCargoGlobal ["V_RebreatherIA", 1];
 					};
 				};
-
 				_object addItemCargoGlobal ["G_Diving", 1];
 				_object addWeaponCargoGlobal ["arifle_SDAR_F", 1];
 				_object addMagazineCargoGlobal ["20Rnd_556x45_UW_mag", 4];

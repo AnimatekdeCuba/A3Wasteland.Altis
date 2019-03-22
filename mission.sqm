@@ -14130,7 +14130,7 @@ class Mission
 			flags=4;
 			class Attributes
 			{
-				init="call{this addAction [""<img image='client\icons\money.paa'/> Sell bin contents"", ""client\systems\selling\sellCrateItems.sqf"", [true], 1, false, false, """", STORE_ACTION_CONDITION + "" && "" + SELL_BIN_CONDITION];}";
+				init="this call A3W_fnc_setupMissionObject; this addAction [""<img image='client\icons\money.paa'/> Sell bin contents"", ""client\systems\selling\sellCrateItems.sqf"", [true], 1, false, false, """", STORE_ACTION_CONDITION + "" && "" + SELL_BIN_CONDITION];";
 				disableSimulation=1;
 				dynamicSimulation=1;
 			};

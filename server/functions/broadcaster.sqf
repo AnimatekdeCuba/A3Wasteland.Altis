@@ -13,7 +13,6 @@ while {true} do
 {
 	serverFPS = diag_fps;
 	publicVariable "serverFPS";
-
 	serverUpTime = diag_tickTime;
 	publicVariable "serverUpTime";
 	sleep 1;

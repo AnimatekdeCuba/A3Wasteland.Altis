@@ -23,13 +23,13 @@ _checks =
 
 	switch (true) do
 	{
-		case ((player distance cursorTarget) > 5): { _text = "Hacking cancelled!" };
-		case (doCancelAction): { doCancelAction = false; _text = "Hacking cancelled!" };
-		case (vehicle player != player): { _text = "Action failed! You can't do this in a vehicle" };
+		case ((player distance cursorTarget) > 5): { _text = "Hackeo Cancelado!" };
+		case (doCancelAction): { doCancelAction = false; _text = "Hackeo Cancelado!" };
+		case (vehicle player != player): { _text = "Error! No puedes hacer eso desde un vehículo" };
 		default
 		{
 			_failed = false;
-			_text = format ["Hacking %1%2 complete", floor (_progress * 100), "%"];
+			_text = format ["Hackeo %1%2 completado", floor (_progress * 100), "%"];
 		};
 	};
 	

@@ -58,9 +58,9 @@ _objWeapons = [];
 	}
 	else
 	{
-	{
-		[_objItems, _x select 0, _x select 1] call fn_addToPairs;
-	} forEach ((getItemCargo _container) call cargoToPairs);
+		{
+			[_objItems, _x select 0, _x select 1] call fn_addToPairs;
+		} forEach ((getItemCargo _container) call cargoToPairs);
 	};
 
 	{

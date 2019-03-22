@@ -227,7 +227,7 @@ class w_RscListBox
 	sizeEx = 0.035;
 	shadow = 0;
 	colorShadow[] = {0, 0, 0, 0.5};
-	period = 0.79;
+	period = 0.75;
 	maxHistoryDelay = 1;
 	colorPictureDisabled[] = {1, 1, 1, 1};
 
@@ -475,7 +475,7 @@ class w_RscCheckBox
 	textureDisabledUnchecked = "\A3\Ui_f\data\GUI\RscCommon\RscCheckBox\CheckBox_unchecked_ca.paa";
 	tooltipColorText[] = {1, 1, 1, 1};
 	tooltipColorBox[] = {1, 1, 1, 1};
-	tooltipColorShade[] = {1, 1, 1, 0.65};
+	tooltipColorShade[] = {0, 0, 0, 0.65};
 	soundEnter[] = {1, 1, 1, 1};
 	soundPush[] = {1, 1, 1, 1};
 	soundClick[] = {1, 1, 1, 1};
@@ -648,19 +648,24 @@ class w_RscMapControl
 	alphaFadeEndScale = 2;
 	colorTrails[] = {0.84, 0.76, 0.65, 0.15};
 	colorTrailsFill[] = {0.84, 0.76, 0.65, 0.65};
+	widthRailWay = 4;
 	fontLabel = "RobotoCondensed";
 	sizeExLabel = "(((((safezoneW / safezoneH) min 1.2) / 1.2) / 25) * 0.8)";
 	fontGrid = "TahomaB";
 	sizeExGrid = 0.02;
 	fontUnits = "TahomaB";
 	sizeExUnits = "(((((safezoneW / safezoneH) min 1.2) / 1.2) / 25) * 0.8)";
-	fontNames = "EtelkaNarrowMediumPro";
+	fontNames = "RobotoCondensed";
 	sizeExNames = "(((((safezoneW / safezoneH) min 1.2) / 1.2) / 25) * 0.8) * 2";
 	fontInfo = "RobotoCondensed";
 	sizeExInfo = "(((((safezoneW / safezoneH) min 1.2) / 1.2) / 25) * 0.8)";
 	fontLevel = "TahomaB";
 	sizeExLevel = 0.02;
 	text = "#(argb,8,8,3)color(1,1,1,1)";
+	idcMarkerColor = -1; 
+	idcMarkerIcon = -1; 
+	textureComboBoxColor = "#(argb,8,8,3)color(1,1,1,1)"; 
+	showMarkers = 1; 
 
 	class Legend {
 		colorBackground[] = {1, 1, 1, 0.5};
@@ -678,7 +683,7 @@ class w_RscMapControl
 	};
 	class Command {
 		color[] = {1, 1, 1, 1};
-		icon = "\A3\ui_f\data\map\mapcontrol\waypoint_ca.paa";
+		icon = "\a3\ui_f\data\map\mapcontrol\waypoint_ca.paa";
 		size = 18;
 		importance = 1;
 		coefMin = 1;
@@ -708,7 +713,7 @@ class w_RscMapControl
 	};
 	class CustomMark {
 		color[] = {1, 1, 1, 1};
-		icon = "\A3\ui_f\data\map\mapcontrol\custommark_ca.paa";
+		icon = "\a3\ui_f\data\map\mapcontrol\custommark_ca.paa";
 		size = 18;
 		importance = 1;
 		coefMin = 1;
@@ -860,10 +865,10 @@ class w_RscMapControl
 	class Stack {
 		color[] = {0, 0, 0, 1};
 		icon = "\A3\ui_f\data\map\mapcontrol\stack_ca.paa";
-		size = 20;
+		size = 16;
 		importance = "2 * 16 * 0.05";
-		coefMin = 0.9;
-		coefMax = 4;
+		coefMin = 0.4;
+		coefMax = 2;
 	};
 	class Ruin {
 		color[] = {0, 0, 0, 1};
@@ -894,7 +899,7 @@ class w_RscMapControl
 		importance = 1;
 		coefMin = 1;
 		coefMax = 1;
-		icon = "\A3\ui_f\data\map\mapcontrol\waypoint_ca.paa";
+		icon = "\a3\ui_f\data\map\mapcontrol\waypoint_ca.paa";
 		size = 18;
 	};
 	class WaypointCompleted {
@@ -902,7 +907,7 @@ class w_RscMapControl
 		importance = 1;
 		coefMin = 1;
 		coefMax = 1;
-		icon = "\A3\ui_f\data\map\mapcontrol\waypointcompleted_ca.paa";
+		icon = "\a3\ui_f\data\map\mapcontrol\waypointcompleted_ca.paa";
 		size = 18;
 	};
 	class power {

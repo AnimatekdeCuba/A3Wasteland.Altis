@@ -11,45 +11,47 @@
 A3W_teamPlayersMap = 1;											// Show all friendly players on the map at all times, regardless of difficulty level (0 = no, 1 = yes)
 A3W_disableGlobalVoice = 1;										// Auto-switch channel to Direct communication whenever broadcasting voice on global, unless being admin (0 = no, 1 = yes)
 A3W_disableSideVoice = 1;										// Auto-switch channel to Direct communication whenever broadcasting voice on side (0 = no, 1 = block Ind team, 2 = block all teams)
-A3W_uavControl = "owner";										// Restrict connection to UAVs based on ownership ("owner", "group", "side")
+A3W_uavControl = "group";										// Restrict connection to UAVs based on ownership ("owner", "group", "side")
 A3W_disableUavFeed = 1;											// Force disable UAV PIP feed to prevent thermal camera abuse (0 = no, 1 = yes)
-//A3W_disableBuiltInThermal = 0;								// Display a black screen if the player tries to use thermal vision built-in a handheld weapon like Titan launcher or laser designator (0 = no, 1 = yes)
+A3W_disableBuiltInThermal = 0;									// Display a black screen if the player tries to use thermal vision built-in a handheld weapon like Titan launcher or laser designator (0 = no, 1 = yes)
+
 // Timers
 BoS_coolDownTimer = 3600;										// Baselocker hacking timer
 A3W_reservedSlots = 6;											// Number of reserved slots available (0 = off)
 A3W_maxPlayers = 140;											// Server slot limit. Needed for reserved slots to work
-A3W_repetitiveCleanup = 1;         // Enable clean-up addon (0 = off, 1 = on)
+A3W_repetitiveCleanup = 1;        								// Enable clean-up addon (0 = off, 1 = on)
 
 // Time settings
-A3W_startHour = 1000;											// In-game hour at mission start (0 to 23) - time is saved and restored between server restarts if A3W_timeSaving = 1
-A3W_timeMultiplierDay = 4;										// Sets the speed of time between 5 AM and 8 PM (for example, 6.0 means 6 hours in-game will pass in 1 real hour)
-A3W_timeMultiplierNight = 8;									// Sets the speed of time between 8 PM and 5 AM
+A3W_startHour = 08;												// In-game hour at mission start (0 to 23) - time is saved and restored between server restarts if A3W_timeSaving = 1
+A3W_timeMultiplierDay = 2;										// Sets the speed of time between 5 AM and 8 PM (for example, 6.0 means 6 hours in-game will pass in 1 real hour)
+A3W_timeMultiplierNight = 4;									// Sets the speed of time between 8 PM and 5 AM
 A3W_moonLight = 1;												// Moon light during night (0 = no, 1 = yes)
+
 // Player settings
-A3W_startingMoney = 10000;										// Amount of money that players start with
+A3W_startingMoney = 100;										// Amount of money that players start with
 A3W_survivalSystem = 0;											// Food and water are required to stay alive (0 = no, 1 = yes) - 0 removes food and water items from the mission
 A3W_unlimitedStamina = 1;										// Allow unlimited sprinting, jumping, etc. (0 = no, 1 = yes) - this also removes energy drinks from the mission
 A3W_bleedingTime = 120;											// Time in seconds for which to allow revive after a critical injury (minimum 10 seconds)
 A3W_headshotNoRevive = 0;										// Instant death on fatal headshot by enemy player with non-explosive ammo (0 = no, 1 = yes)
 A3W_customDeathMessages = 0;									// If difficulty option deathMessages=0, display custom messages related to causes of death, as defined in fn_deathMessage.sqf (0 = no, 1 = yes)
-A3W_healthTime = 7*60;             // Seconds till death once starving or dehydrated
-A3W_hungerTime = 125*60;           // Seconds till starving
-A3W_thirstTime = 110*60;           // Seconds till dehydrated
+A3W_healthTime = 7*60;            							 	// Seconds till death once starving or dehydrated
+A3W_hungerTime = 125*60;           								// Seconds till starving
+A3W_thirstTime = 110*60;           								// Seconds till dehydrated
 
 // Artillery settings
-A3W_artilleryStrike = 1;           // Availability of Artillery Strike item (0 = no, 1 = yes)
-A3W_artilleryShells = 15;          // Number of shells per strike
-A3W_artilleryRadius = 50;          // Strike radius in meters within which the shells will randomly hit
-A3W_artilleryCooldown = 60*60;     // Cooldown in seconds between strike uses per individual player - resets on server restart
-A3W_artilleryCrateOdds = 1/10;     // Odds of finding one Artillery Strike in a mission crate (0.0 to 1.0)
-A3W_artilleryAmmo = "ModuleOrdnanceHowitzer_F_ammo"; // CfgAmmo class of fired shells, also available for example are the more powerful "R_230mm_fly" and less powerful "ModuleOrdnanceMortar_F_ammo"
+A3W_artilleryStrike = 1;           								// Availability of Artillery Strike item (0 = no, 1 = yes)
+A3W_artilleryShells = 15;          								// Number of shells per strike
+A3W_artilleryRadius = 50;          								// Strike radius in meters within which the shells will randomly hit
+A3W_artilleryCooldown = 60*60;     								// Cooldown in seconds between strike uses per individual player - resets on server restart
+A3W_artilleryCrateOdds = 1/10;     								// Odds of finding one Artillery Strike in a mission crate (0.0 to 1.0)
+A3W_artilleryAmmo = "ModuleOrdnanceHowitzer_F_ammo"; 			// CfgAmmo class of fired shells, also available for example are the more powerful "R_230mm_fly" and less powerful "ModuleOrdnanceMortar_F_ammo"
 
 // Spawn settings
 A3W_townSpawnCooldown = 10*60;									// Number of seconds to wait between each spawn on a specific town (0 = disabled)
 A3W_townSpawnSpawnHeight = 1500;								// Altitude in meters at which players will spawn when spawning on a specific town (0 = ground/sea)
 A3W_spawnBeaconCooldown = 15*60;								// Number of seconds to wait between each use of a specific spawn beacon (0 = disabled)
 A3W_spawnBeaconSpawnHeight = 2500;								// Altitude in meters at which players will spawn when using spawn beacons (0 = ground/sea)
-A3W_maxSpawnBeacons = 2;           					 // Maxmimum number of spawn beacons (0 = disabled)
+A3W_maxSpawnBeacons = 2;           					 			// Maxmimum number of spawn beacons (0 = disabled)
 
 // Antihack settings
 A3W_antiHackUnitCheck = 1;										// Detect players who spawn unauthorized AI units (0 = no, 1 = yes) - disable if you have custom unit scripts/mods like AI recruitment or ALiVE
@@ -90,7 +92,7 @@ A3W_timeSaving = 1;												// Save and restore in-game clock time between se
 A3W_weatherSaving = 1;											// Save and restore weather settings between server restarts (0 = no, 1 = yes)
 A3W_combatAbortDelay = 60;										// If playerSaving = 1, delay in seconds for which to disable abort and respawn buttons after firing or being shot (0 = none)
 A3W_vehicleSaving = 1;											// Save purchased and captured vehicles between server restarts (0 = no, 1 = yes)
-A3W_missionVehicleSaving = 0;      // Autosaving behavior for convoy/patrol/shipment _vehicles, until a player force-saves or acquires ownership (0 = off, 1 = on)
+A3W_missionVehicleSaving = 1;      								// Autosaving behavior for convoy/patrol/shipment _vehicles, until a player force-saves or acquires ownership (0 = off, 1 = on)
 A3W_baseSaving = 1;												// Save locked base parts between server restarts (0 = no, 1 = yes)
 A3W_boxSaving = 1;												// Save locked weapon crates and their contents between server restarts (0 = no, 1 = yes)
 A3W_staticWeaponSaving = 1;										// Save locked static weapons and their magazines between server restarts (0 = no, 1 = yes)
@@ -100,12 +102,12 @@ A3W_spawnBeaconSaving = 1;										// Save spawn beacons between server restart
 A3W_objectLifetime = 10*24;										// Maximum lifetime in hours for saved objects (baseparts, crates, etc. except vehicles) across server restarts (0 = no time limit)
 A3W_vehicleLifetime = 0;										// Maximum lifetime in hours for saved vehicles across server restarts, regardless of usage (0 = no time limit)
 A3W_vehicleMaxUnusedTime = 10*24;								// Maximum parking time in hours after which unused saved vehicles will be marked for deletion (0 = no time limit)
-A3W_serverSavingInterval = 1*60;								// Interval in seconds between automatic vehicle & object saves; should be kept at 1 min for profileNamespace and iniDB, while for extDB it can be relaxed to 3-5 mins
-A3W_mineSaving = 0;												// Save placed mines between server restarts (0 = no, 1 = yes)
+A3W_serverSavingInterval = 3*60;								// Interval in seconds between automatic vehicle & object saves; should be kept at 1 min for profileNamespace and iniDB, while for extDB it can be relaxed to 3-5 mins
+A3W_mineSaving = 1;												// Save placed mines between server restarts (0 = no, 1 = yes)
 A3W_mineLifetime = 12;											// Maximum lifetime in hours for saved mines across server restarts (0 = no time limit)
 A3W_privateStorage = 1;											// Enable persistent private storage locations across the map (0 = no, 1 = yes)
 A3W_privateParking = 1;											// If vehicleSaving = 1 and savingMethod = "extDB" or "sock", enable persistent private parking locations across the map (0 = no, 1 = yes)
-A3W_privateParkingLimit = 10;									// Maximum amount of vehicles allowed in private parking (0 = no limit)
+A3W_privateParkingLimit = -1;									// Maximum amount of vehicles allowed in private parking (0 = no limit)
 A3W_privateParkingCost = 15000;									// Cost to retrieve an individual vehicle from private parking
 A3W_vehicleLocking = 1;											// Enable vehicle locking and lockpicking (0 = no, 1 = yes)
 A3W_camoNetSaving = 1;											// Enable camonet savings
@@ -116,22 +118,26 @@ PDB_ObjectFileID = "A3WD_";										// Object savefile prefix (if you run multi
 
 // extDB settings
 A3W_extDB_ServerID = 1;											// Server ID to use in the database for the particular server running off this config file; if you have multiple servers, they all need different IDs
-A3W_extDB_Environment = "normal";							// Value used to separate player & object data from multiple environments running on the same map (e.g. "normal", "hardcore", "dev", etc. can be whatever you want)
-A3W_extDB_playerSaveCrossMap = 1;								// Player saves are shared across maps in same environment, with player location saved separately for each map; death resets save on all maps (0 = no, 1 = yes)
+A3W_extDB_Environment = "normal";								// Value used to separate player & object data from multiple environments running on the same map (e.g. "normal", "hardcore", "dev", etc. can be whatever you want)
+A3W_extDB_playerSaveCrossMap = 0;								// Player saves are shared across maps in same environment, with player location saved separately for each map; death resets save on all maps (0 = no, 1 = yes)
 A3W_extDB_GhostingTimer = 5*60;									// Number of seconds a player has to wait when switching between servers running the same map (0 = disabled)
 A3W_extDB_GhostingAdmins = 0;									// Apply ghosting restriction to server admins (0 = no, 1 = yes)
-A3W_extDB_SaveUnlockedObjects = 0;								// Save and restore unlocked baseparts that were purchased or locked at least once during their lifetime (0 = no, 1 = yes)
+A3W_extDB_SaveUnlockedObjects = 1;								// Save and restore unlocked baseparts that were purchased or locked at least once during their lifetime (0 = no, 1 = yes)
 A3W_extDB_ConfigName = "A3W";									// Name of the connection config from @extDB3\extdb3-conf.ini to be used (the one within [brackets])
 A3W_extDB_IniName = "a3wasteland.ini";							// Name of the INI file in @extDB3\sql_custom to be used
 A3W_extDB_Misc = 0;												// Enable extDB Misc Protocol (0 = no, 1 = yes) - no associated features implemented in vanilla A3W
+A3W_extDB_Steam = 0;											// Enable extDB Steam Protocol (0 = no, 1 = yes) - no associated features implemented in vanilla A3W
+A3W_extDB_Rcon = 0;												// Enable extDB Rcon Protocol (0 = no, 1 = yes) - no associated features implemented in vanilla A3W
+A3W_extDB_RconName = "RCON";									// Name of the Rcon config from extdb-conf.ini to be used (the one within [brackets])
+A3W_extDB_RconCommands = "KICK-ADDBAN";							// List of dash-separated RCON commands allowed via extDB_Rcon
 
 // Headless client settings
 A3W_hcPrefix = "A3W_HC";										// Prefix of the headless client unit names in mission.sqm
 A3W_hcObjCaching = 1;											// Enable headless client object caching (0 = no, 1 = yes)
 A3W_hcObjCachingID = 1;											// ID of the headless client in charge of object caching (1 or 2)
-A3W_hcObjCleanup = 1;											// Enable headless client server cleanup (0 = no, 1 = yes)
+A3W_hcObjCleanup = 0;											// Enable headless client server cleanup (0 = no, 1 = yes)
 A3W_hcObjCleanupID = 1;											// ID of the headless client in charge of object saving (1 or 2)
-A3W_hcObjSaving = 1;											// Enable headless client vehicle & object saving (0 = no, 1 = yes)
+A3W_hcObjSaving = 0;											// Enable headless client vehicle & object saving (0 = no, 1 = yes)
 A3W_hcObjSavingID = 1;											// ID of the headless client in charge of object saving (1 or 2)
 
 // HEADLESS CLIENT NOTES:
@@ -145,9 +151,9 @@ A3W_hcObjSavingID = 1;											// ID of the headless client in charge of objec
 A3W_serverSpawning = 1;											// Vehicle, object, and loot spawning (0 = no, 1 = yes)
 A3W_vehicleSpawning = 1;										// If serverSpawning = 1, spawn vehicles in towns (0 = no, 1 = yes)
 A3W_vehicleQuantity = 200;										// Approximate number of land vehicles to be spawned in towns
-A3W_planeSpawnOdds = 0.50;         // 50% chance spawning
-A3W_heliSpawnOdds = 0.50;         // 50% chance spawning
-A3W_boatSpawnOdds = 0.25;         // 25% chance spawning
+A3W_planeSpawnOdds = 0.50;         								// 50% chance spawning
+A3W_heliSpawnOdds = 0.50;          								// 50% chance spawning
+A3W_boatSpawnOdds = 0.25;          								// 25% chance spawning
 A3W_boatSpawning = 1;											// If serverSpawning = 1, spawn boats at marked areas near coasts (0 = no, 1 = yes)
 A3W_heliSpawning = 1;											// If serverSpawning = 1, spawn helicopters in some towns and airfields (0 = no, 1 = yes)
 A3W_planeSpawning = 1;											// If serverSpawning = 1, spawn planes at some airfields (0 = no, 1 = yes)
@@ -156,15 +162,16 @@ A3W_baseBuilding = 0;											// If serverSpawning = 1, spawn base parts in to
 A3W_essentialsSpawning = 0;										// If serverSpawning = 1, spawn essential items (food sacks, water barrels, minor supply crates) in towns (0 = no, 1 = yes)
 
 // Loot settings
-/*A3W_buildingLootWeapons = 0;       // Spawn weapon loot in all buildings (0 = no, 1 = yes)
-A3W_buildingLootSupplies = 0;      // Spawn supply loot (backpacks & player items) in all buildings (0 = no, 1 = yes)
-A3W_buildingLootChances = 0;*/       // Chance percentage that loot will spawn at each spot in a building (0 to 100)
-A3W_vehicleLoot = 2;               // Level of loot added to vehicles (0 = none, 1 = weapon OR items, 2 = weapon AND items, 3 = two weapons AND items) - 2 or 3 recommended if buildingLoot = 0
-A3W_simpleLoot = 1;                // Spawn loot in all buildings (0 = no, 1 = yes)
+/*A3W_buildingLootWeapons = 0;       							// Spawn weapon loot in all buildings (0 = no, 1 = yes)
+A3W_buildingLootSupplies = 0;      								// Spawn supply loot (backpacks & player items) in all buildings (0 = no, 1 = yes)
+A3W_buildingLootChances = 0;*/     								// Chance percentage that loot will spawn at each spot in a building (0 to 100)
+A3W_vehicleLoot = 2;               								// Level of loot added to vehicles (0 = none, 1 = weapon OR items, 2 = weapon AND items, 3 = two weapons AND items) - 2 or 3 recommended if buildingLoot = 0
+A3W_simpleLoot = 1;                								// Spawn loot in all buildings (0 = no, 1 = yes)
 
 // Territory settings
 A3W_territoryCaptureTime = 1*60;								// Time in seconds needed to capture a territory
 A3W_territoryPayroll = 1;										// Periodically reward sides and indie groups based on how many territories they own (0 = no, 1 = yes)
+A3W_territoryWarningIcons = 1;									// Show exclamation marks on map for friendly territories where enemies are present (0 = no, 1 = yes)
 A3W_payrollInterval = 5;										// Delay in seconds between each payroll
 A3W_payrollAmount = 50;											// Amount of money rewarded per territory on each payroll
 A3W_territoryAllowed = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];			//Territories allowed
@@ -173,36 +180,27 @@ A3W_territoryAllowed = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];			//Territories allowed
 A3W_serverMissions = 1;											// Enable server missions (0 = no, 1 = yes)
 A3W_missionsDifficulty = 1;										// Missions difficulty (0 = normal, 1 = hard)
 A3W_missionFarAiDrawLines = 1;									// Draw small red lines on the map from mission markers to individual units & vehicles which are further away than 75m from the objective (0 = no, 1 = yes)
-A3W_missionsQuantity = 8;										// Number of missions running at the same time (0 to 8)
+A3W_missionsQuantity = 6;										// Number of missions running at the same time (0 to 6)
+
+/* Unused Vanilla mission types
 A3W_heliPatrolMissions = 1;										// Enable missions involving flying helicopters piloted by AI (0 = no, 1 = yes)
 A3W_underWaterMissions = 1;										// Enable underwater missions which require diving gear (0 = no, 1 = yes)
-A3W_mainMissionDelay = 15*60;									// Time in seconds between Main Missions
+A3W_mainMissionDelay = 10*60;									// Time in seconds between Main Missions
 A3W_mainMissionTimeout = 60*60;									// Time in seconds that a Main Mission will run for, unless completed
 A3W_sideMissionDelay = 5*60;									// Time in seconds between Side Missions
-A3W_sideMissionTimeout = 60*60;									// Time in seconds that a Side Mission will run for, unless completed
-A3W_moneyMissionDelay = 10*60;									// Time in seconds between Money Missions
+A3W_sideMissionTimeout = 45*60;									// Time in seconds that a Side Mission will run for, unless completed
+A3W_moneyMissionDelay = 15*60;									// Time in seconds between Money Missions
 A3W_moneyMissionTimeout = 60*60;								// Time in seconds that a Money Mission will run for, unless completed
-A3W_AAFMissionDelay = 5*60;			// Time in seconds between AAF Missions
-A3W_AAFMissionTimeout = 60*60;		// Time in seconds that a AAF Mission will run for, unless completed
-A3W_CSATMissionDelay = 15*60;		// Time in seconds between CSAT Missions
-A3W_CSATMissionTimeout = 60*60;		// Time in seconds that a CSAT Mission will run for, unless completed
-A3W_GENMissionDelay = 20*60;			// Time in seconds between GEN Missions
-A3W_GENMissionTimeout = 30*60;		// Time in seconds that a GEN Mission will run for, unless completed
-A3W_IDAPMissionDelay = 15*60;		// Time in seconds between IDAP Missions
-A3W_IDAPMissionTimeout = 60*60;		// Time in seconds that a IDAP Mission will run for, unless completed
-A3W_NATOMissionDelay = 10*60;		// Time in seconds between NATO Missions
-A3W_NATOMissionTimeout = 60*60;		// Time in seconds that a NATO Mission will run for, unless completed
-A3W_SYNMissionDelay = 5*60;			// Time in seconds between SYN Missions
-A3W_SYNMissionTimeout = 45*60;		// Time in seconds that a SYN Mission will run for, unless completed
-A3W_extraMissionDelay = 5*60;									// Time in seconds between Extra Missions
-A3W_extraMissionTimeout = 45*60;								// Time in seconds that a Extra Mission will run for, unless completed
-A3W_patrolMissionDelay = 30*60;									// Time in seconds between Patrol Missions
-A3W_patrolMissionTimeout = 60*60;								// Time in seconds that a Patrol Mission will run for, unless completed
-A3W_vehicleMissionDelay = 10*60;								// Time in seconds between vehicle capture missions
-A3W_vehicleMissionTimeout = 60*60;								// Time in seconds vehicle capture missions will run for
-A3W_hostileairMissionDelay = 20*60;								// Time in seconds between hostile air Missions
-A3W_hostileairMissionTimeout = 30*60;							// Time in seconds that a hostile air will run for, unless completed
-A3W_aquaticMissionDelay = 5*60;									// Time in seconds between aquatic Missions
-A3W_aquaticMissionTimeout = 60*60;								// Time in seconds that a aquatic Mission will run for, unless completed
-A3W_PrimaryMissionDelay = 240*60;								// Time in seconds between Primary Missions  
-A3W_PrimaryMissionTimeout = 240*60;								// Time in seconds that a Primary Mission will run for, unless completed
+*/
+A3W_AAFMissionDelay = 5*60;										// Time in seconds between AAF Missions
+A3W_AAFMissionTimeout = 60*60;									// Time in seconds that a AAF Mission will run for, unless completed
+A3W_CSATMissionDelay = 15*60;									// Time in seconds between CSAT Missions
+A3W_CSATMissionTimeout = 60*60;									// Time in seconds that a CSAT Mission will run for, unless completed
+A3W_GENMissionDelay = 20*60;									// Time in seconds between GEN Missions
+A3W_GENMissionTimeout = 30*60;									// Time in seconds that a GEN Mission will run for, unless completed
+A3W_IDAPMissionDelay = 15*60;									// Time in seconds between IDAP Missions
+A3W_IDAPMissionTimeout = 60*60;									// Time in seconds that a IDAP Mission will run for, unless completed
+A3W_NATOMissionDelay = 10*60;									// Time in seconds between NATO Missions
+A3W_NATOMissionTimeout = 60*60;									// Time in seconds that a NATO Mission will run for, unless completed
+A3W_SYNMissionDelay = 5*60;										// Time in seconds between SYN Missions
+A3W_SYNMissionTimeout = 45*60;									// Time in seconds that a SYN Mission will run for, unless completed

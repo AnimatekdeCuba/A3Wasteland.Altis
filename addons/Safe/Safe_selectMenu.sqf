@@ -7,9 +7,57 @@
 //	@file Description: Safe script
 
 #define PLAYER_CONDITION "(vehicle player == player && {!isNull cursorTarget})"
-#define ITEM_CONDITION "{cursortarget iskindof 'Box_NATO_AmmoVeh_F'} && {(player distance cursortarget) < 5}"
+#define ITEM_CONDITION "{cursortarget iskindof _BoxList} && {(player distance cursortarget) < 3}"
 #define OBJECT_CONDITION "{cursorTarget getVariable ['objectLocked', false]}"
 #define HACKING_CONDITION "{'ACE_key_lockpick' in (items player)} && {cursorTarget getVariable ['ownerUID',''] != getPlayerUID player}"
+
+private _BoxList = [
+					'Box_FIA_Ammo_F',
+					'Box_T_East_Ammo_F',
+					'Box_East_Ammo_F',
+					'Box_IND_Ammo_F',
+					'Box_NATO_Ammo_F',
+					'Box_Syndicate_Ammo_F',
+					'Box_T_East_Wps_F',
+					'Box_East_Wps_F',
+					'Box_IND_Wps_F',
+					'Box_T_NATO_Wps_F',
+					'Box_NATO_Wps_F',
+					'Box_Syndicate_Wps_F',
+					'Box_FIA_Support_F',
+					'Box_CSAT_Equip_F',
+					'Box_IDAP_Equip_F',
+					'Box_AAF_Equip_F',
+					'Box_NATO_Equip_F',
+					'Box_East_AmmoOrd_F',
+					'Box_IDAP_AmmoOrd_F',
+					'Box_IND_AmmoOrd_F',
+					'Box_NATO_AmmoOrd_F',
+					'Box_IED_Exp_F',
+					'Box_East_Grenades_F',
+					'Box_IND_Grenades_F',
+					'Box_NATO_Grenades_F',
+					'Box_East_WpsLaunch_F',
+					'Box_IND_WpsLaunch_F',
+					'Box_NATO_WpsLaunch_F',
+					'Box_Syndicate_WpsLaunch_F',
+					'Box_T_East_WpsSpecial_F',
+					'Box_East_WpsSpecial_F',
+					'Box_IND_WpsSpecial_F',
+					'Box_T_NATO_WpsSpecial_F',
+					'Box_NATO_WpsSpecial_F',
+					'Box_GEN_Equip_F',
+					'C_IDAP_supplyCrate_F',
+					'I_supplyCrate_F',
+					'Box_East_Support_F',
+					'Box_IND_Support_F',
+					'Box_NATO_Support_F',
+					'Box_CSAT_Uniforms_F',
+					'Box_IDAP_Uniforms_F',
+					'Box_AAF_Uniforms_F',
+					'Box_NATO_Uniforms_F',
+					'Box_FIA_Wps_F'
+					];
 
 Safe_open = 
 {
@@ -30,11 +78,11 @@ Safe_open =
 		};
 		case (isNil _uid || isNull _uid):
 		{
-			hint "You need to lock the object first!";
+			hint "Primero debes bloquear esta caja!";
 		};
 		default
 		{
-		hint "An unknown error occurred. This could be because your Base Locker is not locked."
+		hint "Ha ocurrido un error. Puede que tu Base Locker no esté activado."
 		};
 
 	};

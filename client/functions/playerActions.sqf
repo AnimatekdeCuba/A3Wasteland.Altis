@@ -19,7 +19,7 @@
 	//Take Gear
 	["<img image='client\icons\cancel.paa'/> Take Gear", "client\actions\TakeGear.sqf", [], 1, false, false, "", "!isNull cursorObject && !alive cursorObject && {cursorObject isKindOf 'Man' && player distance cursorObject <= (sizeOf typeOf cursorObject / 3) max 2} && side player != west && side player != east"],
 	//Put on Uniform
-	["Put on Uniform", "client\actions\PutOnUniform.sqf", [], 1, false, false, "", "!isNull cursorObject && {cursorObject isKindOf 'GroundWeaponHolder' && player distance cursorObject <= (sizeOf typeOf cursorObject / 3) max 2} && side player != west && side player != east"],
+	["Ponerse el uniforme", "client\actions\PutOnUniform.sqf", [], 1, false, false, "", "!isNull cursorObject && {cursorObject isKindOf 'GroundWeaponHolder' && player distance cursorObject <= (sizeOf typeOf cursorObject / 3) max 2} && side player != west && side player != east"],
 	//Re-initialize UAV
 	["Re-Initilize UAV", "client\actions\reinitializeUAV.sqf", ["Re-Initilize"], 1, false, false, "", "{_x in ['B_UavTerminal','O_UavTerminal','I_UavTerminal']} count assignedItems player > 0 && {cursorTarget iskindof _x} count ['UAV_02_base_F', 'UAV_04_base_F', 'UAV_03_base_F', 'UGV_01_base_F', 'StaticWeapon', 'UAV_05_Base_F', 'B_Radar_System_01_F', 'O_SAM_System_04_F', 'O_Radar_System_02_F', 'B_SAM_System_03_F'] >0"],
 	//Disable UAV

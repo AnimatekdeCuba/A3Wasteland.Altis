@@ -76,7 +76,7 @@
         if (!isPlayer _outlaw || !isPlayer _bountyHunter || _outlaw == _bountyHunter) exitWith {}; // invalid sender or recipient
 
         _hunterBalance = _bountyHunter getVariable ["bmoney", 0];
-        _hunterBalance = (_hunterBalance + _reward) min (["A3W_atmMaxBalance", 300000] call getPublicVar); // hunter exceeds max atm
+        _hunterBalance = (_hunterBalance + _reward) min (["A3W_atmMaxBalance", 5000000] call getPublicVar); // hunter exceeds max atm
 
         _outlaw setVariable ["bounty", 0, true];
         _bountyHunter setVariable ["bmoney", _hunterBalance, true];

@@ -22,7 +22,7 @@ if (typeName _this == "ARRAY" && {count _this >= 1}) then {
 		//player setVariable ["cmoney", (player getVariable ["cmoney", 0]) + _money, true];
 		[player, _money] call A3W_fnc_setCMoney;
 	};
-
+	player setvariable ["_TerritoryLoopTime", time, true];
 	playSound 'FD_Finish_F'; // Nice sound effect to draw players attention to the notification
 };
 

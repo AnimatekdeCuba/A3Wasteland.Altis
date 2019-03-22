@@ -978,7 +978,7 @@ headArray = compileFinal str
 	["M97 ESS UN", "rhssaf_helmet_m97_nostrap_blue_tan_ess_bare", 400, "hat"],
 	["M59/85 Olive", "rhssaf_helmet_m59_85_nocamo", 400, "hat"],
 	["M59/85 Oakleaf", "rhssaf_helmet_m59_85_oakleaf", 400, "hat"],
-	["HGU-56/P", "rhssaf_helmet_hgu56p", 400, "hat"],
+	//["HGU-56/P", "rhssaf_helmet_hgu56p", 400, "hat"],
 	["Booniehat Digital", "rhssaf_booniehat_digital", 50, "hat"],
 	["Booniehat MDU", "rhssaf_booniehat_md2camo", 50, "hat"],
 	["Booniehat Woodland", "rhssaf_booniehat_woodland", 50, "hat"],

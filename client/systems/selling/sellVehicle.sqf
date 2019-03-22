@@ -82,7 +82,7 @@ storeSellingHandle = _this spawn
 	if (_vehicle getVariable ["ownerUID",""] != getPlayerUID player && _vehicle getVariable ["ownerUID",""] != "") exitWith
     {
     	playSound "FD_CP_Not_Clear_F";
-    	[format [' Ese "%1" no te pertenece.', _objname], "Error"] call  BIS_fnc_guiMessage;
+    	[format [' Este "%1" no te pertenece.', _objname], "Error"] call  BIS_fnc_guiMessage;
     };
 
 	private _variant = _vehicle getVariable ["A3W_vehicleVariant", ""];

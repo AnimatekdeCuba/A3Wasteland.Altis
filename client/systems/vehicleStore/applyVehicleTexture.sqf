@@ -58,72 +58,53 @@ if (_texture isEqualType "") then
 
 		_selections = _selections - (switch (true) do // EXCLUDED SELECTIONS
 		{
-			case (_veh isKindOf "Kart_01_Base_F"):                 { [1,2,3] };
-
-//			case (_veh isKindOf "LSV_01_base_F"):                  { [1,3] };
-//			case (_veh isKindOf "LSV_02_base_F"):                  { [1] };
-
-			case (_veh isKindOf "Offroad_01_base_F"):              { [1] };
-			case (_veh isKindOf "Offroad_02_base_F"):              { [1,2,3] };
-
-			case (_veh isKindOf "Van_01_base_F"):                  { [2] };
-			case (_veh isKindOf "Van_02_base_F"):                  { [1,2,3,4] };
-
-//			case (_veh isKindOf "Truck_01_base_F"):                { [] };
-			case (_veh isKindOf "Truck_02_MRL_base_F"):            { [1] };
-			case (_veh isKindOf "Truck_02_base_F"):                { [2] };
-//			case (_veh isKindOf "Truck_03_base_F"):                { [] };
-
-			case (_veh isKindOf "UGV_01_base_F"):                  { [1] };
-
-//			case (_veh isKindOf "MRAP_01_base_F"):                 { [1] };
-//			case (_veh isKindOf "MRAP_02_base_F"):                 { [] };
-//			case (_veh isKindOf "MRAP_03_base_F"):                 { [] };
-
-			case (_veh isKindOf "APC_Wheeled_01_base_F"):          { [3] };
-			case (_veh isKindOf "APC_Wheeled_02_base_F"):          { [3] };
-			case (_veh isKindOf "APC_Wheeled_03_base_F"):          { [4] };
-
-			case (_veh isKindOf "AFV_Wheeled_01_up_base_F"):       { [5] };
-			case (_veh isKindOf "AFV_Wheeled_01_base_F"):          { [3] };
-
-			case (_veh isKindOf "LT_01_base_F"):                   { [2] };
-
-			case (_veh isKindOf "B_APC_Tracked_01_CRV_F"):         { [4] };
-			case (_veh isKindOf "APC_Tracked_01_base_F"):          { [3] };
-			case (_veh isKindOf "APC_Tracked_02_base_F"):          { [3] };
-			case (_veh isKindOf "APC_Tracked_03_base_F"):          { [2] };
-
-			case (_veh isKindOf "B_MBT_01_TUSK_F"):                { [3] };
-			case (_veh isKindOf "MBT_01_arty_base_F"):             { [3] };
-			case (_veh isKindOf "MBT_01_base_F"):                  { [2] };
-			case (_veh isKindOf "MBT_02_arty_base_F"):             { [4] };
-			case (_veh isKindOf "MBT_02_base_F"):                  { [3] };
-			case (_veh isKindOf "MBT_03_base_F"):                  { [3] };
-			case (_veh isKindOf "MBT_04_base_F"):                  { [2] };
-
-//			case (_veh isKindOf "Heli_Transport_01_base_F"):       { [] };
-			case (_veh isKindOf "Heli_Transport_02_base_F"):       { [3] };
-//			case (_veh isKindOf "Heli_Transport_03_base_F"):       { [] };
-//			case (_veh isKindOf "Heli_Transport_04_base_F"):       { [] };
-
-			case (_veh isKindOf "Heli_Light_01_armed_base_F"):     { [1] };
-
-//			case (_veh isKindOf "Heli_Attack_02_base_F"):          { [] };
-
-//			case (_veh isKindOf "VTOL_Base_F"):                    { [] };
-			case (_veh isKindOf "Plane_Civil_01_base_F"):          { [2,3] };
-			case (_veh isKindOf "Plane_Fighter_01_Base_F"):        { [2,3,4,5,6,7,8,9] };
-			case (_veh isKindOf "Plane_Fighter_02_Base_F"):        { [3,4,5] };
-			case (_veh isKindOf "Plane_Fighter_04_Base_F"):        { [3,4,5] };
-//			case (_veh isKindOf "Plane"):                          { [] };
-
-//			case (_veh isKindOf "UAV_03_base_F"):                  { [] };
-			case (_veh isKindOf "UAV_05_Base_F"):                  { [2,3,4,5] };
-
-			case (_veh isKindOf "Boat_Civil_01_base_F"):           { [1] };
-
-			default                                                { [] };
+			case (_veh isKindOf "AFV_Wheeled_01_base_F"):    { [3              ] };
+			case (_veh isKindOf "AFV_Wheeled_01_up_base_F"): { [5              ] };
+			case (_veh isKindOf "APC_Tracked_01_base_F"):    { [3              ] };
+			case (_veh isKindOf "APC_Tracked_02_base_F"):    { [3              ] };
+			case (_veh isKindOf "APC_Tracked_03_base_F"):    { [2              ] };
+			case (_veh isKindOf "APC_Wheeled_01_base_F"):    { [3              ] };
+			case (_veh isKindOf "APC_Wheeled_02_base_F"):    { [3              ] };
+			case (_veh isKindOf "APC_Wheeled_03_base_F"):    { [4              ] };
+			case (_veh isKindOf "B_APC_Tracked_01_CRV_F"):   { [4              ] };
+			case (_veh isKindOf "B_MBT_01_TUSK_F"):          { [3              ] };
+			case (_veh isKindOf "Boat_Civil_01_base_F"):     { [1              ] };
+			case (_veh isKindOf "Heli_Attack_02_base_F"):    { [               ] };
+			case (_veh isKindOf "Heli_Transport_01_base_F"): { [               ] };
+			case (_veh isKindOf "Heli_Transport_02_base_F"): { [3              ] };
+			case (_veh isKindOf "Heli_Transport_03_base_F"): { [               ] };
+			case (_veh isKindOf "Heli_Transport_04_base_F"): { [               ] };
+			case (_veh isKindOf "Kart_01_Base_F"):           { [1,2,3          ] };
+			case (_veh isKindOf "LSV_01_base_F"):            { [1,3            ] };
+			case (_veh isKindOf "LSV_02_base_F"):            { [1              ] };
+			case (_veh isKindOf "LT_01_base_F"):             { [2              ] };
+			case (_veh isKindOf "MBT_01_arty_base_F"):       { [3              ] };
+			case (_veh isKindOf "MBT_01_base_F"):            { [2              ] };
+			case (_veh isKindOf "MBT_02_arty_base_F"):       { [4              ] };
+			case (_veh isKindOf "MBT_02_base_F"):            { [3              ] };
+			case (_veh isKindOf "MBT_03_base_F"):            { [3              ] };
+			case (_veh isKindOf "MBT_04_base_F"):            { [2              ] };
+			case (_veh isKindOf "MRAP_01_base_F"):           { [1              ] };
+			case (_veh isKindOf "MRAP_02_base_F"):           { [               ] };
+			case (_veh isKindOf "MRAP_03_base_F"):           { [               ] };
+			case (_veh isKindOf "Offroad_01_base_F"):        { [1              ] };
+			case (_veh isKindOf "Offroad_02_base_F"):        { [1,2,3          ] };
+			case (_veh isKindOf "Plane_Civil_01_base_F"):    { [2,3            ] };
+			case (_veh isKindOf "Plane_Fighter_01_Base_F"):  { [2,3,4,5,6,7,8,9] };
+			case (_veh isKindOf "Plane_Fighter_02_Base_F"):  { [3,4,5          ] };
+			case (_veh isKindOf "Plane_Fighter_04_Base_F"):  { [3,4,5          ] };
+			case (_veh isKindOf "Plane"):                    { [               ] };
+			case (_veh isKindOf "Truck_01_base_F"):          { [               ] };
+			case (_veh isKindOf "Truck_02_base_F"):          { [2              ] };
+			case (_veh isKindOf "Truck_02_MRL_base_F"):      { [1              ] };
+			case (_veh isKindOf "Truck_03_base_F"):          { [               ] };
+			case (_veh isKindOf "UAV_03_base_F"):            { [               ] };
+			case (_veh isKindOf "UAV_05_Base_F"):            { [2,3,4,5        ] };
+			case (_veh isKindOf "UGV_01_base_F"):            { [1              ] };
+			case (_veh isKindOf "Van_01_base_F"):            { [2              ] };
+			case (_veh isKindOf "Van_02_base_F"):            { [1,2,3,4        ] };
+			case (_veh isKindOf "VTOL_Base_F"):              { [               ] };
+			default                                          { [               ] };
 		});
 	};
 
@@ -138,9 +119,9 @@ else
 	{
 		{
 			_x params ["_sel", "_tex"];
-		_veh setObjectTextureGlobal [_sel, _tex];
+			_veh setObjectTextureGlobal [_sel, _tex];
 			_textures set [_sel, _tex];
-	} forEach _texture;
+		} forEach _texture;
 	};
 	if (_texture isEqualTypeAll "") then
 	{

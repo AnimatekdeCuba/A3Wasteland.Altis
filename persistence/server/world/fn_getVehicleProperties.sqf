@@ -108,15 +108,15 @@ else // texture paths
 		{
 			_tex = _x;
 
-		if (_tex select [0, _missionDirLen] == _missionDir) then
-		{
-			_tex = _tex select [_missionDirLen]; // exclude mission dir from path
-		};
+			if (_tex select [0, _missionDirLen] == _missionDir) then
+			{
+				_tex = _tex select [_missionDirLen]; // exclude mission dir from path
+			};
 
-		if (_doubleBSlash) then
-		{
-			_tex = (["","\\"] select (_tex select [0,1] == "\")) + (_tex splitString "\" joinString "\\");
-		};
+			if (_doubleBSlash) then
+			{
+				_tex = (["","\\"] select (_tex select [0,1] == "\")) + (_tex splitString "\" joinString "\\");
+			};
 
 			[_textures, _tex, [_forEachIndex]] call fn_addToPairs;
 		};
@@ -170,13 +170,13 @@ if (isNil "_fuelCargo" || {!finite _fuelCargo}) then { _fuelCargo = 0 };
 if (isNil "_repairCargo" || {!finite _repairCargo}) then { _repairCargo = 0 };
 
 // Save Vehicle Status
-{_variables pushBack [_x select 0, _veh getVariable _x] } forEach
+{ _variables pushBack [_x select 0, _veh getVariable _x] } forEach
 [
   ["vPin", false],
-  ["password", ""],
+  ["password", ""]/*,
   ["CamoDeployed", false],
   ["MidRange_AA", true, true],
-  ["LongRange_AA", true, true]
+  ["LongRange_AA", true, true]*/
 ];
 
 //Service system

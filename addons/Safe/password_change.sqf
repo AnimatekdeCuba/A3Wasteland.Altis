@@ -18,9 +18,9 @@ _object setVariable ["password", OutputText, true];
 
 if (OutputText=="")then {
 
-	["PIN lock disabled.", 5] call mf_notify_client;	
+	["PIN lock desactivado.", 5] call mf_notify_client;	
 }else{
-	["You successfully changed the PIN", 5] call mf_notify_client;	
+	["Has cambiado correctamente tu PIN", 5] call mf_notify_client;	
 	};	
 
 

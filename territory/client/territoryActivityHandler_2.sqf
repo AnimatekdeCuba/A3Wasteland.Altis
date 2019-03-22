@@ -37,7 +37,7 @@ if (typeName _this == "ARRAY" && {count _this >= 1}) then
 			{
 				_canPayout = true;
 			};
-		}; 
+		};
 	} forEach allMapMarkers;
 	// player globalChat format ["Can Payout = %1", _canPayout];
 	if (_canPayout) then
@@ -81,13 +81,12 @@ if (typeName _this == "ARRAY" && {count _this >= 1}) then
 	}
 	else
 	{
-		_TerritoryLoopTime =  player getVariable ["_TerritoryLoopTime", nil];
-		if (isnil _TerritoryLoopTime) then { _TerritoryLoopTime = time };
+		_TerritoryLoopTime =  player getVariable ["_TerritoryLoopTime", time];
 		OutOfRangeTime = time;
-		if ((OutOfRangeTime - TerritoryLoopTime) >= 30) then
+		if ((OutOfRangeTime - _TerritoryLoopTime) >= 30) then
 		{
-			titletext ["Your are more then 7km from the closest territory. Payout impossible", "PLAIN DOWN"];
-			player setvariable ["TerritoryLoopTime", time, true];
+			titletext ["Estás a más de 7km de distancia del territorio. Pago imposible", "PLAIN DOWN"];
+			player setvariable ["_TerritoryLoopTime", time, true];
 		};
 	};
 };

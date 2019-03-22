@@ -38,6 +38,6 @@ _rscLayer cutRsc["osefStatusBar","PLAIN"];
 		case 0: {_minutes = "00"};
 	};
 		
-		((uiNamespace getVariable "osefStatusBar")displayCtrl 1000)ctrlSetText format["AC A3Wasteland | CONECTADOS %2 JUGADORES | FPS: %1", round diag_fps, count playableUnits];
+		((uiNamespace getVariable "osefStatusBar")displayCtrl 1000)ctrlSetText format["..:: AC A3Wasteland 1.4D 0.3| %2 JUGADORES | FPS: %1 | Reinicio en %3 ::..", round diag_fps, count playableUnits, _minutes];
 	}; 
 };

@@ -94,8 +94,8 @@ class CfgDebriefing
 	class Reboot
 	{
 		title = "Reiniciando...";
-		subtitle = "Gracias por jugar AC A3Wasteland";
-		description = "El servidor salvará todo y reiniciará para optimizar su desempeño. El servidor estará restringido mientras tanto.";
+		subtitle = "Gracias por jugar AC A3Wasteland. Nos vemos en breve";
+		description = "El servidor salvará todo y reiniciará para optimizar su desempeño. El acceso estará restringido mientras tanto.";
 	};
 	class ReservedSlots
 	{
