@@ -10,8 +10,8 @@ _saveLocation = if (count _this > 1) then { _this select 1 } else { true };
 
 _data = if (_player == player) then {
 	[
-		["Hunger", ["hungerLevel", 0] call getPublicVar],
-		["Thirst", ["thirstLevel", 0] call getPublicVar]
+		["Hunger", ["hungerLevel", _player getVariable ["acex_field_rations_hunger", 0]]call getPublicVar],
+		["Thirst", ["thirstLevel", _player getVariable ["acex_field_rations_thirst", 0]]call getPublicVar]
 	]
 } else {
 	[]

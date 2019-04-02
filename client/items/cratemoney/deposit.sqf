@@ -20,7 +20,7 @@ if (isNull _crate) exitWith { closeDialog IDD_WARCHEST };
 
 _input = _dialog displayCtrl IDC_AMOUNT;
 _amount = _input call mf_verify_money_input;
-
+player globalChat format ["Input Amount: %1", _amount];
 if (_amount < 1) exitWith {};
 
 _money = player getVariable ["cmoney", 0];
@@ -30,5 +30,5 @@ if (_money < _amount) exitWith
 	[ERR_NOT_ENOUGH_FUNDS, 5] call mf_notify_client;
 	playSound "FD_CP_Not_Clear_F";
 };
-
+player globalChat "Calling 'A3W_fnc_processTransaction'";
 ["crateMoney", player, _crate, _amount] call A3W_fnc_processTransaction;

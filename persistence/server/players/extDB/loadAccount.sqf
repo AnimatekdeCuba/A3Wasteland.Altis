@@ -133,7 +133,7 @@ else
 private _bank = 0;
 private _bounty = 0;
 private _bountyKills = [];
-private _maxMoney = ["A3W_atmMaxBalance", 5000000] call getPublicVar;
+private _maxMoney = ["A3W_atmMaxBalance", 1000000] call getPublicVar;
 
 _result = [["getPlayerStatusXMap", _UID, _environment], 2] call extDB_Database_async;
 

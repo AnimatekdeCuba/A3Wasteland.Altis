@@ -5,7 +5,7 @@
 //	@file Author: MercyfulFate, AgentRev, Gigatek
 //	@file Description: Lockpick the nearest vehicle
 
-#define DURATION 60
+#define DURATION 150
 #define ANIMATION "AinvPknlMstpSlayWrflDnon_medic"
 
 #define FORMAT2(STR1,STR2) format ["%1 %2", STR1, STR2]

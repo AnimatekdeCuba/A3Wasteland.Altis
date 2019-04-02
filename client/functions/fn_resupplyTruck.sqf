@@ -8,7 +8,9 @@
 #define REARM_TIME_SLICE 5
 #define REPAIR_TIME_SLICE 1
 #define REFUEL_TIME_SLICE 1
+#define PRICE_OP 60000 // any vehicle this price or over will use PRICE_RELATIONSHIP_OP
 #define PRICE_RELATIONSHIP 4 // resupply price = brand-new store price divided by PRICE_RELATIONSHIP
+#define PRICE_RELATIONSHIP_OP 1.33 // resupply price for OP vehicles = brand-new store price divided by PRICE_RELATIONSHIP_OP
 #define RESUPPLY_TIMEOUT 30
 
 // Check if mutex lock is active.
@@ -44,10 +46,24 @@ _resupplyThread = [_vehicle, _unit] spawn
 	if (_variant != "") then { _variant = "variant_" + _variant };
 
 	{
-		if (_vehClass == _x select 1 && ((_variant == "" && {{_x isEqualType "" && {_x select [0,8] == "variant_"}} count _x == 0}) || {_variant in _x})) exitWith
+		if (_vehClass == _x select 1 && (_variant == "" || {_variant in _x})) exitWith
 		{
-			_price = _x select 2;
-			_price = round (_price / PRICE_RELATIONSHIP);
+			if (_isStaticWep) then
+			{
+				_price = _x select 2;
+			}
+			else
+			{
+				_price = _x select 2;
+				if (_price >= PRICE_OP) then
+				{
+					_price = round (_price / PRICE_RELATIONSHIP_OP);
+				}
+				else
+				{
+					_price = round (_price / PRICE_RELATIONSHIP);
+				};
+			};
 		};
 	} forEach (call allVehStoreVehicles + call staticGunsArray);
 
@@ -202,7 +218,7 @@ _resupplyThread = [_vehicle, _unit] spawn
 
 		//start resupply here
 		//player setVariable ["cmoney", (player getVariable ["cmoney",0]) - _price, true];
-		[player, - _price] call A3W_fnc_setCMoney;
+		[player, -_price] call A3W_fnc_setCMoney;
 		_text = format ["%1\n%2", format ["You paid $%1 to resupply %2.", _price, _vehName], "Please stand by..."];
 		[_text, 10] call mf_notify_client;
 		[] spawn fn_savePlayerData;
@@ -216,7 +232,7 @@ _resupplyThread = [_vehicle, _unit] spawn
 		{
 			_x params ["_mag", "_path", "_ammo"];
 
-			if (_mag != "FakeWeapon" && !isText (configFile >> "CfgMagazines" >> _mag >> "pylonWeapon")) then
+			if (_mag != "FakeWeapon" && _mag select [0,5] != "Pylon") then
 			{
 				_pathArr = [_pathArrs, _path] call fn_getFromPairs;
 				_new = isNil "_pathArr";

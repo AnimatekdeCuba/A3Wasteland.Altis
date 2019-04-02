@@ -77,6 +77,8 @@ player addEventHandler ["WeaponAssembled",
 	{
 		// ownerUID handled thru save funcs
 
+		_obj disableTIEquipment true; // Disable thermal on all unmanned vehicles
+
 		_playerSide = side group _player;
 
 		if (side _obj != _playerSide) then
@@ -172,40 +174,7 @@ player addEventHandler ["InventoryClosed",
 	};
 };
 
-// player addEventHandler ["HandleDamage", unitHandleDamage];
-//Modificado para el ACE MEdical//
-A3W_fnc_ace_findKiller =
-{
-	private ["_unit", "_down", "_sourceA3W", "_ammoA3W"];
-	_unit = _this select 0;
-	_down = _this select 1;
-
-	if (_unit == player && _down && isNil {_unit getVariable "FAR_killerVehicle"}) then
-	{
-		_sourceA3W = objNull;
-		_ammoA3W = "";
-
-		{
-			if (!isNil _x) exitWith
-			{
-				_sourceA3W = call compile _x;
-			};
-		} forEach ["_shooter", "_source", "_sourceOfDamage"];
-
-		{
-			if (!isNil _x) exitWith
-			{
-				_ammoA3W = call compile _x;
-			};
-		} forEach ["_projectile", "_typeOfProjectile"];
-
-		[_unit, _sourceA3W, _ammoA3W] call FAR_setKillerInfo;
-		_unit setVariable ["FAR_killerPrimeSuspect", _unit call FAR_findKiller];
-	};
-} call mf_compile;
-
-["medical_onUnconscious", A3W_fnc_ace_findKiller] call ace_common_fnc_addEventHandler;
-["medical_onSetDead", { [_this select 0, true] call A3W_fnc_ace_findKiller }] call ace_common_fnc_addEventHandler;
+player addEventHandler ["HandleDamage", unitHandleDamage];
 
 if (["A3W_remoteBombStoreRadius", 0] call getPublicVar > 0) then
 {

@@ -24,7 +24,7 @@ if (isNil "_killer" || {isNull _killer}) then
 _killer = effectiveCommander _killer;
 _deathCause = _player getVariable ["A3W_deathCause_local", []];
 
-if (_player getVariable ["FAR_isUnconscious", 0] == 1 && _deathCause isEqualTo []) then
+if (_player getVariable ["ACE_isUnconscious", false] && _deathCause isEqualTo []) then
 {
 	_deathCause = [["kill","bleedout"] select (_player getVariable ["FAR_injuryBroadcast", false])];
 	_player setVariable ["A3W_deathCause_local", _deathCause];
@@ -38,7 +38,7 @@ if (_killer == _player) then
 	{
 		_deathCause = switch (true) do
 		{
-			case (_player == player && ([missionNamespace getVariable "thirstLevel"] param [0,1,[0]] <= 0 || [missionNamespace getVariable "hungerLevel"] param [0,1,[0]] <= 0)): { "survival" };
+			case (_player == player && (_player getVariable ["acex_field_rations_thirst", 0] >= 99.9 || _player getVariable ["acex_field_rations_hunger", 0] >= 99.9)): { "survival" };
 			case (getOxygenRemaining _player <= 0 && getPosASLW _player select 2 < -0.1): { "drown" };
 			default { "suicide" };
 		};

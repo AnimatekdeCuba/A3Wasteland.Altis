@@ -72,7 +72,7 @@ else
 
 		if (!_skipRevive) then
 		{
-			_unit setVariable ["FAR_isUnconscious", 1, true];
+			_unit setVariable ["ACE_isUnconscious", true, true];
 			//_unit allowDamage false;
 			_unit setFatigue 1;
 		};

@@ -208,8 +208,8 @@ switch (_boxType) do
 				_boxItems =
 				[
 					// Item type, Item class(es), # of items, # of magazines per weapon
-					["itm", "Medikit", RANDOM_BETWEEN(10,40)],
-					["itm", "FirstAidKit", RANDOM_BETWEEN(10,40)]
+					//["itm", "Medikit", RANDOM_BETWEEN(10,40)],
+					//["itm", "FirstAidKit", RANDOM_BETWEEN(10,40)]
 				];
 			};
 			case "mission_Field_Engineer": 
@@ -865,8 +865,8 @@ switch (_boxType) do
 			_boxItems =
 			[
 				// Item type, Item class(es), # of items, # of magazines per weapon
-				["itm", "Medikit", 30],
-				["itm", "FirstAidKit", 40]
+				//["itm", "Medikit", 30],
+				//["itm", "FirstAidKit", 40]
 			];
 		};
 		case "airdrop_Diving_Gear": //diving equipment for squad of 2

@@ -5,7 +5,7 @@
 //	@file Author: AgentRev
 //	@file Created: 20/08/2013 00:29
 
-#define DEFAULT_SELL_VALUE 30
+#define DEFAULT_SELL_VALUE 50
 
 #include "sellIncludesStart.sqf";
 

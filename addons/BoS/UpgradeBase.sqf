@@ -103,7 +103,7 @@ if (_ManagerLevel < 5) then
 		} 
 		else
 		{
-			titletext ["Hay otra Base demasiado cerca. Reubíquese para Upgradear", "PLAIN DOWN"];
+			titletext ["Hay otra Base demasiado cerca. Reposiciónela para Upgradear", "PLAIN DOWN"];
 		};
 	} 
 	else

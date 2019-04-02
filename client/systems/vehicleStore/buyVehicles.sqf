@@ -16,7 +16,7 @@ if (!isNil "vehicleStore_lastPurchaseTime") then
 
 	if (_timeLeft > 0) then
 	{
-		hint format ["Debes esperar %1s antes de comprar otro vehículo", ceil _timeLeft];
+		hint format ["Debe esperar %1s antes de comprar otro vehículo", ceil _timeLeft];
 		playSound "FD_CP_Not_Clear_F";
 		breakOut "buyVehicles";
 	};
@@ -83,7 +83,7 @@ storePurchaseHandle = _this spawn
 	_showItemSpawnTimeoutError =
 	{
 		_itemText = _this select 0;
-		hint parseText format ["<t color='#ffff00'>Ha ocurrido un error con aduana.</t><br/>La compra del ""%1"" ha sido cancelada.", _itemText];
+		hint parseText format ["<t color='#ffff00'>An unknown error occurred.</t><br/>The purchase of ""%1"" has been cancelled.", _itemText];
 		playSound "FD_CP_Not_Clear_F";
 		_price = -1;
 	};
@@ -91,7 +91,7 @@ storePurchaseHandle = _this spawn
 	_showItemSpawnedOutsideMessage =
 	{
 		_itemText = _this select 0;
-		hint format ["El ""%1"" está aparcado afuera, en frente de la tienda.", _itemText];
+		hint format ["Su ""%1"" está aparcado afuera, en frente de la tienda.</t><br/>Tenga un buen día", _itemText];
 		playSound "FD_Finish_F";
 	};
 
@@ -170,7 +170,7 @@ storePurchaseHandle = _this spawn
 
 		_requestKey = call A3W_fnc_generateKey;
 		_itemData call requestStoreObject;
-
+		[player, _vehicle, true] call ace_vehiclelock_fnc_addKeyForVehicle; // Llaves del ACE
 		_vehicle = objectFromNetId (missionNamespace getVariable _requestKey);
 
 		if (!isNil "_vehicle" && {!isNull _vehicle}) then

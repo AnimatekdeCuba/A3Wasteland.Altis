@@ -39,7 +39,7 @@ switch (true) do
 		_obj addWeaponCargoGlobal ["Binocular", 5];
 		_obj addItemCargoGlobal ["FirstAidKit", 10];
 		_obj addItemCargoGlobal ["ItemGPS", 5];
-		_obj addItemCargoGlobal ["Medikit", 4];
+		//_obj addItemCargoGlobal ["Medikit", 4];
 		_obj addItemCargoGlobal ["ToolKit", 2];
 	};
 	default

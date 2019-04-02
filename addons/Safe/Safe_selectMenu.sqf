@@ -7,7 +7,7 @@
 //	@file Description: Safe script
 
 #define PLAYER_CONDITION "(vehicle player == player && {!isNull cursorTarget})"
-#define ITEM_CONDITION "{cursortarget iskindof _BoxList} && {(player distance cursortarget) < 3}"
+#define ITEM_CONDITION "{cursortarget iskindof _BoxList} && {(player distance cursortarget) < 5}"
 #define OBJECT_CONDITION "{cursorTarget getVariable ['objectLocked', false]}"
 #define HACKING_CONDITION "{'ACE_key_lockpick' in (items player)} && {cursorTarget getVariable ['ownerUID',''] != getPlayerUID player}"
 
@@ -67,7 +67,7 @@ Safe_open =
 	_uid = getPlayerUID _unit;
 	_owner = cursorTarget getvariable "ownerUID";
 
-	if (!isNull (uiNamespace getVariable ["Safe_Menu", displayNull]) && player getVariable ["FAR_isUnconscious", 0] == 0) exitWith {};
+	if (!isNull (uiNamespace getVariable ["Safe_Menu", displayNull]) && (player getVariable ["ACE_isUnconscious", false])) exitWith {};
 
 	switch (true) do
 	{

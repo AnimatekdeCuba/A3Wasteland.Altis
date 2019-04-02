@@ -28,8 +28,10 @@ if (!isNil "vehicleStore_lastSellTime") then
 
 storeSellingHandle = _this spawn
 {
-	#define CHOPSHOP_PRICE_RELATIONSHIP 0.10 
-	#define VEHICLE_MAX_SELLING_DISTANCE 50
+	#define CHOPSHOP_PRICE_OP 60000 			// Cualquier precio igual o superior a este número, usará CHOPSHOP_PRICE_RELATIONSHIP_OP
+	#define CHOPSHOP_PRICE_RELATIONSHIP 0.20 	// Precio de venta=nuevo multiplicado por by CHOPSHOP_PRICE_RELATIONSHIP
+	#define CHOPSHOP_PRICE_RELATIONSHIP_OP 0.10 // Precio de venta=nuevo multiplicado por CHOPSHOP_PRICE_RELATIONSHIP_OP
+	#define VEHICLE_MAX_SELLING_DISTANCE 120
 
 	private ["_vehicle", "_type", "_price", "_confirmMsg", "_text"];
 
@@ -44,6 +46,7 @@ storeSellingHandle = _this spawn
 
 	_type = typeOf _vehicle;
 	_objName = getText (configFile >> "CfgVehicles" >> _type >> "displayName");
+	_isStaticWep = _type isKindOf "StaticWeapon";
 
 	_checkDamage =
 	{
@@ -82,7 +85,7 @@ storeSellingHandle = _this spawn
 	if (_vehicle getVariable ["ownerUID",""] != getPlayerUID player && _vehicle getVariable ["ownerUID",""] != "") exitWith
     {
     	playSound "FD_CP_Not_Clear_F";
-    	[format [' Este "%1" no te pertenece.', _objname], "Error"] call  BIS_fnc_guiMessage;
+    	[format [' Este "%1" no te pertenece.', _objname], "No puedes venderlo"] call  BIS_fnc_guiMessage;
     };
 
 	private _variant = _vehicle getVariable ["A3W_vehicleVariant", ""];
@@ -93,7 +96,23 @@ storeSellingHandle = _this spawn
 	{
 		if (_type == _x select 1 && ((_variant == "" && {{_x isEqualType "" && {_x select [0,8] == "variant_"}} count _x == 0}) || {_variant in _x})) exitWith
 		{
-			_price = (ceil ((_x select 2) * CHOPSHOP_PRICE_RELATIONSHIP));
+			_price = _x select 2;
+
+			if (_isStaticWep) then
+			{
+				_price = round (_price / 10);
+			}
+			else
+			{
+				if (_price >= CHOPSHOP_PRICE_OP) then
+				{
+					_price = round (_price * CHOPSHOP_PRICE_RELATIONSHIP_OP);
+				}
+				else
+				{
+					_price = round (_price * CHOPSHOP_PRICE_RELATIONSHIP);
+				};
+			};
 		};
 	} forEach (call allVehStoreVehicles + call staticGunsArray);
 

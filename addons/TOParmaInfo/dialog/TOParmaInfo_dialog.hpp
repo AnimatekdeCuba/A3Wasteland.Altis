@@ -46,7 +46,7 @@ class TOParmaInfoD
 			idc = TOParmaInfo_Server_Info;
 			type = CT_STRUCTURED_TEXT;
 			size = 0.040;
-			x = "20 * (((safezoneW / safezoneH) min 1.2) / 40)";
+			x = "21 * (((safezoneW / safezoneH) min 1.2) / 40)";
 			y = "0 * ((((safezoneW / safezoneH) min 1.2) / 1.2) / 25)";
 			w = "12 * (((safezoneW / safezoneH) min 1.2) / 40)";
 			h = "1 * ((((safezoneW / safezoneH) min 1.2) / 1.2) / 25)";
@@ -71,7 +71,7 @@ class TOParmaInfoD
 		class TARulesTiTleBackground: RscText
 		{
 			idc = TOParmaInfo_Rules_Title_BG;
-			text = "REGLAS - IMPORTANTE";
+			text = "REGLAS";
 			x = "0 * (((safezoneW / safezoneH) min 1.2) / 40)";
 			y = "2.2 * ((((safezoneW / safezoneH) min 1.2) / 1.2) / 25)";
 			w = "15 * (((safezoneW / safezoneH) min 1.2) / 40)";
@@ -102,7 +102,7 @@ class TOParmaInfoD
 		class TANewsTiTleBackground: RscText
 		{
 			idc = TOParmaInfo_News_Title_BG;
-			text = "Click en los links para más información:";
+			text = "Info-Links:";
 			x = "15.1 * (((safezoneW / safezoneH) min 1.2) / 40)";
 			y = "9.7 * ((((safezoneW / safezoneH) min 1.2) / 1.2) / 25)";
 			w = "14.9 * (((safezoneW / safezoneH) min 1.2) / 40)";
@@ -143,7 +143,7 @@ class TOParmaInfoD
 			colorLink[] = {0.69,0.75,0.5,1};
 			colorLinkActive[] = {0.69,0.75,0.5,1};
 			x = "0.5 * (((safezoneW / safezoneH) min 1.2) / 40)";
-			y = "3.3 * ((((safezoneW / safezoneH) min 1.2) / 1.2) / 25)";
+			y = "2.2 * ((((safezoneW / safezoneH) min 1.2) / 1.2) / 25)";
 			w = "14 * (((safezoneW / safezoneH) min 1.2) / 40)";
 			h = "7.4 * ((((safezoneW / safezoneH) min 1.2) / 1.2) / 25)";
 		};
@@ -172,7 +172,7 @@ class TOParmaInfoD
 			colorLink[] = {0.69,0.75,0.5,1};
 			colorLinkActive[] = {0.69,0.75,0.5,1};
 			x = "0.5 * (((safezoneW / safezoneH) min 1.2) / 40)";
-			y = "9.7 * ((((safezoneW / safezoneH) min 1.2) / 1.2) / 25)";
+			y = "10 * ((((safezoneW / safezoneH) min 1.2) / 1.2) / 25)";
 			w = "14 * (((safezoneW / safezoneH) min 1.2) / 40)";
 			h = "10.2 * ((((safezoneW / safezoneH) min 1.2) / 1.2) / 25)";
 		};
@@ -209,11 +209,11 @@ class TOParmaInfoD
 		{
 			idc = -1;
 			onButtonClick = "closeDialog 0";
-			text = "Estoy de acuerdo con las reglas";
+			text = "Acepto las Reglas";
 			sizeEx = 0.04;
-			x = "8 * (((safezoneW / safezoneH) min 1.2) / 40)";
+			x = "10 * (((safezoneW / safezoneH) min 1.2) / 40)";
 			y = "21 * ((((safezoneW / safezoneH) min 1.2) / 1.2) / 25)";
-			w = "15.5 * (((safezoneW / safezoneH) min 1.2) / 40)";
+			w = "10 * (((safezoneW / safezoneH) min 1.2) / 40)";
 			h = "1.5 * ((((safezoneW / safezoneH) min 1.2) / 1.2) / 25)";
 		};
 

@@ -6,9 +6,10 @@
 
 // This is where you load player status & inventory data which will be wiped upon death, for persistent variables use c_applyPlayerInfo.sqf instead
 
-private ["_data", "_removal", "_name", "_value"];
+private ["_data", "_removal", "_name", "_value", "_maxMoney"];
 
 _data = _this;
+_maxMoney = ["A3W_maxMoney", 1000000] call getPublicVar;
 _removal = param [1, true];
 
 
@@ -39,9 +40,27 @@ else
 			{ player setHitPointDamage _x } forEach _value;
 			player allowDamage !(player getVariable ["playerSpawning", true]);
 		};
-		case "Hunger": { hungerLevel = _value };
-		case "Thirst": { thirstLevel = _value };
-		case "Money": { [player, _value, true] call A3W_fnc_setCMoney }; //{ player setVariable ["cmoney", _value, true] };
+		case "Hunger": 
+		{
+			hungerLevel = _value; 
+			player setVariable ["acex_field_rations_hunger", _value];
+		};
+		case "Thirst": 
+		{
+			thirstLevel = _value;
+			player setVariable ["acex_field_rations_thirst", _value];
+		};
+		case "Money":
+		{
+			if (_value > _maxMoney) then
+			{
+				[player, _maxMoney, true] call A3W_fnc_setCMoney;
+			}
+			else
+			{
+				[player, _value, true] call A3W_fnc_setCMoney;
+			};
+		};
 		/*case "Position":
 		{
 			if (count _value == 3) then

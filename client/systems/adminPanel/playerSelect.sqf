@@ -96,30 +96,31 @@ if (_uid call isAdmin) then
 		};
 		case 5: //Remove All Money
 		{
-			_targetUID = getPlayerUID _target;
+			/*_targetUID = getPlayerUID _target;
 			{
 				if(getPlayerUID _x == _targetUID) exitWith
 				{
 					_x setVariable["cmoney",0,true];
 				};
 			}forEach playableUnits;
-			["PlayerMgmt_RemoveMoney", format ["%1 (%2)", name _target, getPlayerUID _target]] call notifyAdminMenu;
+			["PlayerMgmt_RemoveMoney", format ["%1 (%2)", name _target, getPlayerUID _target]] call notifyAdminMenu;*/
+			["This option has been disabled since money is now server-sided."] spawn BIS_fnc_guiMessage;
 		};
 		case 6: //Force HALO Jump
 		{
 			_halojump = [(getPosASL _target select 0), (getPosASL _target select 1), (getPosASL _target select 2) + 1200]; 
 			_target setposATL _halojump;
-			["PlayerMgmt_ForceHALOJump", format ["%1 (%2)", name _target, getPlayerUID _target]] call notifyAdminMenu;
+			["playerMgmtForceHALOJump", format ["%1 (%2)", name _target, getPlayerUID _target]] call notifyAdminMenu;
 		};
 		case 7: //Move To Me
 		{
 			vehicle _target setPos (position player);
-			["PlayerMgmt_MoveToMe", format ["%1 (%2)", name _target, getPlayerUID _target]] call notifyAdminMenu;
+			["playerMgmtMoveToMe", format ["%1 (%2)", name _target, getPlayerUID _target]] call notifyAdminMenu;
 		};
 		case 8: //Move To Them
 		{
 			vehicle player setPos (position _target);
-			["PlayerMgmt_MoveToThem", format ["%1 (%2)", name _target, getPlayerUID _target]] call notifyAdminMenu;
+			["playerMgmtMoveToThem", format ["%1 (%2)", name _target, getPlayerUID _target]] call notifyAdminMenu;
 		};
 	};
 };

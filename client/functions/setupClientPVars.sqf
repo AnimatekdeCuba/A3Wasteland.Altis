@@ -11,6 +11,7 @@
 [
 	["currentDate", { [] spawn timeSync }],
 	["messageSystem", { [] spawn serverMessage }],
+
 	["pvar_warnTeamKiller", { PVAL spawn updateTeamKiller }],
 	["pvar_groupNotify", { PVAL spawn groupNotify }],
 	["pvar_disableCollision", { PVAL call fn_disableCollision }],
@@ -18,6 +19,7 @@
 	["pvar_playerEventServer", { PVAL call playerEventServer }],
 	["pvar_weaponDisassembledEvent", { PVAL spawn weaponDisassembledEvent }],
 	["pvar_ejectCorpse", { PVAL spawn fn_ejectCorpse }],
+
 	["pvar_territoryActivityHandler", { PVAR_TARGET(_value call A3W_fnc_territoryActivityHandler) }],
 	["pvar_territoryActivityHandler_2", { PVAR_TARGET(_value call A3W_fnc_territoryActivityHandler_2) }],
 	["pvar_updateTerritoryMarkers", { PVAR_TARGET(_value call updateTerritoryMarkers) }]

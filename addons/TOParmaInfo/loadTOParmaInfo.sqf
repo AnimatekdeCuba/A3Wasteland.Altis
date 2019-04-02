@@ -13,11 +13,11 @@ createDialog "TOParmaInfoD";
 _display = (findDisplay TOParmaInfo_dialog);
 
 _serverInfoText = _display displayCtrl TOParmaInfo_Server_Info;
-_serverInfoString = format ["<t color='#A0FFFFFF'>AC A3Wasteland v1.4D.0.2 %1</t>", worldName];
+_serverInfoString = format ["<t color='#A0FFFFFF'>AC A3Wasteland v1.4d.0.3 %1</t>", worldName];
 _serverInfoText ctrlSetStructuredText parseText _serverInfoString;
 
 _generalInfoText = _display displayCtrl TOParmaInfo_General_Info_BG;
-_generalInfoString = "Forum: <t color='#0091CD'><a href='http://10.31.0.1/threads/arma-iii-snet.1507/'>ArmA III</a></t> FANS: <t color='#0091CD'><a href='http://10.31.0.1/groups/arma-iii.82/feeds'>HABANA.NET|ArmA III</a></t>";
+_generalInfoString = "Website: <t color='#0091CD'><a href='http://www.a3armory.com/'>A3Armory.com</a></t>";
 _generalInfoText ctrlSetStructuredText parseText _generalInfoString;
 
 _rules = "addons\TOParmaInfo\rules.html";

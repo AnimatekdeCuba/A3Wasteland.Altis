@@ -111,7 +111,7 @@ if (_uid call isAdmin) then
 					}] call BIS_fnc_addStackedEventHandler;
 					hint "Click on map to teleport";
 				};
-				case 11: //// toggle God mode
+				case 11: //Toggle God mode
 				{
 					execVM "client\systems\adminPanel\toggleGodMode2.sqf";
 				};
@@ -154,7 +154,7 @@ if (_uid call isAdmin) then
 					[player, _money] call A3W_fnc_setCMoney;
 					if (!isNil "notifyAdminMenu") then { ["money", _money] call notifyAdminMenu };
 				};
-				case 2: // toggle God mode
+				case 2: //Toggle God mode
 				{
 					execVM "client\systems\adminPanel\toggleGodMode.sqf";
 				};
@@ -162,13 +162,13 @@ if (_uid call isAdmin) then
 				{
 					closeDialog 0;
 					[] call loadGunStore;
-					if (!isNil "notifyAdminMenu") then { ["gunstore"] call notifyAdminMenu };
+					if (!isNil "notifyAdminMenu") then { ["gunStore"] call notifyAdminMenu };
 				};
 				case 4: //Access General Store
 				{
 					closeDialog 0;
 					[] call loadGeneralStore;
-					if (!isNil "notifyAdminMenu") then { ["generalstore"] call notifyAdminMenu };
+					if (!isNil "notifyAdminMenu") then { ["generalStore"] call notifyAdminMenu };
 				};
 				case 5: //Access ATM Dialog
 				{

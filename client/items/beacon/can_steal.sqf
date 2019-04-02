@@ -9,10 +9,10 @@
 //@file Argument: [_beacon] The (object that is a) beacon to check if its stealable
 //@file Argument: [] automatically find the closest beacon to test.
 
-#define ERR_NO_TARGET "Need to point at a spawn beacon"
-#define ERR_NOT_SPAWN_BEACON_TYPE "Thats not a spawn beacon (wrong type)"
-#define ERR_IS_FRIENDLY "You cannot steal a friendly beacon!"
-#define ERR_TOO_FAR_AWAY "Stealing Spawn Beacon Failed! You are too far away to do that."
+#define ERR_NO_TARGET "Debes apuntar al Spawn Beacon"
+#define ERR_NOT_SPAWN_BEACON_TYPE "Eso no es un Spawn Beacon (No que yo sepa)"
+#define ERR_IS_FRIENDLY "No puedes robar un Spawn Beacon de un aliado!"
+#define ERR_TOO_FAR_AWAY "Estás muy lejos para robar ese Spawn Beacon."
 private ["_beacon", "_error"];
 
 if (count _this == 0) then {
@@ -23,6 +23,7 @@ if (count _this == 0) then {
 
 _error = "failed";
 switch (true) do {
+	case (isNull _beacon): {_error = ERR_NO_TARGET};
 	case (!alive player): {_error = " "}; // player is dead so no error msg is needed
 	case (player distance _beacon > 5): {_error = ERR_TOO_FAR_AWAY};
 	case (typeof _beacon != MF_ITEMS_SPAWN_BEACON_DEPLOYED_TYPE): {_error = ERR_NOT_SPAWN_BEACON_TYPE};

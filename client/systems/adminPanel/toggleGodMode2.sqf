@@ -11,16 +11,16 @@ if ((getPlayerUID player) call isAdmin) then
 
 	if (!_curPlayerInvulnState) then
 	{
-		thirstLevel = 100;
-		hungerLevel = 100;
+		player setVariable ["acex_field_rations_thirst", 1];
+		player setVariable ["acex_field_rations_hunger", 1];
 		player setDamage 0;
 		player allowDamage false;
 		vehicle player setDamage 0;
 		player setVariable ["isAdminInvulnerable", true, true];
 
-		if (player getVariable ["FAR_isUnconscious", 0] == 1) then
+		if (player getVariable ["ACE_isUnconscious", false]) then
 		{
-			player setVariable ["FAR_isUnconscious", 0, true];
+			player setVariable ["ACE_isUnconscious", false, true];
 		};
 
 		(findDisplay 27910) closeDisplay 0; // ReviveBlankGUI_IDD

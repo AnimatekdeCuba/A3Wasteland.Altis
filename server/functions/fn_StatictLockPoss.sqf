@@ -1,4 +1,10 @@
 /* name: fn_StatictLockPoss.sqf */
+/* Author: Animatek's Team with code from GMG_Monkey */
+/* argument: Keep Autonomus weapons unlocked and Autonomus disabled until */
+
+
+if (!isServer) exitWith {};
+
 private _static = cursorObject;
 private _manager = nearestObject [player, "Land_SatellitePhone_F"];
 private _ManagerPosition = getpos _manager;

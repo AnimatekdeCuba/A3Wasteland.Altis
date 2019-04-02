@@ -18,7 +18,6 @@ enableDebugConsole = 1;
 respawnDialog = 0; // do not enable this, otherwise the default scoreboard will overlap with the new one
 onPauseScript = "client\clientEvents\onPause.sqf";
 showSquadRadar = 1;
-showGPS = 0;
 class Header
 {
 	gameType=Sandbox;

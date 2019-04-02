@@ -1,5 +1,5 @@
 // ******************************************************************************************
-// * This project is licensed under the GNU Affero GPL v3. Copyright ï¿½ 2014 	BadVolt 	*
+// * This project is licensed under the GNU Affero GPL v3. Copyright © 2014 	BadVolt 	*
 // ******************************************************************************************
 //	@file Version: 1.0
 //	@file Name: password_change.sqf
@@ -18,10 +18,10 @@ _object setVariable ["password", OutputText, true];
 
 if (OutputText=="")then {
 
-	["PIN lock desactivado.", 5] call mf_notify_client;
+	["PIN lock desactivado.", 5] call mf_notify_client;	
 }else{
-	["Has cambiado correctamente el PIN", 5] call mf_notify_client;	
-	};
+	["Has cambiado correctamente tu PIN", 5] call mf_notify_client;	
+	};	
 
 
 OutputText = nil;

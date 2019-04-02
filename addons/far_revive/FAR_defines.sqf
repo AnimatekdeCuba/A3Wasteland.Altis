@@ -12,12 +12,11 @@
 #define FAR_DisableRevive false
 // Seconds until unconscious unit bleeds out and dies. Set to 0 to disable.
 #define FAR_BleedOut ((["A3W_bleedingTime", 60] call getPublicVar) max 10)
-
 // Broadcast notifications when player is injured and becomes unconscious
 #define FAR_EnableDeathMessages true
 
 // If enabled, unconscious units will not be able to use ACRE radio, hear other people or use proximity chat
-#define FAR_MuteACRE false
+#define FAR_MuteACRE true
 
 /*
 	0 = Only medics can revive
@@ -33,7 +32,7 @@
 #define FAR_DamageMultiplier 0.005
 
 // Functions
-#define UNCONSCIOUS(UNIT) (UNIT getVariable ["FAR_isUnconscious", 0] == 1)
+#define UNCONSCIOUS(UNIT) (UNIT getVariable ["ACE_isUnconscious", false])
 #define STABILIZED(UNIT) (UNIT getVariable ["FAR_isStabilized", 0] == 1)
 #define DRAGGED_BY(UNIT) (UNIT getVariable ["FAR_draggedBy", objNull])
 #define DRAGGED(UNIT) (!isNull DRAGGED_BY(UNIT))

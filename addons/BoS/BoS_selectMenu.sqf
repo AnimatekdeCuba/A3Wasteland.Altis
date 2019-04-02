@@ -34,7 +34,7 @@ BoS_open =
 		};
 	/*	case (isNil _uid || isNull _uid):
 		{
-			hint "Debes bloquear tu Base pimero!";
+			hint "You need to lock the object first!";
 		};*/
 		default
 		{

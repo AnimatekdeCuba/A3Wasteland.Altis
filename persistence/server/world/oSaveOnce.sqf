@@ -52,7 +52,7 @@ if (_objectSavingOn) then
 	if (_isHC) then { "A3W_objectIDs" call _hcSaveProfileVar };
 
 	diag_log format ["A3W - %1 baseparts and objects have been saved with %2", _objCount, call A3W_savingMethodName];
-	
+
 	_oldIDs = _currObjectIDs - _newObjectIDs;
 	A3W_objectIDs = A3W_objectIDs - _oldIDs;
 

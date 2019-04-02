@@ -21,7 +21,7 @@ player addEventHandler ["GetOutMan", {_this spawn fnc_safe_vehicle_exit;}];
 					(_secondarycontainer isKindof 'ReammoBox_F')
 
 			) exitWith {
-				["Move the crate away to loot the body.", 5] call mf_notify_client;
+				["Aleja la caja para lootear el cuerpo.", 5] call mf_notify_client;
 					true   //close inventory
 			};
 			false // ok - do nothing

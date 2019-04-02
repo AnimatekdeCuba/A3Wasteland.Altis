@@ -29,6 +29,9 @@ _objectsArray = [];
 	if (isNil "_locked") then { _locked = 1 };
 	if (isNil "_hoursAlive") then { _hoursAlive = 0 };
 	_valid = false;
+
+	_maxMoney = ["A3W_maxMoney", 1000000] call getPublicVar;
+
 	if (!isNil "_class" && !isNil "_pos" && {_maxLifetime <= 0 || _hoursAlive < _maxLifetime}) then
 	{
 		if (isNil "_variables") then { _variables = [] };
@@ -96,10 +99,21 @@ _objectsArray = [];
 			switch (_var) do
 			{
 				case "side": { _value = _value call _strToSide };
-				case "cmoney": { if (_value isEqualType "") then { _value = parseNumber _value } };
+				case "cmoney": 
+				{
+					if (_value isEqualType "") then 
+					{ 
+						_value = parseNumber _value 
+					};
+
+					if (_value > _maxMoney) then 
+					{
+						_value = _maxMoney; 
+					};
+				};
 				case "R3F_Side": { _value = _value call _strToSide };
-				case "lockDown": { _value }; // BASE LOCKER
-				case "Lights": { _value }; // BASE LOCKER
+				case "lockDown": { _value }; // BASE LOCKER 
+				case "Lights": { _value }; // BASE LOCKER 
 				case "password": { _value }; 
 				case "password_door_1": { _value }; 
 				case "password_door_2": { _value }; 
@@ -123,19 +137,19 @@ _objectsArray = [];
 				case "password_door_20": { _value }; 
 				case "password_door_21": { _value }; 
 				case "password_door_22": { _value }; 
-				case "ManagerLevel" : {_value};
-				case "moveable": {_value};
-				case "bis_disabled_Door_1": {_value};
-				case "bis_disabled_Door_2": {_value};
-				case "bis_disabled_Door_3": {_value};
-				case "bis_disabled_Door_4": {_value};
-				case "bis_disabled_Door_5": {_value};
-				case "bis_disabled_Door_6": {_value};
-				case "bis_disabled_Door_7": {_value};
-				case "bis_disabled_Door_8": {_value};
-				case "GOM_fnc_fuelCargo" : {_value};
-				case "GOM_fnc_ammoCargo" : {_value};
-				case "GOM_fnc_repairCargo" : {_value};
+				case "ManagerLevel" : {_value}; 
+				case "moveable": {_value}; 
+				case "bis_disabled_Door_1": {_value}; 
+				case "bis_disabled_Door_2": {_value}; 
+				case "bis_disabled_Door_3": {_value}; 
+				case "bis_disabled_Door_4": {_value}; 
+				case "bis_disabled_Door_5": {_value}; 
+				case "bis_disabled_Door_6": {_value}; 
+				case "bis_disabled_Door_7": {_value}; 
+				case "bis_disabled_Door_8": {_value}; 
+				case "GOM_fnc_fuelCargo" : {_value}; 
+				case "GOM_fnc_ammoCargo" : {_value}; 
+				case "GOM_fnc_repairCargo" : {_value}; 
 				case "ownerName":
 				{
 					switch (typeName _value) do
@@ -165,10 +179,10 @@ _objectsArray = [];
 			};
 			_obj setVariable [_var, _value, true];
 		} forEach _variables;
-		
-		if (unitIsUAV _obj) then 
-		{ 
-			[_obj, _uavSide, false, _uavAuto] spawn fn_createCrewUAV; 
+
+		if (unitIsUAV _obj) then
+		{
+			[_obj, _uavSide, false, _uavAuto] spawn fn_createCrewUAV;
 		};
 
 		clearWeaponCargoGlobal _obj;
@@ -234,28 +248,28 @@ _objectsArray = [];
 
 			reload _obj;
 		};
-		
-	//Restore Service Objects
+
+			//Restore Service Objects 
 		if ({_obj iskindof _x} count  
 		[ 
-			"Box_NATO_AmmoVeh_F",
-			"Box_EAST_AmmoVeh_F",
-			"Box_IND_AmmoVeh_F",
-			"B_Slingload_01_Ammo_F",
-			"B_Slingload_01_Fuel_F",
-			"B_Slingload_01_Medevac_F",
-			"B_Slingload_01_Repair_F",
-			"StorageBladder_01_fuel_forest_F",
-			"StorageBladder_01_fuel_sand_F",
-			"Land_fs_feed_F",
-			"Land_FuelStation_01_pump_malevil_F",
-			"Land_FuelStation_Feed_F",
-			"Land_Pod_Heli_Transport_04_fuel_F",
-			"Land_Pod_Heli_Transport_04_repair_F"
+			"Box_NATO_AmmoVeh_F", 
+			"Box_EAST_AmmoVeh_F", 
+			"Box_IND_AmmoVeh_F", 
+			"B_Slingload_01_Ammo_F", 
+			"B_Slingload_01_Fuel_F", 
+			"B_Slingload_01_Medevac_F", 
+			"B_Slingload_01_Repair_F", 
+			"StorageBladder_01_fuel_forest_F", 
+			"StorageBladder_01_fuel_sand_F", 
+			"Land_fs_feed_F", 
+			"Land_FuelStation_01_pump_malevil_F", 
+			"Land_FuelStation_Feed_F", 
+			"Land_Pod_Heli_Transport_04_fuel_F", 
+			"Land_Pod_Heli_Transport_04_repair_F" 
 		] > 0) then	 
 		{ 
-		_obj spawn GOM_fnc_addAircraftLoadoutToObject;
-		};
+			_obj spawn GOM_fnc_addAircraftLoadoutToObject; 
+		}; 
 	};
 
 	if (!_valid && !isNil "_objectID") then
@@ -269,29 +283,29 @@ _objectsArray = [];
 	};
 } forEach _objects;
 
-	//Restore building, towers, etc first
+//Restore building, towers, etc first
 { 
-	if (_x iskindof "NonStrategic") then
-	{
-		_x hideObjectGlobal false;
-		_x enableSimulation true;
-	};
+	if (_x iskindof "NonStrategic") then 
+	{ 
+		_x hideObjectGlobal false; 
+		_x enableSimulation true; 
+	}; 
 } foreach _objectsArray;
-{
-	//Restore things that go in those buildings
-	if (_x iskindof "Thing") then
-	{
-		_x hideObjectGlobal false;
-		_x enableSimulation true;
-	};
+{ 
+	//Restore things that go in those buildings 
+	if (_x iskindof "Thing") then 
+	{ 
+		_x hideObjectGlobal false; 
+		_x enableSimulation true; 
+	}; 
 } foreach _objectsArray;
-{
-	//Restore eerything else
-	if (_x iskindof "All") then
-	{
-		_x hideObjectGlobal false;
-		_x enableSimulation true;
-	};
+{ 
+	//Restore eerything else 
+	if (_x iskindof "All") then 
+	{ 
+		_x hideObjectGlobal false; 
+		_x enableSimulation true; 
+	}; 
 } foreach _objectsArray;
 
 if (_warchestMoneySavingOn) then

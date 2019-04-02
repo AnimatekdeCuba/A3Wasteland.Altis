@@ -1,7 +1,7 @@
 // ******************************************************************************************
 // * This project is licensed under the GNU Affero GPL v3. Copyright © 2014 A3Wasteland.com *
 // ******************************************************************************************
-//	@file Name: createAAFRegular.sqf
+//	@file Name: createsoldier.sqf
 //	Author: GMG_Monkey
 /*
  * Creates a random Soldier.
@@ -502,7 +502,7 @@ private _commanding = 1; //Affects how quickly recognized targets are shared wit
 //Items
 	switch (_type) do
 	{
-		case "Medic":{_itemsList = ["FirstAidKit","Medikit"]};
+		case "Medic":{_itemsList = ["FirstAidKit"]};
 		case "Engineer":{_itemsList = ["MineDetector","FirstAidKit","ToolKit"]};
 		case "Diver":{_itemsList = ["objNull"]};
 		default {_itemsList = ["objNull","SmokeShellBlue","SmokeShellGreen","SmokeShellOrange",	"SmokeShellPurple","SmokeShellRed","SmokeShell","SmokeShellYellow","Chemlight_blue","Chemlight_green","Chemlight_red","Chemlight_yellow","FirstAidKit"]};

@@ -52,6 +52,11 @@ if ({_class isKindOf _x} count ["Air","UGV_01_base_F"] > 0) then
 // Vehicle customization
 switch (true) do
 {
+	//Disable Autonomous mode
+	case ({_vehicle iskindof _x} count ['StaticWeapon','B_Radar_System_01_F', 'O_SAM_System_04_F', 'O_Radar_System_02_F', 'B_SAM_System_03_F']>0):
+	{
+		_vehicle setAutonomous false;
+	};
 	//Recon Drones
 	case ({_vehicle iskindof _x} count [ "O_UAV_02_F",  "I_UAV_02_F", "B_UAV_02_F" ]>0):
 	{ 

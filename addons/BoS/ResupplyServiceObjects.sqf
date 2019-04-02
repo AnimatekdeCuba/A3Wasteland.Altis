@@ -156,6 +156,10 @@ Purpose: Allow player to resupply service objects through base management system
 				{
 					//Subtract cost from player money
 					player setVariable ["bmoney", (player getVariable ["bmoney",0]) - _totalprice, true];
+					if (["A3W_playerSaving"] call isConfigOn) then
+					{
+						[getPlayerUID player, [["BankMoney", _totalprice]], []] call fn_saveAccount;
+					};
 					//Resupply Start
 						//Ammo Resource Section
 						if (_AmmoResourceCost > 0) then

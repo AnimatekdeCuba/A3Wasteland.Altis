@@ -208,9 +208,24 @@ lootItem_list =
 		0,
 		[
 			"acc_flashlight",
-			"FirstAidKit",
-			"FirstAidKit",
-			"FirstAidKit",
+			//"FirstAidKit",
+			//"FirstAidKit",
+			//"FirstAidKit",
+			"ACE_bananaItem",
+			"ACE_Can_Franta_Item",
+			"ACE_Can_RedGull_Item",
+			"ACE_Can_Spirit_Item",
+			"ACE_Canteen_Item",
+			"ACE_Humanitarian_Ration_Item",
+			"ACE_MRE_BeefStew_Item",
+			"ACE_MRE_ChickenTikkaMasala_Item",
+			"ACE_MRE_ChickenHerbDumplings_Item",
+			"ACE_MRE_CreamChickenSoup_Item",
+			"ACE_MRE_CreamTomatoSoup_Item",
+			"ACE_MRE_LambCurry_Item",
+			"ACE_MRE_MeatballsPasta_Item",
+			"ACE_MRE_SteakVegetables_Item",
+			"ACE_WaterBottle_Item",
 			"muzzle_snds_acp",                  // .45 ACP
 			"muzzle_snds_L",                    // 9mm
 			"optic_Aco",
@@ -225,9 +240,9 @@ lootItem_list =
 		[
 			"acc_flashlight",
 			"acc_pointer_IR",
-			"FirstAidKit",
+			//"FirstAidKit",
 			"ItemGPS",
-			"Medikit",
+			//"Medikit",
 			"muzzle_snds_acp",                  // .45 ACP
 			"muzzle_snds_B",                    // 7.62mm
 			"muzzle_snds_H",                    // 6.5mm
@@ -257,9 +272,9 @@ lootItem_list =
 	[ // INDUSTRIAL
 		2,
 		[
-			"FirstAidKit",
-			"FirstAidKit",
-			"Medikit",
+			//"FirstAidKit",
+			//"FirstAidKit",
+			//"Medikit",
 			"ToolKit",
 			"ToolKit"
 		]
@@ -267,11 +282,11 @@ lootItem_list =
 	[ // RESEARCH
 		3,
 		[
-			"FirstAidKit",
-			"FirstAidKit",
-			"FirstAidKit",
+			//"FirstAidKit",
+			//"FirstAidKit",
+			//"FirstAidKit",
 			"ItemGPS",
-			"Medikit",
+			//"Medikit",
 			"NVGoggles",
 			//"NVGoggles_INDEP",
 			//"NVGoggles_OPFOR",

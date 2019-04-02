@@ -2,7 +2,7 @@
 // * This project is licensed under the GNU Affero GPL v3. Copyright © 2014 A3Wasteland.com *
 // ******************************************************************************************
 //	@file Version: 1.0
-//	@file Name: ConvoyMission_1.sqf
+//	@file Name: LandConvoy_1.sqf
 //	@file Author: [GoT] JoSchaap, [404] Del1te, AgentRev, GMG_Monkey
 //	@file Created: 13/02/2014 22:52
 private _selectstart = floor (random 4);
@@ -26,7 +26,7 @@ _startOptions =
 	[[14158.9,16321.9],[14168.3,16314],[14176.9,16306.3],[14186.1],[14195.4],[14205,16280.2],[14213,16272.8],[14221.6,16264.9]],
 	[[9154.53,21584.9],[9144.63,21577.7],[9135.09,21571.2],[9124.46,21564.5],[9113.81,21557.5],[9102.77,21550.4],[9093.72,21544.4],[9084.06,21538.1]],
 	[[11737.3,11870.1],[11730.6,11859.7],[11724,11850.3],[11716.5,11840.2],[11709,11829.9],[11701.4,11819.3],[11695,11810.5],[11688.4,11801.1]]
-];
+],
 
 _starts = select _selectstart;
 // starting directions in which the vehicles are spawned on this route

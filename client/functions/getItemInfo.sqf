@@ -115,7 +115,7 @@ if (!isNil "_itemEntry") then
 					case (_itemType isKindOf "B_Parachute"):
 					{
 						//_name = getText (_weapon >> "displayName");
-						_description = "Ideal para pilotos de Helicópteros!<br/>Inluye uno de reserva.<br/>Producto no reutilizable.";
+						_description = "The perfect companion for wanna-be pilots!<br/>One-time use.";
 					};
 					case (["_UAV_06_antimine_backpack_", _itemType] call fn_findString != -1):
 					{
@@ -232,7 +232,7 @@ if (!isNil "_itemEntry") then
 
 		if (_itemType isKindOf "UAV_06_backpack_base_F") then
 		{
-			if ({_x == "NVG" || _x == "Ti"} count getArray (configFile >> "CfgVehicles" >> _itemType >> "Viewoptics" >> "visionMode") == 0) then
+			if ({_x == "Ti"} count getArray (configFile >> "CfgVehicles" >> _itemType >> "Viewoptics" >> "visionMode") == 0) then
 			{
 				_description = format ["%1%2%3", _description, ["<br/>",""] select (_description isEqualTo ""), "<t color='#FF8000'>NO THERMAL IMAGING</t>"];
 			};

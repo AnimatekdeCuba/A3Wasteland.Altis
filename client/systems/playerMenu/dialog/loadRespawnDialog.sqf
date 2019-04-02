@@ -282,7 +282,7 @@ _selLocChanged =
 
 				if (_enemyPlayers > _friendlyPlayers) then
 				{
-					_textStr = _textStr + "[<t color='#ff0000'>Bloqueado por el enemigo</t>] ";
+					_textStr = _textStr + "[<t color='#ff0000'>Blocked by enemy</t>] ";
 				}
 				else
 				{
@@ -295,47 +295,24 @@ _selLocChanged =
 		{
 			_extraTextStr = "";
 
-			if (_friendlyPlayers > 1) then
+			if (_friendlyPlayers > 0) then
 			{
 				if (_extraTextStr != "") then { _extraTextStr = _extraTextStr + ", " };
-				_extraTextStr = _extraTextStr + format ["<t color='#00ff00'>%1 jugadores aliados</t>", _friendlyPlayers];
-			} 
-			else
-			{
-				if (_friendlyPlayers = 1) then
-				{
-					if (_extraTextStr != "") then { _extraTextStr = _extraTextStr + ", " };
-					_extraTextStr = _extraTextStr + format ["<t color='#00ff00'>%1 jugador aliado</t>", _friendlyPlayers];
-				};
+				_extraTextStr = _extraTextStr + format ["<t color='#00ff00'>%1 friendly player(s)</t>", _friendlyPlayers];
 			};
-			
-			if (_enemyPlayers > 1) then
+
+			if (_enemyPlayers > 0) then
 			{
 				if (_extraTextStr != "") then { _extraTextStr = _extraTextStr + ", " };
-				_extraTextStr = _extraTextStr + format ["<t color='#ff0000'>%1 jugadores enemigos</t>", _enemyPlayers];
-			}
-			else
-			{
-			if (_enemyPlayers = 1) then
-				{
-					if (_extraTextStr != "") then { _extraTextStr = _extraTextStr + ", " };
-					_extraTextStr = _extraTextStr + format ["<t color='#ff0000'>%1 jugador enemigo</t>", _enemyPlayers];
-				};
+				_extraTextStr = _extraTextStr + format ["<t color='#ff0000'>%1 enemy player(s)</t>", _enemyPlayers];
 			};
-			
-			if (_enemyNPCs > 1) then
+
+			if (_enemyNPCs > 0) then
 			{
 				if (_extraTextStr != "") then { _extraTextStr = _extraTextStr + ", " };
-				_extraTextStr = _extraTextStr + format ["<t color='#ff0000'>%1 NPCs enemigos</t>", _enemyNPCs];
-			}
-			else
-			{
-			if (_enemyNPCs = 1) then
-				{
-					if (_extraTextStr != "") then { _extraTextStr = _extraTextStr + ", " };
-					_extraTextStr = _extraTextStr + format ["<t color='#ff0000'>%1 NPC enemigo</t>", _enemyNPCs];
-				};
+				_extraTextStr = _extraTextStr + format ["<t color='#ff0000'>%1 enemy AI(s)</t>", _enemyNPCs];
 			};
+
 			_textStr = _textStr + _extraTextStr;
 
 			private ["_data", "_pos"];

@@ -6,7 +6,7 @@ Purpose: create random loot creates based on Faction, teir, and money
 #define RANDOM_BETWEEN(START,END) ((START) + floor random ((END) - (START) + 1))
 //Input Params
 private _location = _this select 0;
-private _Faction = _this select 1;
+private _faction = _this select 1;
 private _Tier = _this select 2;
 private _MinMoney = _this select 3;
 private _MaxMoney = _this select 4;

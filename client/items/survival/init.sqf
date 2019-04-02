@@ -30,7 +30,7 @@ MF_ITEMS_ENERGY_DRINK = "energydrink";
 private ["_label", "_code", "_condition"];
 
 // Take Food from Sacks
-
+/*
 _label = "<img image='client\icons\cannedfood.paa'/> Take Canned Food";
 _condition = "{_x getVariable ['food', 0] >= 1} count nearestObjects [player, ['Land_Sacks_goods_F'], 3] > 0 && !(MF_ITEMS_CANNED_FOOD call mf_inventory_is_full)";
 _code =
@@ -124,3 +124,4 @@ _code =
 };
 
 ["take-water-well", [_label, _code, [], 0, true, true, "", _condition]] call mf_player_actions_set;
+*/

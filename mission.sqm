@@ -16,7 +16,7 @@ class EditorData
 	};
 	class LayerIndexProvider
 	{
-		nextID=284;
+		nextID=288;
 	};
 	class Camera
 	{
@@ -11089,7 +11089,7 @@ class Mission
 						angles[]={0,2.5787754,0};
 					};
 					side="Civilian";
-					flags=7;
+					flags=3;
 					class Attributes
 					{
 						init="[this] spawn A3W_fnc_setupStoreNPC";
@@ -11097,14 +11097,14 @@ class Mission
 					};
 					id=205;
 					type="C_man_1_1_F";
-					atlOffset=0.063081741;
+					atlOffset=0.35717964;
 				};
 			};
 			class Attributes
 			{
 			};
 			id=204;
-			atlOffset=0.063081741;
+			atlOffset=0.35717964;
 		};
 		class Item39
 		{
@@ -14130,7 +14130,7 @@ class Mission
 			flags=4;
 			class Attributes
 			{
-				init="this call A3W_fnc_setupMissionObject; this addAction [""<img image='client\icons\money.paa'/> Sell bin contents"", ""client\systems\selling\sellCrateItems.sqf"", [true], 1, false, false, """", STORE_ACTION_CONDITION + "" && "" + SELL_BIN_CONDITION];";
+				init="this addAction [""<img image='client\icons\money.paa'/> Sell bin contents"", ""client\systems\selling\sellCrateItems.sqf"", [true], 1, false, false, """", STORE_ACTION_CONDITION + "" && "" + SELL_BIN_CONDITION];";
 				disableSimulation=1;
 				dynamicSimulation=1;
 			};
@@ -14523,7 +14523,7 @@ class Mission
 						angles[]={0,0.84789842,0};
 					};
 					side="Civilian";
-					flags=6;
+					flags=2;
 					class Attributes
 					{
 						init="[this] spawn A3W_fnc_setupStoreNPC";
@@ -14531,7 +14531,7 @@ class Mission
 					};
 					id=2313;
 					type="C_man_1_1_F";
-					atlOffset=0.00082397461;
+					atlOffset=0.56100464;
 					class CustomAttributes
 					{
 						class Attribute0
@@ -14580,7 +14580,7 @@ class Mission
 			{
 			};
 			id=2303;
-			atlOffset=0.00082397461;
+			atlOffset=0.56100464;
 		};
 		class Item282
 		{
@@ -14987,6 +14987,7 @@ class Mission
 			};
 			id=2358;
 			type="Land_Cargo40_cyan_F";
+			atlOffset=-0.00022983551;
 			class CustomAttributes
 			{
 				class Attribute0
@@ -15092,6 +15093,7 @@ class Mission
 			};
 			id=2361;
 			type="Land_LampShabby_F";
+			atlOffset=4.7683716e-007;
 			class CustomAttributes
 			{
 				class Attribute0
@@ -15174,6 +15176,7 @@ class Mission
 			};
 			id=2370;
 			type="Land_Crane_F";
+			atlOffset=4.7683716e-007;
 			class CustomAttributes
 			{
 				class Attribute0
@@ -23667,7 +23670,7 @@ class Mission
 									"BOOL"
 								};
 							};
-							value=0;
+							value=1;
 						};
 					};
 				};
@@ -23776,7 +23779,7 @@ class Mission
 									"STRING"
 								};
 							};
-							value="[""54.2"",""73.1""]";
+							value="[""55.2"",""74.1""]";
 						};
 					};
 				};
@@ -23814,7 +23817,7 @@ class Mission
 									"STRING"
 								};
 							};
-							value="[""70.2"",""127.1""]";
+							value="[""71.2"",""128.1""]";
 						};
 					};
 				};
@@ -23852,7 +23855,7 @@ class Mission
 									"STRING"
 								};
 							};
-							value="DSH&G^G";
+							value="BLH&G^G";
 						};
 					};
 				};
@@ -23923,7 +23926,7 @@ class Mission
 									"STRING"
 								};
 							};
-							value="[""54.2"",""73.1""]";
+							value="[""53.2"",""72.1""]";
 						};
 					};
 				};
@@ -23961,7 +23964,7 @@ class Mission
 									"STRING"
 								};
 							};
-							value="[""70.2"",""127.1""]";
+							value="[""69.2"",""126.1""]";
 						};
 					};
 				};
@@ -23999,7 +24002,7 @@ class Mission
 									"STRING"
 								};
 							};
-							value="DSH&G^G";
+							value="OPH&G^G";
 						};
 					};
 				};
@@ -24030,7 +24033,7 @@ class Mission
 			dataType="Logic";
 			class PositionInfo
 			{
-				position[]={14516.782,5.645256,5881.2344};
+				position[]={14516.782,5.6452222,5881.2339};
 			};
 			id=15988;
 			type="tfar_ModuleTaskForceRadio";
@@ -24146,7 +24149,7 @@ class Mission
 									"STRING"
 								};
 							};
-							value="DSH&G^G";
+							value="INH&G^G";
 						};
 					};
 				};
@@ -24188,7 +24191,7 @@ class Mission
 			};
 			id=2360;
 			type="Land_Cargo20_grey_F";
-			atlOffset=-0.47896338;
+			atlOffset=-0.47890663;
 			class CustomAttributes
 			{
 				class Attribute0
@@ -24318,6 +24321,7 @@ class Mission
 			};
 			id=16023;
 			type="Land_LampHarbour_F";
+			atlOffset=2.3841858e-007;
 			class CustomAttributes
 			{
 				class Attribute0

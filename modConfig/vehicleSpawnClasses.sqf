@@ -225,8 +225,8 @@ vehicleAddition2 =
 	["B_IR_Grenade", "I_IR_Grenade", "O_IR_Grenade"],
 	"acc_flashlight",
 	"acc_pointer_IR",
-	"Medikit",
-	"FirstAidKit",
+	//"Medikit",
+	//"FirstAidKit",
 	"MineDetector",
 	"ToolKit"
 ];

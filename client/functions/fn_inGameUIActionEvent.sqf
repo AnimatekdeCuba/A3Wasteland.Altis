@@ -16,7 +16,7 @@ if (_unit == player && (_showWindow || _menuOpen)) then
 		case (_action == "UseMagazine" || _action == "UseContainerMagazine"): // placed explosive
 		{
 			_minDist = ["A3W_remoteBombStoreRadius", 100] call getPublicVar;
-			_minATMDist = ["A3W_remoteBombATMRadius", 50] call getPublicVar;
+			_minATMDist = ["A3W_remoteBombATMRadius", 100] call getPublicVar;
 			if (_minDist <= 0) exitWith {};
 
 			_nearbyStores = entities "CAManBase" select {_x getVariable ["storeNPC_setupComplete", false] && {player distance _x < _minDist}};

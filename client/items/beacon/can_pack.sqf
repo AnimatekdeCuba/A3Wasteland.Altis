@@ -25,8 +25,9 @@ if (count _this == 0) then {
 
 _error = "failed";
 switch (true) do {
+	case (isNull _beacon): {_error = ERR_NO_TARGET};
 	case (!alive player): {_error = " "}; // Player is dead, no need for a error message
-	case (player distance _beacon > 5): {_error = ERR_TOO_FAR_AWAY};
+	case (player distance _beacon > 3): {_error = ERR_TOO_FAR_AWAY};
 	case (MF_ITEMS_SPAWN_BEACON call mf_inventory_is_full): {_error = ERR_ALREADY_HAVE_SPAWNBEACON};
 	case (_beacon getVariable ["packing", true]): {_error = ERR_SOMEONE_ELSE_IS_PACKING};
 	case (_beacon getVariable ["ownerUID", "0"] != getPlayerUID player): {_error = ERR_NOT_OWNER};

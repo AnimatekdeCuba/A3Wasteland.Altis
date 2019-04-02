@@ -12,12 +12,12 @@ A3W_teamPlayersMap = 1;											// Show all friendly players on the map at all
 A3W_disableGlobalVoice = 1;										// Auto-switch channel to Direct communication whenever broadcasting voice on global, unless being admin (0 = no, 1 = yes)
 A3W_disableSideVoice = 1;										// Auto-switch channel to Direct communication whenever broadcasting voice on side (0 = no, 1 = block Ind team, 2 = block all teams)
 A3W_uavControl = "group";										// Restrict connection to UAVs based on ownership ("owner", "group", "side")
-A3W_disableUavFeed = 1;											// Force disable UAV PIP feed to prevent thermal camera abuse (0 = no, 1 = yes)
+A3W_disableUavFeed = 0;											// Force disable UAV PIP feed to prevent thermal camera abuse (0 = no, 1 = yes)
 A3W_disableBuiltInThermal = 0;									// Display a black screen if the player tries to use thermal vision built-in a handheld weapon like Titan launcher or laser designator (0 = no, 1 = yes)
 
 // Timers
 BoS_coolDownTimer = 3600;										// Baselocker hacking timer
-A3W_reservedSlots = 6;											// Number of reserved slots available (0 = off)
+A3W_reservedSlots = 5;											// Number of reserved slots available (0 = off)
 A3W_maxPlayers = 140;											// Server slot limit. Needed for reserved slots to work
 A3W_repetitiveCleanup = 1;        								// Enable clean-up addon (0 = off, 1 = on)
 
@@ -29,7 +29,7 @@ A3W_moonLight = 1;												// Moon light during night (0 = no, 1 = yes)
 
 // Player settings
 A3W_startingMoney = 100;										// Amount of money that players start with
-A3W_survivalSystem = 0;											// Food and water are required to stay alive (0 = no, 1 = yes) - 0 removes food and water items from the mission
+A3W_survivalSystem = 1;											// Food and water are required to stay alive (0 = no, 1 = yes) - 0 removes food and water items from the mission
 A3W_unlimitedStamina = 1;										// Allow unlimited sprinting, jumping, etc. (0 = no, 1 = yes) - this also removes energy drinks from the mission
 A3W_bleedingTime = 120;											// Time in seconds for which to allow revive after a critical injury (minimum 10 seconds)
 A3W_headshotNoRevive = 0;										// Instant death on fatal headshot by enemy player with non-explosive ammo (0 = no, 1 = yes)
@@ -43,7 +43,7 @@ A3W_artilleryStrike = 1;           								// Availability of Artillery Strike i
 A3W_artilleryShells = 15;          								// Number of shells per strike
 A3W_artilleryRadius = 50;          								// Strike radius in meters within which the shells will randomly hit
 A3W_artilleryCooldown = 60*60;     								// Cooldown in seconds between strike uses per individual player - resets on server restart
-A3W_artilleryCrateOdds = 1/10;     								// Odds of finding one Artillery Strike in a mission crate (0.0 to 1.0)
+A3W_artilleryCrateOdds = 0.1;     								// Odds of finding one Artillery Strike in a mission crate (0.0 to 1.0)
 A3W_artilleryAmmo = "ModuleOrdnanceHowitzer_F_ammo"; 			// CfgAmmo class of fired shells, also available for example are the more powerful "R_230mm_fly" and less powerful "ModuleOrdnanceMortar_F_ammo"
 
 // Spawn settings
@@ -63,9 +63,9 @@ A3W_fastMovementLoopTime = 1;      								// Number of seconds before loop chec
 // Store settings
 A3W_showGunStoreStatus = 0;										// Show enemy and friendly presence at gunstores on map (0 = no, 1 = yes)
 A3W_gunStoreIntruderWarning = 0;								// Warn players in gunstore areas of enemy intruders (0 = no, 1 = yes)
-A3W_remoteBombStoreRadius = 25;									// Prevent players from placing any kind of explosive on the ground within this distance from any store (0 = disabled)
+A3W_remoteBombStoreRadius = 100;									// Prevent players from placing any kind of explosive on the ground within this distance from any store (0 = disabled)
 A3W_poiObjLockDistance = 100;									// Prevent players from locking objects within this distance from points of interest (stores & mission spawns)
-A3W_vehiclePurchaseCooldown = 60;								// Number of seconds to wait before allowing someone to purchase another vehicle, don't bother setting it too high because it can be bypassed by rejoining
+A3W_vehiclePurchaseCooldown = 10;								// Number of seconds to wait before allowing someone to purchase another vehicle, don't bother setting it too high because it can be bypassed by rejoining
 
 // ATM settings
 A3W_atmEnabled = 1;												// Enable ATM system (0 = no, 1 = yes)
@@ -73,7 +73,7 @@ A3W_atmMaxBalance = 5000000;									// Maximum amount of money that can be stor
 A3W_atmTransferFee = 3;											// Fee in percent charged to players for money transfers to other players (0 to 50)
 A3W_atmTransferAllTeams = 1;									// Allow money transfers between players of all teams/sides (0 = same team only, 1 = all teams)
 A3W_atmEditorPlacedOnly = 0;									// Only allow access via ATMs placed from the mission editor (0 = all ATMs from towns & editor allowed, 1 = ATMs from editor only) Note: Stratis has no town ATMs, only editor ones.
-A3W_atmMapIcons = 1;											// Draw small icons on the map that indicate ATM locations (0 = no, 1 = yes)
+A3W_atmMapIcons = 0;											// Draw small icons on the map that indicate ATM locations (0 = no, 1 = yes)
 A3W_atmRemoveIfDisabled = 1;									// Remove all ATMs from map if A3W_atmEnabled is set to 0 (0 = no, 1 = yes)
 
 //Bounty Setting
@@ -103,7 +103,7 @@ A3W_objectLifetime = 10*24;										// Maximum lifetime in hours for saved obje
 A3W_vehicleLifetime = 0;										// Maximum lifetime in hours for saved vehicles across server restarts, regardless of usage (0 = no time limit)
 A3W_vehicleMaxUnusedTime = 10*24;								// Maximum parking time in hours after which unused saved vehicles will be marked for deletion (0 = no time limit)
 A3W_serverSavingInterval = 3*60;								// Interval in seconds between automatic vehicle & object saves; should be kept at 1 min for profileNamespace and iniDB, while for extDB it can be relaxed to 3-5 mins
-A3W_mineSaving = 1;												// Save placed mines between server restarts (0 = no, 1 = yes)
+A3W_mineSaving = 0;												// Save placed mines between server restarts (0 = no, 1 = yes)
 A3W_mineLifetime = 12;											// Maximum lifetime in hours for saved mines across server restarts (0 = no time limit)
 A3W_privateStorage = 1;											// Enable persistent private storage locations across the map (0 = no, 1 = yes)
 A3W_privateParking = 1;											// If vehicleSaving = 1 and savingMethod = "extDB" or "sock", enable persistent private parking locations across the map (0 = no, 1 = yes)
@@ -126,7 +126,7 @@ A3W_extDB_SaveUnlockedObjects = 1;								// Save and restore unlocked baseparts
 A3W_extDB_ConfigName = "A3W";									// Name of the connection config from @extDB3\extdb3-conf.ini to be used (the one within [brackets])
 A3W_extDB_IniName = "a3wasteland.ini";							// Name of the INI file in @extDB3\sql_custom to be used
 A3W_extDB_Misc = 0;												// Enable extDB Misc Protocol (0 = no, 1 = yes) - no associated features implemented in vanilla A3W
-A3W_extDB_Steam = 0;											// Enable extDB Steam Protocol (0 = no, 1 = yes) - no associated features implemented in vanilla A3W
+A3W_extDB_Steam = 1;											// Enable extDB Steam Protocol (0 = no, 1 = yes) - no associated features implemented in vanilla A3W
 A3W_extDB_Rcon = 0;												// Enable extDB Rcon Protocol (0 = no, 1 = yes) - no associated features implemented in vanilla A3W
 A3W_extDB_RconName = "RCON";									// Name of the Rcon config from extdb-conf.ini to be used (the one within [brackets])
 A3W_extDB_RconCommands = "KICK-ADDBAN";							// List of dash-separated RCON commands allowed via extDB_Rcon
@@ -169,10 +169,10 @@ A3W_vehicleLoot = 2;               								// Level of loot added to vehicles (0
 A3W_simpleLoot = 1;                								// Spawn loot in all buildings (0 = no, 1 = yes)
 
 // Territory settings
-A3W_territoryCaptureTime = 1*60;								// Time in seconds needed to capture a territory
+A3W_territoryCaptureTime = 3*60;								// Time in seconds needed to capture a territory
 A3W_territoryPayroll = 1;										// Periodically reward sides and indie groups based on how many territories they own (0 = no, 1 = yes)
 A3W_territoryWarningIcons = 1;									// Show exclamation marks on map for friendly territories where enemies are present (0 = no, 1 = yes)
-A3W_payrollInterval = 5;										// Delay in seconds between each payroll
+A3W_payrollInterval = 10;										// Delay in seconds between each payroll
 A3W_payrollAmount = 50;											// Amount of money rewarded per territory on each payroll
 A3W_territoryAllowed = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];			//Territories allowed
 
@@ -203,4 +203,4 @@ A3W_IDAPMissionTimeout = 60*60;									// Time in seconds that a IDAP Mission w
 A3W_NATOMissionDelay = 10*60;									// Time in seconds between NATO Missions
 A3W_NATOMissionTimeout = 60*60;									// Time in seconds that a NATO Mission will run for, unless completed
 A3W_SYNMissionDelay = 5*60;										// Time in seconds between SYN Missions
-A3W_SYNMissionTimeout = 45*60;									// Time in seconds that a SYN Mission will run for, unless completed
+A3W_SYNMissionTimeout = 45*60;							// Time in seconds that a SYN Mission will run for, unless completed

@@ -16,7 +16,6 @@
 #define ERR_CONNECTED "Alguien está conectado al UAV."
 #define ERR_DESTROYED "El vehículo ha sido destruido."
 #define ERR_CANCELLED "Adquisición cancelada!"
-#define ERR_SPAWNED "Primero completa la misión!"
 
 params ["_vehicle"];
 
@@ -33,7 +32,6 @@ switch (true) do
 	case (vehicle player != player): { _text = CONCAT(ERR_FAILED, ERR_IN_VEHICLE) };
 	case (!alive _vehicle): { _text = CONCAT(ERR_FAILED, ERR_DESTROYED) };
 	case (_vehicle getVariable ["ownerUID","0"] isEqualTo getPlayerUID player && {!unitIsUAV _vehicle || side _vehicle == side group player}): { _text = CONCAT(ERR_FAILED, ERR_OWNED) };
-	case (isNil {_vehicle getVariable "A3W_missionVehicle"}): { _text = CONCAT(ERR_FAILED, ERR_SPAWNED) };
 	case (locked _vehicle > 1): { _text = CONCAT(ERR_FAILED, ERR_LOCKED) };
 	case ({alive _x && getText (configFile >> "CfgVehicles" >> typeOf _x >> "simulation") != "UAVPilot"} count crew _vehicle > 0): { _text = CONCAT(ERR_FAILED, ERR_CREW) };
 	case (!isNull ((uavControl _vehicle) select 0)): { _text = CONCAT(ERR_FAILED, ERR_CONNECTED) };
