@@ -31,10 +31,12 @@ switch (true) do {
 		_player addBackpack "B_Parachute";
 		_player addWeapon "Binocular";
 		_player addItem "ACE_DAGR";
+		_player addItem "ACE_Can_Spirit";
+		_player addItem "ACE_Can_Spirit";
+		_player addItem "ACE_Humanitarian_Ration";
+		_player addItem "ACE_Humanitarian_Ration";
 		_player addItem "ACE_MapTools";
 		_player addItem "ACE_EarPlugs";
-		_player addItem "ACE_quikclot";
-		_player addItem "ACE_quikclot";
 		_player addItem "ACE_quikclot";
 		_player addItem "ACE_quikclot";
 		_player addItem "ACE_quikclot";
@@ -65,10 +67,12 @@ switch (true) do {
 		_player addBackpack "B_Parachute";
 		_player addWeapon "Binocular";
 		_player addItem "ACE_DAGR";
+		_player addItem "ACE_Can_Spirit";
+		_player addItem "ACE_Can_Spirit";
+		_player addItem "ACE_Humanitarian_Ration";
+		_player addItem "ACE_Humanitarian_Ration";
 		_player addItem "ACE_MapTools";
 		_player addItem "ACE_EarPlugs";
-		_player addItem "ACE_quikclot";
-		_player addItem "ACE_quikclot";
 		_player addItem "ACE_quikclot";
 		_player addItem "ACE_quikclot";
 		_player addItem "ACE_quikclot";
@@ -105,8 +109,10 @@ switch (true) do {
 		_player addItem "ACE_DAGR";
 		_player addItem "ACE_MapTools";
 		_player addItem "ACE_EarPlugs";
-		_player addItem "ACE_quikclot";
-		_player addItem "ACE_quikclot";
+		_player addItem "ACE_Can_Spirit";
+		_player addItem "ACE_Can_Spirit";
+		_player addItem "ACE_Humanitarian_Ration";
+		_player addItem "ACE_Humanitarian_Ration";
 		_player addItem "ACE_quikclot";
 		_player addItem "ACE_quikclot";
 		_player addItem "ACE_quikclot";
@@ -127,7 +133,7 @@ switch (true) do {
 		_player addMagazine "rhs_mag_9x18_8_57N181S";
 		[_player,"rhsusf_falconii_mc"] call zade_boc_fnc_addChestpack;
 		_player linkItem "ACE_NVG_Gen1";
-		_rank = "CORPORAL"; //  PRIVATE, CORPORAL, SERGEANT, LIEUTENANT, CAPTAIN, MAJOR or COLONEL
+		_rank = "PRIVATE"; //  PRIVATE, CORPORAL, SERGEANT, LIEUTENANT, CAPTAIN, MAJOR or COLONEL
 	};
 	case (_bmoney >= 1500000 && _bmoney <= 1999999): {//ACP-C2 .45 ACP + Katiba Carbine 6.5mm
 		removeAllItems _player;
@@ -141,9 +147,11 @@ switch (true) do {
 		_player addWeapon "Binocular";
 		_player addItem "ACE_DAGR";
 		_player addItem "ACE_MapTools";
+		_player addItem "ACE_Can_Spirit";
+		_player addItem "ACE_Can_Spirit";
+		_player addItem "ACE_Humanitarian_Ration";
+		_player addItem "ACE_Humanitarian_Ration";
 		_player addItem "ACE_EarPlugs";
-		_player addItem "ACE_quikclot";
-		_player addItem "ACE_quikclot";
 		_player addItem "ACE_quikclot";
 		_player addItem "ACE_quikclot";
 		_player addItem "ACE_quikclot";
@@ -178,10 +186,12 @@ switch (true) do {
 		_player addBackpack "B_Parachute";
 		_player addWeapon "Binocular";
 		_player addItem "ACE_DAGR";
+		_player addItem "ACE_Can_Spirit";
+		_player addItem "ACE_Can_Spirit";
+		_player addItem "ACE_Humanitarian_Ration";
+		_player addItem "ACE_Humanitarian_Ration";
 		_player addItem "ACE_MapTools";
 		_player addItem "ACE_EarPlugs";
-		_player addItem "ACE_quikclot";
-		_player addItem "ACE_quikclot";
 		_player addItem "ACE_quikclot";
 		_player addItem "ACE_quikclot";
 		_player addItem "ACE_quikclot";
@@ -202,7 +212,7 @@ switch (true) do {
 		_player addMagazine "rhs_mag_9x18_8_57N181S";
 		[_player,"rhsusf_falconii_mc"] call zade_boc_fnc_addChestpack;
 		_player linkItem "ACE_NVG_Gen2";
-		_rank = "SERGEANT"; //  PRIVATE, CORPORAL, SERGEANT, LIEUTENANT, CAPTAIN, MAJOR or COLONEL
+		_rank = "CORPORAL"; //  PRIVATE, CORPORAL, SERGEANT, LIEUTENANT, CAPTAIN, MAJOR or COLONEL
 	};	
 	case (_bmoney >= 2500000 && _bmoney <= 2999999): {//ACP-C2 .45 ACP + MX 3GL 6.5mm
 		removeAllItems _player;
@@ -216,10 +226,12 @@ switch (true) do {
 		_player addBackpack "B_Parachute";
 		_player addWeapon "Binocular";
 		_player addItem "ACE_DAGR";
+		_player addItem "ACE_Can_Spirit";
+		_player addItem "ACE_Can_Spirit";
+		_player addItem "ACE_Humanitarian_Ration";
+		_player addItem "ACE_Humanitarian_Ration";
 		_player addItem "ACE_MapTools";
 		_player addItem "ACE_EarPlugs";
-		_player addItem "ACE_quikclot";
-		_player addItem "ACE_quikclot";
 		_player addItem "ACE_quikclot";
 		_player addItem "ACE_quikclot";
 		_player addItem "ACE_quikclot";
@@ -242,7 +254,7 @@ switch (true) do {
 		_player addMagazine "rhsusf_mag_7x45acp_MHP";
 		[_player,"rhsusf_falconii_mc"] call zade_boc_fnc_addChestpack;
 		_player linkItem "ACE_NVG_Gen4";
-		_rank = "LIEUTENANT"; //  PRIVATE, CORPORAL, SERGEANT, LIEUTENANT, CAPTAIN, MAJOR or COLONEL
+		_rank = "SERGEANT"; //  PRIVATE, CORPORAL, SERGEANT, LIEUTENANT, CAPTAIN, MAJOR or COLONEL
 	};
 	case (_bmoney >= 3000000 && _bmoney <= 3499999): {//ACP-C2 .45 ACP + MX SW 6.5mm
 		removeAllItems _player;
@@ -256,10 +268,12 @@ switch (true) do {
 		_player addBackpack "B_Parachute";
 		_player addWeapon "Binocular";
 		_player addItem "ACE_DAGR";
+		_player addItem "ACE_Can_Spirit";
+		_player addItem "ACE_Can_Spirit";
+		_player addItem "ACE_Humanitarian_Ration";
+		_player addItem "ACE_Humanitarian_Ration";
 		_player addItem "ACE_MapTools";
 		_player addItem "ACE_EarPlugs";
-		_player addItem "ACE_quikclot";
-		_player addItem "ACE_quikclot";
 		_player addItem "ACE_quikclot";
 		_player addItem "ACE_quikclot";
 		_player addItem "ACE_quikclot";
@@ -296,10 +310,12 @@ switch (true) do {
 		_player addBackpack "B_Parachute";
 		_player addWeapon "Binocular";
 		_player addItem "ACE_DAGR";
+		_player addItem "ACE_Can_Spirit";
+		_player addItem "ACE_Can_Spirit";
+		_player addItem "ACE_Humanitarian_Ration";
+		_player addItem "ACE_Humanitarian_Ration";
 		_player addItem "ACE_MapTools";
 		_player addItem "ACE_EarPlugs";
-		_player addItem "ACE_quikclot";
-		_player addItem "ACE_quikclot";
 		_player addItem "ACE_quikclot";
 		_player addItem "ACE_quikclot";
 		_player addItem "ACE_quikclot";
@@ -337,9 +353,11 @@ switch (true) do {
 		_player addWeapon "Binocular";
 		_player addItem "ACE_MapTools";
 		_player addItem "ACE_DAGR";
+		_player addItem "ACE_Can_Spirit";
+		_player addItem "ACE_Can_Spirit";
+		_player addItem "ACE_Humanitarian_Ration";
+		_player addItem "ACE_Humanitarian_Ration";
 		_player addItem "ACE_EarPlugs";
-		_player addItem "ACE_quikclot";
-		_player addItem "ACE_quikclot";
 		_player addItem "ACE_quikclot";
 		_player addItem "ACE_quikclot";
 		_player addItem "ACE_quikclot";
@@ -373,10 +391,12 @@ switch (true) do {
 		_player addBackpack "B_Parachute";
 		_player addWeapon "Binocular";
 		_player addItem "ACE_DAGR";
+		_player addItem "ACE_Can_Spirit";
+		_player addItem "ACE_Can_Spirit";
+		_player addItem "ACE_Humanitarian_Ration";
+		_player addItem "ACE_Humanitarian_Ration";
 		_player addItem "ACE_MapTools";
 		_player addItem "ACE_EarPlugs";
-		_player addItem "ACE_quikclot";
-		_player addItem "ACE_quikclot";
 		_player addItem "ACE_quikclot";
 		_player addItem "ACE_quikclot";
 		_player addItem "ACE_quikclot";
@@ -407,12 +427,12 @@ switch (true) do {
 switch (true) do {
 	case (["_medic_", typeOf _player] call fn_findString != -1):
 	{
+		_player removeItem "Medikit";
 		{ ([player] + _x) call zade_boc_fnc_addItemToChestpack } forEach
 		[
-			["ACE_packingBandage",15],
-			["ACE_morphine",10],
-			["ACE_epinephrine",10],
-			["ACE_bloodIV_250",3]
+			["ACE_packingBandage",5],
+			["ACE_morphine",3],
+			["ACE_epinephrine",3]
 		];
 	};
 	case (["_engineer_", typeOf _player] call fn_findString != -1):

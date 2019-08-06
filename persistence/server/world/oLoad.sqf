@@ -95,9 +95,41 @@ _objectsArray = [];
 		{
 			_var = _x select 0;
 			_value = _x select 1;
-
+			//Restore Water Objects 
+			
 			switch (_var) do
 			{
+				case "water": 
+				{
+					if ({_obj iskindof _x} count  
+					[
+						"Land_BarrelWater_F",
+						"StorageBladder_02_water_forest_F",
+						"StorageBladder_02_water_sand_F",
+						"Land_WaterTank_01_F",
+						"Land_WaterTank_02_F",
+						"Land_WaterTank_03_F",
+						"Land_WaterTank_04_F",
+						"Land_WaterCooler_01_new_F",
+						"Land_WaterCooler_01_old_F",
+						"Land_WaterBarrel_F",
+						"Land_WaterTank_F",
+						"Land_BarrelWater_grey_F" 
+					] > 0) then	 
+					{
+						_obj setVariable ["acex_field_rations_currentWaterSupply", _value, true]; 
+					};
+				};
+				case "ace_FuelCount": 
+				{
+					//_obj setVariable ["ace_refuel_currentFuelCargo", _value, true]; 
+					[_obj , _value] call ace_refuel_fnc_setFuel;
+				};
+				case "ace_AmmoCount" : 
+				{
+					// _obj setVariable ["ace_refuel_currentSupply", (_value max 0), true]; 
+					[_obj , _value] call ace_rearm_fnc_setSupplyCount;
+				};
 				case "side": { _value = _value call _strToSide };
 				case "cmoney": 
 				{
@@ -269,7 +301,7 @@ _objectsArray = [];
 		] > 0) then	 
 		{ 
 			_obj spawn GOM_fnc_addAircraftLoadoutToObject; 
-		}; 
+		};
 	};
 
 	if (!_valid && !isNil "_objectID") then

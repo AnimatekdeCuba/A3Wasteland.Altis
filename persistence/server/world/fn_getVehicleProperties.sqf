@@ -173,13 +173,57 @@ if (isNil "_repairCargo" || {!finite _repairCargo}) then { _repairCargo = 0 };
 { _variables pushBack [_x select 0, _veh getVariable _x] } forEach
 [
   ["vPin", false],
-  ["password", ""]/*,
-  ["CamoDeployed", false],
-  ["MidRange_AA", true, true],
-  ["LongRange_AA", true, true]*/
+  ["password", ""]
 ];
 
-//Service system
+//ACE SERVICE system
+if ({_veh isKindOf _x} count 
+	[
+		"rhsgref_cdf_b_ural_fuel", // URAL fuel
+		"RHS_Ural_Fuel_MSV_01",// URAL fuel
+		"RHS_Ural_Fuel_VDV_01",// URAL fuel
+		"RHS_Ural_Fuel_VMF_01",// URAL fuel
+		"RHS_Ural_Fuel_VV_01",// URAL fuel
+		"rhsgref_cdf_ural_fuel",// URAL fuel
+		"rhsgref_nat_van_fuel", // Fuel Van Vanilla versión gref de RHS
+		"rhssaf_army_ural_fuel",// URAL fuel
+		"C_Van_01_fuel_F",
+		"B_G_Van_01_fuel_F",
+		"B_Truck_01_fuel_F",
+		"O_Truck_03_fuel_F",
+		"I_Truck_02_fuel_F",
+		"O_Heli_Transport_04_fuel_F"
+	]>0) then
+	{
+		_variables pushBack ["ace_FuelCount", [_veh] call ace_refuel_fnc_getFuel];
+	};
+	
+if ({_veh isKindOf _x} count 
+	[
+		"rhsgref_cdf_b_gaz66_ammo",
+		"rhsusf_M977A4_AMMO_usarmy_d",
+		"rhsusf_M977A4_AMMO_BKIT_usarmy_d",
+		"rhsusf_M977A4_AMMO_BKIT_M2_usarmy_d",
+		"rhsusf_M977A4_AMMO_usarmy_wd",
+		"rhsusf_M977A4_AMMO_BKIT_usarmy_wd",
+		"rhsusf_M977A4_AMMO_BKIT_M2_usarmy_wd",
+		"rhsgref_ins_gaz66_ammo",
+		"rhs_gaz66_ammo_msv",
+		"rhs_gaz66_ammo_vdv",
+		"rhs_gaz66_ammo_vmf",
+		"rhs_gaz66_ammo_vv",
+		"rhsgref_ins_g_gaz66_ammo",
+		"rhsgref_cdf_gaz66_ammo",
+		"B_Truck_01_ammo_F",
+		"O_Truck_03_ammo_F",
+		"I_Truck_02_ammo_F",
+		"O_Heli_Transport_04_ammo_F"
+	]>0) then
+	{
+		_variables pushBack ["ace_AmmoCount", [_veh] call ace_rearm_fnc_getSupplyCount];
+	};
+	
+//GOM Service system
 if ({_veh isKindOf _x} count 
 	[
 		"C_Van_01_fuel_F",

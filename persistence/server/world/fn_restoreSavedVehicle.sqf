@@ -45,7 +45,6 @@ if (_veh iskindof "B_UAV_05_F") then
 	_veh animate ["wing_fold_cover_r_arm",1];
 	_veh animate ["wing_fold_cover_r",1];
 };
-
 //Reload Service system
 if ({_veh iskindof _x} count
 	[
@@ -71,6 +70,26 @@ then
 {
 	_veh spawn GOM_fnc_addAircraftLoadoutToObject;
 };
+
+if (isNil "_variables") then { _variables = [] };
+{
+	_var = _x select 0;
+	_value = _x select 1;
+	
+	switch (_var) do
+	{
+		case "ace_FuelCount" : 
+		{
+			[_veh, _value] call ace_refuel_fnc_setFuel;
+		};
+		case "ace_AmmoCount" : 
+		{
+			[_veh, _value] call ace_rearm_fnc_setSupplyCount;
+		};
+	};
+	_veh setVariable [_var, _value, true];
+} forEach _variables;
+
 private _velMag = vectorMagnitude velocity _veh;
 
 if (isNil "_safeDistance") then
@@ -117,6 +136,7 @@ private _uavAuto = true;
 				_uavAuto = _val;
 			};
 		};
+		
 	};
 	_veh setVariable [_var, _val, true];
 } forEach _variables;
@@ -312,6 +332,9 @@ if (!isNil "_turretMags2") then
 	_veh setPylonLoadOut [_forEachIndex + 1, _mag, true, _path];
 	_veh setAmmoOnPylon [_forEachIndex + 1, _ammo];
 } forEach _pylons;
+
+if (!isNil "ace_FuelCount") then { _veh setAmmoCargo _ammoCargo };
+if (!isNil "ace_AmmoCount") then { _veh setFuelCargo _fuelCargo };
 
 if (!isNil "_ammoCargo") then { _veh setAmmoCargo _ammoCargo };
 if (!isNil "_fuelCargo") then { _veh setFuelCargo _fuelCargo };

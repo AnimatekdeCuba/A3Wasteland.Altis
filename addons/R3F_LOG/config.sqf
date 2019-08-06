@@ -526,7 +526,20 @@ R3F_LOG_CFG_can_be_transported_cargo = R3F_LOG_CFG_can_be_transported_cargo +
 	["Land_BambooFence_01_s_4m_F", 2],
 	["Land_BambooFence_01_s_pole_F", 2],
 	["Land_BarGate_F", 3],
-	["Land_BarrelWater_F", 2],
+	["Land_BarrelWater_F", 5], // barril azul, el de toda la vida,  160 L
+	["Land_BarrelWater_grey_F", 5], //barril gris, igual al de toda la vida,  160 L
+	["Land_WaterCooler_01_old_F", 2], //Dispensador refrigerador de agua nuevo 20 L
+	["Land_WaterCooler_01_new_F", 2], //Dispensador refrigerador de agua viejo 20 L
+	["Land_WaterBarrel_F", 10], //barril grande 200 L
+	["StorageBladder_02_water_forest_F", 10], //las bolsas gigantes 1000 L
+	["StorageBladder_02_water_sand_F", 10], //las bolsas gigantes 1000 L
+	["WaterPump_01_sand_F", 20], //Bomba amarilla desierto de agua recurso infinito
+	["WaterPump_01_forest_F", 20], //Bomba verde borque de agua recurso infinito
+	["Land_WaterTank_F", 25], //Tanque horizontal 600 L
+	["Land_WaterTank_01_F", 30], //Tanque Grande 2400 L
+	["Land_WaterTank_02_F", 35], //Tanque Grande en alto 2400 L
+	["Land_WaterTank_03_F", 20], //Tanque mediano (verde) 200 L
+	["Land_WaterTank_04_F", 20], //Tanque mediano (verde) en alto 200 L
 	["Land_BC_Court_F", 100],
 	["Land_Bollard_01_F", 2],
 	["Land_Camping_Light_F", 2],
@@ -1142,7 +1155,20 @@ R3F_LOG_CFG_can_be_moved_by_player = R3F_LOG_CFG_can_be_moved_by_player +
 	"Land_BambooFence_01_s_pole_F",
 	"Land_BambooFence_01_s_8m_F",
 	"Land_BarGate_F",
-	"Land_BarrelWater_F",
+	"Land_BarrelWater_F", //barril azul, el de toda la vida,  160 L
+	"Land_BarrelWater_grey_F", //barril gris, igual al de toda la vida,  160 L
+	"Land_WaterCooler_01_old_F", //Dispensador refrigerador de agua nuevo 20 L
+	"Land_WaterCooler_01_new_F", //Dispensador refrigerador de agua viejo 20 L
+	"Land_WaterBarrel_F", //barril grande 200 L
+	"StorageBladder_02_water_forest_F", //las bolsas gigantes 1000 L
+	"StorageBladder_02_water_sand_F", //las bolsas gigantes 1000 L
+	"WaterPump_01_sand_F", //Bomba amarilla desierto de agua recurso infinito
+	"WaterPump_01_forest_F", //Bomba verde borque de agua recurso infinito
+	"Land_WaterTank_F", //Tanque horizontal 600 L
+	"Land_WaterTank_01_F", //Tanque Grande 2400 L
+	"Land_WaterTank_02_F", //Tanque Grande en alto 2400 L
+	"Land_WaterTank_03_F", //Tanque mediano (verde) 200 L
+	"Land_WaterTank_04_F", //Tanque mediano (verde) en alto 200 L
 	"Land_BC_Court_F",
 	"Land_Bollard_01_F",
 	"Land_Camping_Light_F",

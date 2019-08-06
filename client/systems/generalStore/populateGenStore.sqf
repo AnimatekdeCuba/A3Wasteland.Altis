@@ -64,7 +64,7 @@ switch(_switch) do
 			_excludedItems pushBack "energydrink";
 		};
 
-		if !(["A3W_survivalSystem"] call isConfigOn) then
+		if (["A3W_survivalSystem"] call isConfigOn) then
 		{
 			_excludedItems pushBack "water";
 			_excludedItems pushBack "cannedfood";

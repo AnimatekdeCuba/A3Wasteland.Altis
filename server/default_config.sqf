@@ -159,7 +159,7 @@ A3W_heliSpawning = 1;											// If serverSpawning = 1, spawn helicopters in s
 A3W_planeSpawning = 1;											// If serverSpawning = 1, spawn planes at some airfields (0 = no, 1 = yes)
 A3W_boxSpawning = 1;											// If serverSpawning = 1, spawn weapon crates in 50% towns (0 = no, 1 = yes)
 A3W_baseBuilding = 0;											// If serverSpawning = 1, spawn base parts in towns (0 = no, 1 = yes)
-A3W_essentialsSpawning = 0;										// If serverSpawning = 1, spawn essential items (food sacks, water barrels, minor supply crates) in towns (0 = no, 1 = yes)
+A3W_essentialsSpawning = 1;										// If serverSpawning = 1, spawn essential items (food sacks, water barrels, minor supply crates) in towns (0 = no, 1 = yes)
 
 // Loot settings
 /*A3W_buildingLootWeapons = 0;       							// Spawn weapon loot in all buildings (0 = no, 1 = yes)

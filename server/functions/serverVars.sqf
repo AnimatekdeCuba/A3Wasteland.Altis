@@ -21,8 +21,18 @@ currentStaticHelis = []; // Storage for the heli marker numbers so that we don't
 //Essential List - Random Spawns.
 essentialsList =
 [
-	"B_supplyCrate_F",
-	"Land_Sacks_goods_F",
+	//"Land_BarrelWater_grey_F",
+	//"Land_WaterBarrel_F",
+	//"StorageBladder_02_water_forest_F",
+	//"StorageBladder_02_water_sand_F",
+	//"Land_WaterCooler_01_new_F",
+	"Land_WaterCooler_01_old_F",
+	//"WaterPump_01_sand_F",
+	//"Land_WaterTank_F",
+	//"Land_WaterTank_01_F",
+	//"Land_WaterTank_02_F",
+	//"Land_WaterTank_03_F",
+	//"Land_WaterTank_04_F",
 	"Land_BarrelWater_F"
 ];
 

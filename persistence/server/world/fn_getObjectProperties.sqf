@@ -25,9 +25,50 @@ switch (true) do
 	{
 		_variables pushBack ["food", _obj getVariable ["food", 20]];
 	};
-	case (_obj isKindOf "Land_BarrelWater_F"):
+	case ({_obj isKindOf _x} count 
+	[
+		"Land_BarrelWater_F",
+		"StorageBladder_02_water_forest_F",
+		"StorageBladder_02_water_sand_F",
+		"Land_WaterTank_01_F",
+		"Land_WaterTank_02_F",
+		"Land_WaterTank_03_F",
+		"Land_WaterTank_04_F",
+		"Land_WaterCooler_01_new_F",
+		"Land_WaterCooler_01_old_F",
+		"Land_WaterBarrel_F",
+		"Land_WaterTank_F",
+		"Land_BarrelWater_grey_F"
+	] > 0):
 	{
-		_variables pushBack ["water", _obj getVariable ["water", 20]];
+		_variables pushBack ["water", [_obj] call acex_field_rations_fnc_getRemainingWater];//  getVariable ["water", 20]];
+	};
+	case ({_obj isKindOf _x} count 
+	[
+		"StorageBladder_01_fuel_forest_F",// vejiga de combustible
+		"StorageBladder_01_fuel_sand_F",// vejiga de combustible
+		"FlexibleTank_01_forest_F",// tanque flexible de combustible
+		"FlexibleTank_01_sand_F",// tanque flexible de combustible
+		"B_Slingload_01_Fuel_F",// cisterna del huron
+		"Land_Pod_Heli_Transport_04_fuel_F",// cisterna del Taru
+		"Land_CanisterFuel_F",// canistra verde
+		"Land_CanisterFuel_Blue_F",// canistra
+		"Land_CanisterFuel_Red_F",// canistra
+		"Land_CanisterFuel_White_F"// canistra
+	] > 0):
+	{
+		_variables pushBack ["ace_FuelCount", [_obj] call ace_refuel_fnc_getFuel];
+	};
+	case ({_obj isKindOf _x} count 
+	[
+		"B_Slingload_01_Ammo_F",// munición del Huron
+		"Land_Pod_Heli_Transport_04_ammo_F",// munición del taru
+		"Box_NATO_AmmoVeh_F",// contenedor de munición
+		"Box_East_AmmoVeh_F",// contenedor de munición
+		"Box_IND_AmmoVeh_F" // contenedor de munición
+	] > 0):
+	{
+		_variables pushBack ["ace_AmmoCount", [_obj] call ace_rearm_fnc_getSupplyCount];
 	};
 };
 
