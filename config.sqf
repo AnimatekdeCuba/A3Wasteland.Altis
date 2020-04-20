@@ -26,7 +26,7 @@ config_refuel_amounts = compileFinal str
 
 if (isServer) then
 {
-	private _configfile = selectrandom ["Abdera", "ConstructionZone", "GhostHotel", "Kavala", "KoreFactory", "Magos", "MilHill", "Molos", "MOUTVillage", "Oreokastro", "Panagia","Sofia", "Therisa", "Zaros", "OilRigKavala", "OilRigPyrgosGulf", "OilRigNorth", "OilRigSouth"];
+	private _configfile = selectrandom ["Abdera", "ConstructionZone", "GhostHotel", "Kavala",  "LaborCamp", "KoreFactory", "Magos", "MilHill", "Molos", "MOUTVillage", "Oreokastro", "Panagia","Sofia", "Therisa", "Zaros", "OilRigKavala", "OilRigPyrgosGulf", "OilRigNorth", "OilRigSouth"];
 	diag_log format ["Capture Territory is %1", _configfile];
 	config_territory_markers = compileFinal preprocessFileLineNumbers format ["mapConfig\TerritoryConfigs\%1.sqf", _configfile];
 	publicVariable "config_territory_markers";

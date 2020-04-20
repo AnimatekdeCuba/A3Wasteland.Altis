@@ -22,20 +22,25 @@
 		</Key>
 		<Key ID="STR_WL_Gen_TeamGUER">
 			<English>Independent</English>
+			<Spanish>Independiente</Spanish>
 		</Key>
 		<Key ID="STR_WL_Gen_TeamGUER_2">
 			<English>Independent</English>
+			<Spanish>Independiente</Spanish>
 		</Key>
 	</Package>
 	<Package name="TeamLock">
 		<Key ID="STR_WL_Punish_Teamkiller">
 			<English>You have been punished for teamkilling twice during this server session. Your inventory has been wiped, and you are now locked to the Independent side.</English>
+			<Spanish>Has sido Penalizado por Fuego Amigo dos veces durante esta sesión. Tu inventario ha sido borrado, y estarás restringido como Independiente.</Spanish>
 		</Key>
 		<Key ID="STR_WL_Loading_Teamkiller">
 			<English>You are restricted to the Independent side, due to having done 2 or more teamkills during this server session.</English>
+			<Spanish>Has sido restringido a jugar como Independiente dado que has cometido 2 o más Fuego Amigo durante esta sesión.</Spanish>
 		</Key>
 		<Key ID="STR_WL_Loading_Teamswitched">
 			<English>You have played as %1 for too long and cannot switch to the other team. You can still play as Independent. (or if online, ask an admin to unlock you)</English>
+			<Spanish>Has jugado mucho tiempo como %1 y no puedes cambiar de equipo. Aunque puedes jugar como Independiente si deseas. (o si está conectado, pídele a un Admin que te desbloquee)</Spanish>
 		</Key>
 	</Package>
 	<Package name="WelcomeMessage">
@@ -44,28 +49,33 @@
 		</Key>
 		<Key ID="STR_WL_YouAreInTeam">
 			<English>&lt;t color='#FFFFFF' size='1' &gt;* You are on &lt;img size="1" image="%1"/&gt; &lt;t color="%2"&gt;%3&lt;/t&gt; team.&lt;br/&gt;* Attacking or stealing from %4 players is &lt;t color="#FF1111"&gt;FORBIDDEN!&lt;/t&gt;&lt;br/&gt;* &lt;t color="#FF1111"&gt;NO SPAM IN CHAT!&lt;/t&gt;&lt;br/&gt;</English>
+			<Spanish>&lt;t color='#FFFFFF' size='1' &gt;* Eres &lt;img size="1" image="%1"/&gt; &lt;t color="%2"&gt;%3&lt;/t&gt; team.&lt;br/&gt;* Atacar o robar a otros jugadores %4 está &lt;t color="#FF1111"&gt;PROHIBIDO!&lt;/t&gt;&lt;br/&gt;* &lt;t color="#FF1111"&gt;NO HAGA SPAM EN EL CHAT!&lt;/t&gt;&lt;br/&gt;</Spanish>
 		</Key>
 		<Key ID="STR_WL_YouAreInFFA">
 			<English>&lt;t color='#FFFFFF' size='1' &gt;* You are on &lt;img size="1" image="%1"/&gt; &lt;t color="%2"&gt;%3&lt;/t&gt; team.&lt;br/&gt;* You are &lt;t color="#00aa00"&gt;FREE TO ATTACK ANYONE!&lt;/t&gt;&lt;br/&gt;* &lt;t color="#FF1111"&gt;NO SPAM IN CHAT!&lt;/t&gt;&lt;br/&gt;</English>
+			<Spanish>&lt;t color='#FFFFFF' size='1' &gt;* Eres &lt;img size="1" image="%1"/&gt; &lt;t color="%2"&gt;%3&lt;/t&gt; team.&lt;br/&gt;* Eres &lt;t color="#00aa00"&gt;LIBRE DE ATACAR Y ROBAR A TODOS!&lt;/t&gt;&lt;br/&gt;* &lt;t color="#FF1111"&gt;NO HAGA SPAM EN EL CHAT!&lt;/t&gt;&lt;br/&gt;</Spanish>
 		</Key>
 		<Key ID="STR_WL_MapMoreInfo">
-			<English>&lt;t color='#FFFFFF' size='1' &gt;Report bugs and suggestions at Discord.A3Armory.com &lt;br/&gt;Press the Windows or Home key to toggle player names.&lt;br/&gt;Press the End key to toggle earplugs.&lt;br/&gt;</English>
+			<English>&lt;t color='#FFFFFF' size='1' &gt;PROHIBIDO CAMBIAR DE EQUIPO, excepto hacia Independiente.&lt;br/&gt;Si quiere cambiar de facción, consulte con un administrador.&lt;br/&gt;Es obligatorio estar TODOS en el canal TaskForceRadio del TeamSpeak.&lt;br/&gt;</English>
 			<!-- &lt;br/&gt;&lt;/t&gt;&lt;t size='1.3'&gt;[Update X]&lt;/t&gt;&lt;br/&gt; -->
 		</Key>
 	</Package>
 	<Package name="TeamKillWarningMessage">
 		<Key ID="STR_TK_MESSAGE">
 			<English>&lt;t size='2' color='#ff0000'&gt;Team killing is against the rules!&lt;/t&gt;&lt;br/&gt;If this was a mistake then you must explain yourself and say sorry, otherwise they will mark you as teamkiller and you will get kicked.</English>
+			<Spanish>&lt;t size='2' color='#ff0000'&gt;El Fuego Amigo es en contra de las reglas!&lt;/t&gt;&lt;br/&gt;Si fue por un error Ud. debe explicarse y disculparse, de otro modo te marcarán por Fuego Amigo y se te expulsará de la sesión.</Spanish>
 		</Key>
 	</Package>
 	<Package name="Diary">
 		<Key ID="STR_WL_Diary_RulesContent">
 			<English>&lt;br/&gt;    1. Keep bad language to a minimum. If you have a problem with another player, take it to direct.&lt;br/&gt;    2. NO VOIP IN GLOBAL. Use the channels or Teamspeak!.&lt;br/&gt;    3. Team killing when you are on BLUFOR or OPFOR is forbidden and punishable. Play as Independent if you want to be free for all.&lt;br/&gt;    4. Revealing information about your (ex)team to other teams is lame and not appreciated&lt;br/&gt;    5. Do not exploit R3F or any other add-ons or you will be banned.&lt;br/&gt;    6. Using or spamming with loud\long custom sound commands will cause punishment up to permanent ban</English>
+			<Spanish>&lt;br/&gt;    1. Modere su lenguaje. Si tienes problemas con otro jugador, resuélvalo fuera del server.&lt;br/&gt;    2. NO ESCRIBA EN CHAT GLOBAL. Use Teamspeak o PM!.&lt;br/&gt;    3. El Fuego Amigo cuando eres BLUFOR o OPFOR está prohibido y es castigable. Si quieres matar a todo lo que se te cruce, juega Independiente.&lt;br/&gt;    4. Revelar información de tu equipo anterior a otros no será apreciado ni tolerado&lt;br/&gt;    5. No se aproveche de los errores del juego, será considerado como TRAMPA y serás baneado indefinidamente.&lt;br/&gt;    6. Puede ser baneado por hacer SPAM o crear ruidos molestos y distractivos fuera del diseño del juego.</Spanish>
 		</Key>
 	</Package>
 	<Package name="ShopDescriptions">
 		<Key ID="STR_WL_ShopDescriptions_Water">
 			<English>Greece is a hot place! Drink plenty!</English>
+			<Spanish>Grecia es un lugar caluroso! Beba mucha agua!</Spanish>
 		</Key>
 		<Key ID="STR_WL_ShopDescriptions_Camo">
 			<English>An improvised roof, 4 sticks and a blanket!</English>
@@ -112,7 +122,7 @@
 	</Package>
 	<Package name="Dialogs">
 		<Key ID="STR_WL_dialog_TeamkillText">
-			<English>You have been teamkilled by %2 player %1&lt;br/&gt;&lt;br/&gt;If this was an accident, forgive him, otherwise they should explain their actions.&lt;br/&gt;&lt;br/&gt;If the player does not apologize, punish him.</English>
+			<English>Te ha matado (Fuego Amigo) tu compañero %2 player %1&lt;br/&gt;&lt;br/&gt;Si fue un accidente, perdónalo; no obstante él te debe una explicación.&lt;br/&gt;&lt;br/&gt;Si no se disculpa, castígalo.</English>
 		</Key>
 	</Package>
 	<Package name="Errors">

@@ -114,7 +114,7 @@ ZGO_StatusEnabled = true; // LOL ^^
 			if((_hunger >= 20) && (_hunger < 30)) then {_colourHunger =  _colour70;};
 			if((_hunger >= 10) && (_hunger < 20)) then {_colourHunger =  _colour80;};
 			if((_hunger >= 1) && (_hunger < 10)) then {_colourHunger =  _colour90;};
-			if(_hunger < 1) then{_colourHunger =  _colourDead;};
+			if(_hunger < 1) then{_colourHunger =  _colour0;};
 			//Thirst
 			_colourThirst = _colourDefault;
 			if(_thirst >= 100) then{_colourThirst = _colourDefault;};
@@ -128,7 +128,7 @@ ZGO_StatusEnabled = true; // LOL ^^
 			if((_thirst >= 20) && (_thirst < 30)) then {_colourThirst =  _colour70;};
 			if((_thirst >= 10) && (_thirst < 20)) then {_colourThirst =  _colour80;};
 			if((_thirst >= 1) && (_thirst < 10)) then {_colourThirst =  _colour90;};
-			if(_thirst < 1) then{_colourThirst =  _colourDead;};
+			if(_thirst < 1) then{_colourThirst =  _colour0;};
 
 			//display the information
 			((uiNamespace getVariable "RscWastelandStatusBar")displayCtrl 55554) ctrlSetStructuredText

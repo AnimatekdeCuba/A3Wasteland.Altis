@@ -181,7 +181,37 @@ switch (true) do
 // Tigris FLAK ADDON
 switch (true) do
 {
-	case ({_class isKindOf _x} count ["O_APC_Tracked_02_AA_", "rhs_zsu234_aa"] > 0):
+	case ({_class isKindOf _x} count [
+	"rhsgref_cdf_b_zsu234",
+	"rhsgref_ins_zsu234",
+	"rhs_zsu234_aa",
+	"rhsgref_ins_g_zsu234",
+	"rhsgref_cdf_zsu234",
+	"rhsgref_ins_ural_Zu23",
+	"rhsgref_ins_gaz66_zu23",
+	"rhsgref_ins_ZU23",
+	"rhs_gaz66_zu23_msv",
+	"RHS_Ural_Zu23_MSV_01",
+	"RHS_ZU23_MSV",
+	"rhs_gaz66_zu23_vdv",
+	"RHS_Ural_Zu23_VDV_01",
+	"RHS_ZU23_VDV",
+	"rhs_gaz66_zu23_vmf",
+	"RHS_Ural_Zu23_VMF_01",
+	"RHS_ZU23_VMF",
+	"rhs_gaz66_zu23_vv",
+	"RHS_Ural_Zu23_VV_01",
+	"rhsgref_ins_g_gaz66_zu23",
+	"rhsgref_ins_g_ural_Zu23",
+	"rhsgref_ins_g_ZU23",
+	"rhsgref_cdf_gaz66_zu23",
+	"rhsgref_cdf_ural_Zu23",
+	"RHSgref_cdf_ZU23",
+	"rhsgref_nat_ural_Zu23",
+	"rhsgref_nat_ZU23",
+	"B_AAA_System_01_",
+	"B_T_APC_Tracked_01_AA_",
+	"O_APC_Tracked_02_AA_"] > 0):
 	{
 		// Add FLAK Addon Script turning Autocannons into FLAK cannons.
 		this removeMagazinesTurret ["4Rnd_Titan_long_missiles", [0]]; this addEventHandler ["Fired", {deleteVehicle (_this select 6); _this execVM "addons/Flak/flak.sqf";}];

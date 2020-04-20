@@ -30,7 +30,7 @@ _objectsArray = [];
 	if (isNil "_hoursAlive") then { _hoursAlive = 0 };
 	_valid = false;
 
-	_maxMoney = ["A3W_maxMoney", 1000000] call getPublicVar;
+	_maxMoney = ["A3W_maxMoney", 16000000] call getPublicVar;
 
 	if (!isNil "_class" && !isNil "_pos" && {_maxLifetime <= 0 || _hoursAlive < _maxLifetime}) then
 	{
@@ -95,11 +95,10 @@ _objectsArray = [];
 		{
 			_var = _x select 0;
 			_value = _x select 1;
-			//Restore Water Objects 
-			
+
 			switch (_var) do
 			{
-				case "water": 
+				case "water":				//Restore Water Objects 
 				{
 					if ({_obj iskindof _x} count  
 					[
@@ -120,14 +119,12 @@ _objectsArray = [];
 						_obj setVariable ["acex_field_rations_currentWaterSupply", _value, true]; 
 					};
 				};
-				case "ace_FuelCount": 
+				case "ace_FuelCount": 				//Restore Fuel Objects 
 				{
-					//_obj setVariable ["ace_refuel_currentFuelCargo", _value, true]; 
 					[_obj , _value] call ace_refuel_fnc_setFuel;
 				};
-				case "ace_AmmoCount" : 
+				case "ace_AmmoCount" :  				//Restore Ammo Objects 
 				{
-					// _obj setVariable ["ace_refuel_currentSupply", (_value max 0), true]; 
 					[_obj , _value] call ace_rearm_fnc_setSupplyCount;
 				};
 				case "side": { _value = _value call _strToSide };
@@ -144,8 +141,7 @@ _objectsArray = [];
 					};
 				};
 				case "R3F_Side": { _value = _value call _strToSide };
-				//case "lockDown": { _value }; // BASE LOCKER 
-				case "LockedDown": { _value }; // BASE LOCKER 
+				case "lockDown": { _value }; // BASE LOCKER 
 				case "Lights": { _value }; // BASE LOCKER 
 				case "password": { _value }; 
 				case "password_door_1": { _value }; 

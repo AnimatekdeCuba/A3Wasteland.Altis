@@ -5,13 +5,13 @@
 //	@file Author: AgentRev
 
 #define COLLISION_DMG_SCALE 0.2
-#define PLANE_COLLISION_DMG_SCALE 0.005
+#define PLANE_COLLISION_DMG_SCALE 0.5
 #define WHEEL_COLLISION_DMG_SCALE 0.05
-#define MRAP_MISSILE_DMG_SCALE 1.0 // Temporary fix for http://feedback.arma3.com/view.php?id=21743
-#define HELI_MISSILE_DMG_SCALE 0.75
-#define PLANE_MISSILE_DMG_SCALE 1
-#define IFV_DMG_SCALE 0.5
-#define TANK_DMG_SCALE 1.5
+#define MRAP_MISSILE_DMG_SCALE 1.5
+#define HELI_MISSILE_DMG_SCALE 2.0
+#define PLANE_MISSILE_DMG_SCALE 1.5
+#define IFV_DMG_SCALE 1.5
+#define TANK_DMG_SCALE 2.0
 #define NYX_TRACK_DMG_SCALE 0.25
 
 params ["_vehicle", "_selection", "_damage", "_source", "_ammo", "", "_instigator", "_hitPoint"];

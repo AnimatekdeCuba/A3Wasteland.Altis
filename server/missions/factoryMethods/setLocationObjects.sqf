@@ -4,7 +4,7 @@
 //	@file Name: setLocationObjects.sqf
 //	@file Author: AgentRev
 
-// if (!isServer && hasinterface) exitWith {};
+if (!isServer) exitWith {};
 
 private ["_locArray", "_locName", "_locObjects"];
 

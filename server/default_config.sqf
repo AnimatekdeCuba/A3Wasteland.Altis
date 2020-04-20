@@ -24,7 +24,7 @@ A3W_repetitiveCleanup = 1;        								// Enable clean-up addon (0 = off, 1 =
 // Time settings
 A3W_startHour = 08;												// In-game hour at mission start (0 to 23) - time is saved and restored between server restarts if A3W_timeSaving = 1
 A3W_timeMultiplierDay = 2;										// Sets the speed of time between 5 AM and 8 PM (for example, 6.0 means 6 hours in-game will pass in 1 real hour)
-A3W_timeMultiplierNight = 4;									// Sets the speed of time between 8 PM and 5 AM
+A3W_timeMultiplierNight = 6;									// Sets the speed of time between 8 PM and 5 AM
 A3W_moonLight = 1;												// Moon light during night (0 = no, 1 = yes)
 
 // Player settings
@@ -50,7 +50,7 @@ A3W_artilleryAmmo = "ModuleOrdnanceHowitzer_F_ammo"; 			// CfgAmmo class of fire
 A3W_townSpawnCooldown = 10*60;									// Number of seconds to wait between each spawn on a specific town (0 = disabled)
 A3W_townSpawnSpawnHeight = 1500;								// Altitude in meters at which players will spawn when spawning on a specific town (0 = ground/sea)
 A3W_spawnBeaconCooldown = 15*60;								// Number of seconds to wait between each use of a specific spawn beacon (0 = disabled)
-A3W_spawnBeaconSpawnHeight = 2500;								// Altitude in meters at which players will spawn when using spawn beacons (0 = ground/sea)
+A3W_spawnBeaconSpawnHeight = 1500;								// Altitude in meters at which players will spawn when using spawn beacons (0 = ground/sea)
 A3W_maxSpawnBeacons = 2;           					 			// Maxmimum number of spawn beacons (0 = disabled)
 
 // Antihack settings
@@ -65,7 +65,7 @@ A3W_showGunStoreStatus = 0;										// Show enemy and friendly presence at guns
 A3W_gunStoreIntruderWarning = 0;								// Warn players in gunstore areas of enemy intruders (0 = no, 1 = yes)
 A3W_remoteBombStoreRadius = 100;									// Prevent players from placing any kind of explosive on the ground within this distance from any store (0 = disabled)
 A3W_poiObjLockDistance = 100;									// Prevent players from locking objects within this distance from points of interest (stores & mission spawns)
-A3W_vehiclePurchaseCooldown = 10;								// Number of seconds to wait before allowing someone to purchase another vehicle, don't bother setting it too high because it can be bypassed by rejoining
+A3W_vehiclePurchaseCooldown = 60;								// Number of seconds to wait before allowing someone to purchase another vehicle, don't bother setting it too high because it can be bypassed by rejoining
 
 // ATM settings
 A3W_atmEnabled = 1;												// Enable ATM system (0 = no, 1 = yes)
@@ -157,7 +157,7 @@ A3W_boatSpawnOdds = 0.25;          								// 25% chance spawning
 A3W_boatSpawning = 1;											// If serverSpawning = 1, spawn boats at marked areas near coasts (0 = no, 1 = yes)
 A3W_heliSpawning = 1;											// If serverSpawning = 1, spawn helicopters in some towns and airfields (0 = no, 1 = yes)
 A3W_planeSpawning = 1;											// If serverSpawning = 1, spawn planes at some airfields (0 = no, 1 = yes)
-A3W_boxSpawning = 1;											// If serverSpawning = 1, spawn weapon crates in 50% towns (0 = no, 1 = yes)
+A3W_boxSpawning = 0;											// If serverSpawning = 1, spawn weapon crates in 50% towns (0 = no, 1 = yes)
 A3W_baseBuilding = 0;											// If serverSpawning = 1, spawn base parts in towns (0 = no, 1 = yes)
 A3W_essentialsSpawning = 1;										// If serverSpawning = 1, spawn essential items (food sacks, water barrels, minor supply crates) in towns (0 = no, 1 = yes)
 
@@ -165,11 +165,11 @@ A3W_essentialsSpawning = 1;										// If serverSpawning = 1, spawn essential i
 /*A3W_buildingLootWeapons = 0;       							// Spawn weapon loot in all buildings (0 = no, 1 = yes)
 A3W_buildingLootSupplies = 0;      								// Spawn supply loot (backpacks & player items) in all buildings (0 = no, 1 = yes)
 A3W_buildingLootChances = 0;*/     								// Chance percentage that loot will spawn at each spot in a building (0 to 100)
-A3W_vehicleLoot = 2;               								// Level of loot added to vehicles (0 = none, 1 = weapon OR items, 2 = weapon AND items, 3 = two weapons AND items) - 2 or 3 recommended if buildingLoot = 0
+A3W_vehicleLoot = 1;               								// Level of loot added to vehicles (0 = none, 1 = weapon OR items, 2 = weapon AND items, 3 = two weapons AND items) - 2 or 3 recommended if buildingLoot = 0
 A3W_simpleLoot = 1;                								// Spawn loot in all buildings (0 = no, 1 = yes)
 
 // Territory settings
-A3W_territoryCaptureTime = 3*60;								// Time in seconds needed to capture a territory
+A3W_territoryCaptureTime = 2*60;								// Time in seconds needed to capture a territory
 A3W_territoryPayroll = 1;										// Periodically reward sides and indie groups based on how many territories they own (0 = no, 1 = yes)
 A3W_territoryWarningIcons = 1;									// Show exclamation marks on map for friendly territories where enemies are present (0 = no, 1 = yes)
 A3W_payrollInterval = 10;										// Delay in seconds between each payroll
@@ -181,6 +181,7 @@ A3W_serverMissions = 1;											// Enable server missions (0 = no, 1 = yes)
 A3W_missionsDifficulty = 1;										// Missions difficulty (0 = normal, 1 = hard)
 A3W_missionFarAiDrawLines = 1;									// Draw small red lines on the map from mission markers to individual units & vehicles which are further away than 75m from the objective (0 = no, 1 = yes)
 A3W_missionsQuantity = 8;										// Number of missions running at the same time (0 to 8)
+/* Unused Vanilla mission types
 A3W_heliPatrolMissions = 1;										// Enable missions involving flying helicopters piloted by AI (0 = no, 1 = yes)
 A3W_underWaterMissions = 1;										// Enable underwater missions which require diving gear (0 = no, 1 = yes)
 A3W_mainMissionDelay = 15*60;									// Time in seconds between Main Missions
@@ -189,6 +190,7 @@ A3W_sideMissionDelay = 5*60;									// Time in seconds between Side Missions
 A3W_sideMissionTimeout = 60*60;									// Time in seconds that a Side Mission will run for, unless completed
 A3W_moneyMissionDelay = 10*60;									// Time in seconds between Money Missions
 A3W_moneyMissionTimeout = 60*60;								// Time in seconds that a Money Mission will run for, unless completed
+*/
 A3W_extraMissionDelay = 5*60;									// Time in seconds between Extra Missions
 A3W_extraMissionTimeout = 45*60;								// Time in seconds that a Extra Mission will run for, unless completed
 A3W_patrolMissionDelay = 30*60;									// Time in seconds between Patrol Missions

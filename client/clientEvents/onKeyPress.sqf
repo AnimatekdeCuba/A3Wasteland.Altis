@@ -83,7 +83,7 @@ switch (true) do
 if (!UNCONSCIOUS) then // ####################
 {
 	// Parachute
-	if (!_handled && _key in actionKeys "GetOver") then
+	/*if (!_handled && _key in actionKeys "GetOver") then
 	{
 		if (!alive player) exitWith {};
 
@@ -109,7 +109,7 @@ if (!UNCONSCIOUS) then // ####################
 				deleteVehicle _this;
 			};
 		};
-	};
+	};*/
 
 	// Eject
 	if (!_handled && _key in actionKeys "GetOut") then

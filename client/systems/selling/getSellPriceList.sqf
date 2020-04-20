@@ -10,7 +10,7 @@
 // _x select 2 = Name
 // _x select 3 = Value
 
-#define GET_HALF_PRICE(PRICE) ((ceil ((PRICE) * 0.25))) 
+#define GET_HALF_PRICE(PRICE) ((ceil ((PRICE) * 0.20))) 
 private ["_obj", "_sellValue", "_objItems", "_objMags", "_objWeapons", "_weaponArray", "_class", "_container", 
 		"_allStoreMagazines", "_allGunStoreFirearms", "_allStoreItems", "_weaponEntry", "_weaponClass", "_weaponQty", 
 		"_weaponCfg", "_weaponCfgModel", "_masterCfg", "_found", "_cfgItems", "_allObjItems", "_item", "_itemClass", 

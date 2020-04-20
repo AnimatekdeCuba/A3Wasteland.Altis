@@ -1,12 +1,12 @@
 // ******************************************************************************************
 // * This project is licensed under the GNU Affero GPL v3. Copyright © 2014 A3Wasteland.com *
 // ******************************************************************************************
-//	@file Name: moveIntoBuildings.sqf
+//	@file Name: customGroup2.sqf
 //	@file Author: Zenophon, JoSchaap
-//  @file Information: Function called as:  [_units, _missionPos, _buildingRadius, _fillEvenly, _putOnRoof] call moveIntoBuildings;
+//  @file Information: Function called as:  [_aiGroup, _missionPos, _buildingRadius, _fillEvenly, _putOnRoof] call moveIntoBuildings;
 //  @file Information: example call: [_CivGrp1, [333.33,3.33,444.44], 300, true, false] call moveIntoBuildings;
 
-// if (!isServer && hasinterface) exitWith {};
+if (!isServer) exitWith {};
 
 #define I(X) X = X + 1;
 #define EYE_HEIGHT 1.53
@@ -15,13 +15,14 @@
 #define ROOF_CHECK 4
 #define ROOF_EDGE 2
 
-private ["_unitIndex","_missionPos","_units","_buildingsArray", "_j", "_building", "_randomIndex", "_housePos", "_startAngle", "_i", "_k", "_hitCount", "_fillEvenly", "_putOnRoof", "_isRoof", "_housePos", "_edge", "_checkPos"];
+private ["_unitIndex","_aiGroup","_missionPos","_units","_buildingsArray", "_j", "_building", "_randomIndex", "_housePos", "_startAngle", "_i", "_k", "_hitCount", "_fillEvenly", "_putOnRoof", "_isRoof", "_housePos", "_edge", "_checkPos"];
 
-_units = _this select 0;
+_aiGroup = _this select 0;
 _missionPos = _this select 1;
 _buildingRadius = _this select 2;
 _fillEvenly = _this select 3;
 _putOnRoof = _this select 4;
+_units = units _aiGroup;
 _unitIndex = 0;
 
 //

@@ -4,10 +4,10 @@
 //	@file Name: mission_HostileHelicopter.sqf
 //	@file Author: JoSchaap, AgentRev
 
-// if (!isServer && hasinterface) exitWith {};
+if (!isServer) exitwith {};
 //#include "sideMissionDefines.sqf"
 
-private ["_vehicleClass", "_vehicle", "createMissionVehicle", "_vehicles", "_leader", "_speedMode", "_waypoint", "_vehicleName", "_numWaypoints", "_box1", "_box2", "_callLocation", "_callLocationPos","_heliDirection","_heliDistance", "_flyHeight","_heliTypes"];
+private ["_vehicleClass", "_vehicle", "_createVehicle", "_vehicles", "_leader", "_speedMode", "_waypoint", "_vehicleName", "_numWaypoints", "_box1", "_box2", "_callLocation", "_callLocationPos","_heliDirection","_heliDistance", "_flyHeight","_heliTypes"];
 
 _heliDirection = random 360;
 _heliDistance = 1000 + (random 2000);
@@ -21,20 +21,16 @@ _startPos = [(_callLocationPos select 0) + (sin _heliDirection) * _heliDistance,
 
 //Use Random Weighting for Attack Heli type to reduce the likelihood of a Blackfoot or Kaj tearing up players
 _heliTypes =[
-	["RHS_AH64D_wd", .25],
-	["RHS_AH1Z", .25],
-	["RHS_Mi24V_vvs", .25],
-	["rhs_mi28n_vvs", .25],
-	["RHS_Ka52_vvsc", .25],
-	["RHS_UH1Y_d", 1],
-	["rhs_uh1h_hidf_gunship", 1],
-	["RHS_Mi8mtv3_Cargo_vvsc", 1],
-	["RHS_MELB_AH6M", 1]
+	["B_Heli_Attack_01_F", .25],
+	["O_Heli_Attack_02_black_F", .25],
+	["B_Heli_Light_01_armed_F", 1],
+	["O_Heli_Light_02_F", 1],
+	["I_Heli_light_03_F", 1]
 ];
 
 _vehicleClass =  (_heliTypes call generateMissionWeights) call fn_selectRandomWeighted;
 
-createMissionVehicle =
+_createVehicle =
 {
 	private ["_type", "_position", "_direction", "_vehicle", "_soldier"];
 
@@ -92,7 +88,7 @@ createMissionVehicle =
 
 _aiGroup2 = createGroup CIVILIAN;
 
-_vehicle = [_vehicleClass, _startPos, 0] call createMissionVehicle;
+_vehicle = [_vehicleClass, _startPos, 0] call _createVehicle;
 
 _leader = effectiveCommander _vehicle;
 _aiGroup2 selectLeader _leader;

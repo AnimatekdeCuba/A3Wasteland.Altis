@@ -54,8 +54,8 @@ TFS_fnc_ftfar_checkTeamSpeakServer =
 //Function to retreive wrong TeamSpeak server message.
 TFS_fnc_ftfar_getWrongServerString =
 {
-	if !(ftfar_server_password isEqualTo "") exitWith { format["No estás conectado en el servidor de TeamSpeak: %1!\nPor favor, conéctese al servidor en %2  %3!", ftfar_server_name, ftfar_server_ipaddress, ftfar_server_password]; };
-	format["No estás en el servidor de TeamSpeak: %1!\nPor favor, conéctese al %2!", ftfar_server_name, ftfar_server_ipaddress];
+	if !(ftfar_server_password isEqualTo "") exitWith { format["No estás conectado al servidor de TeamSpeak: %1!\n Por favor, conéctese al servidor en %2  %3  AHORA!", ftfar_server_name, ftfar_server_ipaddress, ftfar_server_password]; };
+	format["No estás conectado al servidor de TeamSpeak: %1!\n Por favor, conéctese al %2  AHORA!", ftfar_server_name, ftfar_server_ipaddress];
 };
 
 //Function to check current TeamSpeak channel.
@@ -69,8 +69,8 @@ TFS_fnc_ftfar_checkTeamSpeakChannel =
 //Function to retreive wrong TeamSpeak channel message.
 TFS_fnc_ftfar_getWrongChannelString =
 {
-	if !(tf_radio_channel_password isEqualTo "") exitWith { format["Estás en el canal de TeamSpeak incorrecto!\nPor favor, únase al canal %1 con la contraseña %2!", tf_radio_channel_name, tf_radio_channel_password]; };
-	format["Estás en el canal de TeamSpeak incorrecto!\nPor favor, únase al canal %1!", tf_radio_channel_name];
+	if !(tf_radio_channel_password isEqualTo "") exitWith { format["No estás en el canal de TeamSpeak obligatorio!\n Por favor, entre al canal %1 con la contraseña %2  AHORA!!", tf_radio_channel_name, tf_radio_channel_password]; };
+	format["No estás en el canal de TeamSpeak obligatorio!\n Por favor, entre al canal %1  AHORA!!", tf_radio_channel_name];
 };
 
 FTFAR_waitForActionThread = nil;
@@ -84,7 +84,7 @@ while {true} do
 		try
 		{
 			//Check if TS plugin is actually enabled.
-			if !(call TFAR_fnc_isTeamSpeakPluginEnabled) throw ["El plugin de Task Force Radio no está activado en el TeamSpeak !\nPor favor, instálelo y/o actívelo en Herramientas / Opciones / Complementos!", TFAR_fnc_isTeamSpeakPluginEnabled];
+			if !(call TFAR_fnc_isTeamSpeakPluginEnabled) throw ["El plugin Task Force Radio no está activado en tu clientede TeamSpeak!\n Por favor, actívelo en Herramientas / Opciones / Complementos!", TFAR_fnc_isTeamSpeakPluginEnabled];
 			
 			//Check if player is on in TeamSpeak server.
 			if !(call TFS_fnc_ftfar_checkTeamSpeakServer) throw [call TFS_fnc_ftfar_getWrongServerString, TFS_fnc_ftfar_checkTeamSpeakServer];
@@ -103,7 +103,7 @@ while {true} do
 				private _timer = ftfar_wait_for_action_time;
 				while {_timer > 0} do
 				{
-					cutText [format["%1\n%2", _message, format["Te quedan %1 segundos para ser expulsado (Kickeado)!", _timer]], "BLACK FADED", 999];
+					cutText [format["%1\n%2", _message, format["Te quedan %1 segundos para ser expulsado (kickeado)!", _timer]], "BLACK FADED", 999];
 					uiSleep 1;
 					_timer = _timer - 1;
 					if (call _checkFunction) exitWith {};

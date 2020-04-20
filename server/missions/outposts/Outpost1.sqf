@@ -2,7 +2,7 @@
 // * This project is licensed under the GNU Affero GPL v3. Copyright © 2014 A3Wasteland.com *
 // ******************************************************************************************
 //	@file Name: Outpost1.sqf
-//	@file Author: JoSchaap, AgentRev, GMG_Monkey
+//	@file Author: JoSchaap, AgentRev
 
 [
 	// Class, Position, Direction, Init (optional)
@@ -17,11 +17,11 @@
 	["Land_BagFence_Long_F", [-4.06665, -6.43359, 0], 90],
 	["Land_BarGate_F", [0.25195, -7.94873, 0], 180],
 	["Land_BagBunker_Small_F", [5.96436, 7.86963, 0], 180],
-	["Loot Crate", [-6.24817, 8.69141, 0], 180],
+	["B_CargoNet_01_ammo_F", [-6.24817, 8.69141, 0], 180, { [_this, ["Launchers_Tier_2", "Diving_Gear", "General_supplies", "GEVP", "Ammo_Drop", "mission_AALauncher", "mission_CompactLauncher", "mission_snipers", "mission_RPG", "mission_PCML", "mission_Pistols", "mission_AssRifles", "mission_SMGs", "mission_LMGs", "Medical", "mission_Field_Engineer"] call BIS_fnc_selectRandom] call fn_refillbox }],
 	["Land_BagBunker_Small_F", [-6.35974, 7.86914, 0], 180],
 	["Land_BagBunker_Small_F", [-6.06433, -10.0005, 0], 0],
 	["Land_BagBunker_Small_F", [6.27478, -9.8975, 0], 0],
-	["Loot Crate", [6.26294, -10.02422, 0], 180],
+	["B_CargoNet_01_ammo_F", [6.26294, -10.02422, 0], 180, { [_this, ["Launchers_Tier_2", "Diving_Gear", "General_supplies", "GEVP", "Ammo_Drop", "mission_AALauncher", "mission_CompactLauncher", "mission_snipers", "mission_RPG", "mission_PCML", "mission_Pistols", "mission_AssRifles", "mission_SMGs", "mission_LMGs", "Medical", "mission_Field_Engineer"] call BIS_fnc_selectRandom] call fn_refillbox }],
 	["Land_HBarrierBig_F", [-11.583, -5.92871, 0], 45],
 	["Land_HBarrierBig_F", [-12.4873, 5.40869, 0], 315],
 	["Land_HBarrierBig_F", [10.9138, 4.86182, 0], 45],

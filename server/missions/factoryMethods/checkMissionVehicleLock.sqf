@@ -4,7 +4,7 @@
 //	@file Name: checkMissionVehicleLock.sqf
 //	@file Author: AgentRev
 
-// if (!isServer && hasinterface) exitWith {};
+if (!isServer) exitwith {};
 
 private "_shepherd";
 

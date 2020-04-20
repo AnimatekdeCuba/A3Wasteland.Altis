@@ -50,7 +50,7 @@ if(playerSide in [BLUFOR, OPFOR] && !isNil "pvar_teamSwitchList")then{
 	teamSwitchCode = {
 	  [] spawn{
 	    _uid = getPlayerUID player;
-	    if(["You will return to the lobby and be locked to Independent. Do you wish to continue?", "Confirm", true, true] call BIS_fnc_guiMessage)then{
+	    if(["Regresarás al Lobby y serás bloqueado como Idependiente. ¿Desea continuar?", "Confirm", true, true] call BIS_fnc_guiMessage)then{
 		  pvar_teamSwitchUnlock = _uid;
 		  publicVariableServer "pvar_teamSwitchUnlock";
 		  pvar_teamSwitchLock = [_uid, INDEPENDENT];
@@ -68,7 +68,7 @@ _side = switch (playerSide) do
 	default      { "Independent" };
 };
 
-_respawnText ctrlSetStructuredText parseText (format ["Bienvenido a AC A3Wasteland<br/>Eres %1. Elige como entrar.", _side]);
+_respawnText ctrlSetStructuredText parseText (format ["Bienvenido a AC A3Wasteland<br/>Eres %1. Escoge donde aparecer.", _side]);
 respawnDialogActive = true;
 
 //buttonSetAction [respawn_Random_Button, format ["%1 [%2,0] execVM 'client\functions\spawnAction.sqf'", _disableAllButtons, respawn_Random_Button]];

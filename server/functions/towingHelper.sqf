@@ -22,12 +22,10 @@ switch (_type) do
 	{
 		_veh enableSimulation true;
 		(attachedTo _veh) enableSimulation true;
-
 		sleep 0.3;
 		detach _veh;
 
 		["enableDriving", _veh] call A3W_fnc_towingHelper;
-
 
 		private _pos = getPosATL _veh;
 

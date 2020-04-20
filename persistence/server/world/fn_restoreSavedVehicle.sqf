@@ -136,8 +136,8 @@ private _uavAuto = true;
 				_uavAuto = _val;
 			};
 		};
-		
 	};
+
 	_veh setVariable [_var, _val, true];
 } forEach _variables;
 

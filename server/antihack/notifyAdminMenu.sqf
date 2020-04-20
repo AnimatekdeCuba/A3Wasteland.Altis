@@ -75,13 +75,13 @@ if (!isNil "_cfg" && {isClass _cfg}) then
 	_displayStr = getText (_cfg >> "displayName");
 	if (_displayStr == "") then { _displayStr = _value } else { _value = _displayStr };
 
-	_message = format ['[NOTICE] %1 used the admin menu to obtain a "%2"', profileName, _displayStr];
+	_message = format ['[NOTICIA] %1 ha usado el Menú Administrativo para obtener un "%2"', profileName, _displayStr];
 };
 
 if (!isNil "_message" && {_message != ""}) then
 {
 	[[_message, getPlayerUID player, _flagChecksum, true], "A3W_fnc_chatBroadcast", true] call A3W_fnc_MP;
-	systemChat format ["Server notified about: %1. Uso para deberes administrativos solamente.",_message];
+	systemChat format ["ASUNTO: %1. Para uso administrativo. Reportar bajo sospecha",_message];
 };
 
 [[profileName, getPlayerUID player, _action, _value, _flagChecksum], "A3W_fnc_adminMenuLog", false] call A3W_fnc_MP;

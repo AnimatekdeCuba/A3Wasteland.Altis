@@ -167,7 +167,7 @@ _onCaptureFinished =
 	["pvar_updateTerritoryMarkers", [_captureTeam, [[_captureName], false, _captureTeam, true]]] call fn_publicVariableAll;
 	["pvar_updateTerritoryMarkers", [_otherTeams, [[_captureName], false, _captureTeam, false]]] call fn_publicVariableAll;
 
-	// _msgWinners = format ["Tu equipo ha capturado satisfactoriamente %1 y han recibido $%2. Tropas de apoyo arrivarán en breve.", _captureDescription, _captureValue];
+	// _msgWinners = format ["Tu equipo ha capturado satisfactoriamente %1 y has recibido $%2. Tropas de apoyo arrivarán en breve.", _captureDescription, _captureValue];
 	
 	if (_captureTeam in [BLUFOR,OPFOR]) then {
 		_msgWinners = format ["Tu equipo ha capturado %1 y has recibido $%2. Tropas de refuerzo ya están en camino.", _captureDescription, _captureValue];
@@ -338,8 +338,7 @@ _onCaptureFinished =
 			//diag_log format ["MilitarizeScriptIDs: %1",MilitarizeScriptIDs];
 			//[MilitarizeScriptIDs,[],1500,true,true] execVM "addons\AI_spawn\LV_functions\LV_fnc_simpleCache.sqf";	
 		};
-	}
-	//else{
+	//} else {
 	//	[_captureName,_radius,_territoryID] spawn {
 	//		sleep 60;
 	//		if (isNil "unsaveableArray") then {
@@ -366,7 +365,7 @@ _onCaptureFinished =
 	//		};
 	//		//diag_log format [":::MINES::: %1",(missionNamespace getVariable (format ["LVgroup%1", _territoryID]))];
 	//	};
-	//};
+	};
 };
 
 // Give the human readable name for a team

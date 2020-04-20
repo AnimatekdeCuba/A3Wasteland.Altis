@@ -16,7 +16,9 @@
 #define vehshop_button5 5295 // Boats
 #define vehshop_button6 5296 // Autonomous
 #define vehshop_BuyButton_IDC 100
+
 #define A3W_vehPaintIDD 5785
+
 #define vehshop_list_textureChecked (toLower getText (configFile >> "RscCheckBox" >> "textureChecked"))
 #define vehshop_list_textureUnchecked (toLower getText (configFile >> "RscCheckBox" >> "textureUnchecked"))
 #define vehshop_list_checkboxTextures [vehshop_list_textureUnchecked, vehshop_list_textureChecked]

@@ -4,7 +4,7 @@
 //	@file Name: cleanLocationObjects.sqf
 //	@file Author: AgentRev
 
-// if (!isServer && hasinterface) exitWith {};
+if (!isServer) exitWith {};
 
 #define CLEANUP_RADIUS 50
 

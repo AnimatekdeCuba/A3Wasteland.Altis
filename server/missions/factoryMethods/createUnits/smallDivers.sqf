@@ -50,6 +50,7 @@ _leader = leader _group;
 {
 	_x spawn refillPrimaryAmmo;
 	_x call setMissionSkill;
+	_x triggerDynamicSimulation true;
 	_x addRating 9999999;
 	_x addEventHandler ["Killed", server_playerDied];
 } forEach units _group;

@@ -10,8 +10,8 @@ _saveLocation = if (count _this > 1) then { _this select 1 } else { true };
 
 _data = if (_player == player) then {
 	[
-		["Hunger", ["hungerLevel", _player getVariable ["acex_field_rations_hunger", 0]]call getPublicVar],
-		["Thirst", ["thirstLevel", _player getVariable ["acex_field_rations_thirst", 0]]call getPublicVar]
+		["Hunger", ["hungerLevel", _player getVariable ["acex_field_rations_hunger", 0]] call getPublicVar],
+		["Thirst", ["thirstLevel", _player getVariable ["acex_field_rations_thirst", 0]] call getPublicVar]
 	]
 } else {
 	[]
@@ -163,6 +163,7 @@ if (call A3W_savingMethod == "extDB") then
 ];
 // ACE3 PLAYER'S HEALTH STATUS
 _ace_getBloodLoss = _player call ACE_medical_fnc_getBloodLoss;
+	
 { _data pushBack _x } forEach
 [
 	["ACEPain", _player getVariable ["ace_medical_pain", 0]],
@@ -173,10 +174,5 @@ _ace_getBloodLoss = _player call ACE_medical_fnc_getBloodLoss;
 	["ACEheartRate", _player getVariable ["ace_medical_heartRate", 0]],
 	["ACEbodyPartStatus", _player getVariable ["ace_medical_bodyPartStatus", []]]
 ];
-/*
-{ _data pushBack _x } forEach
-[
-	["ActualPlayerSide", playerSide]
-];
-*/
+
 _data

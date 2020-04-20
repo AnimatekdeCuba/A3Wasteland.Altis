@@ -19,8 +19,8 @@ if (["A3W_missionsDifficulty"] call isConfigOn) then
 }
 else
 {
-	_skill = 0.25;
-	_accuracy = 0.20;
+	_skill = 0.45;
+	_accuracy = 0.25;
 };
 
 _unit allowFleeing 1;

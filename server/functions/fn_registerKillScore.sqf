@@ -72,8 +72,7 @@ if !(_unit getVariable ["A3W_killScoreRegistered", false]) then
 		};
 
 		[_killer, _scoreColumn, _scoreValue] call fn_addScore;
-
-		//Pay bounty to killer
+		//Pay bounty to killer 
 		if(!_friendlyFire)then
 		{
 			_bountyAmount = _unit getVariable ["bounty", 0];

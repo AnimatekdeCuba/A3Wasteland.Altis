@@ -234,7 +234,7 @@ if (playerSide in [BLUFOR,OPFOR] && {{_x select 0 == _uid} count pvar_teamSwitch
 {
 	_startTime = diag_tickTime;
 	waitUntil {sleep 1; diag_tickTime - _startTime >= 180};
-
+	player setVariable ["ActualSide", playerSide];
 	pvar_teamSwitchLock = [_uid, playerSide];
 	publicVariableServer "pvar_teamSwitchLock";
 

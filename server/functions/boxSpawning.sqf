@@ -20,48 +20,7 @@ _boxList =
 	"Box_East_Wps_F",
 	"Box_East_WpsSpecial_F",
 	"Box_IND_Wps_F",
-	"Box_IND_WpsSpecial_F",
-	"Box_IND_Ammo_F",
-	"Box_T_East_Ammo_F",
-	"Box_East_Ammo_F",
-	"Box_NATO_Ammo_F",
-	"Box_Syndicate_Ammo_F",
-	"Box_T_East_Wps_F",
-	"Box_Syndicate_Wps_F",
-	"Box_AAF_Equip_F",
-	"Box_CSAT_Equip_F",
-	"Box_NATO_Equip_F",
-	"Box_IED_Exp_F",
-	"Box_IND_AmmoOrd_F",
-	"Box_NATO_AmmoOrd_F",
-	"Box_FIA_Ammo_F",
-	"Box_FIA_Support_F",
-	"Box_FIA_Wps_F",
-	"Box_IND_Grenades_F",
-	"Box_East_Grenades_F",
-	"Box_NATO_Grenades_F",
-	"Box_IND_WpsLaunch_F",
-	"Box_East_WpsLaunch_F",
-	"Box_NATO_WpsLaunch_F",
-	"Box_Syndicate_WpsLaunch_F",
-	"Box_IND_WpsSpecial_F",
-	"Box_T_East_WpsSpecial_F",
-	"Box_East_WpsSpecial_F",
-	"Box_T_NATO_WpsSpecial_F",
-	"Box_NATO_WpsSpecial_F",
-	"I_supplyCrate_F",
-	"O_supplyCrate_F",
-	"C_supplyCrate_F",
-	"C_T_supplyCrate_F",
-	"IG_supplyCrate_F",
-	"Box_GEN_Equip_F",
-	"B_supplyCrate_F",
-	"Box_IND_Support_F",
-	"Box_East_Support_F",
-	"Box_NATO_Support_F",
-	"Box_AAF_Uniforms_F",
-	"Box_CSAT_Uniforms_F",
-	"Box_NATO_Uniforms_F"
+	"Box_IND_WpsSpecial_F"
 ];
 
 {
@@ -71,9 +30,109 @@ _boxList =
 		_boxClass = _boxList call BIS_fnc_selectRandom;
 		_safePos = [_pos, 10, (_x select 1) / 2, 1, 0, 60 * (pi / 180), 0] call findSafePos; // spawns somewhere within half the town radius
 		_box = createVehicle [_boxClass, _safePos, [], 0, "NONE"];
-		// _box setVariable ["Moveable", true, true];
+		_box setVariable ["Moveable", true, true];
 		_box allowDamage false;
 		_box setVariable ["allowDamage", false, true];
+
+		// Clear prexisting cargo first
+		clearMagazineCargoGlobal _box;
+		clearWeaponCargoGlobal _box;
+		clearItemCargoGlobal _box;
+
+		switch (true) do
+		{
+			// Basic Weapons box contents
+			case (["_Wps_F", _boxClass] call fn_findString != -1):
+			{
+				switch (true) do
+				{
+					case (_box isKindOf "Box_NATO_Wps_F"):
+					{
+						_boxItems =
+						[
+							["wep", "arifle_MX_F", 5, 4],
+							["wep", "arifle_MX_SW_F", 2, 4],
+							["wep", "SMG_01_F", 1, 5] // Vermin
+						]
+					};
+					case (_box isKindOf "Box_East_Wps_F"):
+					{
+						_boxItems =
+						[
+							["wep", "arifle_Katiba_F", 5, 4],
+							["wep", "LMG_Zafir_F", 2, 4],
+							["wep", "SMG_02_F", 1, 5] // Sting
+						]
+					};
+					case (_box isKindOf "Box_IND_Wps_F"):
+					{
+						_boxItems =
+						[
+							["wep", "arifle_Mk20_F", 5, 4],
+							["wep", "LMG_Mk200_F", 2, 4],
+							["wep", "hgun_PDW2000_F", 1, 5]
+						]
+					};
+					default { _boxItems = [] };
+				};
+
+				[_box, _boxItems] call processItems;
+
+				// Extra loadout
+				_boxItems =
+				[
+					["wep", "hgun_Pistol_heavy_01_F", 1, 5],
+					["mag", "9Rnd_45ACP_Mag", 5]
+				];
+
+				[_box, _boxItems] call processItems;
+			};
+
+			// Special Weapons box contents
+			case (["_WpsSpecial_F", _boxClass] call fn_findString != -1):
+			{
+				// Specific loadouts
+				switch (true) do
+				{
+					case (_box isKindOf "Box_NATO_WpsSpecial_F"):
+					{
+						_boxItems =
+						[
+							["wep", "arifle_MXM_DMS_F", 1, 8],
+							["wep", "srifle_LRR_LRPS_F", 1, 8]
+						];
+					};
+					case (_box isKindOf "Box_East_WpsSpecial_F"):
+					{
+						_boxItems =
+						[
+							["wep", "srifle_DMR_01_DMS_F", 1, 8],
+							["wep", "srifle_GM6_LRPS_F", 1, 8]
+						];
+					};
+					case (_box isKindOf "Box_IND_WpsSpecial_F"):
+					{
+						_boxItems =
+						[
+							["wep", "srifle_EBR_DMS_F", 1, 8],
+							["wep", "srifle_GM6_LRPS_F", 1, 8]
+						];
+					};
+					default { _boxItems = [] };
+				};
+
+				[_box, _boxItems] call processItems;
+
+				// Extra loadout
+				_boxItems =
+				[
+					["wep", "arifle_SDAR_F", 1, 4], // SDAR + 4 underwater mags
+					["mag", "30Rnd_556x45_Stanag", 4] // 4 normal mags
+				];
+
+				[_box, _boxItems] call processItems;
+			};
+		};
 
 		_counter = _counter + 1;
 	};

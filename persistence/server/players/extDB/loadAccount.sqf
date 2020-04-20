@@ -81,7 +81,6 @@ else
 		"ACEopenWounds",
 		"ACEheartRate",
 		"ACEbodyPartStatus",
-		/*"ActualPlayerSide",*/
 		
 		"Hunger",
 		"Thirst"

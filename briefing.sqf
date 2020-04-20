@@ -636,7 +636,7 @@ player createDiaryRecord ["infos",
 <br/>
 <br/>" + NKEYNAME(41) + " (open player menu)
 <br/>Ctrl + " + AKEYNAME("GetOut") + " (emergency eject)
-<br/>" + AKEYNAME("GetOver") + " (open parachute)
+<br/>" + AKEYNAME("GetOver") + " (open parachute) NO DISPONIBLE EN ESTA VERSIÓN
 <br/>Shift + " + NKEYNAME(201) + " / " + NKEYNAME(209) + " (adjust nightvision)
 <br/>" + NKEYNAME(22) + " (admin menu)
 "

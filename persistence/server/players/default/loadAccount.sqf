@@ -98,7 +98,6 @@ if (["A3W_moneySaving"] call isConfigOn) then
 ["ACEopenWounds", "ARRAY"] call _getValue;
 ["ACEheartRate", "NUMBER"] call _getValue;
 ["ACEbodyPartStatus", "ARRAY"] call _getValue;
-/*["ActualPlayerSide", "STRING"] call _getValue;*/
 
 ["Hunger", "NUMBER"] call _getValue;
 ["Thirst", "NUMBER"] call _getValue;

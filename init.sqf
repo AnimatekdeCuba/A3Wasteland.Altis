@@ -49,11 +49,11 @@ if (!isDedicated) then
 	{
 		if (hasInterface) then // Normal player
 		{
-			/*if ((getNumber (missionConfigFile >> "ForceTFAR" >> "ftfar_is_enabled")) isEqualTo 1) then
+			if ((getNumber (missionConfigFile >> "ForceTFAR" >> "ftfar_is_enabled")) isEqualTo 1) then
 			{
 				[] spawn compile preprocessFileLineNumbers "TFS_fnc_ftfar_init.sqf";
 			};
-			*/
+			
 			9999 cutText ["Bienvenido a AC A3Wasteland! por favor, espere que el cliente inicie", "BLACK", 0.01];
 
 			waitUntil {!isNull player};

@@ -4,7 +4,7 @@
 //	@file Name: missionController.sqf
 //	@file Author: AgentRev
 
-// if (!isServer && hasinterface) exitWith {};
+if (!isServer) exitWith {};
 
 private ["_controllerNum", "_tempController", "_controllerSuffix", "_missionsFolder", "_missionDelay", "_availableMissions", "_missionsList", "_nextMission"];
 

@@ -369,7 +369,7 @@ else
 		case "BackPackOnChest": { if (_value != "") then { [player,_value] call zade_boc_fnc_addChestpack }; };
 		//case "BackpackOnChestItem": { { [player,_x] call zade_boc_fnc_addItemToChestpack } forEach _value };
 		case "BackpackOnChestItem":
-		{ 
+		{
 			{
 				if (typeName _x isEqualTo "STRING") then
 				{
@@ -392,17 +392,5 @@ else
 		case "ACEopenWounds": { player setVariable ["ace_medical_openWounds", _value, true] };
 		case "ACEheartRate": { player setVariable ["ace_medical_heartRate", _value, true] };
 		case "ACEbodyPartStatus": { player setVariable ["ace_medical_bodyPartStatus", _value, true] };
-		/*case "ActualPlayerSide" :
-		{
-			if (_value != "") then
-			{
-				if (_value != playerSide) exitWith
-				{
-					_uid = getPlayerUID player;
-					pvar_teamSwitchLock = [_uid, _value];
-					publicVariableServer "pvar_teamSwitchLock";
-				};
-			};
-		};*/
 	};
 } forEach _data;
