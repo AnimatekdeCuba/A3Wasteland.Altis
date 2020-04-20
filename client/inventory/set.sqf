@@ -22,10 +22,12 @@
 _new = [];
 _done = false;
 {
-	if (_x select 0 == (_this select 0)) then {
+	if (_x select 0 == (_this select 0)) then 
+	{
 		_new pushBack _this;
 		_done = true;
-	} else {
+	} else 
+	{
 		_new pushBack _x;
 	};
 } forEach mf_inventory;

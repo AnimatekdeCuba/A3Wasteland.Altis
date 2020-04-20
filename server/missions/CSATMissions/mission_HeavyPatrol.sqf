@@ -19,15 +19,15 @@ _setupObjects =
 {
 	_town = (call cityList) call BIS_fnc_selectRandom;
 	_missionPos = markerPos _missionLocation;
-	_veh1types = selectrandom ["O_MRAP_02_F","O_MRAP_02_gmg_F","O_MRAP_02_hmg_F","O_Truck_03_device_F","O_Truck_03_ammo_F","O_Truck_03_medical_F","O_Truck_03_repair_F","O_Truck_03_transport_F","O_Truck_03_covered_F","O_Truck_02_Ammo_F","O_Truck_02_fuel_F","O_Truck_02_medical_F","O_Truck_02_box_F","O_Truck_02_transport_F","O_Truck_02_covered_F","O_APC_Tracked_02_AA_F","O_APC_Tracked_02_cannon_F","O_APC_Wheeled_02_rcws_F","O_MBT_02_arty_F","O_MBT_02_cannon_F"];
-	_veh2types = selectrandom ["O_MRAP_02_F","O_MRAP_02_gmg_F","O_MRAP_02_hmg_F","O_Truck_03_device_F","O_Truck_03_ammo_F","O_Truck_03_medical_F","O_Truck_03_repair_F","O_Truck_03_transport_F","O_Truck_03_covered_F","O_Truck_02_Ammo_F","O_Truck_02_fuel_F","O_Truck_02_medical_F","O_Truck_02_box_F","O_Truck_02_transport_F","O_Truck_02_covered_F","O_APC_Tracked_02_AA_F","O_APC_Tracked_02_cannon_F","O_APC_Wheeled_02_rcws_F","O_MBT_02_arty_F","O_MBT_02_cannon_F"];
-	_veh3types = selectrandom ["O_MRAP_02_F","O_MRAP_02_gmg_F","O_MRAP_02_hmg_F","O_Truck_03_device_F","O_Truck_03_ammo_F","O_Truck_03_medical_F","O_Truck_03_repair_F","O_Truck_03_transport_F","O_Truck_03_covered_F","O_Truck_02_Ammo_F","O_Truck_02_fuel_F","O_Truck_02_medical_F","O_Truck_02_box_F","O_Truck_02_transport_F","O_Truck_02_covered_F","O_APC_Tracked_02_AA_F","O_APC_Tracked_02_cannon_F","O_APC_Wheeled_02_rcws_F","O_MBT_02_arty_F","O_MBT_02_cannon_F"];
-	_veh4types = selectrandom ["O_MRAP_02_F","O_MRAP_02_gmg_F","O_MRAP_02_hmg_F","O_Truck_03_device_F","O_Truck_03_ammo_F","O_Truck_03_medical_F","O_Truck_03_repair_F","O_Truck_03_transport_F","O_Truck_03_covered_F","O_Truck_02_Ammo_F","O_Truck_02_fuel_F","O_Truck_02_medical_F","O_Truck_02_box_F","O_Truck_02_transport_F","O_Truck_02_covered_F","O_APC_Tracked_02_AA_F","O_APC_Tracked_02_cannon_F","O_APC_Wheeled_02_rcws_F","O_MBT_02_arty_F","O_MBT_02_cannon_F"];
-	_veh5types = selectRandom ["O_MRAP_02_F","O_MRAP_02_gmg_F","O_MRAP_02_hmg_F","O_Truck_03_device_F","O_Truck_03_ammo_F","O_Truck_03_medical_F","O_Truck_03_repair_F","O_Truck_03_transport_F","O_Truck_03_covered_F","O_Truck_02_Ammo_F","O_Truck_02_fuel_F","O_Truck_02_medical_F","O_Truck_02_box_F","O_Truck_02_transport_F","O_Truck_02_covered_F","O_APC_Tracked_02_AA_F","O_APC_Tracked_02_cannon_F","O_APC_Wheeled_02_rcws_F","O_MBT_02_arty_F","O_MBT_02_cannon_F"];
-	_veh6types = selectrandom ["O_MRAP_02_F","O_MRAP_02_gmg_F","O_MRAP_02_hmg_F","O_Truck_03_device_F","O_Truck_03_ammo_F","O_Truck_03_medical_F","O_Truck_03_repair_F","O_Truck_03_transport_F","O_Truck_03_covered_F","O_Truck_02_Ammo_F","O_Truck_02_fuel_F","O_Truck_02_medical_F","O_Truck_02_box_F","O_Truck_02_transport_F","O_Truck_02_covered_F","O_APC_Tracked_02_AA_F","O_APC_Tracked_02_cannon_F","O_APC_Wheeled_02_rcws_F","O_MBT_02_arty_F","O_MBT_02_cannon_F"];
-	_veh7types = selectrandom ["O_MRAP_02_F","O_MRAP_02_gmg_F","O_MRAP_02_hmg_F","O_Truck_03_device_F","O_Truck_03_ammo_F","O_Truck_03_medical_F","O_Truck_03_repair_F","O_Truck_03_transport_F","O_Truck_03_covered_F","O_Truck_02_Ammo_F","O_Truck_02_fuel_F","O_Truck_02_medical_F","O_Truck_02_box_F","O_Truck_02_transport_F","O_Truck_02_covered_F","O_APC_Tracked_02_AA_F","O_APC_Tracked_02_cannon_F","O_APC_Wheeled_02_rcws_F","O_MBT_02_arty_F","O_MBT_02_cannon_F"];
-	_veh8types = selectrandom ["O_MRAP_02_F","O_MRAP_02_gmg_F","O_MRAP_02_hmg_F","O_Truck_03_device_F","O_Truck_03_ammo_F","O_Truck_03_medical_F","O_Truck_03_repair_F","O_Truck_03_transport_F","O_Truck_03_covered_F","O_Truck_02_Ammo_F","O_Truck_02_fuel_F","O_Truck_02_medical_F","O_Truck_02_box_F","O_Truck_02_transport_F","O_Truck_02_covered_F","O_APC_Tracked_02_AA_F","O_APC_Tracked_02_cannon_F","O_APC_Wheeled_02_rcws_F","O_MBT_02_arty_F","O_MBT_02_cannon_F"];
-	_veh9types = selectrandom ["O_MRAP_02_F","O_MRAP_02_gmg_F","O_MRAP_02_hmg_F","O_Truck_03_device_F","O_Truck_03_ammo_F","O_Truck_03_medical_F","O_Truck_03_repair_F","O_Truck_03_transport_F","O_Truck_03_covered_F","O_Truck_02_Ammo_F","O_Truck_02_fuel_F","O_Truck_02_medical_F","O_Truck_02_box_F","O_Truck_02_transport_F","O_Truck_02_covered_F","O_APC_Tracked_02_AA_F","O_APC_Tracked_02_cannon_F","O_APC_Wheeled_02_rcws_F","O_MBT_02_arty_F","O_MBT_02_cannon_F"];
+	_veh1types = selectrandom ["rhs_tigr_sts_msv","rhs_tigr_sts_msv","rhsgref_BRDM2_msv","rhs_bmd2m","RHS_Ural_VV_01","RHS_Ural_Fuel_VV_01","RHS_Ural_Repair_VV_01","rhs_gaz66_ammo_vv","rhs_bmd1r","rhs_bmd1p","RHS_Ural_Zu23_VDV_01","rhs_zsu234_aa","rhs_bmp2k_vdv","rhs_btr80a_msv","rhs_2s3_tv","rhs_t80bvk"];
+	_veh2types = selectrandom ["rhs_tigr_sts_msv","rhs_tigr_sts_msv","rhsgref_BRDM2_msv","rhs_bmd2m","RHS_Ural_VV_01","RHS_Ural_Fuel_VV_01","RHS_Ural_Repair_VV_01","rhs_gaz66_ammo_vv","rhs_bmd1r","rhs_bmd1p","RHS_Ural_Zu23_VDV_01","rhs_zsu234_aa","rhs_bmp2k_vdv","rhs_btr80a_msv","rhs_2s3_tv","rhs_t80bvk"];
+	_veh3types = selectrandom ["rhs_tigr_sts_msv","rhs_tigr_sts_msv","rhsgref_BRDM2_ATGM_msv","rhs_bmd2m","rhs_bmp3mera_msv","RHS_Ural_VV_01","RHS_Ural_Fuel_VV_01","RHS_Ural_Repair_VV_01","rhs_gaz66_ammo_vv","rhs_bmd1r","rhs_bmd1p","rhs_gaz66_zu23_vdv","rhs_zsu234_aa","rhs_bmp2k_vdv","rhs_btr80a_msv","RHS_BM21_VDV_01","rhs_t80bvk"];
+	_veh4types = selectrandom ["rhs_tigr_sts_msv","rhs_tigr_sts_msv","rhsgref_BRDM2_ATGM_msv","rhs_bmd2m","rhs_bmp3mera_msv","RHS_Ural_VV_01","RHS_Ural_Fuel_VV_01","RHS_Ural_Repair_VV_01","rhs_gaz66_ammo_vv","rhs_bmd1r","rhs_bmd1p","rhs_gaz66_zu23_vdv","rhs_zsu234_aa","rhs_bmp2k_vdv","rhs_btr80a_msv","RHS_BM21_VDV_01","rhs_t90a_tv"];
+	_veh5types = selectrandom ["rhs_tigr_sts_msv","rhs_tigr_sts_msv","rhsgref_BRDM2_ATGM_msv","rhs_bmd2m","rhs_bmp3mera_msv","RHS_Ural_VV_01","RHS_Ural_Fuel_VV_01","RHS_Ural_Repair_VV_01","rhs_gaz66_ammo_vv","rhs_bmd1r","rhs_bmd1p","rhs_gaz66_zu23_vdv","rhs_zsu234_aa","rhs_bmp2k_vdv","rhs_btr80a_msv","rhs_2s3_tv","rhs_t90a_tv"];
+	_veh6types = selectrandom ["rhs_tigr_sts_msv","rhs_tigr_sts_msv","rhsgref_BRDM2_ATGM_msv","rhs_bmd2m","rhs_bmd4m_vdv","RHS_Ural_VV_01","RHS_Ural_Fuel_VV_01","RHS_Ural_Repair_VV_01","rhs_gaz66_ammo_vv","rhs_bmd1r","rhs_bmd1p","rhs_gaz66_zu23_vdv","rhs_zsu234_aa","rhs_bmp2k_vdv","rhs_btr80a_msv","rhs_2s3_tv","rhs_t90a_tv"];
+	_veh7types = selectrandom ["rhs_tigr_sts_msv","rhs_tigr_sts_msv","rhsgref_BRDM2_ATGM_msv","rhs_bmd2m","rhs_bmd4m_vdv","RHS_Ural_VV_01","RHS_Ural_Fuel_VV_01","RHS_Ural_Repair_VV_01","rhs_gaz66_ammo_vv","rhs_bmd1r","rhs_bmd1p","rhs_gaz66_zu23_vdv","rhs_zsu234_aa","rhs_bmp2k_vdv","rhs_btr80a_msv","RHS_BM21_VDV_01","rhs_t90a_tv"];
+	_veh8types = selectrandom ["rhs_tigr_sts_msv","rhs_tigr_sts_msv","rhsgref_BRDM2_ATGM_msv","rhs_bmd2m","rhs_bmd4m_vdv","RHS_Ural_VV_01","RHS_Ural_Fuel_VV_01","RHS_Ural_Repair_VV_01","rhs_gaz66_ammo_vv","rhs_bmd1r","rhs_bmd1p","rhs_gaz66_zu23_vdv","rhs_zsu234_aa","rhs_bmp2k_vdv","rhs_btr80a_msv","rhs_2s3_tv","rhs_t90a_tv"];
+	_veh9types = selectrandom ["rhs_tigr_sts_msv","rhs_tigr_sts_msv","rhsgref_BRDM2_ATGM_msv","rhs_bmd2m","rhs_bmd4m_vdv","RHS_Ural_VV_01","RHS_Ural_Fuel_VV_01","RHS_Ural_Repair_VV_01","rhs_gaz66_ammo_vv","rhs_bmd1r","rhs_bmd1p","rhs_gaz66_zu23_vdv","rhs_zsu234_aa","rhs_bmp2k_vdv","rhs_btr80a_msv","RHS_BM21_VDV_01","rhs_t90a_tv"];
 
 	_aiGroup1 = createGroup CIVILIAN;
 	_aiGroup2 = createGroup CIVILIAN;
@@ -74,7 +74,7 @@ _setupObjects =
 		{
 			for "_i" from 1 to _Passangers do
 			{
-				private _soldierType = selectrandom ["Rifleman","Rifleman","Rifleman","Rifleman","Rifleman","Rifleman","Rifleman","Rifleman","Rifleman","Rifleman","AT","AA","SAW","SAW","SAW","Engineer","Medic","Grenedier","Engineer","Medic","Grenedier","Marksman","Marksman","Marksman"];
+				private _soldierType = selectrandom ["Rifleman","Rifleman","Rifleman","Rifleman","Rifleman","Rifleman","Rifleman","Rifleman","Rifleman","Rifleman","AT","AA","SAW","SAW","SAW","AT","Medic","Grenedier","AA","Medic","Grenedier","Marksman","Marksman","Marksman"];
 				_soldier = [_aiGroup2, _position, "CSAT", _soldierType] call createsoldier;
 				_soldier moveInCargo _vehicle;
 			};
@@ -86,7 +86,7 @@ _setupObjects =
 	_leader setRank "LIEUTENANT";
 
 	_aiGroup1 setCombatMode "GREEN"; // Will defend themselves
-	_aiGroup1 setBehaviour "SAFE"; // units feel safe until they spot an enemy or get into contact
+	_aiGroup1 setBehaviour "AWARE"; // units feel safe until they spot an enemy or get into contact
 	_aiGroup1 setFormation "FILE";
 
 	_speedMode = "LIMITED";
@@ -97,7 +97,7 @@ _setupObjects =
 		_waypoint setWaypointType "MOVE";
 		_waypoint setWaypointCompletionRadius 50;
 		_waypoint setWaypointCombatMode "GREEN";
-		_waypoint setWaypointBehaviour "SAFE"; // safe is the best behaviour to make AI follow roads, as soon as they spot an enemy or go into combat they WILL leave the road for cover though!
+		_waypoint setWaypointBehaviour "AWARE"; // safe is the best behaviour to make AI follow roads, as soon as they spot an enemy or go into combat they WILL leave the road for cover though!
 		_waypoint setWaypointFormation "FILE";
 		_waypoint setWaypointSpeed _speedMode;
 	} forEach ((call cityList) call BIS_fnc_arrayShuffle);
@@ -140,10 +140,10 @@ _drop_item =
 _successExec =
 {
 _lootPos = getMarkerPos _marker;
-	for "_i" from 1 to 9 do
+	for "_i" from 1 to 3 do
 	{
 		private _tier = selectrandom ["1","2","3","4"];
-		private _maxmoney = ceil (random 20000);
+		private _maxmoney = ceil (8000 + random 22000);
 		private _box = [_lootPos, "CSAT", _tier, 0, _maxmoney] call createrandomlootcrate;
 		_box setVariable ["moveable", true, true];
 	};

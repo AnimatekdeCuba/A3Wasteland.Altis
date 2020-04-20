@@ -2,7 +2,7 @@
 // * This project is licensed under the GNU Affero GPL v3. Copyright © 2014 A3Wasteland.com *
 // ******************************************************************************************
 //	@file Name: fn_getVehicleProperties.sqf
-//	@file Author: AgentRev
+//	@file Author: AgentRev edited by Animatek for use with ACE3
 
 private ["_veh", "_flying", "_class", "_purchasedVehicle", "_missionVehicle", "_pos", "_dir", "_vel", "_fuel", "_damage", "_hitPoints", "_hpDamage", "_variables", "_owner", "_doubleBSlash", "_textures", "_tex", "_texArr", "_weapons", "_magazines", "_items", "_backpacks", "_turretMags", "_turretMags2", "_turretMags3", "_hasDoorGuns", "_turrets", "_path", "_ammoCargo", "_fuelCargo", "_repairCargo", "_props"];
 

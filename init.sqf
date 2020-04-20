@@ -27,8 +27,8 @@ X_JIP = false;
 
 CHVD_allowNoGrass = false;
 CHVD_allowTerrain = false; // terrain option has been disabled out from the menu due to terrible code, this variable has currently no effect
-CHVD_maxView = 12000; // Set maximum view distance (default: 12000)
-CHVD_maxObj = 12000; // Set maximimum object view distance (default: 12000)
+CHVD_maxView = 4000; // Set maximum view distance (default: 12000)
+CHVD_maxObj = 2400; // Set maximimum object view distance (default: 12000)
 
 if (isServer) then { X_Server = true };
 if (!isDedicated) then { X_Client = true };
@@ -49,11 +49,11 @@ if (!isDedicated) then
 	{
 		if (hasInterface) then // Normal player
 		{
-			if ((getNumber (missionConfigFile >> "ForceTFAR" >> "ftfar_is_enabled")) isEqualTo 1) then
+			/*if ((getNumber (missionConfigFile >> "ForceTFAR" >> "ftfar_is_enabled")) isEqualTo 1) then
 			{
 				[] spawn compile preprocessFileLineNumbers "TFS_fnc_ftfar_init.sqf";
 			};
-			
+			*/
 			9999 cutText ["Bienvenido a AC A3Wasteland! por favor, espere que el cliente inicie", "BLACK", 0.01];
 
 			waitUntil {!isNull player};
@@ -107,6 +107,7 @@ if (hasInterface || isServer) then
 	[] execVM "addons\Crater_Cleaner\cratercleaner.sqf";
 	//[] execVM "addons\VCOMAI\init.sqf";
 	[] execVM "addons\scripts\intro.sqf";						// Show intro text
+	// [] execVM "addons\Grenades\ToxicGas.sqf"; 					// Toxic Gas Addon
 	[] execVM "addons\HvT\HvT.sqf"; 							// High Value Target
 	[] execVM "addons\statusBar\statusbar.sqf"; 				// Status Bar
 	[] execVM "addons\JTS_PM\Functions.sqf";					// JTS Personal Messages

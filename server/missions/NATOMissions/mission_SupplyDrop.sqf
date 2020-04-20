@@ -19,7 +19,7 @@ _setupObjects =
 {
 	_missionPos = markerPos (((call cityList) call BIS_fnc_selectRandom) select 0);
 
-	_veh1types = selectrandom ["B_T_VTOL_01_vehicle_F","B_T_VTOL_01_infantry_F"];
+	_veh1types = selectrandom ["RHS_C130J"];
 	_veh1 = [_veh1types, _missionPos,1,1,0,1000] call createMissionVehicle;
 	_aiGroup1 = createGroup CIVILIAN;
 	
@@ -48,7 +48,7 @@ _setupObjects =
 		{
 			for "_i" from 1 to _Passangers do
 			{
-				private _soldierType = selectrandom ["Rifleman","Rifleman","Rifleman","Rifleman","Rifleman","Rifleman","Rifleman","Rifleman","Rifleman","Rifleman","AT","AA","SAW","SAW","SAW","Engineer","Medic","Grenedier","Engineer","Medic","Grenedier","Marksman","Marksman","Marksman"];
+				private _soldierType = selectrandom ["Rifleman","Rifleman","Rifleman","Rifleman","Rifleman","Rifleman","Rifleman","Rifleman","Rifleman","Rifleman","AT","AA","SAW","SAW","SAW","AT","Medic","Grenedier","AA","Medic","Grenedier","Marksman","Marksman","Marksman"];
 				_soldier = [_aiGroup1, _missionPos, "NATO", _soldierType] call createsoldier;
 				_soldier moveInCargo _vehicle;
 			};
@@ -99,10 +99,10 @@ _successExec =
 	// Mission completed
 	_successHintMessage = "The sky is clear again, the enemy patrol was taken out!";
 	_lootPos = getMarkerPos _marker;
-	for "_i" from 1 to 7 do
+	for "_i" from 1 to 2 do
 	{
 		private _tier = selectrandom ["2","3","4","5"];
-		private _maxmoney = ceil (random 10000);
+		private _maxmoney = ceil (10000 + random 25000);
 		private _box = [_lootPos, "NATO", _tier, 0, _maxmoney] call createrandomlootcrate;
 		_box setVariable ["moveable", true, true];
 	};

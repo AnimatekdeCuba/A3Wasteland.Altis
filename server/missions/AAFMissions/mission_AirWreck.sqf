@@ -27,7 +27,7 @@ _setupObjects =
 	_wreckPos = _missionPos vectorAdd ([[25 + random 20, 0, 0], random 360] call BIS_fnc_rotateVector2D);
 
 	// Class, Position, Fuel, Ammo, Damage, Special
-	_wreckTypes = selectrandom ["I_Heli_light_03_dynamicLoadout_F","I_Heli_Transport_02_F","I_Heli_light_03_unarmed_F"];
+	_wreckTypes = selectrandom ["rhs_l159_CDF","rhsgref_cdf_su25","rhsgref_mi24g_CAS","rhsgref_cdf_Mi35","rhsgref_cdf_reg_Mi8amt","rhsgref_cdf_reg_Mi17Sh","rhssaf_airforce_l_18"];
 	_wreckName = getText (configFile >> "CfgVehicles" >> _wreckTypes >> "displayName");
 	_wreck = [_wreckTypes, _wreckPos, 0, 0, 1] call createMissionVehicle;
 
@@ -41,14 +41,14 @@ _setupObjects =
 	_aiGroup1 = createGroup CIVILIAN;
 	for "_i" from 1 to 6 do
 	{
-		private _soldierType = selectrandom ["Rifleman","Rifleman","Rifleman","Rifleman","Rifleman","Rifleman","Rifleman","Rifleman","Rifleman","Rifleman","AT","AA","SAW","SAW","SAW","Engineer","Medic","Grenedier","Engineer","Medic","Grenedier","Marksman","Marksman","Marksman"];
+		private _soldierType = selectrandom ["Rifleman","Rifleman","Rifleman","Rifleman","Rifleman","Rifleman","Rifleman","Rifleman","Rifleman","Rifleman","AT","AA","SAW","SAW","SAW","AT","Medic","Grenedier","AA","Medic","Grenedier","Marksman","Marksman","Marksman"];
 		[_aiGroup1, _missionPos, "AAF", _soldierType] call createsoldier;
 	};
 	_aiGroup1 setCombatMode "RED";
 	_aiGroup2 = createGroup CIVILIAN;
 	for "_i" from 1 to 6 do
 	{
-		private _soldierType = selectrandom ["Rifleman","Rifleman","Rifleman","Rifleman","Rifleman","Rifleman","Rifleman","Rifleman","Rifleman","Rifleman","AT","AA","SAW","SAW","SAW","Engineer","Medic","Grenedier","Engineer","Medic","Grenedier","Marksman","Marksman","Marksman"];
+		private _soldierType = selectrandom ["Rifleman","Rifleman","Rifleman","Rifleman","Rifleman","Rifleman","Rifleman","Rifleman","Rifleman","Rifleman","AT","AA","SAW","SAW","SAW","AT","Medic","Grenedier","AA","Medic","Grenedier","Marksman","Marksman","Marksman"];
 		[_aiGroup2, _missionPos, "AAF", _soldierType] call createsoldier;
 	};
 	_aiGroup2 setCombatMode "RED";
@@ -72,7 +72,7 @@ _successExec =
 	// Mission completed
 	{ _x setVariable ["R3F_LOG_disabled", false, true] } forEach [_box1, _box2];
 	{ _x setVariable ["Moveable", true, true] } forEach [_box1, _box2];
-	{ _x setVariable ["cmoney",ceil (random 10000), true] } forEach [_box1, _box2];
+	{ _x setVariable ["cmoney",ceil (2000 + random 8000), true] } forEach [_box1, _box2];
 	_successHintMessage = "The airwreck supplies have been collected, well done.";
 };
 

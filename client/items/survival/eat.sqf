@@ -29,7 +29,7 @@ _checks = {
 
 _success = [5, ANIMATION, _checks, []] call a3w_actions_start;
 if (_success) then {
-	["descontinuado", 5] call mf_notify_client;
+	["Descontinuado", 5] call mf_notify_client;
 	hint "";
 };
 _success;

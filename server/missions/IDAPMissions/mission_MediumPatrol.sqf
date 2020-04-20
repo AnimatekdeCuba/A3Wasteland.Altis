@@ -21,10 +21,10 @@ _setupObjects =
 	_missionPos = markerPos _missionLocation;
 
 	_veh1types = selectrandom ["C_IDAP_Offroad_02_unarmed_F","C_IDAP_Offroad_01_F","C_IDAP_Van_02_medevac_F","C_IDAP_Van_02_vehicle_F","C_IDAP_Truck_02_transport_F","C_IDAP_Truck_02_F","C_IDAP_Truck_02_water_F"];
-	_veh2types = selectrandom ["C_IDAP_Offroad_02_unarmed_F","C_IDAP_Offroad_01_F","C_IDAP_Van_02_medevac_F","C_IDAP_Van_02_vehicle_F","C_IDAP_Truck_02_transport_F","C_IDAP_Truck_02_F","C_IDAP_Truck_02_water_F"];
+	_veh2types = selectrandom ["B_G_Offroad_01_AT_F","B_G_Offroad_01_armed_F"];
 	_veh3types = selectrandom ["C_IDAP_Offroad_02_unarmed_F","C_IDAP_Offroad_01_F","C_IDAP_Van_02_medevac_F","C_IDAP_Van_02_vehicle_F","C_IDAP_Truck_02_transport_F","C_IDAP_Truck_02_F","C_IDAP_Truck_02_water_F"];
 	_veh4types = selectrandom ["C_IDAP_Offroad_02_unarmed_F","C_IDAP_Offroad_01_F","C_IDAP_Van_02_medevac_F","C_IDAP_Van_02_vehicle_F","C_IDAP_Truck_02_transport_F","C_IDAP_Truck_02_F","C_IDAP_Truck_02_water_F"];
-	_veh5types = selectrandom ["C_IDAP_Offroad_02_unarmed_F","C_IDAP_Offroad_01_F","C_IDAP_Van_02_medevac_F","C_IDAP_Van_02_vehicle_F","C_IDAP_Truck_02_transport_F","C_IDAP_Truck_02_F","C_IDAP_Truck_02_water_F"];
+	_veh5types = selectrandom ["B_G_Offroad_01_AT_F","B_G_Offroad_01_armed_F"];
 
 	_aiGroup1 = createGroup CIVILIAN;
 	_veh1 = [_veh1types, _missionPos] call createMissionVehicle;
@@ -61,23 +61,23 @@ _setupObjects =
 			private _gunner = [_aiGroup1, _missionPos, "IDAP", "Rifleman"] call createsoldier;
 			_gunner moveInGunner _vehicle;
 		};
-		// if (_Passangers > 0) then
-		// {
-		// 	for "_i" from 1 to (ceil _Passangers/4) do
-		// 	{
-		// 		private _faction = selectrandom ["IDAP","IDAP","IDAP","IDAP","IDAP","IDAP","IDAP","IDAP","IDAP","NATO"];
-		// 		_soldier = [_aiGroup1, _missionPos, _faction, "Rifleman"] call createsoldier;
+		 if (_Passangers > 0) then
+		 {
+		 	for "_i" from 1 to (ceil _Passangers/4) do
+		 	{
+		 		private _soldierType = selectrandom ["Rifleman","Rifleman","Rifleman","Rifleman","Rifleman","Rifleman","Rifleman","Rifleman","Rifleman","Rifleman","AT","AT","AT","Grenedier","Grenedier","Grenedier","Grenedier","Grenedier"];
+				_soldier = [_aiGroup1, _missionPos, "IDAP", _soldierType] call createsoldier;
 
-		// 		_soldier moveInCargo _vehicle;
-		// 	};
-		// };
+		 		_soldier moveInCargo _vehicle;
+		 	};
+		 };
 	} foreach _vehicles;
 	_leader = effectiveCommander (_vehicles select 0);
 	_aiGroup1 selectLeader _leader;
 	_leader setRank "LIEUTENANT";
 
 	_aiGroup1 setCombatMode "GREEN"; // Will fire on enemies
-	_aiGroup1 setBehaviour "SAFE"; // units feel safe until they spot an enemy or get into contact
+	_aiGroup1 setBehaviour "AWARE"; // units feel safe until they spot an enemy or get into contact
 	_aiGroup1 setFormation "FILE";
 
 	_speedMode = "LIMITED";
@@ -88,7 +88,7 @@ _setupObjects =
 		_waypoint setWaypointType "MOVE";
 		_waypoint setWaypointCompletionRadius 50;
 		_waypoint setWaypointCombatMode "GREEN";
-		_waypoint setWaypointBehaviour "SAFE"; // safe is the best behaviour to make AI follow roads, as soon as they spot an enemy or go into combat they WILL leave the road for cover though!
+		_waypoint setWaypointBehaviour "AWARE"; // safe is the best behaviour to make AI follow roads, as soon as they spot an enemy or go into combat they WILL leave the road for cover though!
 		_waypoint setWaypointFormation "FILE";
 		_waypoint setWaypointSpeed _speedMode;
 	} forEach ((call cityList) call BIS_fnc_arrayShuffle);
@@ -131,10 +131,10 @@ _drop_item =
 _successExec =
 {
 	_lootPos = getMarkerPos _marker;
-	for "_i" from 1 to 4 do
+	for "_i" from 1 to 2 do
 	{
 		private _tier = selectrandom ["1","2"];
-		private _maxmoney = ceil (random 10000);
+		private _maxmoney = ceil (5000 + random 15000);
 		private _box = [_lootPos, "IDAP", _tier, 0, _maxmoney] call createrandomlootcrate;
 		_box setVariable ["moveable", true, true];
 	};

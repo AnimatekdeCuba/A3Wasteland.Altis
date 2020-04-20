@@ -32,6 +32,10 @@ _setupObjects =
 	{
 		[_aiGroup1, _missionPos, "SYN", "Grenedier"] call createsoldier;
 	};
+	for "_i" from 1 to 2 do
+	{
+		[_aiGroup1, _missionPos, "SYN", "AT"] call createsoldier;
+	};
 
 	_aiGroup1 setCombatMode "RED"; // Will fire on enemies
 	_aiGroup1 setBehaviour "AWARE";  
@@ -72,7 +76,7 @@ _successExec =
 	for "_i" from 1 to 1 do
 	{
 		private _tier = selectrandom ["1","2"];
-		private _maxmoney = ceil (random 10000);
+		private _maxmoney = ceil (2000 + random 8000);
 		private _box = [_lootPos, "SYN", _tier, 0, _maxmoney] call createrandomlootcrate;
 		_box setVariable ["moveable", true, true];
 	};

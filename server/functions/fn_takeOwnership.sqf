@@ -22,7 +22,6 @@ _veh setVariable ["A3W_purchasedVehicle", true, true];
 _veh setVariable ["ownerUID", getPlayerUID _player, true];
 _veh setVariable ["ownerName", name _player, true];
 [_veh, 1] call A3W_fnc_setLockState; // Unlock
-[_player, _veh, true] call ace_vehiclelock_fnc_addKeyForVehicle; // Llaves del ACE
 
 if (_veh getVariable ["A3W_skipAutoSave", false]) then
 {

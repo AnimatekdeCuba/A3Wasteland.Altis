@@ -9,7 +9,7 @@
  *   [_debug]: Optional. true if debug text is to be shown, otherwise false.
  */
 
-params [["_initialFog",-1,[0]], ["_initialOvercast",-1,[0]], ["_initialRain",-1,[0]], ["_initialWind",[],[[]]], ["_debug",false,[false]]]; 
+params [["_initialFog",0,[0]], ["_initialOvercast",-1,[0]], ["_initialRain",-1,[0]], ["_initialWind",[],[[]]], ["_debug",false,[false]]]; 
 
 private ["_minWeatherChangeTimeMin", "_maxWeatherChangeTimeMin", "_minTimeBetweenWeatherChangesMin", "_maxTimeBetweenWeatherChangesMin", "_rainIntervalRainProbability", "_windChangeProbability"];
 private ["_minimumFog", "_maximumFog", "_minimumOvercast", "_maximumOvercast", "_minimumRain", "_maximumRain", "_minimumWind", "_maximumWind", "_minRainIntervalTimeMin", "_maxRainIntervalTimeMin", "_forceRainToStopAfterOneRainInterval", "_maxWind"];

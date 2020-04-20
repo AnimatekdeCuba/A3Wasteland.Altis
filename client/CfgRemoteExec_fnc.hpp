@@ -17,12 +17,12 @@ class BIS_fnc_objectVar {};
 // A3W vanilla
 class A3W_fnc_adminMenuLog { allowedTargets = 2; };
 class A3W_fnc_artilleryStrike { allowedTargets = 2; };
-//class A3W_fnc_StatictLockPoss { allowedTargets = 2; };
 class A3W_fnc_chatBroadcast {};
 class A3W_fnc_checkHackedVehicles { allowedTargets = 2; };
 class A3W_fnc_checkPlayerFlag { allowedTargets = 2; };
 class A3W_fnc_copilotTakeControl {};
 class A3W_fnc_deathMessage {};
+class A3W_fnc_StatictLockPoss {};
 class A3W_fnc_deleteEmptyGroup { allowedTargets = 2; };
 class A3W_fnc_deletePlayerData { allowedTargets = 2; };
 class A3W_fnc_flagHandler { allowedTargets = 2; };

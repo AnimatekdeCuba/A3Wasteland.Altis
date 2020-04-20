@@ -21,11 +21,15 @@ _startPos = [(_callLocationPos select 0) + (sin _heliDirection) * _heliDistance,
 
 //Use Random Weighting for Attack Heli type to reduce the likelihood of a Blackfoot or Kaj tearing up players
 _heliTypes =[
-	["B_Heli_Attack_01_F", .25],
-	["O_Heli_Attack_02_black_F", .25],
-	["B_Heli_Light_01_armed_F", 1],
-	["O_Heli_Light_02_F", 1],
-	["I_Heli_light_03_F", 1]
+	["RHS_AH64D_wd", .25],
+	["RHS_AH1Z", .25],
+	["RHS_Mi24V_vvs", .25],
+	["rhs_mi28n_vvs", .25],
+	["RHS_Ka52_vvsc", .25],
+	["RHS_UH1Y_d", 1],
+	["rhs_uh1h_hidf_gunship", 1],
+	["RHS_Mi8mtv3_Cargo_vvsc", 1],
+	["RHS_MELB_AH6M", 1]
 ];
 
 _vehicleClass =  (_heliTypes call generateMissionWeights) call fn_selectRandomWeighted;

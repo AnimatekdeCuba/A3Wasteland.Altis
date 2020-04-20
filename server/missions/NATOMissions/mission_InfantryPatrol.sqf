@@ -72,7 +72,7 @@ _successExec =
 	for "_i" from 1 to 1 do
 	{
 		private _tier = selectrandom ["1","2","3"];
-		private _maxmoney = ceil (random 10000);
+		private _maxmoney = ceil (2000 + random 8000);
 		private _box = [_lootPos, "NATO", _tier, 0, _maxmoney] call createrandomlootcrate;
 		_box setVariable ["moveable", true, true];
 	};

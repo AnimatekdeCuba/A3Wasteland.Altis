@@ -82,64 +82,64 @@ switch (true) do
 
 if (!UNCONSCIOUS) then // ####################
 {
-// Parachute
-if (!_handled && _key in actionKeys "GetOver") then
-{
-	if (!alive player) exitWith {};
-
-	_veh = vehicle player;
-
-	if (_veh == player) exitWith
+	// Parachute
+	if (!_handled && _key in actionKeys "GetOver") then
 	{
-		// allow opening parachute only above 2.5m
-		if ((getPos player) select 2 > 2.5) then
-		{
-			true call A3W_fnc_openParachute;
-			_handled = true;
-		};
-	};
+		if (!alive player) exitWith {};
 
-	// 1 sec cooldown after parachute is deployed so you don't start falling again if you double-tap the key
-	if (_veh isKindOf "ParachuteBase" && (isNil "A3W_openParachuteTimestamp" || {diag_tickTime - A3W_openParachuteTimestamp >= 1})) then
-	{
-		moveOut player;
-		_veh spawn
-		{
-			sleep 1;
-			deleteVehicle _this;
-		};
-	};
-};
+		_veh = vehicle player;
 
-// Eject
-if (!_handled && _key in actionKeys "GetOut") then
-{
-	_veh = vehicle player;
-
-	if (alive player && _veh != player) then
-	{
-		if (_ctrl && {_veh isKindOf 'Air' && !(_veh isKindOf 'ParachuteBase')}) then
+		if (_veh == player) exitWith
 		{
-			[] spawn
+			// allow opening parachute only above 2.5m
+			if ((getPos player) select 2 > 2.5) then
 			{
-				// if !(["Are you sure you want to eject?", "Confirm", true, true] call BIS_fnc_guiMessage) exitWith {};
-				[[], fn_emergencyEject] execFSM "call.fsm";
+				true call A3W_fnc_openParachute;
+				_handled = true;
 			};
+		};
 
-			_handled = true;
+		// 1 sec cooldown after parachute is deployed so you don't start falling again if you double-tap the key
+		if (_veh isKindOf "ParachuteBase" && (isNil "A3W_openParachuteTimestamp" || {diag_tickTime - A3W_openParachuteTimestamp >= 1})) then
+		{
+			moveOut player;
+			_veh spawn
+			{
+				sleep 1;
+				deleteVehicle _this;
+			};
 		};
 	};
-};
 
-// Override prone reload freeze (ffs BIS)
-if (!_handled && _key in (actionKeys "MoveDown" + actionKeys "MoveUp")) then
-{
-	if ((toLower animationState player) find "reloadprone" != -1) then
+	// Eject
+	if (!_handled && _key in actionKeys "GetOut") then
 	{
-		[player, format ["AmovPknlMstpSrasW%1Dnon", [player, true] call getMoveWeapon]] call switchMoveGlobal;
-		reload player;
+		_veh = vehicle player;
+
+		if (alive player && _veh != player) then
+		{
+			if (_ctrl && {_veh isKindOf 'Air' && !(_veh isKindOf 'ParachuteBase')}) then
+			{
+				[] spawn
+				{
+					// if !(["Are you sure you want to eject?", "Confirm", true, true] call BIS_fnc_guiMessage) exitWith {};
+					[[], fn_emergencyEject] execFSM "call.fsm";
+				};
+
+				_handled = true;
+			};
+		};
 	};
-};
+
+	// Override prone reload freeze (ffs BIS)
+	if (!_handled && _key in (actionKeys "MoveDown" + actionKeys "MoveUp")) then
+	{
+		if ((toLower animationState player) find "reloadprone" != -1) then
+		{
+			[player, format ["AmovPknlMstpSrasW%1Dnon", [player, true] call getMoveWeapon]] call switchMoveGlobal;
+			reload player;
+		};
+	};
 
 } // ####################
 else // UNCONSCIOUS

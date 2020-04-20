@@ -275,6 +275,21 @@ lootItem_list =
 			//"FirstAidKit",
 			//"FirstAidKit",
 			//"Medikit",
+			"ACE_bananaItem",
+			"ACE_Can_Franta_Item",
+			"ACE_Can_RedGull_Item",
+			"ACE_Can_Spirit_Item",
+			"ACE_Canteen_Item",
+			"ACE_Humanitarian_Ration_Item",
+			"ACE_MRE_BeefStew_Item",
+			"ACE_MRE_ChickenTikkaMasala_Item",
+			"ACE_MRE_ChickenHerbDumplings_Item",
+			"ACE_MRE_CreamChickenSoup_Item",
+			"ACE_MRE_CreamTomatoSoup_Item",
+			"ACE_MRE_LambCurry_Item",
+			"ACE_MRE_MeatballsPasta_Item",
+			"ACE_MRE_SteakVegetables_Item",
+			"ACE_WaterBottle_Item",
 			"ToolKit",
 			"ToolKit"
 		]
@@ -311,6 +326,21 @@ lootBackpack_list =
 			"B_FieldPack_blk",
 			"B_FieldPack_cbr",
 			"B_FieldPack_khk",
+			"ACE_bananaItem",
+			"ACE_Can_Franta_Item",
+			"ACE_Can_RedGull_Item",
+			"ACE_Can_Spirit_Item",
+			"ACE_Canteen_Item",
+			"ACE_Humanitarian_Ration_Item",
+			"ACE_MRE_BeefStew_Item",
+			"ACE_MRE_ChickenTikkaMasala_Item",
+			"ACE_MRE_ChickenHerbDumplings_Item",
+			"ACE_MRE_CreamChickenSoup_Item",
+			"ACE_MRE_CreamTomatoSoup_Item",
+			"ACE_MRE_LambCurry_Item",
+			"ACE_MRE_MeatballsPasta_Item",
+			"ACE_MRE_SteakVegetables_Item",
+			"ACE_WaterBottle_Item",
 			"B_FieldPack_oucamo"
 		]
 	],
@@ -386,6 +416,21 @@ lootworldObject_list =
 			"Land_BottlePlastic_V2_F",          // water
 			"Land_BottlePlastic_V2_F",          // water
 			"Land_Can_V3_F",                    // energydrink
+			"ACE_bananaItem",
+			"ACE_Can_Franta_Item",
+			"ACE_Can_RedGull_Item",
+			"ACE_Can_Spirit_Item",
+			"ACE_Canteen_Item",
+			"ACE_Humanitarian_Ration_Item",
+			"ACE_MRE_BeefStew_Item",
+			"ACE_MRE_ChickenTikkaMasala_Item",
+			"ACE_MRE_ChickenHerbDumplings_Item",
+			"ACE_MRE_CreamChickenSoup_Item",
+			"ACE_MRE_CreamTomatoSoup_Item",
+			"ACE_MRE_LambCurry_Item",
+			"ACE_MRE_MeatballsPasta_Item",
+			"ACE_MRE_SteakVegetables_Item",
+			"ACE_WaterBottle_Item",
 			"Land_CanisterOil_F",               // syphon hose
 			"Land_CanisterFuel_F"               // jerrycan
 		]

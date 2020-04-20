@@ -74,10 +74,10 @@ _successExec =
 	// Mission completed
 	_successHintMessage = "The sky is clear again, the enemy patrol was taken out!";
 	_lootPos = getMarkerPos _marker;
-	for "_i" from 1 to 7 do
+	for "_i" from 1 to 2 do
 	{
 		private _tier = selectrandom ["2","3","4","5"];
-		private _maxmoney = ceil (random 10000);
+		private _maxmoney = ceil (10000 + random 25000);
 		private _box = [_lootPos, "NATO", _tier, 0, _maxmoney] call createrandomlootcrate;
 		_box setVariable ["moveable", true, true];
 	};

@@ -27,35 +27,35 @@ _setupObjects =
 
 	_aiGroup1 = createGroup CIVILIAN;
 	_aiGroup2 = createGroup CIVILIAN;
-	_aiGroup3 = createGroup CIVILIAN;
-	_aiGroup4 = createGroup CIVILIAN;
+	//_aiGroup3 = createGroup CIVILIAN;
+	//_aiGroup4 = createGroup CIVILIAN;
 
 	for "_i" from 1 to 5 do
 	{
-		private _faction = selectrandom ["IDAP","IDAP","IDAP","IDAP","IDAP","IDAP","IDAP","IDAP","IDAP","NATO"];
-		[_aiGroup1, _missionPos, _faction, "Rifleman"] call createsoldier;
+		private _soldierType = selectrandom ["Rifleman","Rifleman","Rifleman","Rifleman","Rifleman","Rifleman","Rifleman","Rifleman","Rifleman","Rifleman","AT","AT","AT","Grenedier","Grenedier","Grenedier","Grenedier","Grenedier"];
+		[_aiGroup1, _missionPos, "IDAP", _soldierType] call createsoldier;
 	};
 	_aiGroup1 setCombatMode "RED";
 	for "_i" from 1 to 5 do
 	{
-		private _faction = selectrandom ["IDAP","IDAP","IDAP","IDAP","IDAP","IDAP","IDAP","IDAP","IDAP","NATO"];
-		[_aiGroup1, _missionPos, _faction, "Rifleman"] call createsoldier;
+		private _soldierType = selectrandom ["Rifleman","Rifleman","Rifleman","Rifleman","Rifleman","Rifleman","Rifleman","Rifleman","Rifleman","Rifleman","AT","AT","AT","Grenedier","Grenedier","Grenedier","Grenedier","Grenedier"];
+		[_aiGroup2, _missionPos, "IDAP", _soldierType] call createsoldier;
 	};
 	_aiGroup2 setCombatMode "RED";
-	for "_i" from 1 to 5 do
+	/*for "_i" from 1 to 2 do
 	{
-		private _faction = selectrandom ["IDAP","IDAP","IDAP","IDAP","IDAP","IDAP","IDAP","IDAP","IDAP","NATO"];
-		[_aiGroup1, _missionPos, _faction, "Rifleman"] call createsoldier;
+		private _soldierType = selectrandom ["Rifleman","Rifleman","Rifleman","Rifleman","Rifleman","Rifleman","Rifleman","Rifleman","Rifleman","Rifleman","AT","AT","AT","Grenedier","Grenedier","Grenedier","Grenedier","Grenedier"];
+		[_aiGroup3, _missionPos, "IDAP", _soldierType] call createsoldier;
 	};
 	_aiGroup3 setCombatMode "RED";
-	for "_i" from 1 to 5 do
+	for "_i" from 1 to 2 do
 	{
-		private _faction = selectrandom ["IDAP","IDAP","IDAP","IDAP","IDAP","IDAP","IDAP","IDAP","IDAP","NATO"];
-		[_aiGroup1, _missionPos, _faction, "Rifleman"] call createsoldier;
+		private _soldierType = selectrandom ["Rifleman","Rifleman","Rifleman","Rifleman","Rifleman","Rifleman","Rifleman","Rifleman","Rifleman","Rifleman","AT","AT","AT","Grenedier","Grenedier","Grenedier","Grenedier","Grenedier"];
+		[_aiGroup4, _missionPos, "IDAP", _soldierType] call createsoldier;
 	};
-	_aiGroup4 setCombatMode "RED";
+	_aiGroup4 setCombatMode "RED";*/
 	_missionHintText = format ["An armed <t color='%1'>outpost</t> containing weapon crates has been spotted near the marker, go capture it!", IDAPMissionColor];
-	_turrets = nearestObjects [_missionPos, ["I_HMG_01_high_F"], 50, true];
+	_turrets = nearestObjects [_missionPos, ["RHS_M2StaticMG_W"], 50, true];
 	{
 		deleteVehicle _x
 	} foreach _turrets;
@@ -81,7 +81,7 @@ _successExec =
 		 private _obj = _x;
 		 if (_obj isKindOf "ReammoBox_F") then
 		 {
-			_obj setvariable ["cmoney",ceil (random 10000), true];
+			_obj setvariable ["cmoney",ceil (2000 + random 8000), true];
 		 };
 	} forEach _objects;
 

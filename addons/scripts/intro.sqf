@@ -3,26 +3,28 @@
 //	@file Author: Cael817, original file by HellsGateGaming.com and IT07
 //	@file Created: 20140724 19:34
 
-_onScreenTime = 10;
+_onScreenTime = 7;
 
 sleep 90;
 
-_role1 = "SERVER DE PRUEBAS! HAY ERRORES! HAY DE TODO!";
-_role1names = ["Hay cosas que no van a acabar en la versión final","Ayúdennos a mejorarlo, queremos sus sugerencias","Recuerda el esfuerzo invertido ¡para que ésto funcione!"];
-_role2 = "** Antihack **";
-_role2names = ["Protegido por A3W-AntiHacks e InfiStar A3","¡Más cuatro negros que te romperán las rodillas!"];
-_role3 = "**Orientación y Navegación**";
-_role3names = ["Usa el DGAR, el mapa y la brújula para orientarte!"];
-_role4 = "Vehículos";
-_role4names = ["Lo vehículos NO se bloquean al reinicio del servidor.","Los vehículos bloqueados pueden ser robados con la herramienta correcta."];
-_role5 = "Earplugs";
-_role5names = ["Los Earplugs ahora son un ítem del ACE 3."];
-_role6 = "ATM / Bank";
-_role6names = [" Los cajeros no se muestran en el mapa. Ahora puedes usar cualquier cajero que halles."];
-_role7 = "**NUEVO** Modo Conquista";
-_role7names = ["· Los Territorios están patrullados.","· Una vez capturado, refuerzos aliados llegarán a custodiarlo.","· Los Independentes no obtendrán refuerzos."];
-_role8 = "Nombre de Jugadores";
-_role8names = ["El nombre de tus compañeros se verá hasta 50 metros, si no hay obstáculos en medio","El ícono de jugador aliado es pequeño, y será visible hasta 100 metros","¡CUIDADO CON EL FUEGO AMIGO!"];
+_role1 = "BIENVENIDOS A";
+_role1names = ["Animatek´s Advanced Combat A3Wasteland (BETA)","con Dificultad aumentada","y mayor Inmersión"];
+_role2 = "Antihack";
+_role2names = ["Protegido por A3W-AntiHack e InfiStar"];
+_role3 = "Navegación";
+_role3names = ["Usa el DGAR, el mapa y la brújula para orientarte"];
+_role4 = "Survival";
+_role4names = ["Mantente bebido y comido","MRE es Meal Ready-to-Eat en inglés","En Altis no se cultivan bananas"];
+_role5 = "Equipamiento";
+_role5names = ["Si te molesta el ruido compra Earplugs","Existen varios tipos de NVG"];
+_role6 = "ATM";
+_role6names = ["Puedes usar cualquier cajero que encuentres"];
+_role7 = "Territorios";
+_role7names = ["Es una buena manera de empezar","a ganar dinero fácil.","Nadie hará el trabajo sucio por ti"];
+_role8 = "Comunícate bien";
+_role8names = ["Ponte creativo para identificar a tus aliados","No confíes en nadie, las apariencias engañan","¡Y CUIDADO CON EL FUEGO AMIGO!"];
+_role9 = "Sé responsable";
+_role9names = ["Sé respetuoso","No te aproveches","No uses trampas"];
 
 {
 sleep 2;
@@ -50,5 +52,6 @@ sleep (_onScreenTime);
 [_role5, _role5names],
 [_role6, _role6names],
 [_role7, _role7names],
-[_role8, _role8names]
+[_role8, _role8names],
+[_role9, _role9names]
 ];

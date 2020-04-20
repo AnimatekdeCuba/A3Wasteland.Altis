@@ -80,7 +80,7 @@ _successExec =
 {
 	// Mission complete
 	_box1 setVariable ["R3F_LOG_disabled", false, true];
-	_box1 setVariable ["cmoney",ceil (random 10000), true];
+	_box1 setVariable ["cmoney",ceil (2000 + random 8000), true];
 	_box1 setVariable ["moveable", true, true];
 
 	_successHintMessage = "The treasure has been captured, well done.";

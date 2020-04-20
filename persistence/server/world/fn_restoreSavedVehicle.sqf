@@ -2,7 +2,7 @@
 // * This project is licensed under the GNU Affero GPL v3. Copyright © 2014 A3Wasteland.com *
 // ******************************************************************************************
 //	@file Name: fn_restoreSavedVehicle.sqf
-//	@file Author: AgentRev
+//	@file Author: AgentRev edited by Animatek for use with ACE3
 
 #define STR_TO_SIDE(VAL) ([sideUnknown,BLUFOR,OPFOR,INDEPENDENT,CIVILIAN,sideLogic] select ((["WEST","EAST","GUER","CIV","LOGIC"] find toUpper (VAL)) + 1))
 
@@ -332,9 +332,6 @@ if (!isNil "_turretMags2") then
 	_veh setPylonLoadOut [_forEachIndex + 1, _mag, true, _path];
 	_veh setAmmoOnPylon [_forEachIndex + 1, _ammo];
 } forEach _pylons;
-
-if (!isNil "ace_FuelCount") then { _veh setAmmoCargo _ammoCargo };
-if (!isNil "ace_AmmoCount") then { _veh setFuelCargo _fuelCargo };
 
 if (!isNil "_ammoCargo") then { _veh setAmmoCargo _ammoCargo };
 if (!isNil "_fuelCargo") then { _veh setFuelCargo _fuelCargo };

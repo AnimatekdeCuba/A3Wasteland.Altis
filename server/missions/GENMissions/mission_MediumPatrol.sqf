@@ -21,10 +21,10 @@ _setupObjects =
 	_missionPos = markerPos _missionLocation;
 
 	_veh1types = selectrandom ["B_GEN_Offroad_01_gen_F","B_GEN_Van_02_vehicle_F","B_GEN_Van_02_transport_F"];
-	_veh2types = selectrandom ["B_GEN_Offroad_01_gen_F","B_GEN_Van_02_vehicle_F","B_GEN_Van_02_transport_F"];
+	_veh2types = selectrandom ["B_G_Offroad_01_AT_F","B_G_Offroad_01_armed_F"];
 	_veh3types = selectrandom ["B_GEN_Offroad_01_gen_F","B_GEN_Van_02_vehicle_F","B_GEN_Van_02_transport_F"];
 	_veh4types = selectrandom ["B_GEN_Offroad_01_gen_F","B_GEN_Van_02_vehicle_F","B_GEN_Van_02_transport_F"];
-	_veh5types = selectrandom ["B_GEN_Offroad_01_gen_F","B_GEN_Van_02_vehicle_F","B_GEN_Van_02_transport_F"];
+	_veh5types = selectrandom ["B_G_Offroad_01_AT_F","B_G_Offroad_01_armed_F"];
 
 	_aiGroup1 = createGroup CIVILIAN;
 	_veh1 = [_veh1types, _missionPos] call createMissionVehicle;
@@ -65,7 +65,8 @@ _setupObjects =
 		{
 			for "_i" from 1 to(ceil _Passangers/4) do
 			{
-				_soldier = [_aiGroup1, _missionPos, "GEN", "Rifleman"] call createsoldier;
+				private _soldierType = selectrandom ["Rifleman","Rifleman","Rifleman","Rifleman","Rifleman","Rifleman","Rifleman","Rifleman","Rifleman","Rifleman","AT","AT","AT","Grenedier","Grenedier","Grenedier","Grenedier","Grenedier"];
+				_soldier = [_aiGroup1, _missionPos, "GEN", _soldierType] call createsoldier;
 
 				_soldier moveInCargo _vehicle;
 			};
@@ -76,7 +77,7 @@ _setupObjects =
 	_leader setRank "LIEUTENANT";
 
 	_aiGroup1 setCombatMode "GREEN"; // Will fire on enemies
-	_aiGroup1 setBehaviour "SAFE"; // units feel safe until they spot an enemy or get into contact
+	_aiGroup1 setBehaviour "AWARE"; // units feel safe until they spot an enemy or get into contact
 	_aiGroup1 setFormation "FILE";
 
 	_speedMode = "LIMITED";
@@ -87,7 +88,7 @@ _setupObjects =
 		_waypoint setWaypointType "MOVE";
 		_waypoint setWaypointCompletionRadius 50;
 		_waypoint setWaypointCombatMode "GREEN";
-		_waypoint setWaypointBehaviour "SAFE"; // safe is the best behaviour to make AI follow roads, as soon as they spot an enemy or go into combat they WILL leave the road for cover though!
+		_waypoint setWaypointBehaviour "AWARE"; // safe is the best behaviour to make AI follow roads, as soon as they spot an enemy or go into combat they WILL leave the road for cover though!
 		_waypoint setWaypointFormation "FILE";
 		_waypoint setWaypointSpeed _speedMode;
 	} forEach ((call cityList) call BIS_fnc_arrayShuffle);
@@ -130,10 +131,10 @@ _drop_item =
 _successExec =
 {
 	_lootPos = getMarkerPos _marker;
-	for "_i" from 1 to 5 do
+	for "_i" from 1 to 2 do
 	{
 		private _tier = selectrandom ["1","2"];
-		private _maxmoney = ceil (random 10000);
+		private _maxmoney = ceil (5000 + random 20000);
 		private _box = [_lootPos, "GEN", _tier, 0, _maxmoney] call createrandomlootcrate;
 		_box setVariable ["moveable", true, true];
 	};

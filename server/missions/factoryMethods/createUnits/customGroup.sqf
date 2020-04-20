@@ -37,62 +37,113 @@ for "_i" from 1 to _nbUnits do
 	removeHeadgear _unit;
 	removeGoggles _unit;
 
-	_unit addVest "V_PlateCarrier1_rgr";
-	_unit addMagazine "30Rnd_556x45_Stanag";
-	_unit addMagazine "30Rnd_556x45_Stanag";
-	_unit addMagazine "30Rnd_556x45_Stanag";
+	_unit addHeadgear "rhsusf_lwh_helmet_marpatwd_headset_blk2";
+	_unit addUniform "rhsgref_uniform_ttsko_mountain";
+	_unit addVest "rhsusf_mbav_rifleman";
+	_unit addItem "FirstAidKit";
+	_unit linkItem "rhsusf_ANPVS_14";
+	_unit addItem "rhs_mag_m67";
+	_unit addItem "rhs_mag_rdg2_white";
+	
 
 	switch (true) do
 	{
 		// Grenadier every 3 units, starting from #2
 		case ((_i + 4) % 3 == 0):
 		{
-			_unit addUniform "U_B_CombatUniform_mcam_vest";
-			_unit addMagazine "1Rnd_HE_Grenade_shell";
-			_unit addWeapon "arifle_TRG21_GL_F";
-			_unit addMagazine "1Rnd_HE_Grenade_shell";
-			_unit addMagazine "1Rnd_HE_Grenade_shell";
+			_unit addMagazine "rhs_mag_M441_HE";
+			_unit addMagazine "rhs_mag_30Rnd_556x45_M855A1_Stanag";
+			_unit addWeapon "rhs_weap_m16a4_carryhandle_M203";
+			_unit addPrimaryWeaponItem "rhsusf_acc_T1_high";
+			_unit addMagazine "rhs_mag_30Rnd_556x45_M855A1_Stanag";
+			_unit addMagazine "rhs_mag_30Rnd_556x45_M855A1_Stanag";
+			_unit addMagazine "rhs_mag_M441_HE";
+			_unit addMagazine "rhs_mag_M441_HE";
+			_unit addMagazine "rhs_mag_m4009";
+			_unit addMagazine "rhs_mag_m4009";
 		};
 		// PCML every 6 units, starting from #6
 		case (_i % 6 == 0):
 		{
-			_unit addUniform "U_B_CombatUniform_mcam_tshirt";
-			_unit addBackpack "B_Kitbag_mcamo";
-			_unit addWeapon "arifle_TRG20_F";
-			_unit addMagazine "NLAW_F";
-			_unit addWeapon "launch_NLAW_F";
-			_unit addMagazine "NLAW_F";
-			_unit addMagazine "NLAW_F";
+			_unit addBackpack "B_Carryall_cbr";
+			_unit addMagazine "rhs_mag_30Rnd_556x45_M855A1_Stanag";
+			_unit addWeapon "rhs_weap_m16a4_carryhandle";
+			_unit addPrimaryWeaponItem "rhsusf_acc_T1_high";
+			_unit addMagazine "rhs_mag_30Rnd_556x45_M855A1_Stanag";
+			_unit addMagazine "rhs_mag_30Rnd_556x45_M855A1_Stanag";
+			_unit addMagazine "rhs_fgm148_magazine_AT";
+			_unit addWeapon "rhs_weap_fgm148";
+			_unit addMagazine "rhs_fgm148_magazine_AT";
 		};
 		// RPG-42 every 6 units, starting from #3
 		case ((_i + 3) % 6 == 0):
 		{
-			_unit addUniform "U_B_CombatUniform_mcam_tshirt";
-			_unit addBackpack "B_Kitbag_mcamo";
-			_unit addWeapon "arifle_TRG20_F";
-			_unit addMagazine "RPG32_F";
-			_unit addWeapon "launch_RPG32_F";
-			_unit addMagazine "RPG32_F";
-			_unit addMagazine "RPG32_F";
+			
+			_unit addBackpack "B_Kitbag_cbr";
+			_unit addMagazine "rhs_mag_30Rnd_556x45_M855A1_Stanag";
+			_unit addWeapon "rhs_weap_m16a4_carryhandle";
+			_unit addPrimaryWeaponItem "rhsusf_acc_T1_high";
+			_unit addMagazine "rhs_mag_30Rnd_556x45_M855A1_Stanag";
+			_unit addMagazine "rhs_mag_30Rnd_556x45_M855A1_Stanag";
+			_unit addMagazine "rhs_mag_smaw_HEAA";
+			_unit addWeapon "rhs_weap_smaw_green";
+			_unit addMagazine "rhs_mag_smaw_HEAA";
+			_unit addMagazine "rhs_mag_smaw_HEAA";
+		};
+		// Machinegunner every 4 units, starting from #3
+		case ((_i + 3) % 4 == 0):
+		{
+			_unit addMagazine "rhsusf_200Rnd_556x45_box";
+			_unit addWeapon "rhs_weap_m249_pip";
+			_unit addMagazine "rhsusf_200Rnd_556x45_box";
+			_unit addMagazine "rhsusf_200Rnd_556x45_box";
+			_unit addItem "rhs_mag_an_m14_th3";
+			_unit addItem "rhs_mag_an_m14_th3";
+		};
+		// AA every 7 units, starting from second one
+		case ((_i + 5) % 7 == 0):
+		{
+			_unit addBackpack "B_Kitbag_cbr";
+			_unit addMagazine "rhs_mag_30Rnd_556x45_M855A1_Stanag";
+			_unit addWeapon "rhs_weap_m16a4_carryhandle";
+			_unit addPrimaryWeaponItem "rhsusf_acc_T1_high";
+			_unit addMagazine "rhs_mag_30Rnd_556x45_M855A1_Stanag";
+			_unit addMagazine "rhs_mag_30Rnd_556x45_M855A1_Stanag";
+			_unit addMagazine "rhs_fim92_mag";
+			_unit addWeapon "rhs_weap_fim92";
+			_unit addMagazine "rhs_fim92_mag";
+			_unit addMagazine "rhs_fim92_mag";
 		};
 		// Rifleman
 		default
 		{
-			_unit addUniform "U_B_CombatUniform_mcam";
+			
 
 			if (_unit == leader _group) then
 			{
-				_unit addWeapon "arifle_TRG21_F";
+				_unit addMagazine "rhsusf_20Rnd_762x51_SR25_m118_special_Mag";
+				_unit addWeapon "rhs_weap_sr25_ec_d";
+				_unit addPrimaryWeaponItem "optic_DMS";
+				_unit addPrimaryWeaponItem "rhsusf_acc_SR25S_d";
+				_unit addMagazine "rhsusf_20Rnd_762x51_SR25_m118_special_Mag";
+				_unit addMagazine "rhsusf_20Rnd_762x51_SR25_m118_special_Mag";
+				_unit addMagazine "rhsusf_20Rnd_762x51_SR25_m118_special_Mag";
+				_unit addItem "rhs_mag_m7a3_cs";
+				_unit addItem "rhs_mag_m7a3_cs";
 				_unit setRank "SERGEANT";
 			}
 			else
 			{
-				_unit addWeapon "arifle_TRG20_F";
+				_unit addMagazine "rhs_mag_30Rnd_556x45_M855A1_Stanag";
+				_unit addWeapon "rhs_weap_m4a1_carryhandle";
+				_unit addPrimaryWeaponItem "rhsusf_acc_T1_high";
+				_unit addMagazine "rhs_mag_30Rnd_556x45_M855A1_Stanag";
+				_unit addMagazine "rhs_mag_30Rnd_556x45_M855A1_Stanag";
 			};
 		};
 	};
 
-	_unit addPrimaryWeaponItem "acc_flashlight";
+	//_unit addPrimaryWeaponItem "acc_flashlight";
 	_unit enablegunlights "forceOn";
 
 	_unit addRating 1e11;
@@ -102,4 +153,5 @@ for "_i" from 1 to _nbUnits do
 	_unit addEventHandler ["Killed", server_playerDied];
 };
 
+//[_pos] call addDefensiveMines;
 [_group, _pos] call defendArea;

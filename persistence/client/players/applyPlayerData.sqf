@@ -9,7 +9,7 @@
 private ["_data", "_removal", "_name", "_value", "_maxMoney"];
 
 _data = _this;
-_maxMoney = ["A3W_maxMoney", 1000000] call getPublicVar;
+_maxMoney = ["A3W_maxMoney", 5000000] call getPublicVar;
 _removal = param [1, true];
 
 
@@ -33,7 +33,7 @@ else
 
 	switch (_name) do
 	{
-		case "Damage": { player setDamage _value };
+		case "Damage": { player setDamage 0 /*_value*/ }; // Just in case a player gets damage wihtout been able treat him self due ACE3 convert medikits and first aid kit into anothers items
 		case "HitPoints":
 		{
 			player allowDamage true;
@@ -42,12 +42,12 @@ else
 		};
 		case "Hunger": 
 		{
-			hungerLevel = _value; 
+			//hungerLevel = _value; 
 			player setVariable ["acex_field_rations_hunger", _value];
 		};
 		case "Thirst": 
 		{
-			thirstLevel = _value;
+			//thirstLevel = _value;
 			player setVariable ["acex_field_rations_thirst", _value];
 		};
 		case "Money":
@@ -365,5 +365,44 @@ else
 				backpackContainer player setVariable ["backpackTexture", _value, true];
 			};
 		};
+		// BACKPACKONCHEST
+		case "BackPackOnChest": { if (_value != "") then { [player,_value] call zade_boc_fnc_addChestpack }; };
+		//case "BackpackOnChestItem": { { [player,_x] call zade_boc_fnc_addItemToChestpack } forEach _value };
+		case "BackpackOnChestItem":
+		{ 
+			{
+				if (typeName _x isEqualTo "STRING") then
+				{
+					[player,_x] call zade_boc_fnc_addItemToChestpack;
+				}
+				else
+				{
+					private _itemClass = _x select 0;
+					private _itemAmount = _x select 1;
+					[player,_itemClass,_itemAmount] call zade_boc_fnc_addItemToChestpack;
+				};
+			} forEach _value;
+		};
+		case "BackpackOnChestMags": { { ([player] + _x) call zade_boc_fnc_addMagToChestpack } forEach _value };
+		// ACE3 PLAYER'S HEALTH STATUS
+		case "ACEPain": { player setVariable ["ace_medical_pain", _value, true] };
+		case "ACEbloodVolume": { player setVariable ["ace_medical_bloodVolume", _value, true] };
+		case "ACEBloodLoss": { player setVariable ["ace_medical_hasLostBlood", _value, true] };
+		case "ACEtourniquets": { player setVariable ["ace_medical_tourniquets", _value, true] };
+		case "ACEopenWounds": { player setVariable ["ace_medical_openWounds", _value, true] };
+		case "ACEheartRate": { player setVariable ["ace_medical_heartRate", _value, true] };
+		case "ACEbodyPartStatus": { player setVariable ["ace_medical_bodyPartStatus", _value, true] };
+		/*case "ActualPlayerSide" :
+		{
+			if (_value != "") then
+			{
+				if (_value != playerSide) exitWith
+				{
+					_uid = getPlayerUID player;
+					pvar_teamSwitchLock = [_uid, _value];
+					publicVariableServer "pvar_teamSwitchLock";
+				};
+			};
+		};*/
 	};
 } forEach _data;

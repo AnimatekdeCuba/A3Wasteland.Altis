@@ -37,7 +37,7 @@ if (!_uavConnect) then
 			{
 				moveOut player;
 				["You can't enter vehicles being used by enemies.", 5] call mf_notify_client;
-	
+
 				// ejection bug workaround
 				if (!alive player || lifeState player == "INCAPACITATED") then
 				{

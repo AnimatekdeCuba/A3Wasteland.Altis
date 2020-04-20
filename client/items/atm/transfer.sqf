@@ -50,7 +50,7 @@ if (_balance < _total) exitWith
 	playSound "FD_CP_Not_Clear_F";
 };
 
-_maxBalance = ["A3W_atmMaxBalance", 1000000] call getPublicVar;
+_maxBalance = ["A3W_atmMaxBalance", 16000000] call getPublicVar;
 _destBalance = _selAcc getVariable ["bmoney", 0];
 
 if (_destBalance >= _maxBalance) exitWith

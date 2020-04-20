@@ -19,7 +19,7 @@ _setupObjects =
 {
 	_missionPos = markerPos (((call cityList) call BIS_fnc_selectRandom) select 0);
 
-	_veh1types = selectrandom ["I_Plane_Fighter_03_dynamicLoadout_F","I_Plane_Fighter_04_F"];
+	_veh1types = selectrandom ["rhs_l159_CDF","rhsgref_cdf_su25","rhsgref_cdf_mig29s"];
 	_veh1 = [_veh1types, _missionPos,1,1,0,2000] call createMissionVehicle;
 	_aiGroup1 = createGroup CIVILIAN;
 	

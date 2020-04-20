@@ -20,8 +20,8 @@ _setupObjects =
 	_town = (call cityList) call BIS_fnc_selectRandom;
 	_missionPos = markerPos _missionLocation;
 
-	_veh1types = selectrandom ["B_APC_Tracked_01_AA_F","B_APC_Wheeled_01_cannon_F","B_APC_Tracked_01_CRV_F","B_APC_Tracked_01_rcws_F","B_MRAP_01_hmg_F","B_MBT_01_cannon_F","B_MBT_01_TUSK_F","B_MBT_01_arty_F","B_MBT_01_mlrs_F","B_Truck_01_mover_F","B_Truck_01_ammo_F","B_Truck_01_box_F","B_Truck_01_fuel_F","B_Truck_01_medical_F","B_MRAP_01_F","B_MRAP_01_gmg_F","B_Truck_01_Repair_F","B_Truck_01_transport_F","B_Truck_01_covered_F"];
-	_veh2types = selectrandom ["B_APC_Tracked_01_AA_F","B_APC_Wheeled_01_cannon_F","B_APC_Tracked_01_CRV_F","B_APC_Tracked_01_rcws_F","B_MRAP_01_hmg_F","B_MBT_01_cannon_F","B_MBT_01_TUSK_F","B_MBT_01_arty_F","B_MBT_01_mlrs_F","B_Truck_01_mover_F","B_Truck_01_ammo_F","B_Truck_01_box_F","B_Truck_01_fuel_F","B_Truck_01_medical_F","B_MRAP_01_F","B_MRAP_01_gmg_F","B_Truck_01_Repair_F","B_Truck_01_transport_F","B_Truck_01_covered_F"];
+	_veh1types = selectrandom ["RHS_M6_wd","RHS_M2A2_BUSKI_WD","rhsusf_M1117_W","rhsusf_M1220_M153_M2_usarmy_wd","rhsusf_M1230_MK19_usarmy_wd","rhsusf_m1a1aimwd_usarmy","rhsusf_m109_usarmy","rhsusf_m1a1aimwd_usarmy","rhsusf_m113_usarmy","rhsusf_m113_usarmy_MK19","RHS_M2A2_BUSKI_WD","rhsusf_m1043_w_m2","rhsusf_m1043_w_mk19","rhsusf_m1045_w","rhsusf_M978A4_usarmy_wd","rhsusf_M1083A1P2_B_M2_WD_fmtv_usarmy","rhsusf_M977A4_AMMO_BKIT_M2_usarmy_wd","rhsusf_M977A4_REPAIR_BKIT_M2_usarmy_wd"];
+	_veh2types = selectrandom ["RHS_M6_wd","RHS_M2A2_BUSKI_WD","rhsusf_M1117_W","rhsusf_M1220_M153_M2_usarmy_wd","rhsusf_M1230_MK19_usarmy_wd","rhsusf_m1a1aimwd_usarmy","rhsusf_m109_usarmy","rhsusf_m1a1aimwd_usarmy","rhsusf_m113_usarmy","rhsusf_m113_usarmy_MK19","RHS_M2A2_BUSKI_WD","rhsusf_m1043_w_m2","rhsusf_m1043_w_mk19","rhsusf_m1045_w","rhsusf_M978A4_usarmy_wd","rhsusf_M1083A1P2_B_M2_WD_fmtv_usarmy","rhsusf_M977A4_AMMO_BKIT_M2_usarmy_wd","rhsusf_M977A4_REPAIR_BKIT_M2_usarmy_wd"];
 
 	_aiGroup1 = createGroup CIVILIAN;
 
@@ -63,7 +63,7 @@ _setupObjects =
 		{
 			for "_i" from 1 to _Passangers do
 			{
-				private _soldierType = selectrandom ["Rifleman","Rifleman","Rifleman","Rifleman","Rifleman","Rifleman","Rifleman","Rifleman","Rifleman","Rifleman","AT","AA","SAW","SAW","SAW","Engineer","Medic","Grenedier","Engineer","Medic","Grenedier","Marksman","Marksman","Marksman"];
+				private _soldierType = selectrandom ["Rifleman","Rifleman","Rifleman","Rifleman","Rifleman","Rifleman","Rifleman","Rifleman","Rifleman","Rifleman","AT","AA","SAW","SAW","SAW","AT","Medic","Grenedier","AA","Medic","Grenedier","Marksman","Marksman","Marksman"];
 				_soldier = [_aiGroup1, _missionPos, "NATO", _soldierType] call createsoldier;
 
 				_soldier moveInCargo _vehicle;
@@ -72,7 +72,7 @@ _setupObjects =
 	} foreach _vehicles;
 
 	_aiGroup1 setCombatMode "GREEN"; // Will fire on enemies
-	_aiGroup1 setBehaviour "SAFE"; // units feel safe until they spot an enemy or get into contact
+	_aiGroup1 setBehaviour "AWARE"; // units feel safe until they spot an enemy or get into contact
 	_aiGroup1 setFormation "FILE";
 
 	_speedMode = "LIMITED";
@@ -83,7 +83,7 @@ _setupObjects =
 		_waypoint setWaypointType "MOVE";
 		_waypoint setWaypointCompletionRadius 50;
 		_waypoint setWaypointCombatMode "GREEN";
-		_waypoint setWaypointBehaviour "SAFE"; // safe is the best behaviour to make AI follow roads, as soon as they spot an enemy or go into combat they WILL leave the road for cover though!
+		_waypoint setWaypointBehaviour "AWARE"; // safe is the best behaviour to make AI follow roads, as soon as they spot an enemy or go into combat they WILL leave the road for cover though!
 		_waypoint setWaypointFormation "FILE";
 		_waypoint setWaypointSpeed _speedMode;
 	} forEach ((call cityList) call BIS_fnc_arrayShuffle);
@@ -127,7 +127,7 @@ _successExec =
 	for "_i" from 1 to 2 do
 	{
 		private _tier = selectrandom ["1","2","3"];
-		private _maxmoney = ceil (random 10000);
+		private _maxmoney = ceil (2000 + random 8000);
 		private _box = [_lootPos, "NATO", _tier, 0, _maxmoney] call createrandomlootcrate;
 		_box setVariable ["moveable", true, true];
 	};

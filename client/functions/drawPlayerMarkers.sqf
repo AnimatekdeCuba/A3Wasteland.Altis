@@ -10,6 +10,7 @@ if (!hasInterface) exitWith {};
 #define IS_FRIENDLY_PLAYER(UNIT) (isPlayer UNIT && IS_FRIENDLY_VEHICLE(UNIT))
 #define DEFAULT_ICON_POS(UNIT) (UNIT modelToWorld (UNIT selectionPosition "spine3"))
 #define MISSION_AI_FAR_DISTANCE 75
+#define IS_IN_GROUP(UNIT) (isPlayer UNIT && group UNIT == group player)
 
 disableSerialization;
 

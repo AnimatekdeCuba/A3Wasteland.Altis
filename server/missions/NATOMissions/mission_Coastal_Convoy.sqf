@@ -65,7 +65,7 @@ _setupObjects =
 		{
 			for "_i" from 1 to _Passangers do
 			{
-				private _soldierType = selectrandom ["Rifleman","Rifleman","Rifleman","Rifleman","Rifleman","Rifleman","Rifleman","Rifleman","Rifleman","Rifleman","AT","AA","SAW","SAW","SAW","Engineer","Medic","Grenedier","Engineer","Medic","Grenedier","Marksman","Marksman","Marksman"];
+				private _soldierType = selectrandom ["Rifleman","Rifleman","Rifleman","Rifleman","Rifleman","Rifleman","Rifleman","Rifleman","Rifleman","Rifleman","AT","AA","SAW","SAW","SAW","AT","Medic","Grenedier","AA","Medic","Grenedier","Marksman","Marksman","Marksman"];
 				_soldier = [_aiGroup1, _position, "NATO", _soldierType] call createsoldier;
 				_soldier moveInCargo _vehicle;
 			};
@@ -114,10 +114,10 @@ _successExec =
 {
 	// Mission completed
 	_lootPos = getMarkerPos _marker;
-	for "_i" from 1 to 4 do
+	for "_i" from 1 to 2 do
 	{
 		private _tier = selectrandom ["1","2","3"];
-		private _maxmoney =ceil (random 15000);
+		private _maxmoney =ceil (10000 + random 20000);
 		private _box = [_lootPos, "NATO", _tier, 0, _maxmoney] call createrandomlootcrate;
 		_box setVariable ["moveable", true, true];
 	};

@@ -38,7 +38,7 @@ _setupObjects =
 		};
 		for "_i" from 1 to 2 do
 		{
-			[_aiGroup1, _missionPos, "CSAT", "Genedier"] call createsoldier;
+			[_aiGroup1, _missionPos, "CSAT", "Grenedier"] call createsoldier;
 		};
 		for "_i" from 1 to 2 do
 		{
@@ -50,7 +50,7 @@ _setupObjects =
 		};
 		[_aiGroup1, _missionPos, "CSAT", "AT"] call createsoldier;
 		[_aiGroup1, _missionPos, "CSAT", "AA"] call createsoldier;
-		[_aiGroup1, _missionPos, "CSAT", "Engineer"] call createsoldier;
+		[_aiGroup1, _missionPos, "CSAT", "AT"] call createsoldier;
 	};
 	_createsquad2 =
 	{
@@ -64,7 +64,7 @@ _setupObjects =
 		};
 		for "_i" from 1 to 2 do
 		{
-			[_aiGroup2, _missionPos, "CSAT", "Genedier"] call createsoldier;
+			[_aiGroup2, _missionPos, "CSAT", "Grenedier"] call createsoldier;
 		};
 		for "_i" from 1 to 2 do
 		{
@@ -76,7 +76,7 @@ _setupObjects =
 		};
 		[_aiGroup2, _missionPos, "CSAT", "AT"] call createsoldier;
 		[_aiGroup2, _missionPos, "CSAT", "AA"] call createsoldier;
-		[_aiGroup2, _missionPos, "CSAT", "Engineer"] call createsoldier;
+		[_aiGroup2, _missionPos, "CSAT", "AT"] call createsoldier;
 	};
 	_createsquad3 =
 	{
@@ -90,7 +90,7 @@ _setupObjects =
 		};
 		for "_i" from 1 to 2 do
 		{
-			[_aiGroup3, _missionPos, "CSAT", "Genedier"] call createsoldier;
+			[_aiGroup3, _missionPos, "CSAT", "Grenedier"] call createsoldier;
 		};
 		for "_i" from 1 to 2 do
 		{
@@ -102,7 +102,7 @@ _setupObjects =
 		};
 		[_aiGroup3, _missionPos, "CSAT", "AT"] call createsoldier;
 		[_aiGroup3, _missionPos, "CSAT", "AA"] call createsoldier;
-		[_aiGroup3, _missionPos, "CSAT", "Engineer"] call createsoldier;
+		[_aiGroup3, _missionPos, "CSAT", "AT"] call createsoldier;
 	};
 	_createsquad4 =
 	{
@@ -116,7 +116,7 @@ _setupObjects =
 		};
 		for "_i" from 1 to 2 do
 		{
-			[_aiGroup1, _missionPos, "CSAT", "Genedier"] call createsoldier;
+			[_aiGroup1, _missionPos, "CSAT", "Grenedier"] call createsoldier;
 		};
 		for "_i" from 1 to 2 do
 		{
@@ -128,7 +128,7 @@ _setupObjects =
 		};
 		[_aiGroup1, _missionPos, "CSAT", "AT"] call createsoldier;
 		[_aiGroup1, _missionPos, "CSAT", "AA"] call createsoldier;
-		[_aiGroup1, _missionPos, "CSAT", "Engineer"] call createsoldier;
+		[_aiGroup1, _missionPos, "CSAT", "AT"] call createsoldier;
 	};
 	_aiGroup1 = createGroup CIVILIAN;
 	_aiGroup2 = createGroup CIVILIAN;
@@ -136,60 +136,66 @@ _setupObjects =
 	_aiGroup4 = createGroup CIVILIAN;
 	switch (true) do
 	{
-		case ({_vehicleClass isKindOf _x} count ["O_MRAP_02_hmg_F","O_MRAP_02_gmg_F"] > 0):
+		case ({_vehicleClass isKindOf _x} count ["rhsgref_BRDM2_msv","rhsgref_BRDM2_ATGM_msv"] > 0):
 		{
 			_squad1 = call _createsquad1;
 		};
-		case ({_vehicleClass isKindOf _x} count ["B_APC_Tracked_01_AA_F", "O_APC_Tracked_02_AA_F"] > 0):
+		case ({_vehicleClass isKindOf _x} count ["rhs_zsu234_aa", "RHS_Ural_Zu23_VDV_01"] > 0):
 		{
 			_squad1 = call _createsquad1;
 		};
-		case (_vehicleClass isKindOf "O_APC_Wheeled_02_rcws_F"):
+		case (_vehicleClass isKindOf "rhs_btr80a_msv"):
 		{
 			_squad1 = call _createsquad1;
 			_squad2 = call _createsquad2;
 		};
-		case ({_vehicleClass isKindOf _x} count ["O_UGV_01_rcws_F","O_APC_Tracked_02_cannon_F"]>0):
+		case ({_vehicleClass isKindOf _x} count [
+		"rhs_bmd1p",
+		"rhs_bmd1r",
+		"rhs_bmd2m",
+		"rhs_bmd4m_vdv",
+		"rhs_bmp3mera_msv",
+		"rhs_bmp2k_vdv"]>0):
 		{
 			_squad1 = call _createsquad1;
 			_squad2 = call _createsquad2;
 		};
-		case (_vehicleClass isKindOf "O_MBT_02_cannon_F"):
+		case ({_vehicleClass isKindOf _x} count ["rhs_t80bvk","rhs_t90a_tv"] > 0):
 		{
 			_squad1 = call _createsquad1;
 			_squad2 = call _createsquad2;
-			_squad3 = call _createsquad3;
+			//_squad3 = call _createsquad3;
 		};	
-		case ({_vehicleClass isKindOf _x} count ["O_Plane_CAS_02_dynamicLoadout_F","O_Plane_Fighter_02_F","O_Plane_Fighter_02_Stealth_F","O_T_VTOL_02_infantry_dynamicLoadout_F","O_T_VTOL_02_vehicle_dynamicLoadout_F"] > 0):
+		case ({_vehicleClass isKindOf _x} count ["rhs_mig29sm_vmf","RHS_Su25SM_vvs"] > 0):
 		{
 			_squad1 = call _createsquad1;
 			_squad2 = call _createsquad2;
 			_squad3 = call _createsquad3;
-			_squad4 = call _createsquad4;
+			//_squad4 = call _createsquad4;
 		};
 		case ({_vehicleClass isKindOf _x} count ["O_UAV_02_dynamicLoadout_F","O_T_UAV_04_CAS_F"]>0):
 		{
 			_squad1 = call _createsquad1;
 			_squad2 = call _createsquad2;
 			_squad3 = call _createsquad3;
-			_squad1 = call _createsquad1;
+			//_squad1 = call _createsquad1;
 		};
 		case ({_vehicleClass isKindOf _x} count 
 		[
-			"O_Heli_Transport_04_F",
-			"O_Heli_Transport_04_ammo_F",
-			"O_Heli_Transport_04_bench_F",
-			"O_Heli_Transport_04_box_F",
-			"O_Heli_Transport_04_fuel_F",
-			"O_Heli_Attack_02_dynamicLoadout_F",
-			"O_Heli_Light_02_dynamicLoadout_F",
-			"O_Heli_Light_02_unarmed_F",
-			"O_MBT_02_arty_F"
+		"RHS_Ka52_vvsc",
+		"RHS_Mi24V_vvsc",
+		"rhs_mi28n_vvsc",
+		"RHS_Mi8AMTSh_vvsc",
+		"RHS_Mi8mt_vvsc",
+		"RHS_Mi8MTV3_vvsc",
+		"RHS_Mi8mt_Cargo_vdv",
+		"RHS_BM21_VDV_01",
+		"rhs_2s3_tv"
 		] > 0):
 		{
 			_squad1 = call _createsquad1;
 			_squad2 = call _createsquad2;
-			_squad3 = call _createsquad3;
+			//_squad3 = call _createsquad3;
 		};
 	};
 	_aiGroup1 setCombatMode "RED";

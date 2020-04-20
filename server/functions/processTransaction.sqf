@@ -133,7 +133,7 @@ switch (toLower _type) do
 
 			_newBalance = _balance + _amount;
 
-			if (_newBalance > ["A3W_atmMaxBalance", 1000000] call getPublicVar) exitWith {}; // account would exceed or has reached max balance
+			if (_newBalance > ["A3W_atmMaxBalance", 16000000] call getPublicVar) exitWith {}; // account would exceed or has reached max balance
 
 			_player setVariable ["bmoney", _newBalance, true];
 
@@ -164,7 +164,7 @@ switch (toLower _type) do
 
 			_rBalance = _recipient getVariable ["bmoney", 0];
 
-			if (_rBalance + _amount > ["A3W_atmMaxBalance", 1000000] call getPublicVar) exitWith {}; // recipient would exceed or has reached max balance
+			if (_rBalance + _amount > ["A3W_atmMaxBalance", 16000000] call getPublicVar) exitWith {}; // recipient would exceed or has reached max balance
 
 			_sBalance = _sBalance - (if (!local _sender) then { _total } else { 0 });
 			_rBalance = _rBalance + _amount;

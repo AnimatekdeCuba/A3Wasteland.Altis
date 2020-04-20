@@ -14,33 +14,39 @@ _setupVars =
 	_vehicleClass = selectrandom
 	[
 		//MBT
-		"I_MBT_03_cannon_F",
+		"rhsgref_cdf_t72bb_tv",
+		"rhsgref_cdf_t80bv_tv",
+		//AA
+		"rhsgref_cdf_zsu234",
 		//APCs
-		"I_APC_Wheeled_03_cannon_F",
-		"I_APC_tracked_03_cannon_F",
+		"rhsgref_cdf_btr70",
+		"rhsgref_cdf_bmd1p",
+		"rhsgref_cdf_bmd2",
+		"rhsgref_cdf_bmp2d",
 		//LAV
-		"I_MRAP_03_hmg_F",
-		"I_MRAP_03_gmg_F",
+		"rhsgref_BRDM2",
+		"rhsgref_BRDM2_ATGM",
 		//UAV
 		"I_UAV_02_dynamicLoadout_F",
 		//Jets
-		"I_Plane_Fighter_03_dynamicLoadout_F",
-		"I_Plane_Fighter_04_F",
+		"rhs_l159_CDF",
+		"rhsgref_cdf_su25",
+		"rhssaf_airforce_l_18",
 		//Helis
-		"I_Heli_Transport_02_F",
-		"I_Heli_light_03_dynamicLoadout_F",
-		"I_Heli_light_03_unarmed_F"
+		"rhsgref_cdf_Mi35",
+		"rhsgref_mi24g_CAS",
+		"rhsgref_cdf_Mi24D"
 	];
 	_missionType = switch (true) do
 	{
-		case ({_vehicleClass isKindOf _x} count ["B_APC_Tracked_01_AA_F", "O_APC_Tracked_02_AA_F"] > 0): 																			{ "AAF Anti Aircraft Vehicle" };
-		case (_vehicleClass isKindOf "I_APC_Wheeled_03_cannon_F"):                                                          														{ "AAF Infantry Fighting Vehicle" };
-		case (_vehicleClass isKindOf "I_APC_tracked_03_cannon_F"):																													{ "AAF Armored Personnel Carrier" };
-		case (_vehicleClass isKindOf "I_MBT_03_cannon_F"):																															{ "AAF Main Battle Tank" };
-		case ({_vehicleClass isKindOf _x} count ["I_Plane_Fighter_03_dynamicLoadout_F", "I_Plane_Fighter_04_F"] > 0): 																{ "AAF Jet" };
+		case ({_vehicleClass isKindOf _x} count ["rhsgref_cdf_zsu234"] > 0): 																			{ "AAF Anti Aircraft Vehicle" };
+		case (_vehicleClass isKindOf "rhsgref_cdf_btr70"):                                                          														{ "AAF Infantry Fighting Vehicle" };
+		case ({_vehicleClass isKindOf _x} count ["rhsgref_cdf_bmd1p", "rhsgref_cdf_bmd2", "rhsgref_cdf_bmp2d"] > 0):																													{ "AAF Armored Personnel Carrier" };
+		case ({_vehicleClass isKindOf _x} count ["rhsgref_cdf_t72bb_tv", "rhsgref_cdf_t80bv_tv"] > 0): 																				{ "AAF Main Battle Tank" };
+		case ({_vehicleClass isKindOf _x} count ["rhs_l159_CDF", "rhsgref_cdf_su25", "rhssaf_airforce_l_18"] > 0): 																{ "AAF Jet" };
 		case (_vehicleClass isKindOf "I_UAV_02_dynamicLoadout_F"):                                                          														{ "AAF Unmanned Air Vehicle" };
-		case ({_vehicleClass isKindOf _x} count ["I_Heli_Transport_02_F", "I_Heli_light_03_dynamicLoadout_F", "I_Heli_light_03_unarmed_F"] > 0):									{ "AAF Light Armored Vehicle" };
-		case ({_vehicleClass isKindOf _x} count ["I_MRAP_03_hmg_F","I_MRAP_03_gmg_F"] > 0):																							{ "AAF helicopter" };
+		case ({_vehicleClass isKindOf _x} count ["rhsgref_cdf_Mi35", "rhsgref_mi24g_CAS", "rhsgref_cdf_Mi24D"] > 0):									{ "AAF Helicopter" };
+		case ({_vehicleClass isKindOf _x} count ["rhsgref_BRDM2","rhsgref_BRDM2_ATGM"] > 0):																							{ "AAF Light Armored Vehicle" };
 		default 																																									{ "AAF Vehicle" };
 	};
 	If (_vehicleClass iskindof "Air") then

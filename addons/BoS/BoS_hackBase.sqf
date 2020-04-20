@@ -11,24 +11,24 @@ if(mutexScriptInProgress) exitWith {
 
 private _manager =  nearestObject [player, "Land_SatellitePhone_F"];
 private _ManagerLevel = _manager getVariable ["ManagerLevel", 1];
-private _hacktime = 20;
+private _hacktime = 60*1.5; // 60*1.5
 switch (_ManagerLevel) do
 {
 	case (2):
 	{
-		_hacktime = 25;
+		_hacktime = 60*3;
 	};
 	case (3):
 	{
-		_hacktime = 30;
+		_hacktime = 60*6;
 	};
 	case (4):
 	{
-		_hacktime = 35;
+		_hacktime = 60*12;
 	};
 	case (5):
 	{
-		_hacktime = 45;
+		_hacktime = 60*24;
 	};
 };
 

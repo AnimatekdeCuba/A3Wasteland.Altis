@@ -87,6 +87,19 @@ if (["A3W_moneySaving"] call isConfigOn) then
 ["UniformTexture", "STRING"] call _getValue;
 ["BackpackTexture", "STRING"] call _getValue;
 
+["BackPackOnChest", "STRING"] call _getValue;
+["BackpackOnChestItem", "ARRAY"] call _getValue;
+["BackpackOnChestMags", "ARRAY"] call _getValue;
+
+["ACEPain", "NUMBER"] call _getValue;
+["ACEbloodVolume", "NUMBER"] call _getValue;
+["ACEBloodLoss", "NUMBER"] call _getValue;
+["ACEtourniquets", "ARRAY"] call _getValue;
+["ACEopenWounds", "ARRAY"] call _getValue;
+["ACEheartRate", "NUMBER"] call _getValue;
+["ACEbodyPartStatus", "ARRAY"] call _getValue;
+/*["ActualPlayerSide", "STRING"] call _getValue;*/
+
 ["Hunger", "NUMBER"] call _getValue;
 ["Thirst", "NUMBER"] call _getValue;
 

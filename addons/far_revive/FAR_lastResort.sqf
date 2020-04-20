@@ -7,8 +7,7 @@
 if !(player getVariable ["performingDuty", false]) then
 {
 	_availableBombs = (magazines player) arrayIntersect ["SatchelCharge_Remote_Mag", "IEDUrbanBig_Remote_Mag", "IEDLandBig_Remote_Mag", "DemoCharge_Remote_Mag", "IEDUrbanSmall_Remote_Mag", "IEDLandSmall_Remote_Mag"]; // biggest to smallest
-	_randomSound = selectRandom ["johncena.ogg", "scarface.ogg", "predator.ogg", "akbar.ogg", "bomb.ogg", "fired.ogg", "ilovechina.ogg", "mexicanpeople.ogg", "pussy.ogg", "sloth.ogg", "price-is-right.ogg"];
-	_nonSupSound = selectRandom ["john-stamos.ogg","lastresort.ogg", "price-is-right.ogg", "sloth.ogg"];
+	_randomSound = selectRandom ["john-stamos.ogg","lastresort.ogg", "price-is-right.ogg","johncena.ogg", "scarface.ogg", "predator.ogg", "akbar.ogg", "bomb.ogg", "fired.ogg", "ilovechina.ogg", "mexicanpeople.ogg", "pussy.ogg", "sloth.ogg", "price-is-right.ogg"];
 
 	if !(_availableBombs isEqualTo []) then
 	{
@@ -25,17 +24,9 @@ if !(player getVariable ["performingDuty", false]) then
 			player setVariable ["performingDuty", true];
 
 			player removeMagazine _magType;
+			playSound3D [call currMissionDir + "client\sounds\" + _randomSound, player, false, getPosASL player, 1, 1, 500];
 
-			if ((getPlayerUID player) call isdonor) then
-			{
-				playSound3D [call currMissionDir + "client\sounds\" + _randomSound, player, false, getPosASL player, 1, 1, 500];
-			}
-			else
-			{
-				playSound3D [call currMissionDir + "client\sounds\" + _nonSupSound, player, false, getPosASL player, 1, 1, 500];
-			};
-
-			sleep 1.5;
+			sleep 3;
 
 			_oldMines = getAllOwnedMines player;
 			removeAllOwnedMines player;

@@ -19,6 +19,21 @@ player createDiarySubject ["credits", "Credits"];
 
 player createDiaryRecord ["changelog",
 [
+"1.4d.0.4 versión de Animatek",
+"
+<br/>[Added] Persistencia de la Salud del ACE3 Medical .
+<br/>[Added] Persistencia del Hambre y la Sed del ACEX Survival.
+<br/>[Added] Persistencia del Agua en contenedores (ACEX Survival).
+<br/>[Added] Persistencia del Combustible, Munición y Reparación en vehículos y depósitos (ACE3 Logistics).
+<br/>[Changed] Se elimina el Paracaídas Mágico.
+<br/>[Fixed] Si te desconectabas con la mochila en el pecho, no se guardaban ni la mochila ni los objetos que contenía.
+<br/>[Pendiente] Persistencia del bando.
+<br/>[Pendiente] Mucho aún.
+"
+]];
+
+player createDiaryRecord ["changelog",
+[
 "1.4d.0.3 versión de Animatek",
 "
 <br/>[Added] TFAR mod.
@@ -32,10 +47,10 @@ player createDiaryRecord ["changelog",
 <br/>[Added] Más misiones.
 <br/>[Added] Intro de Bienvenida.
 <br/>[Added] Status Bar.
-<br/>[Added] Bloqueo y Robo de Cajas.
+<br/>[Added] Bloqueo y Robo de Cajas (WIP)
 <br/>[Added] Grass Cutter. A chapear!
 <br/>[Added] Construcción, Bloqueo y Asalto de bases.
-<br/>[Added] Equipamiento de respawn personalizado según Puntuación y dinero en el Banco.
+<br/>[Added] Equipamiento de respawn personalizado según Score y dinero en el Banco.
 <br/>[Added] Cuentas VIP con ítems, armas, vehículos y objetos exclusivos; para jugadores destacados.
 <br/>[Added] IA en Territorios y refuerzos aliados.
 <br/>[Changed] Un territorio aleatório por instancia, dinero por dominación y cercanía.
@@ -43,10 +58,8 @@ player createDiaryRecord ["changelog",
 <br/>[Changed] Retocado el sistema antiaéreo de la IA. (FlaK mod)
 <br/>[Fixed] Algunas mejoras menores, optimización y corrección de errores.
 <br/>[Pendiente] Limitar acceso en las tiendas a armas y vehículos diferidos por facción.
-<br/>[Pendiente] Arreglar la KillFeed y Scoreboard.
 <br/>[Pendiente] Sistema de Ranking con grados militares y acceso a contenido exclusivo.
 <br/>[Pendiente] Mejorar algunos aspectos, descartar lo innecesario o lo que no funcione.
-<br/>[Pendiente] Crear tienda-web para la compra de artículos fuera del juego (con dinero de Wasteland, sin dinero real).
 "
 ]];
 
@@ -655,7 +668,7 @@ player createDiaryRecord ["infos",
 [
 "Sobre Advanced Combat A3Wasteland",
 "
-<br/>Wasteland es un sandbox militar Team vs Team vs Enviroment vs Players con un agradable sabor a Survival. El objetivo es unirse a una facción, o jugar Independiente, buscar recursos, armas y vehículos; destruir a tus enemigos y no dejarlos levantar cabeza; procurando el control y dominación de la isla. Es un Survival casi como cualquier otro; pero único en su clase! Ten en cuenta que es un trabajo en proceso, por favor, reporte a la administración de ArmA III en SNET, o en su defecto a http://forums.a3wasteland.com/
+<br/>Wasteland es un sandbox militar Team vs Team vs Enviroment vs Players con un agradable sabor a Survival. El objetivo es, unido a una facción, o como Independiente, buscar recursos, armas y vehículos; destruir a tus enemigos y no dejarlos levantar cabeza; procurando el control y dominación de la isla. Es un Survival casi como cualquier otro; pero único en su clase! Ten en cuenta que es un trabajo en proceso, por favor, reporte a la administración de ArmA III en SNET, o en su defecto a http://forums.a3wasteland.com/
 <br/>
 <br/>FAQ:
 <br/>
@@ -678,6 +691,6 @@ player createDiaryRecord ["infos",
 <br/>A. Este juego cuenta con un sistema de Agua y Comida en el cual debes de estar alerta si quieres sobrevivir. Puedes acopiar agua y comida de los sacos y tanques de agura y resguardarlos en tu base; así como lootear a otros jugadores botellas de agua y carne enlatada.
 <br/>
 <br/>Q. Vi a alguien rompiendo las reglas. Qué hago?
-<br/>A. Simplemente, recave información sobre la indisciplina y avísele a un administrador en el TS, y reporte el incidente si es grave.
+<br/>A. Simplemente, recave información sobre la indisciplina y contacte a un administrador en el TS, y reporte el incidente si es grave.
 "
 ]];

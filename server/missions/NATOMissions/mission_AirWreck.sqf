@@ -27,7 +27,7 @@ _setupObjects =
 	_wreckPos = _missionPos vectorAdd ([[25 + random 20, 0, 0], random 360] call BIS_fnc_rotateVector2D);
 
 	// Class, Position, Fuel, Ammo, Damage, Special
-	_wreckTypes = selectrandom ["B_Heli_Light_01_dynamicLoadout_F","B_Heli_Transport_03_F","B_Heli_Transport_03_unarmed_F","B_Heli_Light_01_F","B_Heli_Transport_01_F","B_T_VTOL_01_armed_F","B_T_VTOL_01_infantry_F","B_T_VTOL_01_vehicle_F"];
+	_wreckTypes = selectrandom ["RHS_A10","RHS_AH64D_wd","RHS_AH1Z","RHS_UH1Y","rhs_uh1h_hidf_gunship","rhsgref_cdf_b_mig29s","RHS_C130J","rhs_l159_cdf_b_CDF","rhs_uh1h_hidf","RHS_CH_47F_10","RHS_UH60M_d","RHS_MELB_AH6M","rhsusf_CH53E_USMC_D"];
 	_wreckName = getText (configFile >> "CfgVehicles" >> _wreckTypes >> "displayName");
 	_wreck = [_wreckTypes, _wreckPos, 0, 0, 1] call createMissionVehicle;
 
@@ -41,14 +41,14 @@ _setupObjects =
 	_aiGroup1 = createGroup CIVILIAN;
 	for "_i" from 1 to 6 do
 	{
-		private _soldierType = selectrandom ["Rifleman","Rifleman","Rifleman","Rifleman","Rifleman","Rifleman","Rifleman","Rifleman","Rifleman","Rifleman","AT","AA","SAW","SAW","SAW","Engineer","Medic","Grenedier","Engineer","Medic","Grenedier","Marksman","Marksman","Marksman"];
+		private _soldierType = selectrandom ["Rifleman","Rifleman","Rifleman","Rifleman","Rifleman","Rifleman","Rifleman","Rifleman","Rifleman","Rifleman","AT","AA","SAW","SAW","SAW","AT","Medic","Grenedier","AA","Medic","Grenedier","Marksman","Marksman","Marksman"];
 		[_aiGroup1, _missionPos, "NATO", _soldierType] call createsoldier;
 	};
 	_aiGroup1 setCombatMode "RED";
 	_aiGroup2 = createGroup CIVILIAN;
 	for "_i" from 1 to 6 do
 	{
-		private _soldierType = selectrandom ["Rifleman","Rifleman","Rifleman","Rifleman","Rifleman","Rifleman","Rifleman","Rifleman","Rifleman","Rifleman","AT","AA","SAW","SAW","SAW","Engineer","Medic","Grenedier","Engineer","Medic","Grenedier","Marksman","Marksman","Marksman"];
+		private _soldierType = selectrandom ["Rifleman","Rifleman","Rifleman","Rifleman","Rifleman","Rifleman","Rifleman","Rifleman","Rifleman","Rifleman","AT","AA","SAW","SAW","SAW","AT","Medic","Grenedier","AA","Medic","Grenedier","Marksman","Marksman","Marksman"];
 		[_aiGroup2, _missionPos, "NATO", _soldierType] call createsoldier;
 	};
 	_aiGroup2 setCombatMode "RED";
@@ -71,7 +71,7 @@ _successExec =
 {
 	// Mission completed
 	{ _x setVariable ["R3F_LOG_disabled", false, true] } forEach [_box1, _box2];
-	{ _x setVariable ["cmoney",ceil (random 10000), true] } forEach [_box1, _box2];
+	{ _x setVariable ["cmoney",ceil (2000 + random 8000), true] } forEach [_box1, _box2];
 	{ _x setVariable ["Moveable", true, true] } forEach [_box1, _box2];
 
 

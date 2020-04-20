@@ -20,9 +20,13 @@ _setupObjects =
 	_town = (call cityList) call BIS_fnc_selectRandom;
 	_missionPos = markerPos _missionLocation;
 
-	_veh1types = selectrandom ["O_Heli_Attack_02_dynamicLoadout_F","O_Heli_Light_02_dynamicLoadout_F"];
-	_veh2types = selectrandom ["O_Heli_Transport_04_F","O_Heli_Transport_04_ammo_F","O_Heli_Transport_04_bench_F","O_Heli_Transport_04_box_F","O_Heli_Transport_04_fuel_F","O_Heli_Light_02_unarmed_F"];
-	_veh3types = selectrandom ["O_Heli_Attack_02_dynamicLoadout_F","O_Heli_Light_02_dynamicLoadout_F"];
+	_veh1types = selectrandom ["RHS_Ka52_vvsc"];
+	_veh2types = selectrandom ["RHS_Mi8AMTSh_vvsc","RHS_Mi8mt_vvsc","RHS_Mi8MTV3_vvsc","RHS_Mi8mt_Cargo_vdv","rhs_ka60_grey"];
+	_veh3types = selectrandom ["RHS_Ka52_vvsc"];
+
+
+
+
 
 
 	_aiGroup1 = createGroup CIVILIAN;
@@ -61,8 +65,8 @@ _setupObjects =
 		{
 			for "_i" from 1 to _Passangers do
 			{
-				private _soldierType = selectrandom ["Rifleman","Rifleman","Rifleman","Rifleman","Rifleman","Rifleman","Rifleman","Rifleman","Rifleman","Rifleman","AT","AA","SAW","SAW","SAW","Engineer","Medic","Grenedier","Engineer","Medic","Grenedier","Marksman","Marksman","Marksman"];
-				_soldier = [_aiGroup1, _missionPos, "CSAT", _soldierType] call createsoldier;
+				private _soldierType = selectrandom ["Rifleman","Rifleman","Rifleman","Rifleman","Rifleman","Rifleman","Rifleman","Rifleman","Rifleman","Rifleman","AT","AA","SAW","SAW","SAW","AT","Medic","Grenedier","AA","Medic","Grenedier","Marksman","Marksman","Marksman"];
+				_soldier = [_aiGroup1, _position, "CSAT", _soldierType] call createsoldier;
 				_soldier moveInCargo _vehicle;
 			};
 		};
@@ -126,10 +130,10 @@ _drop_item =
 _successExec =
 {
 	_lootPos = getMarkerPos _marker;
-	for "_i" from 1 to 4 do
+	for "_i" from 1 to 2 do
 	{
 		private _tier = selectrandom ["1","2","3"];
-		private _maxmoney = ceil (random 10000);
+		private _maxmoney = ceil (5000 + random 15000);
 		private _box = [_lootPos, "CSAT", _tier, 0, _maxmoney] call createrandomlootcrate;
 		_box setVariable ["moveable", true, true];
 	};

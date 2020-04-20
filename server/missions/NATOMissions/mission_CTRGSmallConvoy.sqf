@@ -20,7 +20,7 @@ _setupObjects =
 	_town = (call cityList) call BIS_fnc_selectRandom;
 	_missionPos = markerPos _missionLocation;
 
-	_veh1types = selectrandom ["B_T_LSV_01_armed_F"];
+	_veh1types = selectrandom ["rhsusf_m1043_w_m2","rhsusf_m1043_w_mk19","rhsusf_m1045_w"];
 
 	_aiGroup1 = createGroup CIVILIAN;
 
@@ -40,7 +40,7 @@ _setupObjects =
 		{
 			for "_i" from 1 to _drivers do
 			{
-				private _Driver = [_aiGroup1, _missionPos, "NATO", "Crew"] call createsoldier;
+				private _Driver = [_aiGroup1, _missionPos, "NATO", "CTRG"] call createsoldier;
 				_Driver moveInDriver _vehicle;
 			};
 		};
@@ -48,20 +48,20 @@ _setupObjects =
 		{
 			for "_i" from 1 to _Commanders do
 			{
-				private _Commander = [_aiGroup1, _missionPos, "NATO", "Crew"] call createsoldier;
+				private _Commander = [_aiGroup1, _missionPos, "NATO", "CTRG"] call createsoldier;
 				_Commander moveInCommander _vehicle;
 			};
 		};
 		if (_Gunners > 0) then
 		{
-			private _gunner = [_aiGroup1, _missionPos, "NATO", "Crew"] call createsoldier;
+			private _gunner = [_aiGroup1, _missionPos, "NATO", "CTRG"] call createsoldier;
 			_gunner moveInGunner _vehicle;
 		};
 		if (_Passangers > 0) then
 		{
 			for "_i" from 1 to _Passangers do
 			{
-				private _soldierType = selectrandom ["Rifleman","Rifleman","Rifleman","Rifleman","Rifleman","Rifleman","Rifleman","Rifleman","Rifleman","Rifleman","AT","AA","SAW","SAW","SAW","Engineer","Medic","Grenedier","Engineer","Medic","Grenedier","Marksman","Marksman","Marksman"];
+				private _soldierType = selectrandom ["Rifleman","Rifleman","Rifleman","Rifleman","Rifleman","Rifleman","Rifleman","Rifleman","Rifleman","Rifleman","AT","AA","SAW","SAW","SAW","AT","Medic","Grenedier","AA","Medic","Grenedier","Marksman","Marksman","Marksman"];
 				_soldier = [_aiGroup1, _missionPos, "NATO", _soldierType] call createsoldier;
 
 				_soldier moveInCargo _vehicle;
@@ -125,7 +125,7 @@ _successExec =
 	for "_i" from 1 to 2 do
 	{
 		private _tier = selectrandom ["2","3"];
-		private _maxmoney = ceil (random 10000);
+		private _maxmoney = ceil (2000 + random 8000);
 		private _box = [_lootPos, "NATO", _tier, 0, _maxmoney] call createrandomlootcrate;
 		_box setVariable ["moveable", true, true];
 	};

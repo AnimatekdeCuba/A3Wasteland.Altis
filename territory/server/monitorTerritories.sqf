@@ -200,8 +200,8 @@ _onCaptureFinished =
 	_spawnInfantry = [true,true]; //Land, Water
 	_spawnVehicles = [false,false,false]; //Land,Water,Air
 	_stayStill = false; //Stay still and do not patrol
-	_infantryAlways = _radius*0.1; //1.5% from radius
-	_infantryRandom = 3;
+	_infantryAlways = _radius*0.07; //1.5% from radius
+	_infantryRandom = 5;
 	_vehiclesAlways = 0;
 	_vehiclesRandom = 0;
 	_aiSkills = "0.8"; //Default or an array
@@ -240,32 +240,32 @@ _onCaptureFinished =
 		case ("TERRITORY_OilRigKavala") : {
 			_spawnInfantry = [false,true]; //Land, Water
 			_spawnVehicles = [false,false,true]; //Land,Water,Air
-			_infantryAlways = _radius*0.05; //1.5% from radius
-			_infantryRandom = 5;
+			_infantryAlways = _radius*0.03; //1.5% from radius
+			_infantryRandom = 2;
 			_vehiclesAlways = 1;
 			_vehiclesRandom = 1;
 		};
 		case ("TERRITORY_OilRigNorth") : {
 			_spawnInfantry = [false,true]; //Land, Water
 			_spawnVehicles = [false,false,true]; //Land,Water,Air
-			_infantryAlways = _radius*0.05; //1.5% from radius
-			_infantryRandom = 5;
+			_infantryAlways = _radius*0.03; //1.5% from radius
+			_infantryRandom = 2;
 			_vehiclesAlways = 1;
 			_vehiclesRandom = 1;
 		};
 		case ("TERRITORY_OilRigPyrgosGulf") : {
 			_spawnInfantry = [false,true]; //Land, Water
 			_spawnVehicles = [false,false,true]; //Land,Water,Air
-			_infantryAlways = _radius*0.05; //1.5% from radius
-			_infantryRandom = 5;
+			_infantryAlways = _radius*0.03; //1.5% from radius
+			_infantryRandom = 2;
 			_vehiclesAlways = 1;
 			_vehiclesRandom = 1;
 		};
 		case ("TERRITORY_OilRigSouth") : {
 			_spawnInfantry = [false,true]; //Land, Water
 			_spawnVehicles = [false,false,true]; //Land,Water,Air
-			_infantryAlways = _radius*0.05; //1.5% from radius
-			_infantryRandom = 5;
+			_infantryAlways = _radius*0.03; //1.5% from radius
+			_infantryRandom = 2;
 			_vehiclesAlways = 1;
 			_vehiclesRandom = 1;
 		};

@@ -71,7 +71,7 @@ class TOParmaInfoD
 		class TARulesTiTleBackground: RscText
 		{
 			idc = TOParmaInfo_Rules_Title_BG;
-			text = "REGLAS";
+			text = "";
 			x = "0 * (((safezoneW / safezoneH) min 1.2) / 40)";
 			y = "2.2 * ((((safezoneW / safezoneH) min 1.2) / 1.2) / 25)";
 			w = "15 * (((safezoneW / safezoneH) min 1.2) / 40)";

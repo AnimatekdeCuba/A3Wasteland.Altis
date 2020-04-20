@@ -38,7 +38,7 @@ BoS_open =
 		};*/
 		default
 		{
-		hint "Ha ocurrido un error. Esto debió ser porque tu Base no está bloqueada."
+		hint "Ha ocurrido un error. Esto debió ser porque su Base no está bloqueada."
 		};
 	};
 };

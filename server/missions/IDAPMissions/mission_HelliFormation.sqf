@@ -20,9 +20,9 @@ _setupObjects =
 	_town = (call cityList) call BIS_fnc_selectRandom;
 	_missionPos = markerPos _missionLocation;
 
-	_veh1types = "C_IDAP_Heli_Transport_02_F";
+	_veh1types = "RHS_UH60M_d";
 	_veh2types = "C_IDAP_Heli_Transport_02_F";
-	_veh3types = "C_IDAP_Heli_Transport_02_F";
+	_veh3types = "RHS_UH60M_MEV_d";
 
 
 	_aiGroup1 = createGroup CIVILIAN;
@@ -61,8 +61,8 @@ _setupObjects =
 		{
 			for "_i" from 1 to (ceil _Passangers/4) do
 			{
-				private _faction = selectrandom ["IDAP","IDAP","IDAP","IDAP","IDAP","IDAP","IDAP","IDAP","IDAP","NATO"];
-				_soldier = [_aiGroup1, _missionPos, _faction, "Rifleman"] call createsoldier;
+				private _soldierType = selectrandom ["Rifleman","Rifleman","Rifleman","Rifleman","Rifleman","Rifleman","Rifleman","Rifleman","Rifleman","Rifleman","AT","AT","AT","Grenedier","Grenedier","Grenedier","Grenedier","Grenedier"];
+				_soldier = [_aiGroup2, _position, "IDAP", _soldierType] call createsoldier;
 				_soldier moveInCargo _vehicle;
 			};
 		};
@@ -126,10 +126,10 @@ _drop_item =
 _successExec =
 {
 _lootPos = getMarkerPos _marker;
-	for "_i" from 1 to 4 do
+	for "_i" from 1 to 2 do
 	{
 		private _tier = selectrandom ["1","2","3"];
-		private _maxmoney = ceil (random 10000);
+		private _maxmoney = ceil (5000 + random 15000);
 		private _box = [_lootPos, "IDAP", _tier, 0, _maxmoney] call createrandomlootcrate;
 		_box setVariable ["moveable", true, true];
 	};

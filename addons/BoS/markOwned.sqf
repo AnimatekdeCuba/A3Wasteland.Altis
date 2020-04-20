@@ -37,7 +37,7 @@ _relockTime = [];
 	_marker setMarkerTypeLocal "waypoint";
 	_marker setMarkerPosLocal _objPos;
 	//_marker setMarkerTextLocal _name;
-	_marker setMarkerSizeLocal [0.6,0.6];
+	_marker setMarkerSizeLocal [0.3,0.3];
 
 	if ((_maxLifetime - _relockTime) < 32) then
 	{

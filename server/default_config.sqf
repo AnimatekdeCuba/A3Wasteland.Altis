@@ -11,9 +11,9 @@
 A3W_teamPlayersMap = 1;											// Show all friendly players on the map at all times, regardless of difficulty level (0 = no, 1 = yes)
 A3W_disableGlobalVoice = 1;										// Auto-switch channel to Direct communication whenever broadcasting voice on global, unless being admin (0 = no, 1 = yes)
 A3W_disableSideVoice = 1;										// Auto-switch channel to Direct communication whenever broadcasting voice on side (0 = no, 1 = block Ind team, 2 = block all teams)
-A3W_uavControl = "group";										// Restrict connection to UAVs based on ownership ("owner", "group", "side")
+A3W_uavControl = "owner";										// Restrict connection to UAVs based on ownership ("owner", "group", "side")
 A3W_disableUavFeed = 0;											// Force disable UAV PIP feed to prevent thermal camera abuse (0 = no, 1 = yes)
-A3W_disableBuiltInThermal = 0;									// Display a black screen if the player tries to use thermal vision built-in a handheld weapon like Titan launcher or laser designator (0 = no, 1 = yes)
+//A3W_disableBuiltInThermal = 0;									// Display a black screen if the player tries to use thermal vision built-in a handheld weapon like Titan launcher or laser designator (0 = no, 1 = yes)
 
 // Timers
 BoS_coolDownTimer = 3600;										// Baselocker hacking timer
@@ -69,7 +69,7 @@ A3W_vehiclePurchaseCooldown = 10;								// Number of seconds to wait before all
 
 // ATM settings
 A3W_atmEnabled = 1;												// Enable ATM system (0 = no, 1 = yes)
-A3W_atmMaxBalance = 5000000;									// Maximum amount of money that can be stored in a bank account (don't go over 16777216 as numbers start losing accuracy)
+A3W_atmMaxBalance = 16000000;									// Maximum amount of money that can be stored in a bank account (don't go over 16777216 as numbers start losing accuracy)
 A3W_atmTransferFee = 3;											// Fee in percent charged to players for money transfers to other players (0 to 50)
 A3W_atmTransferAllTeams = 1;									// Allow money transfers between players of all teams/sides (0 = same team only, 1 = all teams)
 A3W_atmEditorPlacedOnly = 0;									// Only allow access via ATMs placed from the mission editor (0 = all ATMs from towns & editor allowed, 1 = ATMs from editor only) Note: Stratis has no town ATMs, only editor ones.
@@ -119,7 +119,7 @@ PDB_ObjectFileID = "A3WD_";										// Object savefile prefix (if you run multi
 // extDB settings
 A3W_extDB_ServerID = 1;											// Server ID to use in the database for the particular server running off this config file; if you have multiple servers, they all need different IDs
 A3W_extDB_Environment = "normal";								// Value used to separate player & object data from multiple environments running on the same map (e.g. "normal", "hardcore", "dev", etc. can be whatever you want)
-A3W_extDB_playerSaveCrossMap = 0;								// Player saves are shared across maps in same environment, with player location saved separately for each map; death resets save on all maps (0 = no, 1 = yes)
+A3W_extDB_playerSaveCrossMap = 1;								// Player saves are shared across maps in same environment, with player location saved separately for each map; death resets save on all maps (0 = no, 1 = yes)
 A3W_extDB_GhostingTimer = 5*60;									// Number of seconds a player has to wait when switching between servers running the same map (0 = disabled)
 A3W_extDB_GhostingAdmins = 0;									// Apply ghosting restriction to server admins (0 = no, 1 = yes)
 A3W_extDB_SaveUnlockedObjects = 1;								// Save and restore unlocked baseparts that were purchased or locked at least once during their lifetime (0 = no, 1 = yes)
@@ -135,9 +135,9 @@ A3W_extDB_RconCommands = "KICK-ADDBAN";							// List of dash-separated RCON com
 A3W_hcPrefix = "A3W_HC";										// Prefix of the headless client unit names in mission.sqm
 A3W_hcObjCaching = 1;											// Enable headless client object caching (0 = no, 1 = yes)
 A3W_hcObjCachingID = 1;											// ID of the headless client in charge of object caching (1 or 2)
-A3W_hcObjCleanup = 0;											// Enable headless client server cleanup (0 = no, 1 = yes)
+A3W_hcObjCleanup = 1;											// Enable headless client server cleanup (0 = no, 1 = yes)
 A3W_hcObjCleanupID = 1;											// ID of the headless client in charge of object saving (1 or 2)
-A3W_hcObjSaving = 0;											// Enable headless client vehicle & object saving (0 = no, 1 = yes)
+A3W_hcObjSaving = 1;											// Enable headless client vehicle & object saving (0 = no, 1 = yes)
 A3W_hcObjSavingID = 1;											// ID of the headless client in charge of object saving (1 or 2)
 
 // HEADLESS CLIENT NOTES:
@@ -180,18 +180,27 @@ A3W_territoryAllowed = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];			//Territories allowed
 A3W_serverMissions = 1;											// Enable server missions (0 = no, 1 = yes)
 A3W_missionsDifficulty = 1;										// Missions difficulty (0 = normal, 1 = hard)
 A3W_missionFarAiDrawLines = 1;									// Draw small red lines on the map from mission markers to individual units & vehicles which are further away than 75m from the objective (0 = no, 1 = yes)
-A3W_missionsQuantity = 6;										// Number of missions running at the same time (0 to 6)
-
-/* Unused Vanilla mission types
+A3W_missionsQuantity = 8;										// Number of missions running at the same time (0 to 8)
 A3W_heliPatrolMissions = 1;										// Enable missions involving flying helicopters piloted by AI (0 = no, 1 = yes)
 A3W_underWaterMissions = 1;										// Enable underwater missions which require diving gear (0 = no, 1 = yes)
-A3W_mainMissionDelay = 10*60;									// Time in seconds between Main Missions
+A3W_mainMissionDelay = 15*60;									// Time in seconds between Main Missions
 A3W_mainMissionTimeout = 60*60;									// Time in seconds that a Main Mission will run for, unless completed
 A3W_sideMissionDelay = 5*60;									// Time in seconds between Side Missions
-A3W_sideMissionTimeout = 45*60;									// Time in seconds that a Side Mission will run for, unless completed
-A3W_moneyMissionDelay = 15*60;									// Time in seconds between Money Missions
+A3W_sideMissionTimeout = 60*60;									// Time in seconds that a Side Mission will run for, unless completed
+A3W_moneyMissionDelay = 10*60;									// Time in seconds between Money Missions
 A3W_moneyMissionTimeout = 60*60;								// Time in seconds that a Money Mission will run for, unless completed
-*/
+A3W_extraMissionDelay = 5*60;									// Time in seconds between Extra Missions
+A3W_extraMissionTimeout = 45*60;								// Time in seconds that a Extra Mission will run for, unless completed
+A3W_patrolMissionDelay = 30*60;									// Time in seconds between Patrol Missions
+A3W_patrolMissionTimeout = 60*60;								// Time in seconds that a Patrol Mission will run for, unless completed
+A3W_vehicleMissionDelay = 10*60;								// Time in seconds between vehicle capture missions
+A3W_vehicleMissionTimeout = 60*60;								// Time in seconds vehicle capture missions will run for
+A3W_hostileairMissionDelay = 20*60;								// Time in seconds between hostile air Missions
+A3W_hostileairMissionTimeout = 30*60;							// Time in seconds that a hostile air will run for, unless completed
+A3W_aquaticMissionDelay = 5*60;									// Time in seconds between aquatic Missions
+A3W_aquaticMissionTimeout = 60*60;								// Time in seconds that a aquatic Mission will run for, unless completed
+A3W_PrimaryMissionDelay = 240*60;								// Time in seconds between Primary Missions  
+A3W_PrimaryMissionTimeout = 240*60;								// Time in seconds that a Primary Mission will run for, unless completed
 A3W_AAFMissionDelay = 5*60;										// Time in seconds between AAF Missions
 A3W_AAFMissionTimeout = 60*60;									// Time in seconds that a AAF Mission will run for, unless completed
 A3W_CSATMissionDelay = 15*60;									// Time in seconds between CSAT Missions
@@ -203,4 +212,4 @@ A3W_IDAPMissionTimeout = 60*60;									// Time in seconds that a IDAP Mission w
 A3W_NATOMissionDelay = 10*60;									// Time in seconds between NATO Missions
 A3W_NATOMissionTimeout = 60*60;									// Time in seconds that a NATO Mission will run for, unless completed
 A3W_SYNMissionDelay = 5*60;										// Time in seconds between SYN Missions
-A3W_SYNMissionTimeout = 45*60;							// Time in seconds that a SYN Mission will run for, unless completed
+A3W_SYNMissionTimeout = 45*60;									// Time in seconds that a SYN Mission will run for, unless completed

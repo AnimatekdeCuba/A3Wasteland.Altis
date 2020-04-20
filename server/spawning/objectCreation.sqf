@@ -17,10 +17,10 @@ _allowDamage = false;
 
 switch (true) do
 {
-	/*case (_objClass == "Land_BarrelWater_F"):
+	case (_objClass == "Land_BarrelWater_F"):
 	{
 		_obj setVariable ["water", 50, true];
-	};*/
+	};
 	case (_objClass == "Land_Sacks_goods_F"):
 	{
 		_obj setVariable ["food", 40, true];
@@ -39,7 +39,7 @@ switch (true) do
 		_obj addWeaponCargoGlobal ["Binocular", 5];
 		_obj addItemCargoGlobal ["FirstAidKit", 10];
 		_obj addItemCargoGlobal ["ItemGPS", 5];
-		//_obj addItemCargoGlobal ["Medikit", 4];
+		_obj addItemCargoGlobal ["Medikit", 4];
 		_obj addItemCargoGlobal ["ToolKit", 2];
 	};
 	default

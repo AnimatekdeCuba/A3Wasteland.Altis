@@ -103,7 +103,7 @@ while {true} do
 				private _timer = ftfar_wait_for_action_time;
 				while {_timer > 0} do
 				{
-					cutText [format["%1\n%2", _message, format["Te quedan %1 segundo/s para ser expulsado (Kickeado)!", _timer]], "BLACK FADED", 999];
+					cutText [format["%1\n%2", _message, format["Te quedan %1 segundos para ser expulsado (Kickeado)!", _timer]], "BLACK FADED", 999];
 					uiSleep 1;
 					_timer = _timer - 1;
 					if (call _checkFunction) exitWith {};

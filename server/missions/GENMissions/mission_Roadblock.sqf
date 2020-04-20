@@ -27,11 +27,11 @@ _setupObjects =
 	_bargate = createVehicle ["Land_BarGate_F", _missionPos, [], 0, "NONE"];
 	_bargate setDir _markerDir;
 	_bunker1 = createVehicle ["Land_BagBunker_Small_F", _bargate modelToWorld [6.5,-2,-4.1], [], 0, "NONE"];
-	_obj1 = createVehicle ["I_GMG_01_high_F", _bargate modelToWorld [6.5,-2,-4.1], [], 0, "NONE"];
+	_obj1 = createVehicle ["RHS_M2StaticMG_W", _bargate modelToWorld [6.5,-2,-4.1], [], 0, "NONE"];
 	_obj1 setVariable ["moveable", true, true];
 	_bunker1 setDir _markerDir;
 	_bunker2 = createVehicle ["Land_BagBunker_Small_F", _bargate modelToWorld [-8,-2,-4.1], [], 0, "NONE"];
-	_obj2 = createVehicle ["I_GMG_01_high_F", _bargate modelToWorld [-8,-2,-4.1], [], 0, "NONE"];
+	_obj2 = createVehicle ["RHS_M2StaticMG_W", _bargate modelToWorld [-8,-2,-4.1], [], 0, "NONE"];
 	_obj2 setVariable ["moveable", true, true];
 	_bunker2 setDir _markerDir;
 
@@ -39,7 +39,8 @@ _setupObjects =
 	_aiGroup1  = createGroup CIVILIAN;
 	for "_i" from 1 to 7 do
 	{
-		[_aiGroup1, _missionPos, "GEN", "Rifleman"] call createsoldier;
+		private _soldierType = selectrandom ["Rifleman","Rifleman","Rifleman","Rifleman","Rifleman","Rifleman","Rifleman","Rifleman","Rifleman","Rifleman","AT","AT","AT","Grenedier","Grenedier","Grenedier","Grenedier","Grenedier"];
+		[_aiGroup1, _missionPos, "GEN", _soldierType] call createsoldier;
 	};
 	_aiGroup1 setCombatMode "RED";
 	_missionHintText = format ["Enemies have set up an illegal roadblock and are searching vehicles! They need to be stopped!", GENMissionColor];
@@ -69,7 +70,7 @@ _successExec =
 	for "_i" from 1 to 1 do
 	{
 		private _tier = selectrandom ["1","2"];
-		private _maxmoney = ceil (random 10000);
+		private _maxmoney = ceil (2000 + random 8000);
 		private _box = [_lootPos, "GEN", _tier, 0, _maxmoney] call createrandomlootcrate;
 		_box setVariable ["moveable", true, true];
 	};

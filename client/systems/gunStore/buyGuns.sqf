@@ -102,10 +102,10 @@ storePurchaseHandle = _this spawn
 		case 0:
 		{
 			//Check for donator only items
-			if (!(getPlayerUID player call isdonor) && _itemData in call donatorItems) exitWith
+			/*if (!(getPlayerUID player call isdonor) && _itemData in call donatorItems) exitWith
 			{
 				[_itemText] call _showDonatorOnlyError;
-			};
+			};*/
 			//Check for mission only items
 			if (_itemData in call missionOnlyItems) exitWith
 			{

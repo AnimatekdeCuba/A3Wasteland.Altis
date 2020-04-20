@@ -29,22 +29,17 @@ _setupObjects =
 	// Class, Position, Fuel, Ammo, Damage, Special
 _wreckTypes = selectrandom 
 	[
-		"O_Plane_CAS_02_dynamicLoadout_F",
-		"O_Plane_Fighter_02_F",
-		"O_Plane_Fighter_02_Stealth_F",
-		"O_Heli_Transport_04_F",
-		"O_Heli_Transport_04_ammo_F",
-		"O_Heli_Transport_04_bench_F",
-		"O_Heli_Transport_04_box_F",
-		"O_Heli_Transport_04_fuel_F",
-		"O_Heli_Transport_04_medevac_F",
-		"O_Heli_Transport_04_repair_F",
-		"O_Heli_Transport_04_covered_F",
-		"O_Heli_Attack_02_dynamicLoadout_F",
-		"O_Heli_Light_02_dynamicLoadout_F",
-		"O_Heli_Light_02_unarmed_F",
-		"O_T_VTOL_02_infantry_dynamicLoadout_F",
-		"O_T_VTOL_02_vehicle_dynamicLoadout_F"
+		"RHS_Ka52_vvsc",
+		"RHS_Mi24V_vvsc",
+		"rhs_mi28n_vvsc",
+		"RHS_Mi8AMTSh_vvsc",
+		"RHS_Mi8mt_vvsc",
+		"RHS_Mi8MTV3_vvsc",
+		"rhs_mig29sm_vmf",
+		"RHS_TU95MS_vvs_old",
+		"RHS_Su25SM_vvs",
+		"RHS_Mi8mt_Cargo_vdv",
+		"rhs_ka60_grey"
 	];
 	_wreckName = getText (configFile >> "CfgVehicles" >> _wreckTypes >> "displayName");
 	_wreck = [_wreckTypes, _wreckPos, 0, 0, 1] call createMissionVehicle;
@@ -59,14 +54,14 @@ _wreckTypes = selectrandom
 	_aiGroup1 = createGroup CIVILIAN;
 	for "_i" from 1 to 6 do
 	{
-		private _soldierType = selectrandom ["Rifleman","Rifleman","Rifleman","Rifleman","Rifleman","Rifleman","Rifleman","Rifleman","Rifleman","Rifleman","AT","AA","SAW","SAW","SAW","Engineer","Medic","Grenedier","Engineer","Medic","Grenedier","Marksman","Marksman","Marksman"];
+		private _soldierType = selectrandom ["Rifleman","Rifleman","Rifleman","Rifleman","Rifleman","Rifleman","Rifleman","Rifleman","Rifleman","Rifleman","AT","AA","SAW","SAW","SAW","AT","Medic","Grenedier","AA","Medic","Grenedier","Marksman","Marksman","Marksman"];
 		[_aiGroup1, _missionPos, "CSAT", _soldierType] call createsoldier;
 	};
 	_aiGroup1 setCombatMode "RED";
 	_aiGroup2 = createGroup CIVILIAN;
 	for "_i" from 1 to 6 do
 	{
-		private _soldierType = selectrandom ["Rifleman","Rifleman","Rifleman","Rifleman","Rifleman","Rifleman","Rifleman","Rifleman","Rifleman","Rifleman","AT","AA","SAW","SAW","SAW","Engineer","Medic","Grenedier","Engineer","Medic","Grenedier","Marksman","Marksman","Marksman"];
+		private _soldierType = selectrandom ["Rifleman","Rifleman","Rifleman","Rifleman","Rifleman","Rifleman","Rifleman","Rifleman","Rifleman","Rifleman","AT","AA","SAW","SAW","SAW","AT","Medic","Grenedier","AA","Medic","Grenedier","Marksman","Marksman","Marksman"];
 		[_aiGroup2, _missionPos, "CSAT", _soldierType] call createsoldier;
 	};
 	_aiGroup2 setCombatMode "RED";
@@ -90,7 +85,7 @@ _successExec =
 	// Mission completed
 	{ _x setVariable ["R3F_LOG_disabled", false, true] } forEach [_box1, _box2];
 	{ _x setVariable ["Moveable", true, true] } forEach [_box1, _box2];
-	{ _x setVariable ["cmoney",ceil (random 10000), true] } forEach [_box1, _box2];
+	{ _x setVariable ["cmoney",ceil (2000 + random 8000), true] } forEach [_box1, _box2];
 
 	_successHintMessage = "The airwreck supplies have been collected, well done.";
 };

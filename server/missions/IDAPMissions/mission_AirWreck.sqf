@@ -41,15 +41,15 @@ _setupObjects =
 	_aiGroup1 = createGroup CIVILIAN;
 	for "_i" from 1 to 6 do
 	{
-		private _faction = selectrandom ["IDAP","IDAP","IDAP","IDAP","IDAP","IDAP","IDAP","IDAP","IDAP","NATO"];
-		[_aiGroup1, _missionPos, _faction, "Rifleman"] call createsoldier;
+		private _soldierType = selectrandom ["Rifleman","Rifleman","Rifleman","Rifleman","Rifleman","Rifleman","Rifleman","Rifleman","Rifleman","Rifleman","AT","AT","AT","Grenedier","Grenedier","Grenedier","Grenedier","Grenedier"];
+		[_aiGroup1, _missionPos, "IDAP", _soldierType] call createsoldier;
 	};
 	_aiGroup1 setCombatMode "RED";
 	_aiGroup2 = createGroup CIVILIAN;
 	for "_i" from 1 to 6 do
 	{
-		private _faction = selectrandom ["IDAP","IDAP","IDAP","IDAP","IDAP","IDAP","IDAP","IDAP","IDAP","NATO"];
-		[_aiGroup1, _missionPos, _faction, "Rifleman"] call createsoldier;
+		private _soldierType = selectrandom ["Rifleman","Rifleman","Rifleman","Rifleman","Rifleman","Rifleman","Rifleman","Rifleman","Rifleman","Rifleman","AT","AT","AT","Grenedier","Grenedier","Grenedier","Grenedier","Grenedier"];
+		[_aiGroup2, _missionPos, "IDAP", _soldierType] call createsoldier;
 	};
 	_aiGroup2 setCombatMode "RED";
 
@@ -72,7 +72,7 @@ _successExec =
 	// Mission completed
 	{ _x setVariable ["R3F_LOG_disabled", false, true] } forEach [_box1, _box2];
 	{ _x setVariable ["Moveable", true, true] } forEach [_box1, _box2];
-	{ _x setVariable ["cmoney",ceil (random 10000), true] } forEach [_box1, _box2];
+	{ _x setVariable ["cmoney",ceil (2000 + random 8000), true] } forEach [_box1, _box2];
 
 	_successHintMessage = "The airwreck supplies have been collected, well done.";
 };

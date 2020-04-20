@@ -147,4 +147,36 @@ if (call A3W_savingMethod == "extDB") then
 	["BackpackTexture", _backpackTexture]
 ];
 
+// zade BACKPACKONCHEST
+
+	_zade_Backpack = [_player] call zade_boc_fnc_chestpack;
+	
+	_zade_BackpackItem = [_player, false] call zade_boc_fnc_chestpackItems;
+	
+	_zade_BackpackMags = [_player] call zade_boc_fnc_chestpackMagazines;
+	
+{ _data pushBack _x } forEach
+[
+	["BackPackOnChest", _zade_Backpack],
+	["BackpackOnChestItem", _zade_BackpackItem],
+	["BackpackOnChestMags", _zade_BackpackMags]
+];
+// ACE3 PLAYER'S HEALTH STATUS
+_ace_getBloodLoss = _player call ACE_medical_fnc_getBloodLoss;
+{ _data pushBack _x } forEach
+[
+	["ACEPain", _player getVariable ["ace_medical_pain", 0]],
+	["ACEbloodVolume", _player getVariable ["ace_medical_bloodVolume", 0]],
+	["ACEBloodLoss", _ace_getBloodLoss],
+	["ACEtourniquets", _player getVariable ["ace_medical_tourniquets", []]],
+	["ACEopenWounds", _player getVariable ["ace_medical_openWounds", []]],
+	["ACEheartRate", _player getVariable ["ace_medical_heartRate", 0]],
+	["ACEbodyPartStatus", _player getVariable ["ace_medical_bodyPartStatus", []]]
+];
+/*
+{ _data pushBack _x } forEach
+[
+	["ActualPlayerSide", playerSide]
+];
+*/
 _data

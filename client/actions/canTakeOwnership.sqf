@@ -16,7 +16,7 @@
 #define ERR_CONNECTED "Alguien está conectado al UAV."
 #define ERR_DESTROYED "El vehículo ha sido destruido."
 #define ERR_CANCELLED "Adquisición cancelada!"
-
+//#define ERR_SPAWNED "No puedes adquirir los vehículos que spawnean en el mapa!"
 params ["_vehicle"];
 
 if (isNil "_vehicle") then

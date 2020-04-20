@@ -20,7 +20,7 @@ _setupObjects =
 	_town = (call cityList) call BIS_fnc_selectRandom;
 	_missionPos = markerPos _missionLocation;
 
-	_veh1types = selectrandom ["O_T_LSV_02_armed_F"];
+	_veh1types = selectrandom ["rhs_tigr_sts_msv","rhs_tigr_m_msv","rhsgref_BRDM2_ATGM_msv"];
 
 	_aiGroup1 = createGroup CIVILIAN;
 
@@ -128,7 +128,7 @@ _successExec =
 	for "_i" from 1 to 2 do
 	{
 		private _tier = selectrandom ["2","3"];
-		private _maxmoney = ceil (random 10000);
+		private _maxmoney = ceil (2000 + random 8000);
 		private _box = [_lootPos, "CSAT", _tier, 0, _maxmoney] call createrandomlootcrate;
 		_box setVariable ["moveable", true, true];
 	};

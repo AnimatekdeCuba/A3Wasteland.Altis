@@ -103,7 +103,7 @@ if (_ManagerLevel < 5) then
 		} 
 		else
 		{
-			titletext ["Hay otra Base demasiado cerca. Reposiciónela para Upgradear", "PLAIN DOWN"];
+			titletext ["Hay otra Base demasiado cerca. Cámbiela de lugar para Upgradear", "PLAIN DOWN"];
 		};
 	} 
 	else
@@ -111,7 +111,7 @@ if (_ManagerLevel < 5) then
 		//create prompt friendly price number
 		private _promptprice = (_UpgradePrice / 1000000);
 		//Prompt player to confirm cost
-		_msg = format ["%1<br/><br/>%2", format ["Te costará $%1 Millones upgradear la base a %2.", _promptprice, (_ManagerLevel + 1)], "Desea proceder?"];
+		_msg = format ["%1<br/><br/>%2", format ["Te costará $%1 Millones upgradear la base a %2.", _promptprice, (_ManagerLevel + 1)], "¿Desea proceder? ¿Mm..?"];
 		if ([_msg, "Resupply Vehicle", true, true] call BIS_fnc_guiMessage) then
 		{
 			//Make sure the player has enough money

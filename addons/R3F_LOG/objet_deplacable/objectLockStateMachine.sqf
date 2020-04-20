@@ -18,7 +18,7 @@ _lockState = _this select 3;
 _IsProtected = false;
 _IsAllowed = false;
 
-// _object remoteExec ["A3W_fnc_StatictLockPoss", 2];
+// _object call A3W_fnc_StatictLockPoss;
 
 if (((_object distance getMarkerPos "_BluBaseMarker") < 100) && !(side player == blufor)) exitwith {
 	hint "This base can only be changed by Blufor"; R3F_LOG_mutex_local_verrou = false;
@@ -39,7 +39,7 @@ switch (_lockState) do
 		_totalDuration = 1;
 		// Points of interest
 		_poiDist = ["A3W_poiObjLockDistance", 100] call getPublicVar;
-		_poiMarkers = allMapMarkers select {[["GenStore","GunStore","VehStore","Mission_","Jet_","Sniper_","RoadBlock_","Patrol_", "TERRITORY_", "NOBASE_"], _x] call fn_startsWith};
+		_poiMarkers = allMapMarkers select {[["GenStore","BaseStore","GunStore","VehStore","Mission_","Jet_","Sniper_","RoadBlock_","Patrol_", "TERRITORY_", "NOBASE_"], _x] call fn_startsWith};
 
 		if ({(getPosASL player) vectorDistance (ATLtoASL getMarkerPos _x) < _poiDist} count _poiMarkers > 0) exitWith
 		{

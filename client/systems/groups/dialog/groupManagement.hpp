@@ -128,7 +128,7 @@ class GroupManagement {
 
 		class DisbandButton : w_RscButton {
 			idc = groupManagementDisbandButton;
-			text = "Disolver";
+			text = "Deshacer";
 			onButtonClick = "[] execVM 'client\systems\groups\disbandGroup.sqf'";
 			x = 0.3075; y = 0.410;
 			w = 0.14; h = 0.033 * safezoneH;

@@ -38,7 +38,7 @@ if (_killer == _player) then
 	{
 		_deathCause = switch (true) do
 		{
-			case (_player == player && (_player getVariable ["acex_field_rations_thirst", 0] >= 99.9 || _player getVariable ["acex_field_rations_hunger", 0] >= 99.9)): { "survival" };
+			case (_player == player && (_player getVariable ["acex_field_rations_thirst", 0] >= 100 || _player getVariable ["acex_field_rations_hunger", 0] >= 100)): { "survival" };
 			case (getOxygenRemaining _player <= 0 && getPosASLW _player select 2 < -0.1): { "drown" };
 			default { "suicide" };
 		};

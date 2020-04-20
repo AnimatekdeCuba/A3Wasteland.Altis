@@ -20,8 +20,8 @@ _setupObjects =
 	_town = (call cityList) call BIS_fnc_selectRandom;
 	_missionPos = markerPos _missionLocation;
 
-	_veh1types = selectrandom ["O_Heli_Light_02_dynamicLoadout_F","O_Heli_Attack_02_dynamicLoadout_F"];
-	_veh2types = selectrandom ["O_Heli_Light_02_dynamicLoadout_F","O_Heli_Attack_02_dynamicLoadout_F"];
+	_veh1types = selectrandom ["rhs_mi28n_vvsc","RHS_Mi24V_vvsc"];
+	_veh2types = selectrandom ["rhs_mi28n_vvsc","RHS_Mi24V_vvsc"];
 
 	_rad = _town select 1;
 	_missionPos = [_missionPos,_rad,_rad + 50,5,0,0,0] call findSafePos;
@@ -57,7 +57,7 @@ _setupObjects =
 		{
 			for "_i" from 1 to _Passangers do
 			{
-				private _soldierType = selectrandom ["Rifleman","Rifleman","Rifleman","Rifleman","Rifleman","Rifleman","Rifleman","Rifleman","Rifleman","Rifleman","AT","AA","SAW","SAW","SAW","Engineer","Medic","Grenedier","Engineer","Medic","Grenedier","Marksman","Marksman","Marksman"];
+				private _soldierType = selectrandom ["Rifleman","Rifleman","Rifleman","Rifleman","Rifleman","Rifleman","Rifleman","Rifleman","Rifleman","Rifleman","AT","AA","SAW","SAW","SAW","AT","Medic","Grenedier","AA","Medic","Grenedier","Marksman","Marksman","Marksman"];
 				_soldier = [_aiGroup1, _missionPos, "CSAT", _soldierType] call createsoldier;
 				_soldier moveInCargo _vehicle;
 			};
@@ -125,7 +125,7 @@ _lootPos = getMarkerPos _marker;
 	for "_i" from 1 to 2 do
 	{
 		private _tier = selectrandom ["1","2","3"];
-		private _maxmoney = ceil (random 10000);
+		private _maxmoney = ceil (2000 + random 8000);
 		private _box = [_lootPos, "CSAT", _tier, 0, _maxmoney] call createrandomlootcrate;
 		_box setVariable ["moveable", true, true];
 	};

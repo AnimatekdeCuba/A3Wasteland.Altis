@@ -70,6 +70,7 @@ mf_init =
 _clientFunc = "client\functions";
 _serverFunc = "server\functions";
 
+A3W_fnc_StatictLockPoss = [_serverFunc, "fn_StatictLockPoss.sqf"] call mf_compile;
 A3W_fnc_artilleryStrike = "client\items\artillery\fn_artilleryStrike.sqf" call mf_compile;
 A3W_fnc_deathMessage = [_serverFunc, "fn_deathMessage.sqf"] call mf_compile;
 A3W_fnc_getInFast = [_clientFunc, "fn_getInFast.sqf"] call mf_compile;

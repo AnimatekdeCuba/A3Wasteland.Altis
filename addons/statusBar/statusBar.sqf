@@ -40,10 +40,8 @@ ZGO_StatusEnabled = true; // LOL ^^
 			};
 			//initialize variables and set values
 			_unit = _this select 0;
-			// _damage = round ((1 - (damage player)) * 100);
-			_damage = round ((1- (_unit getVariable ["ACE_medical_fnc_getBloodLoss", 0])) * 100);
-			//_damage = (round(_damage * 100));
-			//_hunger = ceil (hungerLevel max 0);
+			_damage = round (player getVariable ["ace_medical_bloodVolume", 100]);
+			// _hunger = ceil (hungerLevel min 100);
 			//_thirst = ceil (thirstLevel max 0);
 			_wallet = player getVariable ["cmoney",0] call fn_numbersText;
 			_respect = player getVariable ["bmoney",0] call fn_numbersText;
@@ -137,30 +135,32 @@ ZGO_StatusEnabled = true; // LOL ^^
 			parseText
 			format
 			["
-				<t shadow='1' shadowColor='#000000' color='%9'><img size='1.6'  shadowColor='#000000' image='addons\statusbar\icons\players.paa' color='%9'/> %2</t>
-				<t shadow='1' shadowColor='#000000' color='%15'><img size='1.0'  shadowColor='#000000' image='addons\statusbar\icons\hunger.paa' color='%15'/> %5%1</t>
-				<t shadow='1' shadowColor='#000000' color='%16'><img size='1.0'  shadowColor='#000000' image='addons\statusbar\icons\thirst.paa' color='%16'/> %6%1</t>
-				<t shadow='1' shadowColor='#000000' color='%9'><img size='1.0'  shadowColor='#000000' image='addons\statusbar\icons\money.paa' color='%9'/> %4</t>
-				<t shadow='1' shadowColor='#000000' color='%9'><img size='1.0'  shadowColor='#000000' image='addons\statusbar\icons\atm.paa' color='%9'/> %8</t>
+				<t shadow='1' shadowColor='#000000' color='%14'><img size='0.9'	shadowColor='#000000' image='addons\statusbar\icons\health.paa'		color='%9'/> %3</t>
+				<t shadow='1' shadowColor='#000000' color='%9'><img size='1.55'	shadowColor='#000000' image='addons\statusbar\icons\players.paa'	color='%9'/> %2</t>
+				<t shadow='1' shadowColor='#000000' color='%16'><img size='1.0'	shadowColor='#000000' image='addons\statusbar\icons\thirst.paa'		color='%16'/> %6%1</t>
+				<t shadow='1' shadowColor='#000000' color='%15'><img size='1.0'	shadowColor='#000000' image='addons\statusbar\icons\hunger.paa'		color='%15'/> %5%1</t>
+				<t shadow='1' shadowColor='#000000' color='%9'><img size='1.0'	shadowColor='#000000' image='addons\statusbar\icons\money.paa'		color='%9'/> %4</t>
+				<t shadow='1' shadowColor='#000000' color='%9'><img size='1.0'	shadowColor='#000000' image='addons\statusbar\icons\atm.paa'		color='%9'/> %8</t>
 				<t shadow='1' shadowColor='#000000' color='%9'>FPS: %7</t>
 				<t shadow='1' shadowColor='#000000' color='%9'><img size='1.6'  shadowColor='#000000' image='addons\statusbar\icons\restart.paa' color='%9'/>%12:%13</t>",
 
-						"%",
-						count playableUnits,
-						_damage,
-						_wallet,
-						_hunger,
-						_thirst,
-						_serverFPS,
-						_respect,
-						_colourDefault,
-						format["%1/%2",_xx,_yy],
-						_dir,
-						_hours,
-						_minutes,
-						_colourDamage,
-						_colourHunger,
-						_colourThirst
+						"%",							// 1
+						count playableUnits,			// 2
+						_damage,						// 3
+						_wallet,						// 4
+						_hunger,						// 5
+						_thirst,						// 6
+						_serverFPS,						// 7
+						_respect,						// 8
+						_colourDefault,					// 9
+						format["%1/%2",_xx,_yy],		// 10
+						_dir,							// 11
+						_hours,							// 12
+						_minutes,						// 13
+						_colourDamage,					// 14
+						_colourHunger,					// 15
+						_colourThirst,					// 16
+						_colour0						// 17
 			];
 		};
 	};

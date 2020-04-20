@@ -2,9 +2,9 @@
 //	@file Name: HvT.sqf
 //	@file Author: Cael817, CRE4MPIE, LouD, AgentRev
 
-#define HVT_AMOUNT 120000  // how much a player needs to be carrying to become a HvT
-#define HINT_DELAY 60  // number of seconds between each HvT reminder hint
-#define MARKER_REFRESH 30  // number of seconds between each HvT marker refresh
+#define HVT_AMOUNT 1000000  // how much a player needs to be carrying to become a HvT
+#define HINT_DELAY 120  // number of seconds between each HvT reminder hint
+#define MARKER_REFRESH 60  // number of seconds between each HvT marker refresh
 
 if (isServer) then
 {
@@ -29,7 +29,7 @@ while {true} do
 		hint parseText ([
 			"<t color='#FF0000' size='1.5' align='center'>High Value Target</t>",
 			//profileName,
-			"<t color='#FFFFFF' shadow='1' shadowColor='#000000' align='center'>Someone has spotted you carrying a large sum of money and has marked your location on the map!</t>"
+			"<t color='#FFFFFF' shadow='1' shadowColor='#000000' align='center'>Tienes demasiado dinero encima. Alguien ha marcado tu posición en el mapa!</t>"
 		] joinString "<br/>");
 
 		_lastHint = diag_tickTime;
@@ -50,8 +50,8 @@ while {true} do
 		{
 			createMarker [_markerName, getPosWorld player];
 			_markerName setMarkerColor "ColorRed";
-			_markerName setMarkerText format [" HVT: %1 ($%2k)", profileName, (floor ((player getVariable ["cmoney",0]) / 1000)) call fn_numToStr];
-			_markerName setMarkerSize [0.75, 0.75];
+			_markerName setMarkerText format [" HVT: %1 ($%2MM)", profileName, (floor ((player getVariable ["cmoney",0]) / 1000000)) call fn_numToStr];
+			_markerName setMarkerSize [0.55, 0.55];
 			_markerName setMarkerShape "ICON";
 			_markerName setMarkerType "mil_warning";
 

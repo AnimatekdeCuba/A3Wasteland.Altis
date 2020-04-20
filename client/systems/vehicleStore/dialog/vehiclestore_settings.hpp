@@ -289,6 +289,7 @@ class vehshopd
 			y = VehStoreMainBG_Y + (0.375 * SZ_SCALE); 
 			w = 0.1173 * SZ_SCALE; 
 			h = 0.040 * SZ_SCALE; 
-		}; 	};
+		};
+	};
 };
 

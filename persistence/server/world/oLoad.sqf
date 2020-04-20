@@ -2,7 +2,7 @@
 // * This project is licensed under the GNU Affero GPL v3. Copyright © 2014 A3Wasteland.com *
 // ******************************************************************************************
 //	@file Name: oLoad.sqf
-//	@file Author: AgentRev, JoSchaap, Austerror, GMG_Monkey
+//	@file Author: AgentRev, JoSchaap, Austerror, GMG_Monkey  edited by Animatek for use with ACE3
 
 #include "functions.sqf"
 #define STR_TO_SIDE(VAL) ([sideUnknown,BLUFOR,OPFOR,INDEPENDENT,CIVILIAN,sideLogic] select ((["WEST","EAST","GUER","CIV","LOGIC"] find toUpper (VAL)) + 1))
@@ -144,7 +144,8 @@ _objectsArray = [];
 					};
 				};
 				case "R3F_Side": { _value = _value call _strToSide };
-				case "lockDown": { _value }; // BASE LOCKER 
+				//case "lockDown": { _value }; // BASE LOCKER 
+				case "LockedDown": { _value }; // BASE LOCKER 
 				case "Lights": { _value }; // BASE LOCKER 
 				case "password": { _value }; 
 				case "password_door_1": { _value }; 

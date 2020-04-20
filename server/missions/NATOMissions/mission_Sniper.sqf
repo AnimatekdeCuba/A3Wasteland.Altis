@@ -24,14 +24,11 @@ _setupObjects =
 	_box1 = [_BoxPos1, "NATO", "1", 0, 0] call createrandomlootcrate;
 	private _BoxPos2 = [_missionPos, 3, 10,1,0,0,0] call findSafePos;
 	_box2 = [_BoxPos2, "NATO", "2", 0, 0] call createrandomlootcrate;
-	private _BoxPos3 = [_missionPos, 3, 10,1,0,0,0] call findSafePos;
-	_box3 = [_BoxPos3, "NATO", "2", 0, 0] call createrandomlootcrate;
-	private _BoxPos4 = [_missionPos, 3, 10,1,0,0,0] call findSafePos;
-	_box4 = [_BoxPos4, "NATO", "3", 0, 0] call createrandomlootcrate;
-	{ _x setVariable ["R3F_LOG_disabled", true, true] } forEach [_box1, _box2, _box3, _box4];
+
+	{ _x setVariable ["R3F_LOG_disabled", true, true] } forEach [_box1, _box2];
 	_aiGroup1 = createGroup CIVILIAN;
 	_aiGroup2 = createGroup CIVILIAN;
-	for "_i" from 1 to 10 do
+	for "_i" from 1 to 6 do
 	{
 		[_aiGroup2, _missionPos, "NATO", "Sniper"] call createsoldier;
 	};
@@ -60,15 +57,15 @@ _waitUntilCondition = nil;
 _failedExec =
 {
 	// Mission failed
-	{ deleteVehicle _x } forEach [_box1, _box2, _box3, _box4];
+	{ deleteVehicle _x } forEach [_box1, _box2];
 };
 
 _successExec =
 {
 	// Mission completed
-	{ _x setVariable ["R3F_LOG_disabled", false, true] } forEach [_box1, _box2, _box3, _box4];
-	{ _x setVariable ["Movable", true, true] } forEach [_box1, _box2, _box3, _box4];
-	{ _x setVariable ["cmoney", ceil (random 10000), true] } forEach [_box1, _box2, _box3, _box4];
+	{ _x setVariable ["R3F_LOG_disabled", false, true] } forEach [_box1, _box2];
+	{ _x setVariable ["Movable", true, true] } forEach [_box1, _box2];
+	{ _x setVariable ["cmoney", ceil (5000 + random 15000), true] } forEach [_box1, _box2];
 	_successHintMessage = format ["The snipers are dead! Well Done!"];
 };
 

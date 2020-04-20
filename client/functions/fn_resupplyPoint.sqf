@@ -407,4 +407,5 @@ Purpose: Allow players to rearm, repair, refuel, and resupply vehicles. Charges 
 		{
 			titleText [format ["You don't have enough money, %1 costs %2 to resupply", _vehname, _totalprice], "PLAIN DOWN"];
 		};
+mutexScriptInProgress = false;
 //All Done!

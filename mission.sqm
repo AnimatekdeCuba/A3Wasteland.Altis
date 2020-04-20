@@ -8,7 +8,7 @@ class EditorData
 	toggles=514;
 	class ItemIDProvider
 	{
-		nextID=16024;
+		nextID=16025;
 	};
 	class MarkerIDProvider
 	{
@@ -16,14 +16,14 @@ class EditorData
 	};
 	class LayerIndexProvider
 	{
-		nextID=288;
+		nextID=296;
 	};
 	class Camera
 	{
-		pos[]={22241.863,27.173685,14535.468};
-		dir[]={-0.62522125,-0.3721253,0.68604147};
-		up[]={-0.25066251,0.92817926,0.27504647};
-		aside[]={0.73911959,-4.4808257e-007,0.67359406};
+		pos[]={11900.062,41.624432,9426.7744};
+		dir[]={-0.43972227,-0.51958829,0.73258346};
+		up[]={-0.26740357,0.85441571,0.44549862};
+		aside[]={0.85740566,-8.0137397e-008,0.5146451};
 	};
 };
 binarizationWanted=0;
@@ -353,7 +353,7 @@ class Mission
 {
 	class Intel
 	{
-		briefingName=" AC A3Wasteland Altis v1.4D.0.2";
+		briefingName=" AC A3Wasteland Altis v1.4D.0.4";
 		overviewText="AC A3Wasteland By Animatek's Team";
 		resistanceWest=0;
 		startWeather=0;
@@ -11089,7 +11089,7 @@ class Mission
 						angles[]={0,2.5787754,0};
 					};
 					side="Civilian";
-					flags=3;
+					flags=7;
 					class Attributes
 					{
 						init="[this] spawn A3W_fnc_setupStoreNPC";
@@ -11097,14 +11097,14 @@ class Mission
 					};
 					id=205;
 					type="C_man_1_1_F";
-					atlOffset=0.35717964;
+					atlOffset=0.063081741;
 				};
 			};
 			class Attributes
 			{
 			};
 			id=204;
-			atlOffset=0.35717964;
+			atlOffset=0.063081741;
 		};
 		class Item39
 		{
@@ -11470,7 +11470,7 @@ class Mission
 		class Item73
 		{
 			dataType="Marker";
-			position[]={11802.776,14.966475,9570.042};
+			position[]={11765.495,15.01,9590.5};
 			name="heliSpawn_12";
 			type="Empty";
 			colorName="ColorGreen";
@@ -13650,7 +13650,7 @@ class Mission
 			flags=1;
 			class Attributes
 			{
-				init="this call A3W_fnc_setupMissionObject; this setVariable ['persistent', true];";
+				init="this setVariable ['persistent', true];this call A3W_fnc_setupMissionObject;";
 			};
 			id=1974;
 			type="Land_i_Shed_Ind_F";
@@ -13680,7 +13680,7 @@ class Mission
 			flags=1;
 			class Attributes
 			{
-				init="this call A3W_fnc_setupMissionObject; this setVariable ['persistent', true];";
+				init="this setVariable ['persistent', true];this call A3W_fnc_setupMissionObject;";
 			};
 			id=1977;
 			type="Land_i_Shed_Ind_F";
@@ -13698,7 +13698,7 @@ class Mission
 			flags=1;
 			class Attributes
 			{
-				init="this call A3W_fnc_setupMissionObject; this setVariable ['persistent', true];";
+				init="this setVariable ['persistent', true];this call A3W_fnc_setupMissionObject;";
 			};
 			id=1978;
 			type="Land_i_Shed_Ind_F";
@@ -13716,7 +13716,7 @@ class Mission
 			flags=1;
 			class Attributes
 			{
-				init="this call A3W_fnc_setupMissionObject; this setVariable ['persistent', true];";
+				init="this setVariable ['persistent', true];this call A3W_fnc_setupMissionObject;";
 			};
 			id=1989;
 			type="Land_i_Shed_Ind_F";
@@ -13744,7 +13744,7 @@ class Mission
 			flags=4;
 			class Attributes
 			{
-				init="this call A3W_fnc_setupMissionObject; this setVariable ['persistent', true];";
+				init="this setVariable ['persistent', true];this call A3W_fnc_setupMissionObject;";
 				createAsSimpleObject=1;
 				disableSimulation=1;
 				aiRadarUsage=-1170287404;
@@ -13787,7 +13787,7 @@ class Mission
 			side="Empty";
 			class Attributes
 			{
-				init="this call A3W_fnc_setupMissionObject; this setVariable ['persistent', true];";
+				init="this setVariable ['persistent', true];this call A3W_fnc_setupMissionObject;";
 				createAsSimpleObject=1;
 				disableSimulation=1;
 			};
@@ -13829,7 +13829,7 @@ class Mission
 			flags=4;
 			class Attributes
 			{
-				init="this call A3W_fnc_setupMissionObject; this setVariable ['persistent', true];";
+				init="this setVariable ['persistent', true];this call A3W_fnc_setupMissionObject;";
 				createAsSimpleObject=1;
 				disableSimulation=1;
 			};
@@ -13872,7 +13872,7 @@ class Mission
 			flags=4;
 			class Attributes
 			{
-				init="this call A3W_fnc_setupMissionObject; this setVariable ['persistent', true];";
+				init="this setVariable ['persistent', true];this call A3W_fnc_setupMissionObject;";
 				createAsSimpleObject=1;
 				disableSimulation=1;
 			};
@@ -13915,7 +13915,7 @@ class Mission
 			flags=4;
 			class Attributes
 			{
-				init="this call A3W_fnc_setupMissionObject; this setVariable ['persistent', true];";
+				init="this setVariable ['persistent', true];this call A3W_fnc_setupMissionObject;";
 				createAsSimpleObject=1;
 				disableSimulation=1;
 				aiRadarUsage=-2147483462;
@@ -13959,7 +13959,7 @@ class Mission
 			flags=4;
 			class Attributes
 			{
-				init="this call A3W_fnc_setupMissionObject; this setVariable ['persistent', true];";
+				init="this setVariable ['persistent', true];this call A3W_fnc_setupMissionObject;";
 				createAsSimpleObject=1;
 				disableSimulation=1;
 			};
@@ -14002,7 +14002,7 @@ class Mission
 			flags=4;
 			class Attributes
 			{
-				init="this call A3W_fnc_setupMissionObject; this setVariable ['persistent', true];";
+				init="this setVariable ['persistent', true];this call A3W_fnc_setupMissionObject;";
 				createAsSimpleObject=1;
 				disableSimulation=1;
 			};
@@ -14044,7 +14044,7 @@ class Mission
 			side="Empty";
 			class Attributes
 			{
-				init="this call A3W_fnc_setupMissionObject; this setVariable ['persistent', true];";
+				init="this setVariable ['persistent', true];this call A3W_fnc_setupMissionObject;";
 				createAsSimpleObject=1;
 				disableSimulation=1;
 			};
@@ -14087,7 +14087,7 @@ class Mission
 			flags=4;
 			class Attributes
 			{
-				init="this call A3W_fnc_setupMissionObject; this setVariable ['persistent', true];";
+				init="this setVariable ['persistent', true];this call A3W_fnc_setupMissionObject;";
 				createAsSimpleObject=1;
 				disableSimulation=1;
 			};
@@ -14190,7 +14190,7 @@ class Mission
 			side="Empty";
 			class Attributes
 			{
-				init="this call A3W_fnc_setupMissionObject; this setVariable ['persistent', true];";
+				init="this setVariable ['persistent', true];this call A3W_fnc_setupMissionObject;";
 				createAsSimpleObject=1;
 				disableSimulation=1;
 			};
@@ -14233,7 +14233,7 @@ class Mission
 			flags=4;
 			class Attributes
 			{
-				init="this call A3W_fnc_setupMissionObject; this setVariable ['persistent', true];";
+				init="this setVariable ['persistent', true];this call A3W_fnc_setupMissionObject;";
 				createAsSimpleObject=1;
 				disableSimulation=1;
 			};
@@ -14275,7 +14275,7 @@ class Mission
 			flags=4;
 			class Attributes
 			{
-				init="this call A3W_fnc_setupMissionObject; this setVariable ['persistent', true];";
+				init="this setVariable ['persistent', true];this call A3W_fnc_setupMissionObject;";
 				createAsSimpleObject=1;
 				disableSimulation=1;
 				aiRadarUsage=999433120;
@@ -14319,7 +14319,7 @@ class Mission
 			flags=4;
 			class Attributes
 			{
-				init="this call A3W_fnc_setupMissionObject; this setVariable ['persistent', true];";
+				init="this setVariable ['persistent', true];this call A3W_fnc_setupMissionObject;";
 				createAsSimpleObject=1;
 				disableSimulation=1;
 			};
@@ -14479,7 +14479,7 @@ class Mission
 			};
 			class Attributes
 			{
-				init="this call A3W_fnc_setupMissionObject; this setVariable ['persistent', true];";
+				init="this setVariable ['persistent', true];this call A3W_fnc_setupMissionObject;";
 			};
 			id=2032;
 			atlOffset=0.0058441162;
@@ -14523,7 +14523,7 @@ class Mission
 						angles[]={0,0.84789842,0};
 					};
 					side="Civilian";
-					flags=2;
+					flags=6;
 					class Attributes
 					{
 						init="[this] spawn A3W_fnc_setupStoreNPC";
@@ -14531,7 +14531,7 @@ class Mission
 					};
 					id=2313;
 					type="C_man_1_1_F";
-					atlOffset=0.56100464;
+					atlOffset=0.00082397461;
 					class CustomAttributes
 					{
 						class Attribute0
@@ -14580,7 +14580,7 @@ class Mission
 			{
 			};
 			id=2303;
-			atlOffset=0.56100464;
+			atlOffset=0.00082397461;
 		};
 		class Item282
 		{
@@ -14750,7 +14750,7 @@ class Mission
 			flags=4;
 			class Attributes
 			{
-				init="this call A3W_fnc_setupMissionObject; this setVariable ['persistent', true];";
+				init="this setVariable ['persistent', true];this call A3W_fnc_setupMissionObject;";
 				createAsSimpleObject=1;
 				disableSimulation=1;
 			};
@@ -14793,7 +14793,7 @@ class Mission
 			flags=4;
 			class Attributes
 			{
-				init="this call A3W_fnc_setupMissionObject; this setVariable ['persistent', true];";
+				init="this setVariable ['persistent', true];this call A3W_fnc_setupMissionObject;";
 				createAsSimpleObject=1;
 				disableSimulation=1;
 			};
@@ -14836,7 +14836,7 @@ class Mission
 			flags=4;
 			class Attributes
 			{
-				init="this call A3W_fnc_setupMissionObject; this setVariable ['persistent', true];";
+				init="this setVariable ['persistent', true];this call A3W_fnc_setupMissionObject;";
 				createAsSimpleObject=1;
 				disableSimulation=1;
 			};
@@ -14879,7 +14879,7 @@ class Mission
 			flags=4;
 			class Attributes
 			{
-				init="this call A3W_fnc_setupMissionObject; this setVariable ['persistent', true];";
+				init="this setVariable ['persistent', true];this call A3W_fnc_setupMissionObject;";
 				createAsSimpleObject=1;
 				disableSimulation=1;
 			};
@@ -14922,7 +14922,7 @@ class Mission
 			flags=1;
 			class Attributes
 			{
-				init="this call A3W_fnc_setupMissionObject; this setVariable ['persistent', true];";
+				init="this setVariable ['persistent', true];this call A3W_fnc_setupMissionObject;";
 			};
 			id=2314;
 			type="Land_Shed_08_grey_F";
@@ -14940,7 +14940,7 @@ class Mission
 			flags=1;
 			class Attributes
 			{
-				init="this call A3W_fnc_setupMissionObject; this setVariable ['persistent', true];";
+				init="this setVariable ['persistent', true];this call A3W_fnc_setupMissionObject;";
 				disableSimulation=1;
 			};
 			id=2348;
@@ -14982,7 +14982,7 @@ class Mission
 			flags=4;
 			class Attributes
 			{
-				init="this call A3W_fnc_setupMissionObject; this setVariable ['persistent', true];";
+				init="this setVariable ['persistent', true];this call A3W_fnc_setupMissionObject;";
 				createAsSimpleObject=1;
 			};
 			id=2358;
@@ -15088,7 +15088,7 @@ class Mission
 			flags=5;
 			class Attributes
 			{
-				init="this call A3W_fnc_setupMissionObject; this setVariable ['persistent', true];";
+				init="this setVariable ['persistent', true];this call A3W_fnc_setupMissionObject;";
 				disableSimulation=1;
 			};
 			id=2361;
@@ -15130,7 +15130,7 @@ class Mission
 			flags=5;
 			class Attributes
 			{
-				init="this call A3W_fnc_setupMissionObject; this setVariable ['persistent', true];";
+				init="this setVariable ['persistent', true];this call A3W_fnc_setupMissionObject;";
 				disableSimulation=1;
 			};
 			id=2369;
@@ -15171,7 +15171,7 @@ class Mission
 			flags=5;
 			class Attributes
 			{
-				init="this call A3W_fnc_setupMissionObject; this setVariable ['persistent', true];";
+				init="this setVariable ['persistent', true];this call A3W_fnc_setupMissionObject;";
 				disableSimulation=1;
 			};
 			id=2370;
@@ -15213,7 +15213,7 @@ class Mission
 			flags=5;
 			class Attributes
 			{
-				init="this call A3W_fnc_setupMissionObject; this setVariable ['persistent', true];";
+				init="this setVariable ['persistent', true];this call A3W_fnc_setupMissionObject;";
 			};
 			id=4487;
 			type="Land_Fortress_01_outterCorner_90_F";
@@ -15231,7 +15231,7 @@ class Mission
 			flags=5;
 			class Attributes
 			{
-				init="this call A3W_fnc_setupMissionObject; this setVariable ['persistent', true];";
+				init="this setVariable ['persistent', true];this call A3W_fnc_setupMissionObject;";
 			};
 			id=4488;
 			type="Land_Fortress_01_5m_F";
@@ -15249,7 +15249,7 @@ class Mission
 			flags=5;
 			class Attributes
 			{
-				init="this call A3W_fnc_setupMissionObject; this setVariable ['persistent', true];";
+				init="this setVariable ['persistent', true];this call A3W_fnc_setupMissionObject;";
 			};
 			id=4489;
 			type="Land_Fortress_01_outterCorner_90_F";
@@ -15267,7 +15267,7 @@ class Mission
 			flags=5;
 			class Attributes
 			{
-				init="this call A3W_fnc_setupMissionObject; this setVariable ['persistent', true];";
+				init="this setVariable ['persistent', true];this call A3W_fnc_setupMissionObject;";
 			};
 			id=4490;
 			type="Land_Fortress_01_5m_F";
@@ -15285,7 +15285,7 @@ class Mission
 			flags=5;
 			class Attributes
 			{
-				init="this call A3W_fnc_setupMissionObject; this setVariable ['persistent', true];";
+				init="this setVariable ['persistent', true];this call A3W_fnc_setupMissionObject;";
 			};
 			id=4491;
 			type="Land_Fortress_01_d_R_F";
@@ -15303,7 +15303,7 @@ class Mission
 			flags=5;
 			class Attributes
 			{
-				init="this call A3W_fnc_setupMissionObject; this setVariable ['persistent', true];";
+				init="this setVariable ['persistent', true];this call A3W_fnc_setupMissionObject;";
 			};
 			id=4492;
 			type="Land_Fortress_01_d_L_F";
@@ -15321,7 +15321,7 @@ class Mission
 			flags=4;
 			class Attributes
 			{
-				init="this call A3W_fnc_setupMissionObject; this setVariable ['persistent', true];";
+				init="this setVariable ['persistent', true];this call A3W_fnc_setupMissionObject;";
 			};
 			id=4493;
 			type="Land_GH_Stairs_F";
@@ -15338,7 +15338,7 @@ class Mission
 			side="Empty";
 			class Attributes
 			{
-				init="this call A3W_fnc_setupMissionObject; this setVariable ['persistent', true];";
+				init="this setVariable ['persistent', true];this call A3W_fnc_setupMissionObject;";
 			};
 			id=4494;
 			type="Land_GH_Stairs_F";
@@ -15356,7 +15356,7 @@ class Mission
 			flags=5;
 			class Attributes
 			{
-				init="this call A3W_fnc_setupMissionObject; this setVariable ['persistent', true];";
+				init="this setVariable ['persistent', true];this call A3W_fnc_setupMissionObject;";
 			};
 			id=4495;
 			type="Land_BasaltKerb_01_2m_F";
@@ -15374,7 +15374,7 @@ class Mission
 			flags=1;
 			class Attributes
 			{
-				init="this call A3W_fnc_setupMissionObject; this setVariable ['persistent', true];";
+				init="this setVariable ['persistent', true];this call A3W_fnc_setupMissionObject;";
 			};
 			id=4496;
 			type="Land_BasaltKerb_01_2m_F";
@@ -15392,7 +15392,7 @@ class Mission
 			flags=5;
 			class Attributes
 			{
-				init="this call A3W_fnc_setupMissionObject; this setVariable ['persistent', true];";
+				init="this setVariable ['persistent', true];this call A3W_fnc_setupMissionObject;";
 			};
 			id=4497;
 			type="Land_BasaltKerb_01_2m_F";
@@ -15410,7 +15410,7 @@ class Mission
 			flags=1;
 			class Attributes
 			{
-				init="this call A3W_fnc_setupMissionObject; this setVariable ['persistent', true];";
+				init="this setVariable ['persistent', true];this call A3W_fnc_setupMissionObject;";
 			};
 			id=4498;
 			type="Land_BasaltKerb_01_2m_F";
@@ -15428,7 +15428,7 @@ class Mission
 			flags=1;
 			class Attributes
 			{
-				init="this call A3W_fnc_setupMissionObject; this setVariable ['persistent', true];";
+				init="this setVariable ['persistent', true];this call A3W_fnc_setupMissionObject;";
 			};
 			id=4499;
 			type="Land_BasaltKerb_01_2m_F";
@@ -15446,7 +15446,7 @@ class Mission
 			flags=1;
 			class Attributes
 			{
-				init="this call A3W_fnc_setupMissionObject; this setVariable ['persistent', true];";
+				init="this setVariable ['persistent', true];this call A3W_fnc_setupMissionObject;";
 			};
 			id=4500;
 			type="Land_BasaltKerb_01_2m_F";
@@ -15464,7 +15464,7 @@ class Mission
 			flags=4;
 			class Attributes
 			{
-				init="this call A3W_fnc_setupMissionObject; this setVariable ['persistent', true];";
+				init="this setVariable ['persistent', true];this call A3W_fnc_setupMissionObject;";
 			};
 			id=4501;
 			type="Land_ConcreteKerb_01_4m_F";
@@ -15482,7 +15482,7 @@ class Mission
 			flags=4;
 			class Attributes
 			{
-				init="this call A3W_fnc_setupMissionObject; this setVariable ['persistent', true];";
+				init="this setVariable ['persistent', true];this call A3W_fnc_setupMissionObject;";
 			};
 			id=4502;
 			type="Land_ConcreteKerb_01_4m_F";
@@ -15500,7 +15500,7 @@ class Mission
 			flags=4;
 			class Attributes
 			{
-				init="this call A3W_fnc_setupMissionObject; this setVariable ['persistent', true];";
+				init="this setVariable ['persistent', true];this call A3W_fnc_setupMissionObject;";
 			};
 			id=4503;
 			type="Land_ConcreteKerb_01_2m_F";
@@ -15518,7 +15518,7 @@ class Mission
 			flags=4;
 			class Attributes
 			{
-				init="this call A3W_fnc_setupMissionObject; this setVariable ['persistent', true];";
+				init="this setVariable ['persistent', true];this call A3W_fnc_setupMissionObject;";
 			};
 			id=4504;
 			type="Land_ConcreteKerb_01_4m_F";
@@ -15536,7 +15536,7 @@ class Mission
 			flags=4;
 			class Attributes
 			{
-				init="this call A3W_fnc_setupMissionObject; this setVariable ['persistent', true];";
+				init="this setVariable ['persistent', true];this call A3W_fnc_setupMissionObject;";
 			};
 			id=4505;
 			type="Land_ConcreteKerb_01_4m_F";
@@ -15554,7 +15554,7 @@ class Mission
 			flags=4;
 			class Attributes
 			{
-				init="this call A3W_fnc_setupMissionObject; this setVariable ['persistent', true];";
+				init="this setVariable ['persistent', true];this call A3W_fnc_setupMissionObject;";
 			};
 			id=4506;
 			type="Land_ConcreteKerb_01_4m_F";
@@ -15571,7 +15571,7 @@ class Mission
 			side="Empty";
 			class Attributes
 			{
-				init="this call A3W_fnc_setupMissionObject; this setVariable ['persistent', true];";
+				init="this setVariable ['persistent', true];this call A3W_fnc_setupMissionObject;";
 			};
 			id=4507;
 			type="Land_ConcreteKerb_01_2m_F";
@@ -15589,7 +15589,7 @@ class Mission
 			flags=4;
 			class Attributes
 			{
-				init="this call A3W_fnc_setupMissionObject; this setVariable ['persistent', true];";
+				init="this setVariable ['persistent', true];this call A3W_fnc_setupMissionObject;";
 			};
 			id=4508;
 			type="Land_ConcreteKerb_01_4m_F";
@@ -15607,7 +15607,7 @@ class Mission
 			flags=4;
 			class Attributes
 			{
-				init="this call A3W_fnc_setupMissionObject; this setVariable ['persistent', true];";
+				init="this setVariable ['persistent', true];this call A3W_fnc_setupMissionObject;";
 			};
 			id=4509;
 			type="Land_ConcreteKerb_01_4m_F";
@@ -15625,7 +15625,7 @@ class Mission
 			flags=4;
 			class Attributes
 			{
-				init="this call A3W_fnc_setupMissionObject; this setVariable ['persistent', true];";
+				init="this setVariable ['persistent', true];this call A3W_fnc_setupMissionObject;";
 			};
 			id=4510;
 			type="Land_ConcreteKerb_01_4m_F";
@@ -15642,7 +15642,7 @@ class Mission
 			side="Empty";
 			class Attributes
 			{
-				init="this call A3W_fnc_setupMissionObject; this setVariable ['persistent', true];";
+				init="this setVariable ['persistent', true];this call A3W_fnc_setupMissionObject;";
 			};
 			id=4511;
 			type="Land_ConcreteKerb_01_4m_F";
@@ -15659,7 +15659,7 @@ class Mission
 			side="Empty";
 			class Attributes
 			{
-				init="this call A3W_fnc_setupMissionObject; this setVariable ['persistent', true];";
+				init="this setVariable ['persistent', true];this call A3W_fnc_setupMissionObject;";
 			};
 			id=4512;
 			type="Land_ConcreteKerb_01_4m_F";
@@ -15676,7 +15676,7 @@ class Mission
 			side="Empty";
 			class Attributes
 			{
-				init="this call A3W_fnc_setupMissionObject; this setVariable ['persistent', true];";
+				init="this setVariable ['persistent', true];this call A3W_fnc_setupMissionObject;";
 			};
 			id=4513;
 			type="Land_ConcreteKerb_01_4m_F";
@@ -15693,7 +15693,7 @@ class Mission
 			side="Empty";
 			class Attributes
 			{
-				init="this call A3W_fnc_setupMissionObject; this setVariable ['persistent', true];";
+				init="this setVariable ['persistent', true];this call A3W_fnc_setupMissionObject;";
 			};
 			id=4514;
 			type="Land_ConcreteKerb_01_2m_F";
@@ -15711,7 +15711,7 @@ class Mission
 			flags=4;
 			class Attributes
 			{
-				init="this call A3W_fnc_setupMissionObject; this setVariable ['persistent', true];";
+				init="this setVariable ['persistent', true];this call A3W_fnc_setupMissionObject;";
 			};
 			id=4515;
 			type="Land_ConcreteKerb_01_4m_F";
@@ -15729,7 +15729,7 @@ class Mission
 			flags=4;
 			class Attributes
 			{
-				init="this call A3W_fnc_setupMissionObject; this setVariable ['persistent', true];";
+				init="this setVariable ['persistent', true];this call A3W_fnc_setupMissionObject;";
 			};
 			id=4516;
 			type="Land_ConcreteKerb_01_4m_F";
@@ -15747,7 +15747,7 @@ class Mission
 			flags=4;
 			class Attributes
 			{
-				init="this call A3W_fnc_setupMissionObject; this setVariable ['persistent', true];";
+				init="this setVariable ['persistent', true];this call A3W_fnc_setupMissionObject;";
 			};
 			id=4517;
 			type="Land_ConcreteKerb_01_4m_F";
@@ -15764,7 +15764,7 @@ class Mission
 			side="Empty";
 			class Attributes
 			{
-				init="this call A3W_fnc_setupMissionObject; this setVariable ['persistent', true];";
+				init="this setVariable ['persistent', true];this call A3W_fnc_setupMissionObject;";
 			};
 			id=4518;
 			type="Land_ConcreteKerb_01_2m_F";
@@ -15781,7 +15781,7 @@ class Mission
 			side="Empty";
 			class Attributes
 			{
-				init="this call A3W_fnc_setupMissionObject; this setVariable ['persistent', true];";
+				init="this setVariable ['persistent', true];this call A3W_fnc_setupMissionObject;";
 			};
 			id=4519;
 			type="Land_ConcreteKerb_01_4m_F";
@@ -15798,7 +15798,7 @@ class Mission
 			side="Empty";
 			class Attributes
 			{
-				init="this call A3W_fnc_setupMissionObject; this setVariable ['persistent', true];";
+				init="this setVariable ['persistent', true];this call A3W_fnc_setupMissionObject;";
 			};
 			id=4520;
 			type="Land_ConcreteKerb_01_4m_F";
@@ -15816,7 +15816,7 @@ class Mission
 			flags=5;
 			class Attributes
 			{
-				init="this call A3W_fnc_setupMissionObject; this setVariable ['persistent', true];";
+				init="this setVariable ['persistent', true];this call A3W_fnc_setupMissionObject;";
 			};
 			id=4521;
 			type="Land_Fortress_01_5m_F";
@@ -15834,7 +15834,7 @@ class Mission
 			flags=5;
 			class Attributes
 			{
-				init="this call A3W_fnc_setupMissionObject; this setVariable ['persistent', true];";
+				init="this setVariable ['persistent', true];this call A3W_fnc_setupMissionObject;";
 			};
 			id=4522;
 			type="Land_Fortress_01_outterCorner_90_F";
@@ -15852,7 +15852,7 @@ class Mission
 			flags=5;
 			class Attributes
 			{
-				init="this call A3W_fnc_setupMissionObject; this setVariable ['persistent', true];";
+				init="this setVariable ['persistent', true];this call A3W_fnc_setupMissionObject;";
 			};
 			id=4523;
 			type="Land_Fortress_01_5m_F";
@@ -15870,7 +15870,7 @@ class Mission
 			flags=5;
 			class Attributes
 			{
-				init="this call A3W_fnc_setupMissionObject; this setVariable ['persistent', true];";
+				init="this setVariable ['persistent', true];this call A3W_fnc_setupMissionObject;";
 			};
 			id=4524;
 			type="Land_Fortress_01_outterCorner_90_F";
@@ -15888,7 +15888,7 @@ class Mission
 			flags=5;
 			class Attributes
 			{
-				init="this call A3W_fnc_setupMissionObject; this setVariable ['persistent', true];";
+				init="this setVariable ['persistent', true];this call A3W_fnc_setupMissionObject;";
 			};
 			id=4525;
 			type="Land_Fortress_01_5m_F";
@@ -15906,7 +15906,7 @@ class Mission
 			flags=5;
 			class Attributes
 			{
-				init="this call A3W_fnc_setupMissionObject; this setVariable ['persistent', true];";
+				init="this setVariable ['persistent', true];this call A3W_fnc_setupMissionObject;";
 			};
 			id=4526;
 			type="Land_Fortress_01_d_L_F";
@@ -15924,7 +15924,7 @@ class Mission
 			flags=4;
 			class Attributes
 			{
-				init="this call A3W_fnc_setupMissionObject; this setVariable ['persistent', true];";
+				init="this setVariable ['persistent', true];this call A3W_fnc_setupMissionObject;";
 			};
 			id=4527;
 			type="Land_GH_Stairs_F";
@@ -15941,7 +15941,7 @@ class Mission
 			side="Empty";
 			class Attributes
 			{
-				init="this call A3W_fnc_setupMissionObject; this setVariable ['persistent', true];";
+				init="this setVariable ['persistent', true];this call A3W_fnc_setupMissionObject;";
 			};
 			id=4528;
 			type="Land_GH_Stairs_F";
@@ -15959,7 +15959,7 @@ class Mission
 			flags=5;
 			class Attributes
 			{
-				init="this call A3W_fnc_setupMissionObject; this setVariable ['persistent', true];";
+				init="this setVariable ['persistent', true];this call A3W_fnc_setupMissionObject;";
 			};
 			id=4529;
 			type="Land_BasaltKerb_01_2m_F";
@@ -15977,7 +15977,7 @@ class Mission
 			flags=5;
 			class Attributes
 			{
-				init="this call A3W_fnc_setupMissionObject; this setVariable ['persistent', true];";
+				init="this setVariable ['persistent', true];this call A3W_fnc_setupMissionObject;";
 			};
 			id=4530;
 			type="Land_BasaltKerb_01_2m_F";
@@ -15995,7 +15995,7 @@ class Mission
 			flags=5;
 			class Attributes
 			{
-				init="this call A3W_fnc_setupMissionObject; this setVariable ['persistent', true];";
+				init="this setVariable ['persistent', true];this call A3W_fnc_setupMissionObject;";
 			};
 			id=4531;
 			type="Land_BasaltKerb_01_2m_F";
@@ -16013,7 +16013,7 @@ class Mission
 			flags=5;
 			class Attributes
 			{
-				init="this call A3W_fnc_setupMissionObject; this setVariable ['persistent', true];";
+				init="this setVariable ['persistent', true];this call A3W_fnc_setupMissionObject;";
 			};
 			id=4532;
 			type="Land_BasaltKerb_01_2m_F";
@@ -16031,7 +16031,7 @@ class Mission
 			flags=1;
 			class Attributes
 			{
-				init="this call A3W_fnc_setupMissionObject; this setVariable ['persistent', true];";
+				init="this setVariable ['persistent', true];this call A3W_fnc_setupMissionObject;";
 			};
 			id=4533;
 			type="Land_BasaltKerb_01_2m_F";
@@ -16049,7 +16049,7 @@ class Mission
 			flags=1;
 			class Attributes
 			{
-				init="this call A3W_fnc_setupMissionObject; this setVariable ['persistent', true];";
+				init="this setVariable ['persistent', true];this call A3W_fnc_setupMissionObject;";
 			};
 			id=4534;
 			type="Land_BasaltKerb_01_2m_F";
@@ -16067,7 +16067,7 @@ class Mission
 			flags=4;
 			class Attributes
 			{
-				init="this call A3W_fnc_setupMissionObject; this setVariable ['persistent', true];";
+				init="this setVariable ['persistent', true];this call A3W_fnc_setupMissionObject;";
 			};
 			id=4535;
 			type="Land_ConcreteKerb_01_4m_F";
@@ -16085,7 +16085,7 @@ class Mission
 			flags=4;
 			class Attributes
 			{
-				init="this call A3W_fnc_setupMissionObject; this setVariable ['persistent', true];";
+				init="this setVariable ['persistent', true];this call A3W_fnc_setupMissionObject;";
 			};
 			id=4536;
 			type="Land_ConcreteKerb_01_4m_F";
@@ -16103,7 +16103,7 @@ class Mission
 			flags=4;
 			class Attributes
 			{
-				init="this call A3W_fnc_setupMissionObject; this setVariable ['persistent', true];";
+				init="this setVariable ['persistent', true];this call A3W_fnc_setupMissionObject;";
 			};
 			id=4537;
 			type="Land_ConcreteKerb_01_2m_F";
@@ -16121,7 +16121,7 @@ class Mission
 			flags=4;
 			class Attributes
 			{
-				init="this call A3W_fnc_setupMissionObject; this setVariable ['persistent', true];";
+				init="this setVariable ['persistent', true];this call A3W_fnc_setupMissionObject;";
 			};
 			id=4538;
 			type="Land_ConcreteKerb_01_4m_F";
@@ -16139,7 +16139,7 @@ class Mission
 			flags=4;
 			class Attributes
 			{
-				init="this call A3W_fnc_setupMissionObject; this setVariable ['persistent', true];";
+				init="this setVariable ['persistent', true];this call A3W_fnc_setupMissionObject;";
 			};
 			id=4539;
 			type="Land_ConcreteKerb_01_4m_F";
@@ -16157,7 +16157,7 @@ class Mission
 			flags=4;
 			class Attributes
 			{
-				init="this call A3W_fnc_setupMissionObject; this setVariable ['persistent', true];";
+				init="this setVariable ['persistent', true];this call A3W_fnc_setupMissionObject;";
 			};
 			id=4540;
 			type="Land_ConcreteKerb_01_4m_F";
@@ -16174,7 +16174,7 @@ class Mission
 			side="Empty";
 			class Attributes
 			{
-				init="this call A3W_fnc_setupMissionObject; this setVariable ['persistent', true];";
+				init="this setVariable ['persistent', true];this call A3W_fnc_setupMissionObject;";
 			};
 			id=4541;
 			type="Land_ConcreteKerb_01_2m_F";
@@ -16192,7 +16192,7 @@ class Mission
 			flags=4;
 			class Attributes
 			{
-				init="this call A3W_fnc_setupMissionObject; this setVariable ['persistent', true];";
+				init="this setVariable ['persistent', true];this call A3W_fnc_setupMissionObject;";
 			};
 			id=4542;
 			type="Land_ConcreteKerb_01_4m_F";
@@ -16210,7 +16210,7 @@ class Mission
 			flags=4;
 			class Attributes
 			{
-				init="this call A3W_fnc_setupMissionObject; this setVariable ['persistent', true];";
+				init="this setVariable ['persistent', true];this call A3W_fnc_setupMissionObject;";
 			};
 			id=4543;
 			type="Land_ConcreteKerb_01_4m_F";
@@ -16228,7 +16228,7 @@ class Mission
 			flags=4;
 			class Attributes
 			{
-				init="this call A3W_fnc_setupMissionObject; this setVariable ['persistent', true];";
+				init="this setVariable ['persistent', true];this call A3W_fnc_setupMissionObject;";
 			};
 			id=4544;
 			type="Land_ConcreteKerb_01_4m_F";
@@ -16245,7 +16245,7 @@ class Mission
 			side="Empty";
 			class Attributes
 			{
-				init="this call A3W_fnc_setupMissionObject; this setVariable ['persistent', true];";
+				init="this setVariable ['persistent', true];this call A3W_fnc_setupMissionObject;";
 			};
 			id=4545;
 			type="Land_ConcreteKerb_01_4m_F";
@@ -16262,7 +16262,7 @@ class Mission
 			side="Empty";
 			class Attributes
 			{
-				init="this call A3W_fnc_setupMissionObject; this setVariable ['persistent', true];";
+				init="this setVariable ['persistent', true];this call A3W_fnc_setupMissionObject;";
 			};
 			id=4546;
 			type="Land_ConcreteKerb_01_4m_F";
@@ -16279,7 +16279,7 @@ class Mission
 			side="Empty";
 			class Attributes
 			{
-				init="this call A3W_fnc_setupMissionObject; this setVariable ['persistent', true];";
+				init="this setVariable ['persistent', true];this call A3W_fnc_setupMissionObject;";
 			};
 			id=4547;
 			type="Land_ConcreteKerb_01_4m_F";
@@ -16297,7 +16297,7 @@ class Mission
 			flags=4;
 			class Attributes
 			{
-				init="this call A3W_fnc_setupMissionObject; this setVariable ['persistent', true];";
+				init="this setVariable ['persistent', true];this call A3W_fnc_setupMissionObject;";
 			};
 			id=4548;
 			type="Land_ConcreteKerb_01_2m_F";
@@ -16315,7 +16315,7 @@ class Mission
 			flags=4;
 			class Attributes
 			{
-				init="this call A3W_fnc_setupMissionObject; this setVariable ['persistent', true];";
+				init="this setVariable ['persistent', true];this call A3W_fnc_setupMissionObject;";
 			};
 			id=4549;
 			type="Land_ConcreteKerb_01_4m_F";
@@ -16333,7 +16333,7 @@ class Mission
 			flags=4;
 			class Attributes
 			{
-				init="this call A3W_fnc_setupMissionObject; this setVariable ['persistent', true];";
+				init="this setVariable ['persistent', true];this call A3W_fnc_setupMissionObject;";
 			};
 			id=4550;
 			type="Land_ConcreteKerb_01_4m_F";
@@ -16351,7 +16351,7 @@ class Mission
 			flags=4;
 			class Attributes
 			{
-				init="this call A3W_fnc_setupMissionObject; this setVariable ['persistent', true];";
+				init="this setVariable ['persistent', true];this call A3W_fnc_setupMissionObject;";
 			};
 			id=4551;
 			type="Land_ConcreteKerb_01_4m_F";
@@ -16369,7 +16369,7 @@ class Mission
 			flags=4;
 			class Attributes
 			{
-				init="this call A3W_fnc_setupMissionObject; this setVariable ['persistent', true];";
+				init="this setVariable ['persistent', true];this call A3W_fnc_setupMissionObject;";
 			};
 			id=4552;
 			type="Land_ConcreteKerb_01_2m_F";
@@ -16386,7 +16386,7 @@ class Mission
 			side="Empty";
 			class Attributes
 			{
-				init="this call A3W_fnc_setupMissionObject; this setVariable ['persistent', true];";
+				init="this setVariable ['persistent', true];this call A3W_fnc_setupMissionObject;";
 			};
 			id=4553;
 			type="Land_ConcreteKerb_01_4m_F";
@@ -16403,7 +16403,7 @@ class Mission
 			side="Empty";
 			class Attributes
 			{
-				init="this call A3W_fnc_setupMissionObject; this setVariable ['persistent', true];";
+				init="this setVariable ['persistent', true];this call A3W_fnc_setupMissionObject;";
 			};
 			id=4554;
 			type="Land_ConcreteKerb_01_4m_F";
@@ -16421,7 +16421,7 @@ class Mission
 			flags=5;
 			class Attributes
 			{
-				init="this call A3W_fnc_setupMissionObject; this setVariable ['persistent', true];";
+				init="this setVariable ['persistent', true];this call A3W_fnc_setupMissionObject;";
 			};
 			id=4555;
 			type="Land_Fortress_01_5m_F";
@@ -16439,7 +16439,7 @@ class Mission
 			flags=5;
 			class Attributes
 			{
-				init="this call A3W_fnc_setupMissionObject; this setVariable ['persistent', true];";
+				init="this setVariable ['persistent', true];this call A3W_fnc_setupMissionObject;";
 			};
 			id=4556;
 			type="Land_Fortress_01_d_R_F";
@@ -16457,7 +16457,7 @@ class Mission
 			flags=1;
 			class Attributes
 			{
-				init="this call A3W_fnc_setupMissionObject; this setVariable ['persistent', true];";
+				init="this setVariable ['persistent', true];this call A3W_fnc_setupMissionObject;";
 			};
 			id=4557;
 			type="Land_Fortress_01_bricks_v1_F";
@@ -16475,7 +16475,7 @@ class Mission
 			flags=1;
 			class Attributes
 			{
-				init="this call A3W_fnc_setupMissionObject; this setVariable ['persistent', true];";
+				init="this setVariable ['persistent', true];this call A3W_fnc_setupMissionObject;";
 			};
 			id=4558;
 			type="Land_Fortress_01_bricks_v1_F";
@@ -16493,7 +16493,7 @@ class Mission
 			flags=1;
 			class Attributes
 			{
-				init="this call A3W_fnc_setupMissionObject; this setVariable ['persistent', true];";
+				init="this setVariable ['persistent', true];this call A3W_fnc_setupMissionObject;";
 			};
 			id=4559;
 			type="Land_Fortress_01_bricks_v1_F";
@@ -16511,7 +16511,7 @@ class Mission
 			flags=1;
 			class Attributes
 			{
-				init="this call A3W_fnc_setupMissionObject; this setVariable ['persistent', true];";
+				init="this setVariable ['persistent', true];this call A3W_fnc_setupMissionObject;";
 			};
 			id=4560;
 			type="Land_Fortress_01_bricks_v1_F";
@@ -16529,7 +16529,7 @@ class Mission
 			flags=5;
 			class Attributes
 			{
-				init="this call A3W_fnc_setupMissionObject; this setVariable ['persistent', true];";
+				init="this setVariable ['persistent', true];this call A3W_fnc_setupMissionObject;";
 			};
 			id=4561;
 			type="Land_Fortress_01_bricks_v1_F";
@@ -16546,7 +16546,7 @@ class Mission
 			flags=5;
 			class Attributes
 			{
-				init="this call A3W_fnc_setupMissionObject; this setVariable ['persistent', true];";
+				init="this setVariable ['persistent', true];this call A3W_fnc_setupMissionObject;";
 			};
 			id=4562;
 			type="Land_Fortress_01_bricks_v1_F";
@@ -16564,7 +16564,7 @@ class Mission
 			flags=5;
 			class Attributes
 			{
-				init="this call A3W_fnc_setupMissionObject; this setVariable ['persistent', true];";
+				init="this setVariable ['persistent', true];this call A3W_fnc_setupMissionObject;";
 			};
 			id=4563;
 			type="Land_Fortress_01_bricks_v1_F";
@@ -16582,7 +16582,7 @@ class Mission
 			flags=5;
 			class Attributes
 			{
-				init="this call A3W_fnc_setupMissionObject; this setVariable ['persistent', true];";
+				init="this setVariable ['persistent', true];this call A3W_fnc_setupMissionObject;";
 			};
 			id=4564;
 			type="Land_Fortress_01_bricks_v1_F";
@@ -16600,7 +16600,7 @@ class Mission
 			flags=5;
 			class Attributes
 			{
-				init="this call A3W_fnc_setupMissionObject; this setVariable ['persistent', true];";
+				init="this setVariable ['persistent', true];this call A3W_fnc_setupMissionObject;";
 			};
 			id=4565;
 			type="Land_Fortress_01_bricks_v1_F";
@@ -16618,7 +16618,7 @@ class Mission
 			flags=1;
 			class Attributes
 			{
-				init="this call A3W_fnc_setupMissionObject; this setVariable ['persistent', true];";
+				init="this setVariable ['persistent', true];this call A3W_fnc_setupMissionObject;";
 			};
 			id=4566;
 			type="Land_Fortress_01_bricks_v1_F";
@@ -16636,7 +16636,7 @@ class Mission
 			flags=1;
 			class Attributes
 			{
-				init="this call A3W_fnc_setupMissionObject; this setVariable ['persistent', true];";
+				init="this setVariable ['persistent', true];this call A3W_fnc_setupMissionObject;";
 			};
 			id=4567;
 			type="Land_Fortress_01_bricks_v1_F";
@@ -16654,7 +16654,7 @@ class Mission
 			flags=5;
 			class Attributes
 			{
-				init="this call A3W_fnc_setupMissionObject; this setVariable ['persistent', true];";
+				init="this setVariable ['persistent', true];this call A3W_fnc_setupMissionObject;";
 			};
 			id=4568;
 			type="Land_Fortress_01_bricks_v1_F";
@@ -16671,7 +16671,7 @@ class Mission
 			flags=5;
 			class Attributes
 			{
-				init="this call A3W_fnc_setupMissionObject; this setVariable ['persistent', true];";
+				init="this setVariable ['persistent', true];this call A3W_fnc_setupMissionObject;";
 			};
 			id=4569;
 			type="Land_Fortress_01_bricks_v1_F";
@@ -16688,7 +16688,7 @@ class Mission
 			flags=5;
 			class Attributes
 			{
-				init="this call A3W_fnc_setupMissionObject; this setVariable ['persistent', true];";
+				init="this setVariable ['persistent', true];this call A3W_fnc_setupMissionObject;";
 			};
 			id=4570;
 			type="Land_Fortress_01_bricks_v1_F";
@@ -16706,7 +16706,7 @@ class Mission
 			flags=5;
 			class Attributes
 			{
-				init="this call A3W_fnc_setupMissionObject; this setVariable ['persistent', true];";
+				init="this setVariable ['persistent', true];this call A3W_fnc_setupMissionObject;";
 			};
 			id=4571;
 			type="Land_Fortress_01_bricks_v1_F";
@@ -16723,7 +16723,7 @@ class Mission
 			flags=5;
 			class Attributes
 			{
-				init="this call A3W_fnc_setupMissionObject; this setVariable ['persistent', true];";
+				init="this setVariable ['persistent', true];this call A3W_fnc_setupMissionObject;";
 			};
 			id=4572;
 			type="Land_Fortress_01_bricks_v1_F";
@@ -16740,7 +16740,7 @@ class Mission
 			flags=5;
 			class Attributes
 			{
-				init="this call A3W_fnc_setupMissionObject; this setVariable ['persistent', true];";
+				init="this setVariable ['persistent', true];this call A3W_fnc_setupMissionObject;";
 			};
 			id=4573;
 			type="Land_Fortress_01_bricks_v1_F";
@@ -16757,7 +16757,7 @@ class Mission
 			flags=5;
 			class Attributes
 			{
-				init="this call A3W_fnc_setupMissionObject; this setVariable ['persistent', true];";
+				init="this setVariable ['persistent', true];this call A3W_fnc_setupMissionObject;";
 			};
 			id=4574;
 			type="Land_Fortress_01_bricks_v1_F";
@@ -16774,7 +16774,7 @@ class Mission
 			flags=5;
 			class Attributes
 			{
-				init="this call A3W_fnc_setupMissionObject; this setVariable ['persistent', true];";
+				init="this setVariable ['persistent', true];this call A3W_fnc_setupMissionObject;";
 			};
 			id=4575;
 			type="Land_Fortress_01_cannon_F";
@@ -16792,7 +16792,7 @@ class Mission
 			flags=5;
 			class Attributes
 			{
-				init="this call A3W_fnc_setupMissionObject; this setVariable ['persistent', true];";
+				init="this setVariable ['persistent', true];this call A3W_fnc_setupMissionObject;";
 			};
 			id=4576;
 			type="Land_Fortress_01_cannon_F";
@@ -16810,7 +16810,7 @@ class Mission
 			flags=5;
 			class Attributes
 			{
-				init="this call A3W_fnc_setupMissionObject; this setVariable ['persistent', true];";
+				init="this setVariable ['persistent', true];this call A3W_fnc_setupMissionObject;";
 			};
 			id=4577;
 			type="Land_Fortress_01_cannon_F";
@@ -16828,7 +16828,7 @@ class Mission
 			flags=1;
 			class Attributes
 			{
-				init="this call A3W_fnc_setupMissionObject; this setVariable ['persistent', true];";
+				init="this setVariable ['persistent', true];this call A3W_fnc_setupMissionObject;";
 			};
 			id=4578;
 			type="Land_Fortress_01_cannon_F";
@@ -16846,7 +16846,7 @@ class Mission
 			flags=5;
 			class Attributes
 			{
-				init="this call A3W_fnc_setupMissionObject; this setVariable ['persistent', true];";
+				init="this setVariable ['persistent', true];this call A3W_fnc_setupMissionObject;";
 			};
 			id=4579;
 			type="Land_Fortress_01_cannon_F";
@@ -16864,7 +16864,7 @@ class Mission
 			flags=1;
 			class Attributes
 			{
-				init="this call A3W_fnc_setupMissionObject; this setVariable ['persistent', true];";
+				init="this setVariable ['persistent', true];this call A3W_fnc_setupMissionObject;";
 			};
 			id=4580;
 			type="Land_Castle_01_tower_F";
@@ -16882,7 +16882,7 @@ class Mission
 			flags=4;
 			class Attributes
 			{
-				init="this call A3W_fnc_setupMissionObject; this setVariable ['persistent', true];";
+				init="this setVariable ['persistent', true];this call A3W_fnc_setupMissionObject;";
 			};
 			id=4581;
 			type="Land_SharpStone_02";
@@ -16900,7 +16900,7 @@ class Mission
 			flags=4;
 			class Attributes
 			{
-				init="this call A3W_fnc_setupMissionObject; this setVariable ['persistent', true];";
+				init="this setVariable ['persistent', true];this call A3W_fnc_setupMissionObject;";
 			};
 			id=4582;
 			type="Land_SharpStone_02";
@@ -16918,7 +16918,7 @@ class Mission
 			flags=4;
 			class Attributes
 			{
-				init="this call A3W_fnc_setupMissionObject; this setVariable ['persistent', true];";
+				init="this setVariable ['persistent', true];this call A3W_fnc_setupMissionObject;";
 			};
 			id=4583;
 			type="Land_SharpStone_02";
@@ -16936,7 +16936,7 @@ class Mission
 			flags=4;
 			class Attributes
 			{
-				init="this call A3W_fnc_setupMissionObject; this setVariable ['persistent', true];";
+				init="this setVariable ['persistent', true];this call A3W_fnc_setupMissionObject;";
 			};
 			id=4584;
 			type="Land_SharpRock_apart";
@@ -16954,7 +16954,7 @@ class Mission
 			flags=4;
 			class Attributes
 			{
-				init="this call A3W_fnc_setupMissionObject; this setVariable ['persistent', true];";
+				init="this setVariable ['persistent', true];this call A3W_fnc_setupMissionObject;";
 			};
 			id=4585;
 			type="Land_SharpStones_erosion";
@@ -16972,7 +16972,7 @@ class Mission
 			flags=4;
 			class Attributes
 			{
-				init="this call A3W_fnc_setupMissionObject; this setVariable ['persistent', true];";
+				init="this setVariable ['persistent', true];this call A3W_fnc_setupMissionObject;";
 			};
 			id=4586;
 			type="Land_SharpStones_erosion";
@@ -16990,7 +16990,7 @@ class Mission
 			flags=4;
 			class Attributes
 			{
-				init="this call A3W_fnc_setupMissionObject; this setVariable ['persistent', true];";
+				init="this setVariable ['persistent', true];this call A3W_fnc_setupMissionObject;";
 			};
 			id=4587;
 			type="Land_SharpStones_erosion";
@@ -17008,7 +17008,7 @@ class Mission
 			flags=4;
 			class Attributes
 			{
-				init="this call A3W_fnc_setupMissionObject; this setVariable ['persistent', true];";
+				init="this setVariable ['persistent', true];this call A3W_fnc_setupMissionObject;";
 			};
 			id=4588;
 			type="Land_SharpStones_erosion";
@@ -17026,7 +17026,7 @@ class Mission
 			flags=4;
 			class Attributes
 			{
-				init="this call A3W_fnc_setupMissionObject; this setVariable ['persistent', true];";
+				init="this setVariable ['persistent', true];this call A3W_fnc_setupMissionObject;";
 			};
 			id=4589;
 			type="Land_SharpStones_erosion";
@@ -17065,7 +17065,7 @@ class Mission
 			flags=1;
 			class Attributes
 			{
-				init="this call A3W_fnc_setupMissionObject; this setVariable ['persistent', true];";
+				init="this setVariable ['persistent', true];this call A3W_fnc_setupMissionObject;";
 			};
 			id=4813;
 			type="Land_i_Shed_Ind_F";
@@ -23519,7 +23519,7 @@ class Mission
 			side="Empty";
 			class Attributes
 			{
-				init="this call A3W_fnc_setupMissionObject; this setVariable ['persistent', true];";
+				init="this setVariable ['persistent', true];this call A3W_fnc_setupMissionObject;";
 			};
 			id=15929;
 			type="Land_Carrier_01_base_F";
@@ -24187,7 +24187,7 @@ class Mission
 			flags=4;
 			class Attributes
 			{
-				init="this call A3W_fnc_setupMissionObject; this setVariable ['persistent', true];";
+				init="this setVariable ['persistent', true];this call A3W_fnc_setupMissionObject;";
 			};
 			id=2360;
 			type="Land_Cargo20_grey_F";
@@ -24273,7 +24273,7 @@ class Mission
 			flags=4;
 			class Attributes
 			{
-				init="this call A3W_fnc_setupMissionObject; this setVariable ['persistent', true];";
+				init="this setVariable ['persistent', true];this call A3W_fnc_setupMissionObject;";
 				createAsSimpleObject=1;
 				disableSimulation=1;
 			};
@@ -24316,7 +24316,7 @@ class Mission
 			flags=4;
 			class Attributes
 			{
-				init="this call A3W_fnc_setupMissionObject; this setVariable ['persistent', true];";
+				init="this setVariable ['persistent', true];this call A3W_fnc_setupMissionObject;";
 				disableSimulation=1;
 			};
 			id=16023;

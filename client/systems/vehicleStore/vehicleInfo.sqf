@@ -143,9 +143,9 @@ if (!isNil "_repaint" && {_repaint}) then
 		_colorlist lbSetData [_colorlistIndex, str _texData];
 
 		//Disabled look for donator only colors
-		if (!(getPlayerUID player call isdonor)) then{
+		/*if (!(getPlayerUID player call isdonor)) then{
 			_colorlist lbSetColor [_colorlistIndex, [0, 255, 0, .25]];
-		};
+		};*/
 	};
 } forEach _colorsArray;
 };

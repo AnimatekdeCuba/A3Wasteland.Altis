@@ -9,7 +9,7 @@
 //@file Argument: [_beacon] The (object that is a) beacon to check if its stealable
 //@file Argument: [] automatically find the closest beacon to test.
 
-#define ERR_NO_TARGET "Debes apuntar al Spawn Beacon"
+#define ERR_NO_TARGET "Debes estar frente al Spawn Beacon"
 #define ERR_NOT_SPAWN_BEACON_TYPE "Eso no es un Spawn Beacon (No que yo sepa)"
 #define ERR_IS_FRIENDLY "No puedes robar un Spawn Beacon de un aliado!"
 #define ERR_TOO_FAR_AWAY "Estás muy lejos para robar ese Spawn Beacon."

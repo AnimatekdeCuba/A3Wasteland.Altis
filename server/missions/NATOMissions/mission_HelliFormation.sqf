@@ -20,9 +20,9 @@ _setupObjects =
 	_town = (call cityList) call BIS_fnc_selectRandom;
 	_missionPos = markerPos _missionLocation;
 
-	_veh1types = selectrandom ["B_Heli_Light_01_dynamicLoadout_F","B_Heli_Attack_01_dynamicLoadout_F"];
-	_veh2types = selectrandom ["B_Heli_Light_01_dynamicLoadout_F","B_Heli_Attack_01_dynamicLoadout_F"];
-	_veh3types = selectrandom ["B_Heli_Transport_03_F","B_Heli_Transport_03_unarmed_F","B_Heli_Light_01_F","B_Heli_Transport_01_F"];
+	_veh1types = selectrandom ["RHS_AH64D_wd","RHS_AH1Z"];
+	_veh2types = selectrandom ["RHS_UH1Y","rhs_uh1h_hidf_gunship"];
+	_veh3types = selectrandom ["RHS_CH_47F_10","RHS_UH60M_d","rhsusf_CH53E_USMC_D"];
 
 
 	_aiGroup1 = createGroup CIVILIAN;
@@ -61,8 +61,8 @@ _setupObjects =
 		{
 			for "_i" from 1 to _Passangers do
 			{
-				private _soldierType = selectrandom ["Rifleman","Rifleman","Rifleman","Rifleman","Rifleman","Rifleman","Rifleman","Rifleman","Rifleman","Rifleman","AT","AA","SAW","SAW","SAW","Engineer","Medic","Grenedier","Engineer","Medic","Grenedier","Marksman","Marksman","Marksman"];
-				_soldier = [_aiGroup1, _missionPos, "NATO", _soldierType] call createsoldier;
+				private _soldierType = selectrandom ["Rifleman","Rifleman","Rifleman","Rifleman","Rifleman","Rifleman","Rifleman","Rifleman","Rifleman","Rifleman","AT","AA","SAW","SAW","SAW","AT","Medic","Grenedier","AA","Medic","Grenedier","Marksman","Marksman","Marksman"];
+				_soldier = [_aiGroup1, _position, "NATO", _soldierType] call createsoldier;
 				_soldier moveInCargo _vehicle;
 			};
 		};
@@ -126,10 +126,10 @@ _drop_item =
 _successExec =
 {
 	_lootPos = getMarkerPos _marker;
-	for "_i" from 1 to 4 do
+	for "_i" from 1 to 2 do
 	{
 		private _tier = selectrandom ["1","2","3","4"];
-		private _maxmoney = ceil (random 10000);
+		private _maxmoney = ceil (5000 + random 15000);
 		private _box = [_lootPos, "NATO", _tier, 0, _maxmoney] call createrandomlootcrate;
 		_box setVariable ["moveable", true, true];
 	};

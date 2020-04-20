@@ -20,8 +20,8 @@ _setupObjects =
 	_town = (call cityList) call BIS_fnc_selectRandom;
 	_missionPos = markerPos _missionLocation;
 
-	_veh1types = selectrandom ["I_MRAP_03_F","I_MRAP_03_hmg_F","I_MRAP_03_gmg_F", "I_APC_Wheeled_03_cannon_F", "I_APC_tracked_03_cannon_F", "I_MBT_03_cannon_F","I_Truck_02_transport_F","I_Truck_02_covered_F","I_Truck_02_fuel_F","I_Truck_02_medical_F","I_Truck_02_box_F","I_Truck_02_ammo_F"];
-	_veh2types = selectrandom ["I_MRAP_03_F","I_MRAP_03_hmg_F","I_MRAP_03_gmg_F", "I_APC_Wheeled_03_cannon_F", "I_APC_tracked_03_cannon_F", "I_MBT_03_cannon_F","I_Truck_02_transport_F","I_Truck_02_covered_F","I_Truck_02_fuel_F","I_Truck_02_medical_F","I_Truck_02_box_F","I_Truck_02_ammo_F"];
+	_veh1types = selectrandom ["rhsgref_cdf_reg_uaz_dshkm","rhsgref_cdf_reg_uaz_ags","rhsgref_cdf_reg_uaz_spg9", "rhsgref_BRDM2", "rhsgref_cdf_bmp2d", "rhsgref_cdf_t72bb_tv","rhsgref_cdf_ural","rhsgref_cdf_ural_fuel","rhsgref_cdf_ural_repair","rhsgref_cdf_gaz66_ammo"];
+	_veh2types = selectrandom ["rhsgref_cdf_reg_uaz_dshkm","rhsgref_cdf_reg_uaz_ags","rhsgref_cdf_reg_uaz_spg9", "rhsgref_BRDM2", "rhsgref_cdf_bmp2d", "rhsgref_cdf_t72bb_tv","rhsgref_cdf_ural","rhsgref_cdf_ural_fuel","rhsgref_cdf_ural_repair","rhsgref_cdf_gaz66_ammo"];
 
 	_aiGroup1 = createGroup CIVILIAN;
 
@@ -63,7 +63,7 @@ _setupObjects =
 		{
 			for "_i" from 1 to _Passangers do
 			{
-				private _soldierType = selectrandom ["Rifleman","Rifleman","Rifleman","Rifleman","Rifleman","Rifleman","Rifleman","Rifleman","Rifleman","Rifleman","AT","AA","SAW","SAW","SAW","Engineer","Medic","Grenedier","Engineer","Medic","Grenedier","Marksman","Marksman","Marksman"];
+				private _soldierType = selectrandom ["Rifleman","Rifleman","Rifleman","Rifleman","Rifleman","Rifleman","Rifleman","Rifleman","Rifleman","Rifleman","AT","AA","SAW","SAW","SAW","AT","Medic","Grenedier","AA","Medic","Grenedier","Marksman","Marksman","Marksman"];
 				_soldier = [_aiGroup1, _missionPos, "AAF", _soldierType] call createsoldier;
 
 				_soldier moveInCargo _vehicle;
@@ -77,7 +77,7 @@ _setupObjects =
 
 
 	_aiGroup1 setCombatMode "GREEN"; // Will fire on enemies
-	_aiGroup1 setBehaviour "SAFE"; // units feel safe until they spot an enemy or get into contact
+	_aiGroup1 setBehaviour "AWARE"; // units feel safe until they spot an enemy or get into contact
 	_aiGroup1 setFormation "FILE";
 
 	_speedMode = "LIMITED";
@@ -88,7 +88,7 @@ _setupObjects =
 		_waypoint setWaypointType "MOVE";
 		_waypoint setWaypointCompletionRadius 50;
 		_waypoint setWaypointCombatMode "GREEN";
-		_waypoint setWaypointBehaviour "SAFE"; // safe is the best behaviour to make AI follow roads, as soon as they spot an enemy or go into combat they WILL leave the road for cover though!
+		_waypoint setWaypointBehaviour "AWARE"; // safe is the best behaviour to make AI follow roads, as soon as they spot an enemy or go into combat they WILL leave the road for cover though!
 		_waypoint setWaypointFormation "FILE";
 		_waypoint setWaypointSpeed _speedMode;
 	} forEach ((call cityList) call BIS_fnc_arrayShuffle);
@@ -132,7 +132,7 @@ _successExec =
 	for "_i" from 1 to 2 do
 	{
 		private _tier = selectrandom ["1","2","3"];
-		private _maxmoney = ceil (random 10000);
+		private _maxmoney = ceil (2000 + random 8000);
 		private _box = [_lootPos, "AAF", _tier, 0, _maxmoney] call createrandomlootcrate;
 		_box setVariable ["moveable", true, true];
 	};

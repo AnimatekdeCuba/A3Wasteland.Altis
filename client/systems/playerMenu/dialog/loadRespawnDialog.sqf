@@ -61,7 +61,6 @@ if(playerSide in [BLUFOR, OPFOR] && !isNil "pvar_teamSwitchList")then{
 	};
 	_switchTeamButton buttonSetAction "call teamSwitchCode";
 };
-
 _side = switch (playerSide) do
 {
 	case BLUFOR: { "BLUFOR" };

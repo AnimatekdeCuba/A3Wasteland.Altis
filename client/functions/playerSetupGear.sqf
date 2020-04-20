@@ -5,7 +5,7 @@
 //	@file Author: [GoT] JoSchaap, AgentRev
 //  @file Modifications to LOADOUTS: [BC]CeccaTTo
 
-private ["_player", "_bmoney", "_playerScore", "_uniform", "_headgear", "_rank"];
+private ["_player", "_bmoney", "_playerScore", "_uniform", "_headgear", "_rank", "_uid"];
 _rank = "PRIVATE"; //  PRIVATE, CORPORAL, SERGEANT, LIEUTENANT, CAPTAIN, MAJOR or COLONEL
 _player = _this;
 _bmoney = _player getVariable ["bmoney", 0];
@@ -19,7 +19,7 @@ if (_headgear != "") then { _player addHeadgear _headgear };
 sleep 0.1;
 
 switch (true) do {
-	case (_bmoney >= 0 && _bmoney <= 499999): {//ACP-C2 .45 ACP + PDW2000 9mm
+	case (_bmoney >= 0 && _bmoney <= 499999): {
 		removeAllItems _player;
 		removeAllWeapons _player;
 		removeVest _player;
@@ -27,33 +27,29 @@ switch (true) do {
 		removeAllWeapons _player;
 		removeVest _player;
 		removeBackpack _player;
-		_player addVest "V_HarnessO_brn";
-		_player addBackpack "B_Parachute";
+		_player addVest "rhsgref_alice_webbing";				// VEST
+		_player addBackpack "B_Parachute";				// Allways Parachute
+		_player addWeapon "rhs_weap_makarov_pm"; 		// Weapon 1
+		_player addMagazine "rhs_mag_9x18_8_57N181S";	// Weapon Magazine
+		_player addMagazine "rhs_mag_9x18_8_57N181S";
 		_player addWeapon "Binocular";
 		_player addItem "ACE_DAGR";
+		_player addItem "ACE_Can_Spirit"; // 2 sodas
 		_player addItem "ACE_Can_Spirit";
-		_player addItem "ACE_Can_Spirit";
-		_player addItem "ACE_Humanitarian_Ration";
+		_player addItem "ACE_Humanitarian_Ration";	// 2 MRE
 		_player addItem "ACE_Humanitarian_Ration";
 		_player addItem "ACE_MapTools";
 		_player addItem "ACE_EarPlugs";
+		_player addItem "ACE_quikclot"; // 3 quikclot
 		_player addItem "ACE_quikclot";
 		_player addItem "ACE_quikclot";
-		_player addItem "ACE_quikclot";
+		_player addItem "ACE_morphine"; // 2 Morphine
 		_player addItem "ACE_morphine";
-		_player addItem "ACE_morphine";
-		_player addItem "ACE_morphine";
+		_player addItem "ACE_epinephrine"; // 2 Epinephrine
 		_player addItem "ACE_epinephrine";
-		_player addItem "ACE_epinephrine";
-		_player addItem "ACE_epinephrine";
-		_player addItem "SmokeShell";
-		_player addMagazine "rhs_mag_9x18_8_57N181S";
-		_player addWeapon "rhs_weap_makarov_pm";
-		_player addMagazine "rhs_mag_9x18_8_57N181S";
-		_player addMagazine "rhs_mag_9x18_8_57N181S";
+		_player addItem "SmokeShell"; // Grenade
 		[_player,"rhsusf_falconii_mc"] call zade_boc_fnc_addChestpack;
 		_player linkItem "ACE_NVG_Gen1";
-		_rank = "PRIVATE"; //  PRIVATE, CORPORAL, SERGEANT, LIEUTENANT, CAPTAIN, MAJOR or COLONEL
 	};
 	case (_bmoney >= 500000 && _bmoney <= 999999): {//ACP-C2 .45 ACP + Vermin SMG .45 ACP
 		removeAllItems _player;
@@ -63,39 +59,34 @@ switch (true) do {
 		removeAllWeapons _player;
 		removeVest _player;
 		removeBackpack _player;
-		_player addVest "V_HarnessO_brn";
-		_player addBackpack "B_Parachute";
+		_player addVest "rhsgref_alice_webbing";				// VEST
+		_player addBackpack "B_Parachute";				// Allways Parachute
+		_player addWeapon "rhs_weap_makarov_pm"; 		// Weapon 1
+		_player addWeapon "rhs_weap_m3a1"; 				// Weapon 2
+		_player addMagazine "rhs_mag_9x18_8_57N181S";	// Weapon Magazines
+		_player addMagazine "rhs_mag_9x18_8_57N181S";
+		_player addMagazine "rhsgref_30rnd_1143x23_M1T_SMG";
+		_player addMagazine "rhsgref_30rnd_1143x23_M1T_SMG";
 		_player addWeapon "Binocular";
 		_player addItem "ACE_DAGR";
+		_player addItem "ACE_Can_Spirit"; // 2 sodas
 		_player addItem "ACE_Can_Spirit";
-		_player addItem "ACE_Can_Spirit";
-		_player addItem "ACE_Humanitarian_Ration";
+		_player addItem "ACE_Humanitarian_Ration";	// 2 MRE
 		_player addItem "ACE_Humanitarian_Ration";
 		_player addItem "ACE_MapTools";
 		_player addItem "ACE_EarPlugs";
+		_player addItem "ACE_quikclot"; // 3 quikclot
 		_player addItem "ACE_quikclot";
 		_player addItem "ACE_quikclot";
-		_player addItem "ACE_quikclot";
+		_player addItem "ACE_morphine"; // 2 Morphine
 		_player addItem "ACE_morphine";
-		_player addItem "ACE_morphine";
-		_player addItem "ACE_morphine";
+		_player addItem "ACE_epinephrine"; // 2 Epinephrine
 		_player addItem "ACE_epinephrine";
-		_player addItem "ACE_epinephrine";
-		_player addItem "ACE_epinephrine";
-		_player addItem "SmokeShell";
-		_player addMagazine "rhsgref_10rnd_765x17_vz61";
-		_player addWeapon "rhs_weap_savz61";
-		_player addMagazine "rhsgref_10rnd_765x17_vz61";
-		_player addMagazine "rhsgref_10rnd_765x17_vz61";
-		_player addMagazine "rhs_mag_9x18_8_57N181S";
-		_player addWeapon "rhs_weap_makarov_pm";
-		_player addMagazine "rhs_mag_9x18_8_57N181S";
-		_player addMagazine "rhs_mag_9x18_8_57N181S";
+		_player addItem "SmokeShell"; // Grenade
 		[_player,"rhsusf_falconii_mc"] call zade_boc_fnc_addChestpack;
 		_player linkItem "ACE_NVG_Gen1";
-		_rank = "PRIVATE"; //  PRIVATE, CORPORAL, SERGEANT, LIEUTENANT, CAPTAIN, MAJOR or COLONEL
 	};
-	case (_bmoney >= 1000000 && _bmoney <= 1499999): {//ACP-C2 .45 ACP + TRG-20 5.56mm
+	case (_bmoney >= 1000000 && _bmoney <= 1499999): {
 		removeAllItems _player;
 		removeAllWeapons _player;
 		removeVest _player;
@@ -103,37 +94,40 @@ switch (true) do {
 		removeAllWeapons _player;
 		removeVest _player;
 		removeBackpack _player;
-		_player addVest "V_HarnessO_brn";
-		_player addBackpack "B_Parachute";
+		_player addVest "V_HarnessO_brn";				// VEST
+		_player addBackpack "B_Parachute";				// Allways Parachute
+		_player addWeapon "rhs_weap_makarov_pm"; 		// Weapon 1
+		_player addWeapon "rhs_weap_Izh18"; 				// Weapon 2
+		_player addMagazine "rhs_mag_9x18_8_57N181S";	// Weapon Magazines
+		_player addMagazine "rhs_mag_9x18_8_57N181S";
+		_player addMagazine "rhsgref_1Rnd_00Buck";
+		_player addMagazine "rhsgref_1Rnd_00Buck";
+		_player addMagazine "rhsgref_1Rnd_00Buck";
+		_player addMagazine "rhsgref_1Rnd_00Buck";
+		_player addMagazine "rhsgref_1Rnd_00Buck";
+		_player addMagazine "rhsgref_1Rnd_00Buck";
+		_player addMagazine "rhsgref_1Rnd_00Buck";
+		_player addMagazine "rhsgref_1Rnd_00Buck";
+		_player addMagazine "rhsgref_1Rnd_00Buck";
+		_player addMagazine "rhsgref_1Rnd_00Buck";
 		_player addWeapon "Binocular";
 		_player addItem "ACE_DAGR";
+		_player addItem "ACE_Can_Spirit"; // 2 sodas
+		_player addItem "ACE_Can_Spirit";
+		_player addItem "ACE_Humanitarian_Ration";	// 2 MRE
+		_player addItem "ACE_Humanitarian_Ration";
 		_player addItem "ACE_MapTools";
 		_player addItem "ACE_EarPlugs";
-		_player addItem "ACE_Can_Spirit";
-		_player addItem "ACE_Can_Spirit";
-		_player addItem "ACE_Humanitarian_Ration";
-		_player addItem "ACE_Humanitarian_Ration";
+		_player addItem "ACE_quikclot"; // 3 quikclot
 		_player addItem "ACE_quikclot";
 		_player addItem "ACE_quikclot";
-		_player addItem "ACE_quikclot";
+		_player addItem "ACE_morphine"; // 2 Morphine
 		_player addItem "ACE_morphine";
-		_player addItem "ACE_morphine";
-		_player addItem "ACE_morphine";
+		_player addItem "ACE_epinephrine"; // 2 Epinephrine
 		_player addItem "ACE_epinephrine";
-		_player addItem "ACE_epinephrine";
-		_player addItem "ACE_epinephrine";
-		_player addItem "SmokeShell";
-		_player addMagazine "rhsgref_10rnd_765x17_vz61";
-		_player addWeapon "rhs_weap_savz61";
-		_player addMagazine "rhsgref_10rnd_765x17_vz61";
-		_player addMagazine "rhsgref_10rnd_765x17_vz61";
-		_player addMagazine "rhs_mag_9x18_8_57N181S";
-		_player addWeapon "rhs_weap_makarov_pm";
-		_player addMagazine "rhs_mag_9x18_8_57N181S";
-		_player addMagazine "rhs_mag_9x18_8_57N181S";
+		_player addItem "SmokeShell"; // Grenade
 		[_player,"rhsusf_falconii_mc"] call zade_boc_fnc_addChestpack;
-		_player linkItem "ACE_NVG_Gen1";
-		_rank = "PRIVATE"; //  PRIVATE, CORPORAL, SERGEANT, LIEUTENANT, CAPTAIN, MAJOR or COLONEL
+		_player linkItem "ACE_NVG_Gen2";
 	};
 	case (_bmoney >= 1500000 && _bmoney <= 1999999): {//ACP-C2 .45 ACP + Katiba Carbine 6.5mm
 		removeAllItems _player;
@@ -143,36 +137,36 @@ switch (true) do {
 		removeAllWeapons _player;
 		removeVest _player;
 		removeBackpack _player;
-		_player addBackpack "B_Parachute";
+		_player addVest "V_HarnessO_brn";				// VEST
+		_player addBackpack "B_Parachute";				// Allways Parachute
+		_player addWeapon "rhs_weap_makarov_pm"; 		// Weapon 1
+		_player addWeapon "rhs_weap_kar98k"; 				// Weapon 2
+		_player addMagazine "rhs_mag_9x18_8_57N181S";	// Weapon Magazines
+		_player addMagazine "rhs_mag_9x18_8_57N181S";
+		_player addMagazine "rhsgref_5Rnd_792x57_kar98k";
+		_player addMagazine "rhsgref_5Rnd_792x57_kar98k";
+		_player addMagazine "rhsgref_5Rnd_792x57_kar98k";
+		_player addMagazine "rhsgref_5Rnd_792x57_kar98k";
+		_player addMagazine "rhsgref_5Rnd_792x57_kar98k";
+		_player addMagazine "rhsgref_5Rnd_792x57_kar98k";
 		_player addWeapon "Binocular";
 		_player addItem "ACE_DAGR";
+		_player addItem "ACE_Can_Spirit"; // 2 sodas
+		_player addItem "ACE_Can_Spirit";
+		_player addItem "ACE_Humanitarian_Ration";	// 2 MRE
+		_player addItem "ACE_Humanitarian_Ration";
 		_player addItem "ACE_MapTools";
-		_player addItem "ACE_Can_Spirit";
-		_player addItem "ACE_Can_Spirit";
-		_player addItem "ACE_Humanitarian_Ration";
-		_player addItem "ACE_Humanitarian_Ration";
 		_player addItem "ACE_EarPlugs";
+		_player addItem "ACE_quikclot"; // 3 quikclot
 		_player addItem "ACE_quikclot";
 		_player addItem "ACE_quikclot";
-		_player addItem "ACE_quikclot";
+		_player addItem "ACE_morphine"; // 2 Morphine
 		_player addItem "ACE_morphine";
-		_player addItem "ACE_morphine";
-		_player addItem "ACE_morphine";
+		_player addItem "ACE_epinephrine"; // 2 Epinephrine
 		_player addItem "ACE_epinephrine";
-		_player addItem "ACE_epinephrine";
-		_player addItem "ACE_epinephrine";
-		_player addItem "SmokeShell";
-		_player addMagazine "rhs_30Rnd_762x39mm";
-		_player addWeapon "rhs_weap_akm";
-		_player addMagazine "rhs_30Rnd_762x39mm";
-		_player addMagazine "rhs_30Rnd_762x39mm";
-		_player addMagazine "rhs_mag_9x18_8_57N181S";
-		_player addWeapon "rhs_weap_makarov_pm";
-		_player addMagazine "rhs_mag_9x18_8_57N181S";
-		_player addMagazine "rhs_mag_9x18_8_57N181S";
+		_player addItem "SmokeShell"; // Grenade
 		[_player,"rhsusf_falconii_mc"] call zade_boc_fnc_addChestpack;
 		_player linkItem "ACE_NVG_Gen2";
-		_rank = "CORPORAL"; //  PRIVATE, CORPORAL, SERGEANT, LIEUTENANT, CAPTAIN, MAJOR or COLONEL
 	};
 	case (_bmoney >= 2000000 && _bmoney <= 2499999): {//ACP-C2 .45 ACP + MXC 6.5mm
 		removeAllItems _player;
@@ -182,37 +176,40 @@ switch (true) do {
 		removeAllWeapons _player;
 		removeVest _player;
 		removeBackpack _player;
-		_player addVest "V_HarnessO_brn";
-		_player addBackpack "B_Parachute";
+		_player addVest "rhsgref_6b23_khaki_rifleman";				// VEST
+		_player addBackpack "B_Parachute";				// Allways Parachute
+		_player addWeapon "rhs_weap_makarov_pm"; 		// Weapon 1
+		_player addWeapon "rhs_weap_m1garand_sa43"; 				// Weapon 2
+		_player addMagazine "rhs_mag_9x18_8_57N181S";	// Weapon Magazines
+		_player addMagazine "rhs_mag_9x18_8_57N181S";
+		_player addMagazine "rhsgref_8Rnd_762x63_Tracer_M1T_M1rifle";
+		_player addMagazine "rhsgref_8Rnd_762x63_Tracer_M1T_M1rifle";
+		_player addMagazine "rhsgref_8Rnd_762x63_Tracer_M1T_M1rifle";
+		_player addMagazine "rhsgref_8Rnd_762x63_Tracer_M1T_M1rifle";
+		_player addMagazine "rhsgref_8Rnd_762x63_Tracer_M1T_M1rifle";
+		_player addMagazine "rhsgref_8Rnd_762x63_Tracer_M1T_M1rifle";
 		_player addWeapon "Binocular";
 		_player addItem "ACE_DAGR";
+		_player addItem "ACE_Can_Spirit"; // 2 sodas
 		_player addItem "ACE_Can_Spirit";
 		_player addItem "ACE_Can_Spirit";
-		_player addItem "ACE_Humanitarian_Ration";
+		_player addItem "ACE_Humanitarian_Ration";	// 2 MRE
+		_player addItem "ACE_Humanitarian_Ration";	// 2 MRE
 		_player addItem "ACE_Humanitarian_Ration";
 		_player addItem "ACE_MapTools";
 		_player addItem "ACE_EarPlugs";
+		_player addItem "ACE_quikclot"; // 3 quikclot
 		_player addItem "ACE_quikclot";
 		_player addItem "ACE_quikclot";
-		_player addItem "ACE_quikclot";
+		_player addItem "ACE_morphine"; // 2 Morphine
 		_player addItem "ACE_morphine";
 		_player addItem "ACE_morphine";
-		_player addItem "ACE_morphine";
+		_player addItem "ACE_epinephrine"; // 2 Epinephrine
 		_player addItem "ACE_epinephrine";
 		_player addItem "ACE_epinephrine";
-		_player addItem "ACE_epinephrine";
-		_player addItem "SmokeShell";
-		_player addMagazine "rhs_mag_30Rnd_556x45_M855_Stanag_Tracer_Red";
-		_player addWeapon "rhs_weap_m16a4";
-		_player addMagazine "rhs_mag_30Rnd_556x45_M855_Stanag_Tracer_Red";
-		_player addMagazine "rhs_mag_30Rnd_556x45_M855_Stanag_Tracer_Red";
-		_player addMagazine "rhs_mag_9x18_8_57N181S";
-		_player addWeapon "rhs_weap_makarov_pm";
-		_player addMagazine "rhs_mag_9x18_8_57N181S";
-		_player addMagazine "rhs_mag_9x18_8_57N181S";
+		_player addItem "SmokeShell"; // Grenade
 		[_player,"rhsusf_falconii_mc"] call zade_boc_fnc_addChestpack;
-		_player linkItem "ACE_NVG_Gen2";
-		_rank = "CORPORAL"; //  PRIVATE, CORPORAL, SERGEANT, LIEUTENANT, CAPTAIN, MAJOR or COLONEL
+		_player linkItem "NVGoggles_OPFOR";
 	};	
 	case (_bmoney >= 2500000 && _bmoney <= 2999999): {//ACP-C2 .45 ACP + MX 3GL 6.5mm
 		removeAllItems _player;
@@ -222,39 +219,38 @@ switch (true) do {
 		removeAllWeapons _player;
 		removeVest _player;
 		removeBackpack _player;
-		_player addVest "V_HarnessO_brn";
-		_player addBackpack "B_Parachute";
+		_player addVest "rhsgref_6b23_khaki_rifleman";				// VEST
+		_player addBackpack "B_Parachute";				// Allways Parachute
+		_player addWeapon "rhs_weap_makarov_pm"; 		// Weapon 1
+		_player addWeapon "rhs_weap_m21a"; 				// Weapon 2
+		_player addMagazine "rhs_mag_9x18_8_57N181S";	// Weapon Magazines
+		_player addMagazine "rhs_mag_9x18_8_57N181S";
+		_player addMagazine "rhsgref_30rnd_556x45_m21_t";
+		_player addMagazine "rhsgref_30rnd_556x45_m21_t";
+		_player addMagazine "rhsgref_30rnd_556x45_m21_t";
+		_player addMagazine "rhsgref_30rnd_556x45_m21_t";
 		_player addWeapon "Binocular";
 		_player addItem "ACE_DAGR";
+		_player addItem "ACE_Can_Spirit"; // 2 sodas
 		_player addItem "ACE_Can_Spirit";
 		_player addItem "ACE_Can_Spirit";
-		_player addItem "ACE_Humanitarian_Ration";
+		_player addItem "ACE_Humanitarian_Ration";	// 2 MRE
+		_player addItem "ACE_Humanitarian_Ration";	// 2 MRE
 		_player addItem "ACE_Humanitarian_Ration";
 		_player addItem "ACE_MapTools";
 		_player addItem "ACE_EarPlugs";
+		_player addItem "ACE_quikclot"; // 3 quikclot
 		_player addItem "ACE_quikclot";
 		_player addItem "ACE_quikclot";
-		_player addItem "ACE_quikclot";
+		_player addItem "ACE_morphine"; // 2 Morphine
 		_player addItem "ACE_morphine";
 		_player addItem "ACE_morphine";
-		_player addItem "ACE_morphine";
+		_player addItem "ACE_epinephrine"; // 2 Epinephrine
 		_player addItem "ACE_epinephrine";
 		_player addItem "ACE_epinephrine";
-		_player addItem "ACE_epinephrine";
-		_player addItem "SmokeShell";
-		_player addMagazine "rhs_mag_30Rnd_556x45_M855_Stanag_Tracer_Red";
-		_player addWeapon "rhs_weap_m16a4";
-		_player addMagazine "rhs_mag_30Rnd_556x45_M855_Stanag_Tracer_Red";
-		_player addMagazine "rhs_mag_30Rnd_556x45_M855_Stanag_Tracer_Red";
-		_player addMagazine "3Rnd_HE_Grenade_shell";
-		_player addMagazine "3Rnd_HE_Grenade_shell";
-		_player addMagazine "rhsusf_mag_7x45acp_MHP";
-		_player addWeapon "rhsusf_weap_m1911a1";
-		_player addMagazine "rhsusf_mag_7x45acp_MHP";
-		_player addMagazine "rhsusf_mag_7x45acp_MHP";
+		_player addItem "SmokeShell"; // Grenade
 		[_player,"rhsusf_falconii_mc"] call zade_boc_fnc_addChestpack;
-		_player linkItem "ACE_NVG_Gen4";
-		_rank = "SERGEANT"; //  PRIVATE, CORPORAL, SERGEANT, LIEUTENANT, CAPTAIN, MAJOR or COLONEL
+		_player linkItem "NVGoggles_OPFOR";
 	};
 	case (_bmoney >= 3000000 && _bmoney <= 3499999): {//ACP-C2 .45 ACP + MX SW 6.5mm
 		removeAllItems _player;
@@ -264,39 +260,36 @@ switch (true) do {
 		removeAllWeapons _player;
 		removeVest _player;
 		removeBackpack _player;
-		_player addVest "V_HarnessO_brn";
-		_player addBackpack "B_Parachute";
+		_player addVest "rhsgref_6b23_khaki_rifleman";				// VEST
+		_player addBackpack "B_Parachute";				// Allways Parachute
+		_player addWeapon "rhs_weap_makarov_pm"; 		// Weapon 1
+		_player addWeapon "rhs_weap_m21s"; 				// Weapon 2
+		_player addMagazine "rhs_mag_9x18_8_57N181S";	// Weapon Magazines
+		_player addMagazine "rhs_mag_9x18_8_57N181S";
+		_player addMagazine "rhsgref_30rnd_556x45_m21_t";
+		_player addMagazine "rhsgref_30rnd_556x45_m21_t";
 		_player addWeapon "Binocular";
 		_player addItem "ACE_DAGR";
+		_player addItem "ACE_Can_Spirit"; // 2 sodas
 		_player addItem "ACE_Can_Spirit";
 		_player addItem "ACE_Can_Spirit";
-		_player addItem "ACE_Humanitarian_Ration";
+		_player addItem "ACE_Humanitarian_Ration";	// 2 MRE
+		_player addItem "ACE_Humanitarian_Ration";	// 2 MRE
 		_player addItem "ACE_Humanitarian_Ration";
 		_player addItem "ACE_MapTools";
 		_player addItem "ACE_EarPlugs";
+		_player addItem "ACE_quikclot"; // 3 quikclot
 		_player addItem "ACE_quikclot";
 		_player addItem "ACE_quikclot";
-		_player addItem "ACE_quikclot";
+		_player addItem "ACE_morphine"; // 2 Morphine
 		_player addItem "ACE_morphine";
 		_player addItem "ACE_morphine";
-		_player addItem "ACE_morphine";
+		_player addItem "ACE_epinephrine"; // 2 Epinephrine
 		_player addItem "ACE_epinephrine";
 		_player addItem "ACE_epinephrine";
-		_player addItem "ACE_epinephrine";
-		_player addItem "SmokeShell";
-		_player addMagazine "rhs_mag_30Rnd_556x45_M855_Stanag_Tracer_Red";
-		_player addWeapon "rhs_weap_m16a4_carryhandle_M203";
-		_player addMagazine "rhs_mag_30Rnd_556x45_M855_Stanag_Tracer_Red";
-		_player addMagazine "rhs_mag_30Rnd_556x45_M855_Stanag_Tracer_Red";
-		_player addMagazine "rhs_mag_M433_HEDP";
-		_player addMagazine "rhs_mag_M433_HEDP";
-		_player addMagazine "rhsusf_mag_7x45acp_MHP";
-		_player addWeapon "rhsusf_weap_m1911a1";
-		_player addMagazine "rhsusf_mag_7x45acp_MHP";
-		_player addMagazine "rhsusf_mag_7x45acp_MHP";
+		_player addItem "SmokeShell"; // Grenade
 		[_player,"rhsusf_falconii_mc"] call zade_boc_fnc_addChestpack;
 		_player linkItem "ACE_NVG_Gen4";
-		_rank = "LIEUTENANT"; //  PRIVATE, CORPORAL, SERGEANT, LIEUTENANT, CAPTAIN, MAJOR or COLONEL
 	};
 	case (_bmoney >= 3500000 && _bmoney <= 3999999): {//ACP-C2 .45 ACP + Mk200 6.5mm
 		removeAllItems _player;
@@ -306,39 +299,38 @@ switch (true) do {
 		removeAllWeapons _player;
 		removeVest _player;
 		removeBackpack _player;
-		_player addVest "V_HarnessO_brn";
-		_player addBackpack "B_Parachute";
+		_player addVest "rhsgref_6b23_khaki_rifleman";				// VEST
+		_player addBackpack "B_Parachute";				// Allways Parachute
+		_player addWeapon "rhs_weap_makarov_pm"; 		// Weapon 1
+		_player addWeapon "rhs_weap_m76"; 				// Weapon 2
+		_player addMagazine "rhs_mag_9x18_8_57N181S";	// Weapon Magazines
+		_player addMagazine "rhs_mag_9x18_8_57N181S";
+		_player addMagazine "rhssaf_10Rnd_792x57_m76_tracer";
+		_player addMagazine "rhssaf_10Rnd_792x57_m76_tracer";
+		_player addMagazine "rhssaf_10Rnd_792x57_m76_tracer";
+		_player addMagazine "rhssaf_10Rnd_792x57_m76_tracer";
 		_player addWeapon "Binocular";
 		_player addItem "ACE_DAGR";
+		_player addItem "ACE_Can_Spirit"; // 2 sodas
 		_player addItem "ACE_Can_Spirit";
 		_player addItem "ACE_Can_Spirit";
-		_player addItem "ACE_Humanitarian_Ration";
+		_player addItem "ACE_Humanitarian_Ration";	// 2 MRE
+		_player addItem "ACE_Humanitarian_Ration";	// 2 MRE
 		_player addItem "ACE_Humanitarian_Ration";
 		_player addItem "ACE_MapTools";
 		_player addItem "ACE_EarPlugs";
+		_player addItem "ACE_quikclot"; // 3 quikclot
 		_player addItem "ACE_quikclot";
 		_player addItem "ACE_quikclot";
-		_player addItem "ACE_quikclot";
+		_player addItem "ACE_morphine"; // 2 Morphine
 		_player addItem "ACE_morphine";
 		_player addItem "ACE_morphine";
-		_player addItem "ACE_morphine";
+		_player addItem "ACE_epinephrine"; // 2 Epinephrine
 		_player addItem "ACE_epinephrine";
 		_player addItem "ACE_epinephrine";
-		_player addItem "ACE_epinephrine";
-		_player addItem "SmokeShell";
-		_player addMagazine "rhs_mag_30Rnd_556x45_M855_Stanag_Tracer_Red";
-		_player addWeapon "rhs_weap_m16a4_carryhandle_M203";
-		_player addMagazine "rhs_mag_30Rnd_556x45_M855_Stanag_Tracer_Red";
-		_player addMagazine "rhs_mag_30Rnd_556x45_M855_Stanag_Tracer_Red";
-		_player addMagazine "rhs_mag_M433_HEDP";
-		_player addMagazine "rhs_mag_M433_HEDP";
-		_player addMagazine "rhsusf_mag_7x45acp_MHP";
-		_player addWeapon "rhsusf_weap_m1911a1";
-		_player addMagazine "rhsusf_mag_7x45acp_MHP";
-		_player addMagazine "rhsusf_mag_7x45acp_MHP";
+		_player addItem "SmokeShell"; // Grenade
 		[_player,"rhsusf_falconii_mc"] call zade_boc_fnc_addChestpack;
 		_player linkItem "ACE_NVG_Gen4";
-		_rank = "CAPTAIN"; //  PRIVATE, CORPORAL, SERGEANT, LIEUTENANT, CAPTAIN, MAJOR or COLONEL
 	};
 	case (_bmoney >= 4000000 && _bmoney <= 4499999): {//ACP-C2 .45 ACP + Zafir 7.62mm
 		removeAllItems _player;
@@ -348,36 +340,42 @@ switch (true) do {
 		removeAllWeapons _player;
 		removeVest _player;
 		removeBackpack _player;
-		_player addVest "V_HarnessO_brn";
-		_player addBackpack "B_Parachute";
+		_player addVest "rhsgref_6b23_khaki_rifleman";	// VEST
+		_player addBackpack "B_Parachute";				// Allways Parachute
+		_player addWeapon "rhs_weap_makarov_pm"; 		// Weapon 1
+		_player addWeapon "rhs_weap_vhsd2_ct15x"; 		// Weapon 2
+		_player addMagazine "rhs_mag_9x18_8_57N181S";	// Weapon Magazines
+		_player addMagazine "rhs_mag_9x18_8_57N181S";
+		_player addMagazine "rhsgref_30rnd_556x45_vhs2_t";
+		_player addMagazine "rhsgref_30rnd_556x45_vhs2_t";
+		_player addMagazine "rhsgref_30rnd_556x45_vhs2_t";
+		_player addMagazine "rhsgref_30rnd_556x45_vhs2_t";
 		_player addWeapon "Binocular";
-		_player addItem "ACE_MapTools";
 		_player addItem "ACE_DAGR";
+		_player addItem "ACE_Can_Spirit"; // 2 sodas
 		_player addItem "ACE_Can_Spirit";
 		_player addItem "ACE_Can_Spirit";
+		_player addItem "ACE_Humanitarian_Ration";	// MRE
+		_player addItem "ACE_Humanitarian_Ration";	// 
 		_player addItem "ACE_Humanitarian_Ration";
 		_player addItem "ACE_Humanitarian_Ration";
+		_player addItem "ACE_MapTools";
 		_player addItem "ACE_EarPlugs";
+		_player addItem "ACE_quikclot"; // 3 quikclot
+		_player addItem "ACE_quikclot"; // 3 quikclot
 		_player addItem "ACE_quikclot";
 		_player addItem "ACE_quikclot";
-		_player addItem "ACE_quikclot";
+		_player addItem "ACE_morphine"; // 2 Morphine
 		_player addItem "ACE_morphine";
 		_player addItem "ACE_morphine";
 		_player addItem "ACE_morphine";
+		_player addItem "ACE_epinephrine"; // 2 Epinephrine
 		_player addItem "ACE_epinephrine";
 		_player addItem "ACE_epinephrine";
 		_player addItem "ACE_epinephrine";
-		_player addItem "SmokeShell";
-		_player addMagazine "rhs_100Rnd_762x54mmR_green";
-		_player addWeapon "rhs_weap_pkm";
-		_player addMagazine "rhs_100Rnd_762x54mmR_green";
-		_player addMagazine "rhsusf_mag_7x45acp_MHP";
-		_player addWeapon "rhsusf_weap_m1911a1";
-		_player addMagazine "rhsusf_mag_7x45acp_MHP";
-		_player addMagazine "rhsusf_mag_7x45acp_MHP";
+		_player addItem "SmokeShell"; // Grenade
 		[_player,"rhsusf_falconii_mc"] call zade_boc_fnc_addChestpack;
 		_player linkItem "ACE_NVG_Wide";
-		_rank = "MAJOR"; //  PRIVATE, CORPORAL, SERGEANT, LIEUTENANT, CAPTAIN, MAJOR or COLONEL
 	};
 	case (_bmoney >= 4500000 && _bmoney <= 5000000): {//ACP-C2 .45 ACP + M320 LRR .408
 		removeAllItems _player;
@@ -387,59 +385,71 @@ switch (true) do {
 		removeAllWeapons _player;
 		removeVest _player;
 		removeBackpack _player;
-		_player addVest "V_HarnessO_brn";
-		_player addBackpack "B_Parachute";
+		_player addVest "rhsgref_6b23_khaki_rifleman";	// VEST
+		_player addBackpack "B_Parachute";				// Allways Parachute
+		_player addWeapon "rhs_weap_makarov_pm"; 		// Weapon 1
+		_player addWeapon "rhs_weap_vhsd2_bg_ct15x"; 	// Weapon 2
+		_player addMagazine "rhs_mag_9x18_8_57N181S";	// Weapon Magazines
+		_player addMagazine "rhs_mag_9x18_8_57N181S";
+		_player addMagazine "rhsgref_30rnd_556x45_vhs2_t";
+		_player addMagazine "rhsgref_30rnd_556x45_vhs2_t";
+		_player addMagazine "rhsgref_30rnd_556x45_vhs2_t";
+		_player addMagazine "rhsgref_30rnd_556x45_vhs2_t";
+		_player addMagazine "rhs_mag_M441_HE";
+		_player addMagazine "rhs_mag_M441_HE";
+		_player addMagazine "rhs_mag_M441_HE";
+		_player addMagazine "rhs_mag_M441_HE";
 		_player addWeapon "Binocular";
 		_player addItem "ACE_DAGR";
-		_player addItem "ACE_Can_Spirit";
-		_player addItem "ACE_Can_Spirit";
+		_player addItem "ACE_Canteen";
+		_player addItem "ACE_Humanitarian_Ration";	// MRE
+		_player addItem "ACE_Humanitarian_Ration";	// 
 		_player addItem "ACE_Humanitarian_Ration";
 		_player addItem "ACE_Humanitarian_Ration";
 		_player addItem "ACE_MapTools";
 		_player addItem "ACE_EarPlugs";
+		_player addItem "ACE_quikclot"; // 3 quikclot
+		_player addItem "ACE_quikclot"; // 3 quikclot
 		_player addItem "ACE_quikclot";
 		_player addItem "ACE_quikclot";
-		_player addItem "ACE_quikclot";
+		_player addItem "ACE_morphine"; // 2 Morphine
 		_player addItem "ACE_morphine";
 		_player addItem "ACE_morphine";
 		_player addItem "ACE_morphine";
+		_player addItem "ACE_epinephrine"; // 2 Epinephrine
 		_player addItem "ACE_epinephrine";
 		_player addItem "ACE_epinephrine";
 		_player addItem "ACE_epinephrine";
-		_player addItem "SmokeShell";
-		_player addMagazine "rhsgref_30rnd_556x45_m21_t";
-		_player addWeapon "rhs_weap_m21a_pr_pbg40";
-		_player addMagazine "rhsgref_30rnd_556x45_m21_t";
-		_player addMagazine "rhsgref_30rnd_556x45_m21_t";
-		_player addMagazine "rhsgref_30rnd_556x45_m21_t";
-		_player addMagazine "rhs_mag_M433_HEDP";
-		_player addMagazine "rhs_mag_M433_HEDP";
-		_player addMagazine "rhsusf_mag_7x45acp_MHP";
-		_player addWeapon "rhsusf_weap_m1911a1";
-		_player addMagazine "rhsusf_mag_7x45acp_MHP";
-		_player addMagazine "rhsusf_mag_7x45acp_MHP";
+		_player addItem "SmokeShell"; // Grenade
+		_player addItem "SmokeShell"; // Grenade
 		[_player,"rhsusf_falconii_mc"] call zade_boc_fnc_addChestpack;
 		_player linkItem "ACE_NVG_Wide";
-		_rank = "COLONEL"; //  PRIVATE, CORPORAL, SERGEANT, LIEUTENANT, CAPTAIN, MAJOR or COLONEL
 	};
 };
 
 switch (true) do {
-	case (["_medic_", typeOf _player] call fn_findString != -1):
+	case (["_medic_", typeOf _player] call fn_findString != -1) :
 	{
 		_player removeItem "Medikit";
 		{ ([player] + _x) call zade_boc_fnc_addItemToChestpack } forEach
 		[
+			["ACE_personalAidKit",1],
 			["ACE_packingBandage",5],
-			["ACE_morphine",3],
-			["ACE_epinephrine",3]
+			["ACE_morphine",5],
+			["ACE_epinephrine",5]
 		];
 	};
 	case (["_engineer_", typeOf _player] call fn_findString != -1):
 	{
 		_player addItem "MineDetector";
-		_player addItem "ACE_DefusalKit";
-		[_player,"Toolkit"] call zade_boc_fnc_addItemToChestpack;
+		{ ([player] + _x) call zade_boc_fnc_addItemToChestpack } forEach
+		[
+			["Toolkit",1],
+			["ACE_DefusalKit",1],
+			["ACE_packingBandage",3],
+			["DemoCharge_Remote_Mag",1],
+			["ACE_Clacker",1]
+		];
 	};
 	case (["_sniper_", typeOf _player] call fn_findString != -1):
 	{
@@ -449,61 +459,61 @@ switch (true) do {
 };
 
 switch (true) do {//Additional
-	case (_playerScore >= 100 && _playerScore <= 149): {
+	case (_playerScore >= 100 && _playerScore <= 149): { // LEVEL 1
 		_player addItem "rhs_mag_f1";
-		_player addItem "rhs_mag_m67";
+		_player addItem "rhs_mag_f1";
+		_rank = "PRIVATE"; //  PRIVATE, CORPORAL, SERGEANT, LIEUTENANT, CAPTAIN, MAJOR or COLONEL
 	};
-	case (_playerScore >= 150 && _playerScore <= 199): {
+	case (_playerScore >= 150 && _playerScore <= 199): { // LEVEL 2
 		_player addItem "rhs_mag_f1";
 		_player addItem "rhs_mag_f1";
-		_player addItem "rhs_mag_m67";
-		_player addItem "rhs_mag_m67";
+		_rank = "PRIVATE"; //  PRIVATE, CORPORAL, SERGEANT, LIEUTENANT, CAPTAIN, MAJOR or COLONEL
 	};
-	case (_playerScore >= 200 && _playerScore <= 249): {
+	case (_playerScore >= 200 && _playerScore <= 249): { // LEVEL 3
 		_player addItem "rhs_mag_f1";
-		_player addItem "rhs_mag_m67";
-		_player addItem "APERSTripMine_Wire_Mag";
+		_player addItem "rhs_mag_f1";
+		_player addItem "ACE_M14";
+		_player addItem "ACE_M14";
+		_rank = "PRIVATE"; //  PRIVATE, CORPORAL, SERGEANT, LIEUTENANT, CAPTAIN, MAJOR or COLONEL
 	};
-	case (_playerScore >= 250 && _playerScore <= 299): {
+	case (_playerScore >= 250 && _playerScore <= 299): { // LEVEL 4
 		_player addItem "rhs_mag_f1";
-		_player addItem "rhs_mag_m67";
-		_player addItem "APERSBoundingMine_Range_Mag";
+		_player addItem "rhs_mag_f1";
+		_rank = "CORPORAL"; //  PRIVATE, CORPORAL, SERGEANT, LIEUTENANT, CAPTAIN, MAJOR or COLONEL
 	};
-	case (_playerScore >= 300 && _playerScore <= 349): {
-		_player addItem "rhs_mag_f1";
+	case (_playerScore >= 300 && _playerScore <= 349): { // LEVEL 5
 		_player addItem "rhs_mag_m67";
-		_player addItem "APERSMine_Range_Mag";
+		_player addItem "rhs_mag_m67";
+		_rank = "CORPORAL"; //  PRIVATE, CORPORAL, SERGEANT, LIEUTENANT, CAPTAIN, MAJOR or COLONEL
 	};
-	case (_playerScore >= 350 && _playerScore <= 399): {
-		_player addItem "rhs_mag_f1";
+	case (_playerScore >= 350 && _playerScore <= 399): { // LEVEL 6
 		_player addItem "rhs_mag_m67";
-		_player addItem "ClaymoreDirectionalMine_Remote_Mag";
+		_player addItem "rhs_mag_m67";
+		_rank = "SERGEANT"; //  PRIVATE, CORPORAL, SERGEANT, LIEUTENANT, CAPTAIN, MAJOR or COLONEL
 	};
-	case (_playerScore >= 400 && _playerScore <= 449): {
-		_player addItem "rhs_mag_f1";
+	case (_playerScore >= 400 && _playerScore <= 449): { // LEVEL 7
 		_player addItem "rhs_mag_m67";
-		_player addItem "SLAMDirectionalMine_Wire_Mag";
+		_player addItem "rhs_mag_m67";
+		_rank = "LIEUTENANT"; //  PRIVATE, CORPORAL, SERGEANT, LIEUTENANT, CAPTAIN, MAJOR or COLONEL
 	};
-	case (_playerScore >= 450 && _playerScore <= 499): {
-		_player addItem "rhs_mag_f1";
+	case (_playerScore >= 450 && _playerScore <= 499): { // LEVEL 8
 		_player addItem "rhs_mag_m67";
-		_player addItem "DemoCharge_Remote_Mag";
+		_player addItem "rhs_mag_m67";
 		_player addItem "ACE_Clacker";
+		_rank = "CAPTAIN"; //  PRIVATE, CORPORAL, SERGEANT, LIEUTENANT, CAPTAIN, MAJOR or COLONEL
 	};
-	case (_playerScore >= 500 && _playerScore <= 999): {
-		_player addItem "rhs_mag_f1";
+	case (_playerScore >= 500 && _playerScore <= 999): { // LEVEL 9
 		_player addItem "rhs_mag_m67";
-		_player addItem "DemoCharge_Remote_Mag";
-		_player addItem "ACE_Clacker";
+		_player addItem "rhs_mag_m67";
+		_rank = "MAJOR"; //  PRIVATE, CORPORAL, SERGEANT, LIEUTENANT, CAPTAIN, MAJOR or COLONEL
 	};
-	case (_playerScore >= 1000): {
+	case (_playerScore >= 1000): { 						// LEVEL 10
 		_player removeItem "Binocular";
 		_player removeItem "Rangefinder";
-		_player addWeapon "ACE_Yardage450";
-		_player addItem "rhs_mag_f1";
+		_player addWeapon "ACE_VectorDay";
 		_player addItem "rhs_mag_m67";
-		_player addItem "DemoCharge_Remote_Mag";
-		_player addItem "ACE_Clacker";
+		_player addItem "rhs_mag_m67";
+		_rank = "COLONEL"; //  PRIVATE, CORPORAL, SERGEANT, LIEUTENANT, CAPTAIN, MAJOR or COLONEL
 	};
 };
 
@@ -514,6 +524,6 @@ if (_rank != "") then
 
 if (_player == player) then
 {
-	_player setVariable ["acex_field_rations_thirst", 1]; 
-	_player setVariable ["acex_field_rations_hunger", 1];
+	_player setVariable ["acex_field_rations_thirst", 0]; 
+	_player setVariable ["acex_field_rations_hunger", 0];
 };

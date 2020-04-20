@@ -1,15 +1,23 @@
 respawn="BASE";
-respawnDelay=3;
+respawnDelay=15;
 disabledAI=1;
-disableChannels[] = {{0,true,true}, {1,true,true}, {2,true,true}, {3,true,true}}; // 0 = global, 1 = side, 2 = command // new syntax: {{channel<number>, disableText<bool>, disableVoice<bool>}, ...};
+disableChannels[] = {
+						{0,true,true},  // 0 = global, 1 = side, 2 = command // new syntax: {{channel<number>, disableText<bool>, disableVoice<bool>}, ...};
+						{1,true,true},
+						{2,true,true},
+						{3,false,true},
+						{4,false,true},
+						{5,false,true},
+						{6,true,true}
+					};
 // side chat is disabled for indies in client\preInit.sqf
 joinUnassigned = 0;
 enableItemsDropping = 0;
 forceRotorLibSimulation = 0; // if you set this to 1, you deny freedom of choice to the players, which is the very principle this mission is built upon
 weaponPool = 0;
 corpseManagerMode = 1;
-corpseRemovalMinTime = 10*60;
-corpseRemovalMaxTime = 15*60;
+corpseRemovalMinTime = 30*60;
+corpseRemovalMaxTime = 30*60;
 wreckManagerMode = 1;
 wreckLimit = 1;
 wreckRemovalMinTime = 5*60;
@@ -218,7 +226,7 @@ class ForceTFAR
 
 	//Force TFAR Settings.
 	ftfar_is_enabled = 1; //Is "Force" Task Force Enabled? 1 = yes, 0 = no, if set to 1 validation of correct server + channel will be ran.
-	ftfar_server_name = "SNET->>TS OFICIAL STEAM (GNTK)"; //Server name.
+	ftfar_server_name = "SNET->>TS OFICIAL ArmA III (GNTK)"; //Server name.
 	ftfar_server_ipaddress = "10.31.0.1:9997"; //Server ip address.
 	ftfar_server_password = ""; //Server password.
 	ftfar_wait_for_action_time = 60; //Time in seconds.

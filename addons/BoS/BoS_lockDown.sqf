@@ -66,7 +66,7 @@ if (_lockdown) then
 	hint "Base Underlockdown. Action Aborted";
 } else 
 {
-	if (_objectsCount > _MaxObjects) exitwith { titletext [format ["Error %1 objects detected. Maximum %2 objects can be Locked down. Upgrade your Base to increase this limit", _objectsCount, _MaxObjects], "PLAIN DOWN"]};
+	if (_objectsCount > _MaxObjects) exitwith { titletext [format ["Error en %1 objetos detectados. Máximo %2 objetos pueden Bloquearse. Upgradea tu Base para aumentar este límite", _objectsCount, _MaxObjects], "PLAIN DOWN"]};
 	{
 		private _objectLocked = _x getVariable ["objectLocked",false];
 		if (_objectLocked) then

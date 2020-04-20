@@ -58,7 +58,7 @@ while {true} do
 		};
 
 		// medical UAV setup
-		/*if (isNil {_uav getVariable "FAR_uavReviveAction"}) then
+		if (isNil {_uav getVariable "FAR_uavReviveAction"}) then
 		{
 			if (round getNumber (configFile >> "CfgVehicles" >> typeOf _uav >> "attendant") > 0 && !isNil "FAR_Check_Revive") then
 			{
@@ -68,7 +68,7 @@ while {true} do
 			{
 				_uav setVariable ["FAR_uavReviveAction", -1];
 			};
-		};*/
+		};
 	};
 
 	waitUntil {_uav != getConnectedUAV player};

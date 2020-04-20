@@ -6,13 +6,15 @@
 
 _markers =
 [
-	["Leyenda:", "EmptyIcon", "ColorGrey", [1,1]],
 	["GNTK | ArmA 3", "EmptyIcon", "ColorGrey", [1,1]],
-	["Solo los mejores juegan AC A3Wasteland", "EmptyIcon", "ColorGrey", [1,1]],
-	["GS - General Store", "mil_dot", "ColorBlue", [1,1]],
-	["VS - Vehicle Store", "mil_dot", "ColorOrange", [1,1]],
-	["RP - Re-Supply Point", "mil_dot", "ColorGreen", [1,1]],
-	["BS - Base Parts Store", "mil_dot", "ColorRed", [1,1]]
+	["Animatek's AC A3Wasteland", "EmptyIcon", "ColorGrey", [1,1]],
+	["Es un honor jugar con ustedes", "EmptyIcon", "ColorGrey", [1,1]],
+	["Leyenda:", "EmptyIcon", "ColorGrey", [1,1]],
+	["GS: General Store", "mil_dot", "ColorBlue", [1,1]],
+	["VS: Vehicle Store", "mil_dot", "ColorOrange", [1,1]],
+	["Gun Store", "mil_dot", "ColorYellow", [1,1]],
+	["RP: Re-Supply Point", "mil_dot", "ColorGreen", [1,1]],
+	["BS: Base Parts Store", "mil_dot", "ColorRed", [1,1]]
 	//["CVN-83 - USS Freedom", "mil_dot", "ColorKhaki", [1,1]] // si se descomenta, no olvidar añadir la coma al final de la línea anterior
 ];
 

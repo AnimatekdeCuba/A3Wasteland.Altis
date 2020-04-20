@@ -47,8 +47,8 @@ NATOMissions =
 	["mission_LightPatrol", 1],
 	["mission_AttackHelis", 1],
 	["mission_HeliFormation", 1],
-	["mission_SupplyDrop", 1],
-	["mission_Gunship", 1],
+	//["mission_SupplyDrop", 1],
+	//["mission_Gunship", 1],
 	["mission_CTRGMediumConvoy", 1],
 	["mission_CTRGPatrol", 1],
 	["mission_CTRFSmallConvoy", 1]
@@ -74,8 +74,8 @@ CSATMissions =
 	["mission_HeliFormation", 1],
 	["mission_ViperFootPatrol", 1],
 	["mission_ViperMediumConvoy", 1],
-	["mission_ViperSmallVonvoy", 1],
-	["mission_HostileVTOL", 1]
+	["mission_ViperSmallVonvoy", 1]
+	//["mission_HostileVTOL", 1]
 ];
 IDAPMissions =
 [

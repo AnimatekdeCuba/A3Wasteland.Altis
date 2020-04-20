@@ -67,7 +67,7 @@ storePurchaseHandle = _this spawn
 	_showInsufficientDonatorError =
 	{
 		_itemText = _this select 0;
-		hint parseText format ["<t color='#ffff00'>La compra de colores personalizados está reservada a cuentas VIP.</t><br/>Compra el ""%1"" sin pintura personalizada.</t><br/>Lo siento.", _itemText];
+		hint parseText format ["<t color='#ffff00'>La compra de colores personalizados está reservada a cuentas VIP.<br/>Compra el ""%1"" sin pintura personalizada.<br/>Lo siento.", _itemText];
 		playSound "FD_CP_Not_Clear_F";
 		_price = -1;
 	};
@@ -91,7 +91,7 @@ storePurchaseHandle = _this spawn
 	_showItemSpawnedOutsideMessage =
 	{
 		_itemText = _this select 0;
-		hint format ["Su ""%1"" está aparcado afuera, en frente de la tienda.</t><br/>Tenga un buen día", _itemText];
+		hint format ["Su ""%1"" está aparcado afuera, en frente de la tienda.<br/>Tenga un buen día", _itemText];
 		playSound "FD_Finish_F";
 	};
 
@@ -163,14 +163,13 @@ storePurchaseHandle = _this spawn
 		};
 
 		//Check donor status
-		if (!((getPlayerUID player) call isdonor) && (!isNil "_colorData")) exitWith
+		/*if (!((getPlayerUID player) call isdonor) && (!isNil "_colorData")) exitWith
 		{
 			[_itemText] call _showInsufficientDonatorError;
-		};
+		};*/
 
 		_requestKey = call A3W_fnc_generateKey;
 		_itemData call requestStoreObject;
-		[player, _vehicle, true] call ace_vehiclelock_fnc_addKeyForVehicle; // Llaves del ACE
 		_vehicle = objectFromNetId (missionNamespace getVariable _requestKey);
 
 		if (!isNil "_vehicle" && {!isNull _vehicle}) then

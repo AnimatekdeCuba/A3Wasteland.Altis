@@ -44,7 +44,7 @@
 	//Remote Base Access
 	["Acess Remote Base Management", "client\actions\BaseManegement.sqf", [], -98, false, true, "","{_x in ['B_UavTerminal','O_UavTerminal','I_UavTerminal']} count assignedItems player > 0"],
 	//Base Cracking
-	["Hack Base", "client\actions\BaseCracking.sqf", [], 99, false, false, "", "(vehicle player) iskindof 'O_Truck_03_device_F'"],
+	["Hack Base", "client\actions\BaseCracking.sqf", [], 99, false, false, "", "(vehicle player) iskindof 'rhs_gaz66_r142_msv'"],
 	//Cancel Action
 	["<img image='\a3\Ui_f\data\GUI\Cfg\CommunicationMenu\transport_ca.paa'/> <t color='#FFFFFF'>Cancel Action</t>", { doCancelAction = true }, [], 1, false, false, "", "mutexScriptInProgress"],
 	//Salvage Vehicle

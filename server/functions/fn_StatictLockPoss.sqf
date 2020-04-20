@@ -1,5 +1,5 @@
 /* name: fn_StatictLockPoss.sqf */
-/* Author: Animatek's Team with code from GMG_Monkey */
+/* Author: Animatek with code from GMG_Monkey */
 /* argument: Keep Autonomus weapons unlocked and Autonomus disabled until */
 
 
@@ -34,35 +34,41 @@ switch (_ManagerLevel) do
 	};
 };
 
-if ({_static iskindof _x} count[
-	"B_SAM_System_02_F",
-	"B_HMG_01_A_F",
-	"B_GMG_01_A_F",
-	"B_SAM_System_01_F",
-	"B_AAA_System_01_F",
-	"O_HMG_01_A_F",
-	"O_GMG_01_A_F",
-	"I_HMG_01_A_F",
-	"I_GMG_01_A_F"]>0) && (!({_static iskindof _x} count["B_Static_Designator_01_F","O_Static_Designator_02_F"])>0) then     // except remote laser designator
-	
+if ({_static iskindof _x} count
+	[
+		"B_SAM_System_02_F",
+		"B_HMG_01_A_F",
+		"B_GMG_01_A_F",
+		"B_SAM_System_01_F",
+		"B_AAA_System_01_F",
+		"O_HMG_01_A_F",
+		"O_GMG_01_A_F",
+		"I_HMG_01_A_F",
+		"I_GMG_01_A_F"
+	]>0) && (!({_static iskindof _x} count
+	[	// except remote laser designator
+		"B_Static_Designator_01_F",
+		"O_Static_Designator_02_F"
+	])>0)
+then     
 {
-	if (_static getVariable ["R3F_LOG_disabled", false]) then			// if is unLocked
+	if (!(_static getVariable ["R3F_LOG_disabled", false])) then			// if is unLocked
 	{
-		_static setAutonomous false;									// Shutdown autonomous
+		_static setAutonomous false;										// Shutdown autonomous
 	};
 	
-	if (_distance > _BaseRadius) then									// Check distance from player base, kinda.
+	if (_distance > _BaseRadius) then										// Check distance from player base, kinda.
 	{
-		_static setVariable ["R3F_LOG_disabled", false, true];			// keeping it unlocked and in "BLUE" and "CARELESS" mode, if it is away from player base
+		_static setVariable ["R3F_LOG_disabled", false, true];				// keeping it unlocked, and "Autonomous false" mode, if it's away from player base
 		playSound "FD_CP_Not_Clear_F";
-		["Please, lock this only in your base.", 5] call mf_notify_client;
+		["Please, lock down this in your own base only.", 5] call mf_notify_client; // Lets him know
 	}
 	else
 	{
-		if (_distance < _BaseRadius) then									// Now is functionally
+		if (_distance < _BaseRadius) then									// Check if from player is in his base
 		{
 			if (_static getVariable ["R3F_LOG_disabled", false]) then		// wait for it...
-			_static setAutonomous true;										// Turn On autonomous
+			_static setAutonomous true;										// Turn On autonomous.. dary!
 		};
 	};
 };
