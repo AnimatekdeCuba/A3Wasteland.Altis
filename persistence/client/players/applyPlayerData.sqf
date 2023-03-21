@@ -394,7 +394,7 @@ else
 		case "ACEbodyPartStatus": { player setVariable ["ace_medical_bodyPartStatus", _value, true] };
 		
 		case "ActualPlayerSide" : // applys lastplayerside and forces switchteam to last side played (still WIP)
-		{	
+		{	if !(["A3W_LastPlayedSideSaving"] call isConfigOn) exitWith {};
 			_uid = getPlayerUID player;
 			if ((!_uid call isAdmin) && playerSide in [BLUFOR,OPFOR]) then {
 				if (_value != "") then {

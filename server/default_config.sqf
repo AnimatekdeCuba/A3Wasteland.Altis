@@ -111,6 +111,7 @@ A3W_privateParkingLimit = -1;									// Maximum amount of vehicles allowed in p
 A3W_privateParkingCost = 15000;									// Cost to retrieve an individual vehicle from private parking
 A3W_vehicleLocking = 1;											// Enable vehicle locking and lockpicking (0 = no, 1 = yes)
 A3W_camoNetSaving = 1;											// Enable camonet savings
+A3W_LastPlayedSideSaving = 1;									// Enable Last Played Side savings
 
 // iniDB settings
 PDB_PlayerFileID = "A3W_";										// Player savefile prefix (if you run multiple servers, keep it the same for all of them)
