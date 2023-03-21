@@ -3181,7 +3181,7 @@ planesArray = compileFinal str
 	["Caesar BTT",																"C_Plane_Civil_01_F",												3000,						"vehicle"],
 	["Ceasar BTT (racing)",														"C_Plane_Civil_01_Racing_F",										3000,						"vehicle"],
 	["F/A-181 Black Wasp II (Stealth)",											"B_Plane_Fighter_01_Stealth_F",										500000,						"vehicle"],
-	["F/A-181 Black Wasp II",													"B_Plane_Fighter_01_F",												550000,						"vehicle"],
+	["F/A-181 Black Wasp II",													"B_Plane_Fighter_01_F",												550000,						"vehicle", "variant_blackwaspCAS"],
 	["Pchela-1T UAV (Unarmed)",													"rhs_pchela1t_vvsc",												25000,						"vehicle"],
 	["K40 Ababil-3 UAV (Unarmed)",												"O_UAV_02_F",														25000,						"vehicle"],
 	["K40 Ababil-3 UAV (Bomber)",												"I_UAV_02_dynamicLoadout_F",										250000,						"vehicle",						"variant_greyhawkBomber"],
@@ -3194,7 +3194,7 @@ planesArray = compileFinal str
 	["MQ4A Greyhawk UAV (Bomber)",												"B_UAV_02_dynamicLoadout_F",										250000,						"vehicle",						"variant_greyhawkBomber"],// Bomber UAVs are a lot harder to use,hence why they are cheaper than Missile ones
 	["MQ4A Greyhawk UAV (Missiles)",											"B_UAV_02_dynamicLoadout_F",										425000,						"vehicle",						"variant_greyhawkMissile"],
 	["To-199 Neophron CAS",														"O_Plane_CAS_02_dynamicLoadout_F",									450000,						"vehicle"],
-	["To-201 Shikra",															"O_Plane_Fighter_02_F",												550000,						"vehicle"],
+	["To-201 Shikra",															"O_Plane_Fighter_02_F",												550000,						"vehicle", "variant_shikraCAS"],
 	["To-201 Shikra (Stealth)",													"O_Plane_Fighter_02_Stealth_F",										500000,						"vehicle"],
 	["UCAV Sentinel",															"B_UAV_05_F",														400000,						"vehicle"],
 	["V-44 X Blackfish (Vehicle Transport)",									"B_T_VTOL_01_vehicle_F",											30000,						"vehicle"],

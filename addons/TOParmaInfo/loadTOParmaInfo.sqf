@@ -13,7 +13,7 @@ createDialog "TOParmaInfoD";
 _display = (findDisplay TOParmaInfo_dialog);
 
 _serverInfoText = _display displayCtrl TOParmaInfo_Server_Info;
-_serverInfoString = format ["<t color='#A0FFFFFF'>AC A3Wasteland v1.4d.0.4 %1</t>", worldName];
+_serverInfoString = format ["<t color='#A0FFFFFF'>HC A3Wasteland v1.4D.0.4 %1</t>", worldName];
 _serverInfoText ctrlSetStructuredText parseText _serverInfoString;
 
 _generalInfoText = _display displayCtrl TOParmaInfo_General_Info_BG;

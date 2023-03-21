@@ -7,24 +7,24 @@ _onScreenTime = 7;
 
 sleep 90;
 
-_role1 = "BIENVENIDOS A";
-_role1names = ["Animatek´s Advanced Combat A3Wasteland (BETA)","con Dificultad aumentada","y mayor Inmersión"];
+_role1 = "Welcome to";
+_role1names = ["Animatek´s HardCore A3Wasteland (BETA)","MilSim RolePlay","and inmersive"];
 _role2 = "Antihack";
-_role2names = ["Protegido por A3W-AntiHack e InfiStar"];
-_role3 = "Navegación";
-_role3names = ["Usa el DGAR, el mapa y la brújula para orientarte"];
+_role2names = ["Protected by A3W-AntiHack & InfiStar"];
+_role3 = "Navigate";
+_role3names = ["Use DGAR, Map Tools and Compass to find your way"];
 _role4 = "Survival";
-_role4names = ["Mantente bebido y comido","MRE es Meal Ready-to-Eat en inglés","En Altis no se cultivan bananas"];
-_role5 = "Equipamiento";
-_role5names = ["Si te molesta el ruido compra Earplugs","Existen varios tipos de NVG"];
+_role4names = ["Eat and Drink","MRE is short of Meal Ready-to-Eat","Altis is hot"];
+_role5 = "Equipment Tip";
+_role5names = ["Use Earplugs for loud sounds","There's several types of NVG"];
 _role6 = "ATM";
-_role6names = ["Puedes usar cualquier cajero que encuentres"];
-_role7 = "Territorios";
-_role7names = ["Es una buena manera de empezar","a ganar dinero fácil.","Nadie hará el trabajo sucio por ti"];
-_role8 = "Comunícate bien";
-_role8names = ["Ponte creativo para identificar a tus aliados","No confíes en nadie, las apariencias engañan","¡Y CUIDADO CON EL FUEGO AMIGO!"];
-_role9 = "Sé responsable";
-_role9names = ["Sé respetuoso","No te aproveches","No uses trampas"];
+_role6names = ["Save and transfer money"];
+_role7 = "Territories";
+_role7names = ["Is a good way to start","Make easy money","Do the dirty job"];
+_role8 = "Comms";
+_role8names = ["Ident your enemies and alies","Trust no one","¡BE AWARE OF FRIENDLY FIRE!"];
+_role9 = "Be nice";
+_role9names = ["Respect","Don't Exploit","No Cheating"];
 
 {
 sleep 2;

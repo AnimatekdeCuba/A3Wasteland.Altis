@@ -69,9 +69,16 @@ if (isServer) then
 		}
 		else
 		{
+			if (isNull _unit) exitWith {};
+
 			if (!isNull _veh) then
 			{
 				_unit spawn fn_ejectCorpse;
+			};
+
+			if (["A3W_playerSaving"] call isConfigOn) then
+			{
+				_uid spawn fn_deletePlayerSave;
 			};
 		};
 
@@ -84,7 +91,7 @@ if (isServer) then
 	[] execVM "server\backers.sqf";
 };
 
-[] execVM "server\functions\serverVars.sqf";
+call compile preprocessFileLineNumbers "server\functions\serverVars.sqf";
 
 if (isServer) then
 {
@@ -217,6 +224,8 @@ _timeSavingOn = ["A3W_timeSaving"] call isConfigOn;
 _weatherSavingOn = ["A3W_weatherSaving"] call isConfigOn;
 _mineSavingOn = ["A3W_mineSaving"] call isConfigOn;
 
+_teamSwitchListSavingOn = ["A3W_teamSwitchListSavingOn"] call isConfigOn; // my try retriving teamSwitchListSavingOn
+
 _objectSavingOn = (_baseSavingOn || _boxSavingOn || _staticWeaponSavingOn || _warchestSavingOn || _warchestMoneySavingOn || _beaconSavingOn || _camonetSavingOn);
 _vehicleSavingOn = ["A3W_vehicleSaving"] call isConfigOn;
 _hcObjSavingOn = ["A3W_hcObjSaving"] call isConfigOn;
@@ -243,7 +252,7 @@ _setupPlayerDB = scriptNull;
 #define MIN_EXTDB_VERSION 1.0124
 
 // Do we need any persistence?
-if (_playerSavingOn || _objectSavingOn || _vehicleSavingOn || _mineSavingOn || _timeSavingOn || _weatherSavingOn) then
+if (_playerSavingOn || _objectSavingOn || _vehicleSavingOn || _mineSavingOn || _timeSavingOn || _weatherSavingOn || _teamSwitchListSavingOn) then
 {
 	////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -339,9 +348,9 @@ if (_playerSavingOn || _objectSavingOn || _vehicleSavingOn || _mineSavingOn || _
 		};
 	};
 
-	[_playerSavingOn, _objectSavingOn, _vehicleSavingOn, _mineSavingOn, _timeSavingOn, _weatherSavingOn, _hcObjSavingOn] spawn
+	[_playerSavingOn, _objectSavingOn, _vehicleSavingOn, _mineSavingOn, _timeSavingOn, _weatherSavingOn, _hcObjSavingOn, _teamSwitchListSavingOn] spawn
 	{
-		params ["_playerSavingOn", "_objectSavingOn", "_vehicleSavingOn", "_mineSavingOn", "_timeSavingOn", "_weatherSavingOn", "_hcObjSavingOn"];
+		params ["_playerSavingOn", "_objectSavingOn", "_vehicleSavingOn", "_mineSavingOn", "_timeSavingOn", "_weatherSavingOn", "_hcObjSavingOn", "_teamSwitchListSavingOn"];
 
 		_oSave = (_objectSavingOn || _vehicleSavingOn || _mineSavingOn || _timeSavingOn || {_playerSavingOn && call A3W_savingMethod == "profile"});
 
@@ -452,7 +461,8 @@ if (_playerSavingOn || _objectSavingOn || _vehicleSavingOn || _mineSavingOn || _
 			["camoNetSaving", _camonetSavingOn],
 			["timeSaving", _timeSavingOn],
 			["weatherSaving", _weatherSavingOn],
-			["hcObjSaving", _hcObjSavingOn]
+			["hcObjSaving", _hcObjSavingOn],
+			["teamSwitchListSavingOn", _teamSwitchListSavingOn]
 		];
 	};
 };
@@ -488,6 +498,11 @@ if (!isNil "A3W_startHour" || !isNil "A3W_moonLight") then
 if (_timeSavingOn || _weatherSavingOn) then
 {
 	execVM "persistence\server\world\tLoad.sqf";
+};
+
+if (_teamSwitchListSavingOn) then
+{
+	execVM "persistence\server\world\teamSwitchListSavingOnLoad.sqf";
 };
 
 // Simple loot spawn

@@ -150,6 +150,7 @@ CREATE TABLE `playersave`  (
   `ACEopenWounds` varchar(1024) CHARACTER SET latin1 COLLATE latin1_swedish_ci NOT NULL DEFAULT '[]',
   `ACEheartRate` float NOT NULL DEFAULT 80,
   `ACEbodyPartStatus` varchar(1024) CHARACTER SET latin1 COLLATE latin1_swedish_ci NOT NULL DEFAULT '[]',
+  `ActualPlayerSide` varchar(128) CHARACTER SET latin1 COLLATE latin1_swedish_ci NOT NULL DEFAULT '[]',
   UNIQUE INDEX `idx_PlayerSave_uniquePlayerMap`(`PlayerUID`, `MapID`) USING BTREE,
   INDEX `fk_PlayerSave_ServerMap_idx`(`MapID`) USING BTREE,
   INDEX `fk_PlayerSave_ServerInstance_idx`(`LastServerID`) USING BTREE,

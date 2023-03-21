@@ -32,7 +32,6 @@ if (!isNil "pvar_teamKillList" && {playerSide in [BLUFOR,OPFOR]}) then
 if (!isNil "pvar_teamSwitchList" && playerSide in [BLUFOR,OPFOR]) then
 {
 	_prevSide = [pvar_teamSwitchList, getPlayerUID player, playerSide] call fn_getFromPairs;
-	_ActualSide = player getvariable ["ActualSide", []];
 
 	if (_prevSide != playerSide) exitWith
 	{

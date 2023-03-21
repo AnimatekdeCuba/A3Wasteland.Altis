@@ -1,7 +1,7 @@
 // ******************************************************************************************
 // * This project is licensed under the GNU Affero GPL v3. Copyright © 2015 A3Wasteland.com *
 // ******************************************************************************************
-//	@file Name: atmPositions.sqf
+//	@file Name: WaterSourcePositions.sqf
 //	@file Author: AgentRev
 
 // WaterSourse positions for Altis map

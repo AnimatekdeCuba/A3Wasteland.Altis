@@ -43,6 +43,7 @@ va_player_exit = {
       _player setPos (_player modelToWorldVisual [0,0,0]);
     };
   };
+
   //leave engine in same state after exiting
   def(_engine_state);
   _engine_state =  isEngineOn _vehicle;
@@ -147,7 +148,8 @@ va_unflip_action = {
       _player groupChat format["Could not unflip the %1, you must stay within %2 meters.", _display_name, _dist];
     };
 
-    [[_vehicle,surfaceNormal (getPos _vehicle)],"A3W_fnc_unflip",_vehicle] call BIS_fnc_MP;
+    // [[_vehicle,surfaceNormal (getPos _vehicle)],"A3W_fnc_unflip",_vehicle] call BIS_fnc_MP; // TEST remoteExec instead of BIS_fnc_MP
+    [_vehicle,surfaceNormal (getPos _vehicle)] remoteExecCall ["A3W_fnc_unflip",_vehicle, True];
 
 
     _player groupChat format["The %1 has been unflipped", _display_name];
@@ -177,11 +179,11 @@ va_get_tag = {
   if (isSTRING(_tag)) exitWith {_tag};
   if (not(isNil "_tag")) exitWith {str _tag};
 
-  ""
+  netId _vehicle
 };
 
 va_get_owner_name = {
-  ARGVX4(0,_vehicle,objNull,"None");
+  ARGVX4(0,_vehicle,objNull,"(none)");
 
   def(_name);
   _name = _vehicle getVariable "ownerN";
@@ -201,7 +203,7 @@ va_get_owner_name = {
   _uid3 = _vehicle getVariable ["ownerUID", ""];
   _uid4 = _vehicle getVariable ["UID", ""];
 
-  if (_uid1 == "" && { _uid2 == "" && { _uid3 == "" && { _uid4 == ""}}}) exitWith {"None"};
+  if (_uid1 == "" && { _uid2 == "" && { _uid3 == "" && { _uid4 == ""}}}) exitWith {"(none)"};
 
   def(_uid);
   def(_player);
@@ -237,9 +239,13 @@ va_information_action = {
   def(_display_name);
   _class = typeOf _vehicle;
   _driver = driver _vehicle;
-  _driver = if (isNull _driver) then {"None"} else {(name _driver)};
+  _driver = if (isNull _driver) then {"(none)"} else {(name _driver)};
   _picture = [_class] call generic_picture_path;
-  _display_name = [_class] call generic_display_name;
+
+  private _variant = _vehicle getVariable ["A3W_vehicleVariant", ""];
+  if (_variant != "") then { _variant = "variant_" + _variant };
+
+  _display_name = [_class, _variant] call generic_display_name_variant;
 
   def(_owner);
   def(_tag);
@@ -256,19 +262,19 @@ va_information_action = {
     _text = _text + "<t align='left' font='PuristaMedium' size='1'>" + _label + "</t><t align='left' font='PuristaMedium'>" + _value + "</t><br />";
   }
   forEach(
-    [["   ID:         ", ([_tag,17] call str_truncate)],
+    [["   ID:           ", ([_tag,17] call str_truncate)],
      ["   Direction:  ", str(round(getdir _vehicle)) + toString [176]],
-     ["   Grid:       ", mapGridPosition _vehicle],
-     ["   Altitude:   ", str(round(getposASL _vehicle select 2)) + " meter(s) ASL"],
+     ["   Grid:        ", mapGridPosition _vehicle],
+     ["   Altitude:   ", str(round(getposASL _vehicle select 2)) + " m ASL"],
      ["   Driver:     ", ([_driver,17] call str_truncate)],
-     ["   Seats:     ", str((_vehicle emptyPositions "cargo")+(_vehicle emptyPositions "driver")) + " seat(s)"],
-     ["   Size:       ", str(round((sizeOf _class)*10)/10) + " meter(s)"],
-     ["   Owner:     ",  ([_owner,17] call str_truncate)]
+     ["   Seats:     ", str((_vehicle emptyPositions "cargo")+(_vehicle emptyPositions "driver"))],
+     ["   Size:       ", str(round((sizeOf _class)*10)/10) + " m"],
+     ["   Owner:    ",  ([_owner,17] call str_truncate)]
 
 
     ]);
 
-  _text = format["<t align='center' font='PuristaMedium' size='1.4' >Vehicle Information</t><br /><img image='%1' size='2.8'   /><br /><t  align='center'>(%2)</t>", _picture, ([_display_name,25] call str_truncate)] + "<br /><br />" + _text;
+  _text = format["<t align='center' font='PuristaMedium' size='1.4' >Vehicle Information</t><br /><img image='%1' size='2.8'   /><br /><t  align='center'>%2</t>", _picture, _display_name] + "<br /><br />" + _text;
   hint parseText _text;
 };
 

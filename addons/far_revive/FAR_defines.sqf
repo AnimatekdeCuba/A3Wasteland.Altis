@@ -10,6 +10,7 @@
 
 // Set to true if you want to completely disable the revive system
 #define FAR_DisableRevive false
+
 // Seconds until unconscious unit bleeds out and dies. Set to 0 to disable.
 #define FAR_BleedOut ((["A3W_bleedingTime", 60] call getPublicVar) max 10)
 // Broadcast notifications when player is injured and becomes unconscious
@@ -33,7 +34,6 @@
 
 // Functions
 #define UNCONSCIOUS(UNIT) (UNIT getVariable ["ACE_isUnconscious", false])
-// #define STABILIZED(UNIT) (UNIT getVariable ["FAR_isStabilized", 0] == 1)
 #define STABILIZED(UNIT) (UNIT call ACE_medical_fnc_isInStableCondition)
 #define DRAGGED_BY(UNIT) (UNIT getVariable ["FAR_draggedBy", objNull])
 #define DRAGGED(UNIT) (!isNull DRAGGED_BY(UNIT))

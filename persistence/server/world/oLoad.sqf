@@ -116,14 +116,14 @@ _objectsArray = [];
 						"Land_BarrelWater_grey_F" 
 					] > 0) then	 
 					{
-						_obj setVariable ["acex_field_rations_currentWaterSupply", _value, true]; 
+						_obj setVariable ["acex_field_rations_currentWaterSupply", _value, true];  //Restore ACE Water Objects 
 					};
 				};
-				case "ace_FuelCount": 				//Restore Fuel Objects 
+				case "ace_FuelCount": 				//Restore ACE Fuel Objects 
 				{
 					[_obj , _value] call ace_refuel_fnc_setFuel;
 				};
-				case "ace_AmmoCount" :  				//Restore Ammo Objects 
+				case "ace_AmmoCount" :  				//Restore ACE Ammo Objects 
 				{
 					[_obj , _value] call ace_rearm_fnc_setSupplyCount;
 				};

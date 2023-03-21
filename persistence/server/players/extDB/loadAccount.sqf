@@ -82,6 +82,8 @@ else
 		"ACEheartRate",
 		"ACEbodyPartStatus",
 		
+		"ActualPlayerSide",
+		
 		"Hunger",
 		"Thirst"
 	];

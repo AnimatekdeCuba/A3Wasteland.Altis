@@ -117,6 +117,14 @@ if (!isNil "_itemEntry") then
 						//_name = getText (_weapon >> "displayName");
 						_description = "The perfect companion for wanna-be pilots!<br/>One-time use.";
 					};
+					case (_itemType isKindOf "UGV_02_Demining_backpack_base_F"):
+					{
+						_description = "Remote-controlled robo-shotgun to dispose of trespassers, pre-packaged in a backpack.<br/>UAV Terminal sold separately. Ages 8+";
+					};
+					case (_itemType isKindOf "UGV_02_backpack_base_F"):
+					{
+						_description = "Remote-controlled robot to spy on your neighbor's wife, pre-packaged in a backpack.<br/>UAV Terminal sold separately. Ages 8+";
+					};
 					case (["_UAV_06_antimine_backpack_", _itemType] call fn_findString != -1):
 					{
 						_description = "Remote-controlled hexacopter to bomb the shit out of 'em, pre-packaged in a backpack.<br/>UAV Terminal sold separately. Ages 8+";
@@ -165,7 +173,7 @@ if (!isNil "_itemEntry") then
 					};
 					case ([["_CTRG_Soldier","_Soldier_Viper"], _itemType] call fn_findString != -1):
 					{
-						_description = "Pijama anti-térmico";
+						_description = "Thermally insulated pajamas";
 					};
 					default
 					{
@@ -214,7 +222,7 @@ if (!isNil "_itemEntry") then
 				};
 				if (["G_Balaclava_TI_", _itemType] call fn_startsWith) then
 				{
-					_description = "Anti-térmica";
+					_description = "Thermally insulated";
 				};
 			};
 			default

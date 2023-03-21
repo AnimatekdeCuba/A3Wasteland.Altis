@@ -9,7 +9,7 @@
 # @@Function: Updates JIP players with the correct territory colours
 #*********************************************************/
 
-if (!isServer && hasInterface) exitwith {};
+if (!isServer && hasInterface) exitWith {};
 
 // Exit if territories are not set
 if (isNil "currentTerritoryDetails" || {count currentTerritoryDetails == 0}) exitWith {};

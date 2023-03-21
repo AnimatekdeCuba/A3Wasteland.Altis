@@ -6,7 +6,7 @@
 //	@file Author: AgentRev
 //	@file Created: 15/06/2013 17:33
 
-// "getDammage" and "damage" don't detect repairs done with the toolkit, so we have to check all vehicle parts with getHitPointDamage
+// "Damage" and "damage" don't detect repairs done with the toolkit, so we have to check all vehicle parts with getHitPointDamage
 
 private ["_vehicle", "_hitPtsCfg", "_hitPoints", "_previousDmg", "_currentDmg"];
 

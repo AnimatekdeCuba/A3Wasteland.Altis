@@ -18,10 +18,15 @@ clearMagazineCargoGlobal _vehicle;
 clearWeaponCargoGlobal _vehicle;
 clearItemCargoGlobal _vehicle;
 
-
 if !(_class isKindOf "AllVehicles") exitWith {}; // if not actual vehicle, finish here
 
 clearBackpackCargoGlobal _vehicle;
+
+// Disable thermal on all manned vehicles
+if (!unitIsUAV _vehicle) then
+{
+	_vehicle disableTIEquipment true;
+};
 
 //Remove This?
 if ({_vehicle isKindOf _x} count ["StaticMGWeapon","StaticGrenadeLauncher","StaticMortar"] > 0) then
@@ -39,12 +44,18 @@ _vehicle setVariable ["A3W_engineEH", _vehicle addEventHandler ["Engine", vehicl
 _vehicle addEventHandler ["GetIn", fn_vehicleGetInOutServer];
 _vehicle addEventHandler ["GetOut", fn_vehicleGetInOutServer];
 _vehicle addEventHandler ["Killed", fn_vehicleKilledServer];
+
 //Setup Vpin
 _vehicle setVariable ["vPin", true, true];
 _vehicle setVariable ["password", 0000, true];
 if ({_class isKindOf _x} count ["Air","UGV_01_base_F"] > 0) then
 {
 	_vehicle remoteExec ["A3W_fnc_setupAntiExplode", 0, _vehicle];
+};
+
+if (_vehicle getVariable ["A3W_resupplyTruck", false] || getNumber (configFile >> "CfgVehicles" >> _class >> "transportAmmo") > 0) then
+{
+	[_vehicle] remoteExecCall ["A3W_fnc_setupResupplyTruck", 0, _vehicle];
 };
 
 [_vehicle, _brandNew] call A3W_fnc_setVehicleLoadout;
@@ -77,9 +88,9 @@ switch (true) do
 		_centerOfMass set [2, (_centerOfMass select 2) - 0.1]; // cannot be static number like SUV due to different values for each variant
 		_vehicle setCenterOfMass _centerOfMass;
 	};
-	case (_class isKindOf "Heli_Light_01_base_F"):
+	case ({_class isKindOf _x} count ["Heli_Light_01_base_F","Plane_Civil_01_base_F"] > 0):
 	{
-		// Add flares to poor MH-9's
+		// Add flares to poor MH-9 and Caesar BTT
 		_vehicle removeWeaponTurret ["CMFlareLauncher", [-1]];
 
 		if (_brandNew) then

@@ -75,9 +75,7 @@ player addEventHandler ["WeaponAssembled",
 
 	if (unitIsUAV _obj) then
 	{
-		// ownerUID handled thru save funcs
-
-		_obj disableTIEquipment true; // Disable thermal on all unmanned vehicles
+		// Don't disable UAV thermal vision here, do it at the bottom of fn_createCrewUAV.sqf
 
 		_playerSide = side group _player;
 
@@ -234,7 +232,6 @@ if (playerSide in [BLUFOR,OPFOR] && {{_x select 0 == _uid} count pvar_teamSwitch
 {
 	_startTime = diag_tickTime;
 	waitUntil {sleep 1; diag_tickTime - _startTime >= 180};
-	player setVariable ["ActualSide", playerSide];
 	pvar_teamSwitchLock = [_uid, playerSide];
 	publicVariableServer "pvar_teamSwitchLock";
 

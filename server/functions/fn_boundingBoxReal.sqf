@@ -4,8 +4,8 @@
 //	@file Name: fn_boundingBoxReal.sqf
 //	@file Author: AgentRev
 
-// Since BIS are unable to make a command that returns the actual, genuine bounding box of an object (boundingBoxReal is shit and boundingBox is ever shittier),
-// I decided to extract the bounding boxes using an intersect scanner I made, which is at the bottom of this file
+// Since BIS are unable to make a command that returns the actual, genuine bounding box of an object (boundingBoxReal is shit and boundingBox is even shittier),
+// I decided to extract the bounding boxes using an intersect scanner I made, which is at the bottom of this file.
 
 private ["_vehicle", "_vehClass", "_realBoundingBoxes", "_boundingBoxReal"];
 _vehicle = _this;
@@ -13,7 +13,7 @@ _vehClass = typeOf _vehicle;
 
 _realBoundingBoxes =
 [
-	// Vehicle variants are ordered according to their class inheritance, disrupting those orders can cause unexpected results
+	// Vehicle variants are ordered according to their class inheritance, from lowest child to highest parent. Disrupting those orders can cause unexpected results.
 	[
 		"ReammoBox_F",
 		[
@@ -81,6 +81,7 @@ _realBoundingBoxes =
 	[
 		"Tank_F",
 		[
+			["UGV_02_Base_F", [[-0.3,-0.5,-0.3],[0.3,0.4,0.3]]],
 			["LT_01_AT_base_F", [[-1.6,-2.7,-2],[1.2,2.9,0.9]]],
 			["LT_01_AA_base_F", [[-1.6,-2.7,-2],[1.2,2.9,0.9]]],
 			["LT_01_cannon_base_F", [[-1.6,-2.6,-1.9],[1.2,2.7,0.6]]],
@@ -108,6 +109,8 @@ _realBoundingBoxes =
 			["Kart_01_Base_F", [[-0.6,-0.9,-1.1],[0.7,1.2,-0.4]]],
 			["Quadbike_01_base_F", [[-0.6,-1.2,-1.7],[0.6,1.1,-0.4]]],
 			["Hatchback_01_base_F", [[-1,-2.6,-1.5],[0.9,2.3,0.3]]],
+			["Tractor_01_base_F", [[-1,-2,-1.8],[1,1.7,0.9]]],
+			["Offroad_01_military_covered_base_F", [[-1.3,-2.8,-1.8],[1.2,3,0.8]]],
 			["Offroad_01_armed_base_F", [[-1.3,-2.9,-2.3],[1.2,2.9,0.3]]],
 			["Offroad_01_repair_base_F", [[-1.1,-3,-1.7],[1.1,2.8,0.6]]],
 			["Offroad_01_base_F", [[-1.3,-3,-1.7],[1.2,2.8,0.6]]],

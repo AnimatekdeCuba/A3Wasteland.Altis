@@ -1,5 +1,7 @@
 # A3Wasteland Altis
 
+This is a heavily modified version from the AgentRev ArmA3_A3Wasteland to make it compatible with ACE 3 and other third-party addons. It includes hardcode and milsim gameplay elements with the purpose of achieving a more difficult experience and promoting team play, communication and mechanics based on specialization. WARNING, it is not for casual.
+
 A3Wasteland is a survival-like combat sandbox, which incorporates elements of team deathmatch and sector control in one big fun-to-play package. Similar to DayZ, the objectives are to scavenge weapons and vehicles, team up with fellow players, and engage in combat to obtain control of the landscape. Best experienced with 50 or more players. 
 
 The source code is based on [GoT Wasteland](https://github.com/JoSchaap/GoT_Wasteland_V2.Stratis), which is based on [404 Wasteland](https://github.com/domuk/Arma3-404Wasteland-Stratis), which is based on [Sa-Matra's Wasteland](http://forums.bistudio.com/showthread.php?142427), which is ultimately based on [Tonic's Wasteland](http://forums.bistudio.com/showthread.php?140070).

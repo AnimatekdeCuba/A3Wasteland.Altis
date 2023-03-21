@@ -174,6 +174,7 @@ _ace_getBloodLoss = _player call ACE_medical_fnc_getBloodLoss;
 	["ACEheartRate", _player getVariable ["ace_medical_heartRate", 0]],
 	["ACEbodyPartStatus", _player getVariable ["ace_medical_bodyPartStatus", []]]
 ];
+//saves lastplayerside (still WIP) 
 
 { _data pushBack _x } forEach
 [

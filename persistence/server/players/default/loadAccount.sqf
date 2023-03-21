@@ -99,6 +99,8 @@ if (["A3W_moneySaving"] call isConfigOn) then
 ["ACEheartRate", "NUMBER"] call _getValue;
 ["ACEbodyPartStatus", "ARRAY"] call _getValue;
 
+["ActualPlayerSide", "ARRAY"] call _getValue;
+
 ["Hunger", "NUMBER"] call _getValue;
 ["Thirst", "NUMBER"] call _getValue;
 

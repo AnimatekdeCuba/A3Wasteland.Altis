@@ -27,8 +27,8 @@ X_JIP = false;
 
 CHVD_allowNoGrass = false;
 CHVD_allowTerrain = false; // terrain option has been disabled out from the menu due to terrible code, this variable has currently no effect
-CHVD_maxView = 4000; // Set maximum view distance (default: 12000)
-CHVD_maxObj = 2400; // Set maximimum object view distance (default: 12000)
+CHVD_maxView = 3500; // Set maximum view distance (default: 12000)
+CHVD_maxObj = 3500; // Set maximimum object view distance (default: 12000)
 
 if (isServer) then { X_Server = true };
 if (!isDedicated) then { X_Client = true };
@@ -54,7 +54,7 @@ if (!isDedicated) then
 				[] spawn compile preprocessFileLineNumbers "TFS_fnc_ftfar_init.sqf";
 			};
 			
-			9999 cutText ["Bienvenido a AC A3Wasteland! por favor, espere que el cliente inicie", "BLACK", 0.01];
+			9999 cutText ["Bienvenido a HC A3Wasteland! por favor, espere que el cliente inicie", "BLACK", 0.01];
 
 			waitUntil {!isNull player};
 			player setVariable ["playerSpawning", true, true];

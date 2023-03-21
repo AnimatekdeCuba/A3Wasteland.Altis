@@ -10,10 +10,10 @@ if PG_get(Autoheal) then {
 			sleep 0.5;
 			_cursortarget = cursorTarget;
 			_veh = vehicle player;
-			_p_hit_EH = player addEventHandler ["hit",{player setDammage 0}];
-			_p_dam_EH = player addEventHandler ["dammaged",{player setDammage 0}];
-			_veh_hit_EH = _veh addEventHandler ["hit",{vehicle player setDammage 0}];
-			_veh_dam_EH = _veh addEventHandler ["dammaged",{vehicle player setDammage 0}];
+			_p_hit_EH = player addEventHandler ["hit",{player setDamage 0}];
+			_p_dam_EH = player addEventHandler ["dammaged",{player setDamage 0}];
+			_veh_hit_EH = _veh addEventHandler ["hit",{vehicle player setDamage 0}];
+			_veh_dam_EH = _veh addEventHandler ["dammaged",{vehicle player setDamage 0}];
 			while {(_veh == (vehicle player))&&PG_get(Autoheal)} do {
 				if (isClass(configFile >> "cfgPatches" >> "ace_main")) then {
 					player setVariable ["ace_w_bleed", 0];
@@ -24,8 +24,8 @@ if PG_get(Autoheal) then {
 					player setVariable ["ace_w_revive", -1];
 					player setVariable ["ace_sys_stamina_Fatigue", 0];
 				};
-				player setDammage 0;
-				_veh setDammage 0;
+				player setDamage 0;
+				_veh setDamage 0;
 				_veh setFuel 1;
 				sleep .5;
 			};

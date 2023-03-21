@@ -24,7 +24,7 @@ config_refuel_amounts = compileFinal str
 	["Air", 0.1]
 ];
 
-if (isServer) then
+if (isServer) then // custom territories
 {
 	private _configfile = selectrandom ["Abdera", "ConstructionZone", "GhostHotel", "Kavala",  "LaborCamp", "KoreFactory", "Magos", "MilHill", "Molos", "MOUTVillage", "Oreokastro", "Panagia","Sofia", "Therisa", "Zaros", "OilRigKavala", "OilRigPyrgosGulf", "OilRigNorth", "OilRigSouth"];
 	diag_log format ["Capture Territory is %1", _configfile];

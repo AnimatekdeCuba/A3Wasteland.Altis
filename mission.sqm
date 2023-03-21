@@ -353,8 +353,8 @@ class Mission
 {
 	class Intel
 	{
-		briefingName=" AC A3Wasteland Altis v1.4D.0.4";
-		overviewText="AC A3Wasteland By Animatek's Team";
+		briefingName=" HC A3Wasteland Altis v1.4D.0.4";
+		overviewText="HardCore A3Wasteland By Animatek's Team";
 		resistanceWest=0;
 		startWeather=0;
 		startWind=0;

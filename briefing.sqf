@@ -19,47 +19,45 @@ player createDiarySubject ["credits", "Credits"];
 
 player createDiaryRecord ["changelog",
 [
-"1.4d.0.4 versión de Animatek",
+"1.4D.0.4 Animatek's version",
 "
-<br/>[Added] Persistencia de la Salud del ACE3 Medical .
-<br/>[Added] Persistencia del Hambre y la Sed del ACEX Survival.
-<br/>[Added] Persistencia del Agua en contenedores (ACEX Survival).
-<br/>[Added] Persistencia del Combustible, Munición y Reparación en vehículos y depósitos (ACE3 Logistics).
-<br/>[Changed] Se elimina el Paracaídas Mágico.
-<br/>[Fixed] Si te desconectabas con la mochila en el pecho, no se guardaban ni la mochila ni los objetos que contenía.
-<br/>[Pendiente] Persistencia del bando.
-<br/>[Pendiente] Mucho aún.
+<br/>[Added] ACE3 Medical persistence.
+<br/>[Added] ACEX Survival's Hungry and Thirst persistence.
+<br/>[Added] Water Containers persistence (ACEX Survival).
+<br/>[Added] Fuel, Ammo y RepairPoints in vehicles and deposits persistence (ACE3 Logistics).
+<br/>[Changed] Magic Parachute is no longer in use.
+<br/>[Fixed] BackpackOnChest items persistence.
+<br/>[Fixed] KillFeed ACE3 compatible.
+<br/>[Pendiente] Last played side persistence (WIP).
+<br/>[Pendiente] A lot!.
 "
 ]];
 
 player createDiaryRecord ["changelog",
 [
-"1.4d.0.3 versión de Animatek",
+"1.4D.0.3 Animatek's version",
 "
 <br/>[Added] TFAR mod.
-<br/>[Added] ACE Mod.
+<br/>[Added] ACE3 and ACEX Mod.
 <br/>[Added] Immerse mod.
 <br/>[Added] Advanced Urban Rappel mod.
 <br/>[Added] BackpackOnChest mod.
 <br/>[Added] MOCAP mod.
-<br/>[Added] Advanced SlingLoad (Server side mod).
-<br/>[Added] Advanced Towing (Server side) (Sustituye al Tow Vehicle)
-<br/>[Added] Más misiones.
-<br/>[Added] Intro de Bienvenida.
-<br/>[Added] Status Bar.
+<br/>[Added] Advanced SlingLoad mod (Server side).
+<br/>[Added] Advanced Towing (Server side).
+<br/>[Added] More missions. (WIP)
+<br/>[Added] New Intro. (WIP)
+<br/>[Added] Status Bar. (WIP)
 <br/>[Added] Bloqueo y Robo de Cajas (WIP)
 <br/>[Added] Grass Cutter. A chapear!
-<br/>[Added] Construcción, Bloqueo y Asalto de bases.
-<br/>[Added] Equipamiento de respawn personalizado según Score y dinero en el Banco.
-<br/>[Added] Cuentas VIP con ítems, armas, vehículos y objetos exclusivos; para jugadores destacados.
-<br/>[Added] IA en Territorios y refuerzos aliados.
-<br/>[Changed] Un territorio aleatório por instancia, dinero por dominación y cercanía.
-<br/>[Changed] Se sustituyen armas y vehículos por defecto por los RHS y otros addons (aún en desarrollo).
-<br/>[Changed] Retocado el sistema antiaéreo de la IA. (FlaK mod)
-<br/>[Fixed] Algunas mejoras menores, optimización y corrección de errores.
-<br/>[Pendiente] Limitar acceso en las tiendas a armas y vehículos diferidos por facción.
-<br/>[Pendiente] Sistema de Ranking con grados militares y acceso a contenido exclusivo.
-<br/>[Pendiente] Mejorar algunos aspectos, descartar lo innecesario o lo que no funcione.
+<br/>[Added] GOM and BoS mod (edited by GMG_Monkey)
+<br/>[Added] Ranked respawn loadout.
+<br/>[Added] Ranked items, weapons and vehicles in Stores. (WIP)
+<br/>[Added] IA reinforcement in Captured Territories.
+<br/>[Changed] Customized Random Territory Capture.
+<br/>[Changed] RHS mod (WIP).
+<br/>[Changed] FlaK mod.
+<br/>[Fixed] Other minor changes and fixes.
 "
 ]];
 
@@ -646,7 +644,7 @@ player createDiaryRecord ["infos",
 [
 "Pistas y consejos",
 "
-<br/><font size='18'>Advanced Combat A3Wasteland</font>
+<br/><font size='18'>HardCore A3Wasteland</font>
 <br/>
 <br/>* Al iniciar el juego, busca provisiones antes de establecer una base. Los suministros son lo más importante.
 <br/>
@@ -666,7 +664,7 @@ player createDiaryRecord ["infos",
 
 player createDiaryRecord ["infos",
 [
-"Sobre Advanced Combat A3Wasteland",
+"Sobre HardCore A3Wasteland",
 "
 <br/>Wasteland es un sandbox militar Team vs Team vs Enviroment vs Players con un agradable sabor a Survival. El objetivo es, unido a una facción, o como Independiente, buscar recursos, armas y vehículos; destruir a tus enemigos y no dejarlos levantar cabeza; procurando el control y dominación de la isla. Es un Survival casi como cualquier otro; pero único en su clase! Ten en cuenta que es un trabajo en proceso, por favor, reporte a la administración de ArmA III en SNET, o en su defecto a http://forums.a3wasteland.com/
 <br/>

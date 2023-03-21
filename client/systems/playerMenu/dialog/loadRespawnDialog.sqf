@@ -68,7 +68,7 @@ _side = switch (playerSide) do
 	default      { "Independent" };
 };
 
-_respawnText ctrlSetStructuredText parseText (format ["Bienvenido a AC A3Wasteland<br/>Eres %1. Escoge donde aparecer.", _side]);
+_respawnText ctrlSetStructuredText parseText (format ["Bienvenido a HC A3Wasteland<br/>Eres %1. Escoge donde aparecer.", _side]);
 respawnDialogActive = true;
 
 //buttonSetAction [respawn_Random_Button, format ["%1 [%2,0] execVM 'client\functions\spawnAction.sqf'", _disableAllButtons, respawn_Random_Button]];

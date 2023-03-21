@@ -193,7 +193,7 @@ Purpose: Allow players to rearm, repair, refuel, and resupply vehicles. Charges 
 	private _vehFuelCap = getnumber  (_vehCfg >> "fuelCapacity");
 	private _vehturrets = allturrets _vehicle;
 	private _mags = magazinesallturrets _vehicle;
-	private _vehDamage = getDammage _vehicle;
+	private _vehDamage = Damage _vehicle;
 	private _vehFuel = fuel _vehicle;
 	private	_VehAmmoResource = _vehicle getvariable ["GOM_fnc_ammoCargo", 0];
 	private _vehfuelresource = _vehicle getvariable ["GOM_fnc_fuelCargo", 0];
@@ -340,7 +340,7 @@ Purpose: Allow players to rearm, repair, refuel, and resupply vehicles. Charges 
 								{
 									titleText ["Reparing...", "PLAIN DOWN"];
 									sleep 15;
-									_vehicle setDammage 0;
+									_vehicle setDamage 0;
 								};
 							if (isEngineOn _vehicle && !(_vehicle isKindOf "StaticWeapon")) exitwith {titletext ["Resupply Canceled, Vehicle engine started", "PLAIN DOWN"]};
 							//Refuel Section

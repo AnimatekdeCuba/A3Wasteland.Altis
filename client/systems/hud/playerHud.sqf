@@ -198,7 +198,7 @@ while {true} do
 
 	if (isStreamFriendlyUIEnabled) then
 	{
-		_tempString = format ["<t color='#CCCCCCCC'>AC A3Wasteland %1<br/>a3wasteland.com</t>", getText (configFile >> "CfgWorlds" >> worldName >> "description")];
+		_tempString = format ["<t color='#CCCCCCCC'>HC A3Wasteland %1<br/>a3wasteland.com</t>", getText (configFile >> "CfgWorlds" >> worldName >> "description")];
 		_yOffset = _yOffset + 0.08;
 	}
 	else
@@ -372,5 +372,5 @@ while {true} do
 		showChat true;
 	};
 
-	uiSleep 1;
+	uiSleep 1; // do NOT set higher than 1, this will cause unintended side effects
 };

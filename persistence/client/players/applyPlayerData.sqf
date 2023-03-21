@@ -33,7 +33,7 @@ else
 
 	switch (_name) do
 	{
-		case "Damage": { player setDamage 0 /*_value*/ }; // Just in case a player gets damage wihtout been able treat him self due ACE3 convert medikits and first aid kit into anothers items
+		case "Damage": { player setDamage 0 /*_value*/ }; // Just in case a player gets damage wihtout been able treat him self due ACE3 convert medikits and first aid kit into anothers items. Out of Testing Period this will be eliminated
 		case "HitPoints":
 		{
 			player allowDamage true;
@@ -392,17 +392,41 @@ else
 		case "ACEopenWounds": { player setVariable ["ace_medical_openWounds", _value, true] };
 		case "ACEheartRate": { player setVariable ["ace_medical_heartRate", _value, true] };
 		case "ACEbodyPartStatus": { player setVariable ["ace_medical_bodyPartStatus", _value, true] };
-		case "ActualPlayerSide" :
-		{
-			if (_value != "") then
-			{
-				if (_value != playerSide) exitWith
-				{
-					_uid = getPlayerUID player;
-					pvar_teamSwitchLock = [_uid, _value];
-					publicVariableServer "pvar_teamSwitchLock";
+		
+		case "ActualPlayerSide" : // applys lastplayerside and forces switchteam to last side played (still WIP)
+		{	
+			_uid = getPlayerUID player;
+			if ((!_uid call isAdmin) && playerSide in [BLUFOR,OPFOR]) then {
+				if (_value != "") then {
+					if (_value != playerSide) exitWith
+					{
+						pvar_teamSwitchLock = [_uid, _value];
+						publicVariableServer "pvar_teamSwitchLock";
+						
+						player allowDamage false;
+						player setUnconscious true;
+						9999 cutText ["", "BLACK", 0.01];
+						0 fadeSound 0;
+						uiNamespace setVariable ["BIS_fnc_guiMessage_status", false];
+
+						_sideName = switch (_value) do
+						{
+							case BLUFOR: { "BLUFOR" };
+							case OPFOR:  { "OPFOR" };
+						};
+
+						_msgBox = [format [localize "STR_WL_Loading_Teamswitched", _sideName]] spawn BIS_fnc_guiMessage;
+						_time = diag_tickTime;
+
+						waitUntil {scriptDone _msgBox || diag_tickTime - _time >= 20};
+						endMission "LOSER";
+						waitUntil {uiNamespace setVariable ["BIS_fnc_guiMessage_status", false]; closeDialog 0; false};
+					};
 				};
+			} else {
+            cutText ["You have used your admin to join the enemy team. Only do this for admin duties.", "PLAIN DOWN", 1];
 			};
 		};
 	};
 } forEach _data;
+
