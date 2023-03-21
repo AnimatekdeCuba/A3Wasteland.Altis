@@ -392,7 +392,7 @@ else
 		case "ACEopenWounds": { player setVariable ["ace_medical_openWounds", _value, true] };
 		case "ACEheartRate": { player setVariable ["ace_medical_heartRate", _value, true] };
 		case "ACEbodyPartStatus": { player setVariable ["ace_medical_bodyPartStatus", _value, true] };
-		
+		// ACTUAL PLAYER SIDE
 		case "ActualPlayerSide" : // applys lastplayerside and forces switchteam to last side played (still WIP)
 		{	if !(["A3W_LastPlayedSideSaving"] call isConfigOn) exitWith {};
 			_uid = getPlayerUID player;
@@ -400,9 +400,9 @@ else
 				if (_value != "") then {
 					if (_value != playerSide) exitWith
 					{
-						pvar_teamSwitchLock = [_uid, _value];
+						pvar_teamSwitchLock = [_uid, _value]; // Force faction from DB
 						publicVariableServer "pvar_teamSwitchLock";
-						
+						// Back to lobby
 						player allowDamage false;
 						player setUnconscious true;
 						9999 cutText ["", "BLACK", 0.01];
