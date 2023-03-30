@@ -7,7 +7,7 @@
 if (!isServer) exitwith {};
 //#include "sideMissionDefines.sqf"
 
-private ["_vehicleClass", "_vehicle", "_createVehicle", "_vehicles", "_leader", "_speedMode", "_waypoint", "_vehicleName", "_numWaypoints", "_box1", "_box2", "_callLocation", "_callLocationPos","_heliDirection","_heliDistance", "_flyHeight","_heliTypes"];
+private ["_vehicleClass", "_vehicle", "createMissionVehicle", "_vehicles", "_leader", "_speedMode", "_waypoint", "_vehicleName", "_numWaypoints", "_box1", "_box2", "_callLocation", "_callLocationPos","_heliDirection","_heliDistance", "_flyHeight","_heliTypes"];
 
 _heliDirection = random 360;
 _heliDistance = 1000 + (random 2000);
@@ -30,7 +30,7 @@ _heliTypes =[
 
 _vehicleClass =  (_heliTypes call generateMissionWeights) call fn_selectRandomWeighted;
 
-_createVehicle =
+createMissionVehicle =
 {
 	private ["_type", "_position", "_direction", "_vehicle", "_soldier"];
 
@@ -88,7 +88,7 @@ _createVehicle =
 
 _aiGroup2 = createGroup CIVILIAN;
 
-_vehicle = [_vehicleClass, _startPos, 0] call _createVehicle;
+_vehicle = [_vehicleClass, _startPos, 0] call createMissionVehicle;
 
 _leader = effectiveCommander _vehicle;
 _aiGroup2 selectLeader _leader;

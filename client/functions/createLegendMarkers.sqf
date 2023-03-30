@@ -6,15 +6,16 @@
 
 _markers =
 [
-	["GNTK | ArmA 3", "EmptyIcon", "ColorGrey", [1,1]],
+	["Batallón 95", "EmptyIcon", "ColorGrey", [1,1]],
 	["Animatek's HC A3Wasteland", "EmptyIcon", "ColorGrey", [1,1]],
-	["Es un honor jugar con ustedes", "EmptyIcon", "ColorGrey", [1,1]],
-	["Leyenda:", "EmptyIcon", "ColorGrey", [1,1]],
+	["It's an honor.", "EmptyIcon", "ColorGrey", [1,1]],
+	["LEGEND:", "EmptyIcon", "ColorGrey", [1,1]],
 	["GS: General Store", "mil_dot", "ColorBlue", [1,1]],
 	["VS: Vehicle Store", "mil_dot", "ColorOrange", [1,1]],
 	["Gun Store", "mil_dot", "ColorYellow", [1,1]],
 	["RP: Re-Supply Point", "mil_dot", "ColorGreen", [1,1]],
-	["BS: Base Parts Store", "mil_dot", "ColorRed", [1,1]]
+	["BS: Base Parts Store", "mil_dot", "ColorRed", [1,1]],
+	["Territory Capture", "mil_objective", "ColorRed", [0.5,0.5]]
 ];
 
 if (["A3W_privateParking"] call isConfigOn) then

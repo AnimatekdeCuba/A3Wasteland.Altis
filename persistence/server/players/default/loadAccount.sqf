@@ -92,14 +92,20 @@ if (["A3W_moneySaving"] call isConfigOn) then
 ["BackpackOnChestMags", "ARRAY"] call _getValue;
 
 ["ACEPain", "NUMBER"] call _getValue;
+["ACEPainSuppress", "NUMBER"] call _getValue;
+["ACEPainMedication", "ARRAY"] call _getValue;
 ["ACEbloodVolume", "NUMBER"] call _getValue;
+["ACEBloodPressure", "ARRAY"] call _getValue;
 ["ACEBloodLoss", "NUMBER"] call _getValue;
+["ACEhemorrhage", "NUMBER"] call _getValue;
 ["ACEtourniquets", "ARRAY"] call _getValue;
 ["ACEopenWounds", "ARRAY"] call _getValue;
+["ACEbandagedWounds", "ARRAY"] call _getValue;
 ["ACEheartRate", "NUMBER"] call _getValue;
 ["ACEbodyPartStatus", "ARRAY"] call _getValue;
 
 ["ActualPlayerSide", "ARRAY"] call _getValue;
+["ACE_EarPlug", "BOOL"] call _getValue;
 
 ["Hunger", "NUMBER"] call _getValue;
 ["Thirst", "NUMBER"] call _getValue;

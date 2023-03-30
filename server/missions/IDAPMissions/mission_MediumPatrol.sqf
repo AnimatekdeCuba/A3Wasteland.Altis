@@ -61,7 +61,7 @@ _setupObjects =
 			private _gunner = [_aiGroup1, _missionPos, "IDAP", "Rifleman"] call createsoldier;
 			_gunner moveInGunner _vehicle;
 		};
-		 if (_Passangers > 0) then
+		/* if (_Passangers > 0) then
 		 {
 		 	for "_i" from 1 to (ceil _Passangers/4) do
 		 	{
@@ -70,14 +70,14 @@ _setupObjects =
 
 		 		_soldier moveInCargo _vehicle;
 		 	};
-		 };
+		 };*/
 	} foreach _vehicles;
 	_leader = effectiveCommander (_vehicles select 0);
 	_aiGroup1 selectLeader _leader;
 	_leader setRank "LIEUTENANT";
 
 	_aiGroup1 setCombatMode "GREEN"; // Will fire on enemies
-	_aiGroup1 setBehaviour "AWARE"; // units feel safe until they spot an enemy or get into contact
+	_aiGroup1 setBehaviour "SAFE"; // units feel safe until they spot an enemy or get into contact
 	_aiGroup1 setFormation "FILE";
 
 	_speedMode = "LIMITED";
@@ -88,7 +88,7 @@ _setupObjects =
 		_waypoint setWaypointType "MOVE";
 		_waypoint setWaypointCompletionRadius 50;
 		_waypoint setWaypointCombatMode "GREEN";
-		_waypoint setWaypointBehaviour "AWARE"; // safe is the best behaviour to make AI follow roads, as soon as they spot an enemy or go into combat they WILL leave the road for cover though!
+		_waypoint setWaypointBehaviour "SAFE"; // safe is the best behaviour to make AI follow roads, as soon as they spot an enemy or go into combat they WILL leave the road for cover though!
 		_waypoint setWaypointFormation "FILE";
 		_waypoint setWaypointSpeed _speedMode;
 	} forEach ((call cityList) call BIS_fnc_arrayShuffle);

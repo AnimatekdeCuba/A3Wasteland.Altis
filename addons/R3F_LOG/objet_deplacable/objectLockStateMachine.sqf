@@ -18,7 +18,7 @@ _lockState = _this select 3;
 _IsProtected = false;
 _IsAllowed = false;
 
-// _object call A3W_fnc_StatictLockPoss;
+// if _object call A3W_fnc_StatictLockPoss;
 
 if (((_object distance getMarkerPos "_BluBaseMarker") < 100) && !(side player == blufor)) exitwith {
 	hint "This base can only be changed by Blufor"; R3F_LOG_mutex_local_verrou = false;
@@ -47,7 +47,7 @@ switch (_lockState) do
 			[format ["You are not allowed to lock objects within %1m of stores and mission spawns, or within Territory Areas and Airfields", _poiDist], 5] call mf_notify_client;
 			R3F_LOG_mutex_local_verrou = false;
 		};
-
+		//_object remoteExec [A3W_fnc_StatictLockPoss]; //MÁTAME
 		_checks =
 		{
 			private ["_progress", "_object", "_failed", "_text", "_reLocker"];

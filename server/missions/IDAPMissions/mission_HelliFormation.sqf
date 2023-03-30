@@ -61,8 +61,8 @@ _setupObjects =
 		{
 			for "_i" from 1 to (ceil _Passangers/4) do
 			{
-				private _soldierType = selectrandom ["Rifleman","Rifleman","Rifleman","Rifleman","Rifleman","Rifleman","Rifleman","Rifleman","Rifleman","Rifleman","AT","AT","AT","Grenedier","Grenedier","Grenedier","Grenedier","Grenedier"];
-				_soldier = [_aiGroup2, _position, "IDAP", _soldierType] call createsoldier;
+				private _faction = selectrandom ["IDAP","IDAP","IDAP","IDAP","IDAP","IDAP","IDAP","IDAP","IDAP","NATO"];
+				_soldier = [_aiGroup1, _missionPos, _faction, "Rifleman"] call createsoldier;
 				_soldier moveInCargo _vehicle;
 			};
 		};

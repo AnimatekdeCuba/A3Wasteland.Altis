@@ -41,15 +41,15 @@ _setupObjects =
 	_aiGroup1 = createGroup CIVILIAN;
 	for "_i" from 1 to 6 do
 	{
-		private _soldierType = selectrandom ["Rifleman","Rifleman","Rifleman","Rifleman","Rifleman","Rifleman","Rifleman","Rifleman","Rifleman","Rifleman","AT","AT","AT","Grenedier","Grenedier","Grenedier","Grenedier","Grenedier"];
-		[_aiGroup1, _missionPos, "IDAP", _soldierType] call createsoldier;
+		private _faction = selectrandom ["IDAP","IDAP","IDAP","IDAP","IDAP","IDAP","IDAP","IDAP","IDAP","NATO"];
+		[_aiGroup1, _missionPos, _faction, "Rifleman"] call createsoldier;
 	};
 	_aiGroup1 setCombatMode "RED";
 	_aiGroup2 = createGroup CIVILIAN;
 	for "_i" from 1 to 6 do
 	{
-		private _soldierType = selectrandom ["Rifleman","Rifleman","Rifleman","Rifleman","Rifleman","Rifleman","Rifleman","Rifleman","Rifleman","Rifleman","AT","AT","AT","Grenedier","Grenedier","Grenedier","Grenedier","Grenedier"];
-		[_aiGroup2, _missionPos, "IDAP", _soldierType] call createsoldier;
+		private _faction = selectrandom ["IDAP","IDAP","IDAP","IDAP","IDAP","IDAP","IDAP","IDAP","IDAP","NATO"];
+		[_aiGroup1, _missionPos, _faction, "Rifleman"] call createsoldier;
 	};
 	_aiGroup2 setCombatMode "RED";
 

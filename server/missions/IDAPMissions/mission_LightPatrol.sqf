@@ -59,7 +59,7 @@ _setupObjects =
 			private _gunner = [_aiGroup1, _missionPos, "IDAP", "Rifleman"] call createsoldier;
 			_gunner moveInGunner _vehicle;
 		};
-		 if (_Passangers > 0) then
+		 /*if (_Passangers > 0) then
 		 {
 		 	for "_i" from 1 to (ceil _Passangers/4) do
 		 	{
@@ -68,7 +68,7 @@ _setupObjects =
 
 		 		_soldier moveInCargo _vehicle;
 		 	};
-		 };
+		 };*/
 	} foreach _vehicles;
 
 	_aiGroup1 setCombatMode "GREEN"; // Will fire on enemies

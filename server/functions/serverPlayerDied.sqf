@@ -51,5 +51,4 @@ if (!isPlayer _unit) then
 			_cash = round(random 499);
 			_item setVariable ["cmoney", _cash, true];
 			_item setVariable ["owner", "world", true];
-
 };

@@ -29,12 +29,17 @@ createRandomSoldierC = [_path, "createUnits\createRandomSoldierC.sqf"] call mf_c
 createSmallDivers = [_path, "createUnits\smallDivers.sqf"] call mf_compile;
 generateMissionWeights = [_path, "generateMissionWeights.sqf"] call mf_compile;
 mission_VehicleCapture = "server\missions\vehicleMissions\mission_VehicleCapture.sqf" call mf_compile;
+mission_AAFVehicleCapture = "server\missions\AAFMissions\mission_VehicleCapture.sqf" call mf_compile;
+mission_NATOVehicleCapture = "server\missions\NATOMissions\mission_VehicleCapture.sqf" call mf_compile;
+mission_CSATVehicleCapture = "server\missions\CSATMissions\mission_VehicleCapture.sqf" call mf_compile;
 missionHint = [_path, "missionHint.sqf"] call mf_compile;
 moveIntoBuildings = [_path, "moveIntoBuildings.sqf"] call mf_compile;
 removeDisabledMissions = [_path, "removeDisabledMissions.sqf"] call mf_compile;
 setLocationObjects = [_path, "setLocationObjects.sqf"] call mf_compile;
 setLocationState = [_path, "setLocationState.sqf"] call mf_compile;
 setMissionState = [_path, "setMissionState.sqf"] call mf_compile;
+createMissionVehicle = [_path, "createMissionVehicle.sqf"] call mf_compile; 
+createMissionVehicle2 = [_path, "createMissionVehicle2.sqf"] call mf_compile;
 //Addon Missions
 createsniperGroup = [_path, "createUnits\sniperGroup.sqf"] call mf_compile;
 createsmugglerGroup = [_path, "createUnits\smugglerGroup.sqf"] call mf_compile;

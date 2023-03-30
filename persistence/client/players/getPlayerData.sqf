@@ -162,23 +162,38 @@ if (call A3W_savingMethod == "extDB") then
 	["BackpackOnChestMags", _zade_BackpackMags]
 ];
 // ACE3 PLAYER'S HEALTH STATUS
-_ace_getBloodLoss = _player call ACE_medical_fnc_getBloodLoss;
+//_ace_getBloodLoss = [_player] call ace_medical_status_fnc_getBloodLoss;
+_ace_getBloodPressure = [_player] call ace_medical_status_fnc_getBloodPressure;
 	
 { _data pushBack _x } forEach
 [
 	["ACEPain", _player getVariable ["ace_medical_pain", 0]],
+	["ACEPainSuppress", _player getVariable ["ace_medical_painSupp", 0]],			// new table 0
+	["ACEPainMedication", _player getVariable ["ace_medical_Medications", []]],		// new table []
 	["ACEbloodVolume", _player getVariable ["ace_medical_bloodVolume", 0]],
-	["ACEBloodLoss", _ace_getBloodLoss],
+	["ACEBloodPressure", _ace_getBloodPressure],									// new table [80,120]
+	["ACEBloodLoss", _player getVariable ["ace_medical_woundBleeding", 0]],		// new table 0
+	["ACEhemorrhage", _player getVariable ["ace_medical_hemorrhage", 0]],			// new table 0
 	["ACEtourniquets", _player getVariable ["ace_medical_tourniquets", []]],
+	["ACEFractures", _player getVariable ["ace_medical_Fractures", []]],			// new table []
 	["ACEopenWounds", _player getVariable ["ace_medical_openWounds", []]],
+	["ACEbandagedWounds", _player getVariable ["ace_medical_bandagedWounds", []]],	// new table []
 	["ACEheartRate", _player getVariable ["ace_medical_heartRate", 0]],
-	["ACEbodyPartStatus", _player getVariable ["ace_medical_bodyPartStatus", []]]
+	["ACEbodyPartStatus", _player getVariable ["ace_medical_bodyPartDamage", []]]
 ];
 //saves lastplayerside (still WIP) 
 
 { _data pushBack _x } forEach
 [
-	["ActualPlayerSide", playerSide]
+	["ActualPlayerSide", str playerSide]
+];
+
+//saves ACE EarPlug (still WIP) 
+_ACEEarPlug = [_player] call ace_hearing_fnc_hasEarPlugsIn; 
+	
+{ _data pushBack _x } forEach
+[
+	["ACE_EarPlug", _ACEEarPlug]
 ];
 
 _data

@@ -229,7 +229,6 @@ class w_RscListBox
 	colorShadow[] = {0, 0, 0, 0.5};
 	period = 0.75; // blink period
 	maxHistoryDelay = 1;
-	colorPictureDisabled[] = {1, 1, 1, 1};
 
 	class ListScrollBar
 	{

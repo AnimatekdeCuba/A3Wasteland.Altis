@@ -39,7 +39,7 @@ _setupObjects =
 	_aiGroup1  = createGroup CIVILIAN;
 	for "_i" from 1 to 7 do
 	{
-		private _soldierType = selectrandom ["Rifleman","Rifleman","Rifleman","Rifleman","Rifleman","Rifleman","Rifleman","Rifleman","Rifleman","Rifleman","AT","AT","AT","SAW","SAW","SAW","Grenedier","Grenedier","Grenedier","Grenedier","Grenedier"];
+		private _soldierType = selectrandom ["Rifleman","Rifleman","Rifleman","Rifleman","Rifleman","Rifleman","Rifleman","Rifleman","Rifleman","Rifleman","AT","AA","SAW","SAW","SAW","Engineer","Medic","Grenedier","Engineer","Medic","Grenedier","Marksman","Marksman","Marksman"];
 		[_aiGroup1, _missionPos, "SYN", _soldierType] call createsoldier;
 	};
 	_aiGroup1 setCombatMode "RED";

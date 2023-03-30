@@ -220,14 +220,14 @@ _warchestSavingOn = ["A3W_warchestSaving"] call isConfigOn;
 _warchestMoneySavingOn = ["A3W_warchestMoneySaving"] call isConfigOn;
 _beaconSavingOn = ["A3W_spawnBeaconSaving"] call isConfigOn;
 _camonetSavingOn = ["A3W_camoNetSaving"] call isConfigOn;
-_LastPlayedSideSaving = ["A3W_LastPlayedSideSaving"] call isConfigOn;
+_LastPlayedSideSavingOn = ["A3W_LastPlayedSideSaving"] call isConfigOn;
 _timeSavingOn = ["A3W_timeSaving"] call isConfigOn;
 _weatherSavingOn = ["A3W_weatherSaving"] call isConfigOn;
 _mineSavingOn = ["A3W_mineSaving"] call isConfigOn;
 
-_teamSwitchListSavingOn = ["A3W_teamSwitchListSavingOn"] call isConfigOn; // my try retriving teamSwitchListSavingOn
+//_teamSwitchListSavingOn = ["A3W_teamSwitchListSavingOn"] call isConfigOn; // my try retriving teamSwitchListSavingOn
 
-_objectSavingOn = (_baseSavingOn || _boxSavingOn || _staticWeaponSavingOn || _warchestSavingOn || _warchestMoneySavingOn || _beaconSavingOn || _camonetSavingOn);
+_objectSavingOn = (_baseSavingOn || _boxSavingOn || _staticWeaponSavingOn || _warchestSavingOn || _warchestMoneySavingOn || _beaconSavingOn || _camonetSavingOn || _LastPlayedSideSavingOn);
 _vehicleSavingOn = ["A3W_vehicleSaving"] call isConfigOn;
 _hcObjSavingOn = ["A3W_hcObjSaving"] call isConfigOn;
 
@@ -253,7 +253,7 @@ _setupPlayerDB = scriptNull;
 #define MIN_EXTDB_VERSION 1.0124
 
 // Do we need any persistence?
-if (_playerSavingOn || _objectSavingOn || _vehicleSavingOn || _mineSavingOn || _timeSavingOn || _weatherSavingOn || _teamSwitchListSavingOn) then
+if (_playerSavingOn || _objectSavingOn || _vehicleSavingOn || _mineSavingOn || _timeSavingOn || _weatherSavingOn/* || _teamSwitchListSavingOn*/) then
 {
 	////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -349,9 +349,9 @@ if (_playerSavingOn || _objectSavingOn || _vehicleSavingOn || _mineSavingOn || _
 		};
 	};
 
-	[_playerSavingOn, _objectSavingOn, _vehicleSavingOn, _mineSavingOn, _timeSavingOn, _weatherSavingOn, _hcObjSavingOn, _teamSwitchListSavingOn] spawn
+	[_playerSavingOn, _objectSavingOn, _vehicleSavingOn, _mineSavingOn, _timeSavingOn, _weatherSavingOn, _hcObjSavingOn/*, _teamSwitchListSavingOn*/] spawn
 	{
-		params ["_playerSavingOn", "_objectSavingOn", "_vehicleSavingOn", "_mineSavingOn", "_timeSavingOn", "_weatherSavingOn", "_hcObjSavingOn", "_teamSwitchListSavingOn"];
+		params ["_playerSavingOn", "_objectSavingOn", "_vehicleSavingOn", "_mineSavingOn", "_timeSavingOn", "_weatherSavingOn", "_hcObjSavingOn"/*, "_teamSwitchListSavingOn"*/];
 
 		_oSave = (_objectSavingOn || _vehicleSavingOn || _mineSavingOn || _timeSavingOn || {_playerSavingOn && call A3W_savingMethod == "profile"});
 
@@ -460,10 +460,11 @@ if (_playerSavingOn || _objectSavingOn || _vehicleSavingOn || _mineSavingOn || _
 			["warchestMoneySaving", _warchestMoneySavingOn],
 			["spawnBeaconSaving", _beaconSavingOn],
 			["camoNetSaving", _camonetSavingOn],
+			["LastPlayedSideSaving", _LastPlayedSideSavingOn],
 			["timeSaving", _timeSavingOn],
 			["weatherSaving", _weatherSavingOn],
-			["hcObjSaving", _hcObjSavingOn],
-			["teamSwitchListSavingOn", _teamSwitchListSavingOn]
+			["hcObjSaving", _hcObjSavingOn]/*,
+			["teamSwitchListSavingOn", _teamSwitchListSavingOn]*/
 		];
 	};
 };
@@ -500,12 +501,12 @@ if (_timeSavingOn || _weatherSavingOn) then
 {
 	execVM "persistence\server\world\tLoad.sqf";
 };
-
+/*
 if (_teamSwitchListSavingOn) then
 {
-	execVM "persistence\server\world\teamSwitchListSavingOnLoad.sqf";
+	execVM "persistence\server\world\fn_teamSwitchListSavingOnLoad.sqf";
 };
-
+*/
 // Simple loot spawn
 if (["A3W_simpleLoot"] call isConfigOn) then
 {

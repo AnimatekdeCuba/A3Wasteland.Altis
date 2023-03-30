@@ -5,18 +5,18 @@
 //	@file Author: MercyfulFate, AgentRev
 
 #define CONCAT(STR1,STR2) format ["%1 %2", STR1, STR2]
-#define ERR_FAILED "Adquisición fallida!"
-#define ERR_IN_VEHICLE "No puedes hacer esto desde otro vehículo."
-#define ERR_DISTANCE "Estás muy lejos del vehículo."
-#define ERR_MOVED "Alguien ha movido el vehículo."
-#define ERR_TOWED "Alguien ha remolcado el vehículo."
-#define ERR_OWNED "El vehículo ya es tuyo."
-#define ERR_LOCKED "El vehículo está bloqueado."
-#define ERR_CREW "Hay alguien dentro del vehículo."
-#define ERR_CONNECTED "Alguien está conectado al UAV."
-#define ERR_DESTROYED "El vehículo ha sido destruido."
-#define ERR_CANCELLED "Adquisición cancelada!"
-//#define ERR_SPAWNED "No puedes adquirir los vehículos que spawnean en el mapa!"
+#define ERR_FAILED "Acquiring failed!"
+#define ERR_IN_VEHICLE "You can't do that in a vehicle."
+#define ERR_DISTANCE "You are too far away from the vehicle."
+#define ERR_MOVED "Somebody moved the vehicle."
+#define ERR_TOWED "Somebody towed or lifted the vehicle."
+#define ERR_OWNED "The vehicle is already yours."
+#define ERR_LOCKED "The vehicle is locked."
+#define ERR_CREW "Somebody is inside the vehicle."
+#define ERR_CONNECTED "Somebody is connected to the UAV."
+#define ERR_DESTROYED "The vehicle is destroyed."
+#define ERR_CANCELLED "Lockpicking cancelled!"
+
 params ["_vehicle"];
 
 if (isNil "_vehicle") then

@@ -9,4 +9,3 @@
 
 // Specific to ACE3
 [_this] call ace_medical_fnc_getBloodLoss > 0
-

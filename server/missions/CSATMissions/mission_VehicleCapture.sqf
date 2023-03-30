@@ -164,21 +164,21 @@ _setupObjects =
 		{
 			_squad1 = call _createsquad1;
 			_squad2 = call _createsquad2;
-			//_squad3 = call _createsquad3;
+			_squad3 = call _createsquad3;
 		};	
 		case ({_vehicleClass isKindOf _x} count ["rhs_mig29sm_vmf","RHS_Su25SM_vvs"] > 0):
 		{
 			_squad1 = call _createsquad1;
 			_squad2 = call _createsquad2;
 			_squad3 = call _createsquad3;
-			//_squad4 = call _createsquad4;
+			_squad4 = call _createsquad4;
 		};
 		case ({_vehicleClass isKindOf _x} count ["O_UAV_02_dynamicLoadout_F","O_T_UAV_04_CAS_F"]>0):
 		{
 			_squad1 = call _createsquad1;
 			_squad2 = call _createsquad2;
 			_squad3 = call _createsquad3;
-			//_squad1 = call _createsquad1;
+			_squad1 = call _createsquad1;
 		};
 		case ({_vehicleClass isKindOf _x} count 
 		[
@@ -195,7 +195,7 @@ _setupObjects =
 		{
 			_squad1 = call _createsquad1;
 			_squad2 = call _createsquad2;
-			//_squad3 = call _createsquad3;
+			_squad3 = call _createsquad3;
 		};
 	};
 	_aiGroup1 setCombatMode "RED";

@@ -34,6 +34,54 @@ private _LootSelect = "";
 				{
 					_LootSelect = selectRandom
 					[
+						"Mission_PMPistol",
+						"Mission_P07Pistol",
+						"Mission_ZuberPistol",
+						"Mission_RookPistol",
+						"Mission_PDW",
+						"Mission_45Pistol",
+						"Mission_ZuberPistol",
+						"Mission_Sting",
+						"Mission_Vermin",
+						"Mission_Protector",
+						"Mission_SDAR",
+						"Mission_Mk20",
+						"Mission_TRG",
+						"Mission_Katiba",
+						"Mission_MX",
+						"Mission_SPAR16",
+						"Mission_CAR95",
+						"Mission_MXSW",
+						"Mission_Mk200",
+						"Mission_SPAR16S",
+						"Mission_CAR951",
+						"Mission_LIM",
+						"Mission_AK",
+						"Mission_MXM",
+						"Mission_Mk18",
+						"Mission_CMR76",
+						"Mission_SPAR17",
+						"Mission_MK14",
+						"Mission_MK1",
+						"Mission_MAR10",
+						"Mission_Syrus",
+						"Mission_M320",
+						"Mission_Lynx",
+						"Mission_ASP",
+						"Mission_Zafir",
+						"Mission_Ammo_45",
+						"Mission_Ammo_545",
+						"Mission_Ammo_556",
+						"Mission_Ammo_58",
+						"Mission_Ammo_65",
+						"Mission_Ammo_762",
+						"Mission_Ammo_338",
+						"Mission_Ammo_93",
+						"Mission_Ammo_408",
+						"Mission_Ammo_127",
+						"Mission_Ammo_50",
+						"Mission_Ammo_3GL",
+						"Mission_Ammo_UGL",
 						"mission_USLaunchers",
 						"mission_USLaunchers2",
 						"mission_USSpecial",
@@ -65,6 +113,11 @@ private _LootSelect = "";
 				{
 					_LootSelect = selectRandom
 					[
+						"Mission_IDAP_APERSDispencer",
+						"Mission_IDAP_MedDrone",
+						"Mission_IDAP_DeMineDrone",
+						"Mission_IDAP_UtilityDrone",
+						"Mission_IDAP_Darter",
 						"Diving_Gear",
 						"General_supplies",
 						"Ammo_Drop",
@@ -75,6 +128,10 @@ private _LootSelect = "";
 				{
 					_LootSelect = selectRandom
 					[
+						"Mission_RPG7",
+						"Mission_RPG42",
+						"Mission_SYN_IED",
+						"Mission_WepEquipment",
 						"mission_RPG",
 						"mission_AssRifles",
 						"mission_SMGs",
@@ -87,6 +144,22 @@ private _LootSelect = "";
 				{
 					_LootSelect = selectRandom
 					[
+						"Mission_SPMG",
+						"Mission_NAVID",
+						"Mission_RPG7",
+						"Mission_RPG42",
+						"Mission_PCML",
+						"Diving_Gear_AAF",
+						"Mission_AAF_TitanAA",
+						"Mission_AAF_TitanAT",
+						"Mission_Grenades",
+						"Mission_APERS",
+						"Mission_ATMine",
+						"Mission_ExpCharge",
+						"Mission_Claymore",
+						"Mission_ExpSatch",
+						"Mission_Slam",
+						"Mission_WepEquipment",
 						"mission_USLaunchers",
 						"mission_USSpecial",
 						"Launchers_Tier_2",
@@ -112,6 +185,23 @@ private _LootSelect = "";
 					_LootSelect = selectRandom
 					[
 						
+						"Mission_SPMG",
+						"Mission_NAVID",
+						"Mission_PCML",
+						"Diving_Gear_AAF",
+						"Mission_AAF_TitanAA",
+						"Mission_AAF_TitanAT",
+						"Mission_Grenades",
+						"Mission_APERS",
+						"Mission_ATMine",
+						"Mission_ExpCharge",
+						"Mission_Claymore",
+						"Mission_ExpSatch",
+						"Mission_Slam",
+						"Mission_WepEquipment",
+						"Mission_AAF_MedDrone",
+						"Mission_AAF_UtilityDrone",
+						"Mission_AAF_Darter",
 						"mission_USLaunchers",
 						"mission_USLaunchers2",
 						"mission_USSpecial",
@@ -138,6 +228,23 @@ private _LootSelect = "";
 					_LootSelect = selectRandom
 					[
 						
+						"Mission_SPMG",
+						"Mission_NAVID",
+						"Mission_PCML",
+						"Diving_Gear_NATO",
+						"Mission_NATO_TitanAA",
+						"Mission_NATO_TitanAT",
+						"Mission_Grenades",
+						"Mission_APERS",
+						"Mission_ATMine",
+						"Mission_ExpCharge",
+						"Mission_Claymore",
+						"Mission_ExpSatch",
+						"Mission_Slam",
+						"Mission_WepEquipment",
+						"Mission_NATO_MedDrone",
+						"Mission_NATO_UtilityDrone",
+						"Mission_NATO_Darter",
 						"mission_USLaunchers",
 						"mission_USLaunchers2",
 						"mission_USSpecial",
@@ -163,6 +270,23 @@ private _LootSelect = "";
 				{
 					_LootSelect = selectRandom
 					[
+						"Mission_SPMG",
+						"Mission_NAVID",
+						"Mission_PCML",
+						"Diving_Gear_CSAT",
+						"Mission_CSAT_TitanAA",
+						"Mission_CSAT_TitanAT",
+						"Mission_Grenades",
+						"Mission_APERS",
+						"Mission_ATMine",
+						"Mission_ExpCharge",
+						"Mission_Claymore",
+						"Mission_ExpSatch",
+						"Mission_Slam",
+						"Mission_WepEquipment",
+						"Mission_CSAT_MedDrone",
+						"Mission_CSAT_UtilityDrone",
+						"Mission_CSAT_Darter",
 						"mission_USLaunchers",
 						"mission_USLaunchers2",
 						"mission_USSpecial",
@@ -188,6 +312,33 @@ private _LootSelect = "";
 				{
 					_LootSelect = selectRandom
 					[
+						"Mission_SPMG",
+						"Mission_NAVID",
+						"Mission_RPG7",
+						"Mission_RPG42",
+						"Mission_PCML",
+						"Mission_Grenades",
+						"Mission_APERS",
+						"Mission_ATMine",
+						"Mission_ExpCharge",
+						"Mission_Claymore",
+						"Mission_ExpSatch",
+						"Mission_Slam",
+						"Mission_IDAP_APERSDispencer",
+						"Mission_WepEquipment",
+						"Mission_IDAP_MedDrone",
+						"Mission_IDAP_DeMineDrone",
+						"Mission_IDAP_UtilityDrone",
+						"Mission_IDAP_Darter",
+						"Mission_AAF_MedDrone",
+						"Mission_AAF_UtilityDrone",
+						"Mission_AAF_Darter",
+						"Mission_NATO_MedDrone",
+						"Mission_NATO_UtilityDrone",
+						"Mission_NATO_Darter",
+						"Mission_CSAT_MedDrone",
+						"Mission_CSAT_UtilityDrone",
+						"Mission_CSAT_Darter",
 						"mission_USLaunchers",
 						"mission_USLaunchers2",
 						"mission_USSpecial",
@@ -219,6 +370,10 @@ private _LootSelect = "";
 				{
 					_LootSelect = selectRandom
 					[
+						"Diving_Gear_NATO",
+						"SniperGear_NATO",
+						"Launchers_NATO",
+						"CTRG",
 						"Diving_Gear",
 						"mission_snipers",
 						"mission_USLaunchers",
@@ -230,6 +385,10 @@ private _LootSelect = "";
 				{
 					_LootSelect = selectRandom
 					[
+						"Diving_Gear_CSAT",
+						"SniperGear_CSAT",
+						"Launchers_CSAT",
+						"Viper",
 						"Diving_Gear",
 						"mission_snipers",
 						"mission_USLaunchers",
@@ -241,6 +400,9 @@ private _LootSelect = "";
 				{
 					_LootSelect = selectRandom
 					[
+						"Diving_Gear_AAF",
+						"SniperGear_AAF",
+						"Launchers_AAF",
 						"Diving_Gear",
 						"mission_snipers",
 						"mission_USLaunchers",
@@ -252,6 +414,17 @@ private _LootSelect = "";
 				{
 					_LootSelect = selectRandom
 					[
+						"Diving_Gear_AAF",
+						"Diving_Gear_NATO",
+						"Diving_Gear_CSAT",
+						"SniperGear_NATO",
+						"Launchers_NATO",
+						"CTRG",
+						"SniperGear_CSAT",
+						"Launchers_CSAT",
+						"Viper",
+						"SniperGear_AAF",
+						"Launchers_AAF",
 						"Diving_Gear",
 						"mission_snipers",
 						"mission_USLaunchers",
@@ -284,7 +457,30 @@ private _LootSelect = "";
 			_LootSelect == "mission_Pistols" ||
 			_LootSelect == "mission_SMGs"|| 
 			_LootSelect == "mission_AssRifles"|| 
-			_LootSelect == "mission_LMGs"
+			_LootSelect == "mission_LMGs"||
+			_LootSelect == "Mission_PMPistol" ||
+			_LootSelect == "Mission_P07Pistol"|| 
+			_LootSelect == "Mission_ZuberPistol"|| 
+			_LootSelect == "Mission_RookPistol"|| 
+			_LootSelect == "Mission_PDW"|| 
+			_LootSelect == "Mission_45Pistol"|| 
+			_LootSelect == "Mission_ZuberPistol"|| 
+			_LootSelect == "Mission_Sting"|| 
+			_LootSelect == "Mission_Vermin"|| 
+			_LootSelect == "Mission_Protector"|| 
+			_LootSelect == "Mission_SDAR"|| 
+			_LootSelect == "Mission_Mk20"|| 
+			_LootSelect == "Mission_TRG"|| 
+			_LootSelect == "Mission_Katiba"|| 
+			_LootSelect == "Mission_MX"|| 
+			_LootSelect == "Mission_SPAR16"|| 
+			_LootSelect == "Mission_CAR95"|| 
+			_LootSelect == "Mission_MXSW"|| 
+			_LootSelect == "Mission_Mk200"|| 
+			_LootSelect == "Mission_SPAR16S"|| 
+			_LootSelect == "Mission_CAR951"|| 
+			_LootSelect == "Mission_LIM"|| 
+			_LootSelect == "Mission_AK"
 
 		) then
 		{
@@ -318,7 +514,21 @@ private _LootSelect = "";
 			_LootSelect == "mission_snipers"|| 
 			_LootSelect == "Diving_Gear"|| 
 			_LootSelect == "mission_USSpecial"|| 
-			_LootSelect == "GEVP"
+			_LootSelect == "GEVP"||
+			_LootSelect == "Mission_MXM"|| 
+			_LootSelect == "Mission_Mk18"|| 
+			_LootSelect == "Mission_CMR76"|| 
+			_LootSelect == "Mission_SPAR17"|| 
+			_LootSelect == "Mission_MK14"|| 
+			_LootSelect == "Mission_MK1"|| 
+			_LootSelect == "Mission_MAR10"|| 
+			_LootSelect == "Mission_Syrus"|| 
+			_LootSelect == "Mission_M320"|| 
+			_LootSelect == "Mission_Lynx"|| 
+			_LootSelect == "Mission_ASP"|| 
+			_LootSelect == "Mission_Zafir"|| 
+			_LootSelect == "Mission_SPMG"|| 
+			_LootSelect == "Mission_NAVID"
 		) then
 		{
 			switch (_faction) do
@@ -350,7 +560,16 @@ private _LootSelect = "";
 			_LootSelect == "mission_AALauncher"||
 			_LootSelect == "mission_CompactLauncher"||
 			_LootSelect == "mission_RPG"||
-			_LootSelect == "mission_PCML"
+			_LootSelect == "mission_PCML"||
+			_LootSelect == "Mission_RPG7"|| 
+			_LootSelect == "Mission_RPG42"|| 
+			_LootSelect == "Mission_PCML"||
+			_LootSelect == "Mission_NATO_TitanAA"||
+			_LootSelect == "Mission_NATO_TitanAT"||
+			_LootSelect == "Mission_CSAT_TitanAA"||
+			_LootSelect == "Mission_CSAT_TitanAT"||
+			_LootSelect == "Mission_AAF_TitanAA"||
+			_LootSelect == "Mission_AAF_TitanAT"
 		) then
 		{
 			switch (_faction) do
@@ -380,7 +599,20 @@ private _LootSelect = "";
 	// Ammo Crate
 		if 
 		(
-			_LootSelect == "Ammo_Drop"
+			_LootSelect == "Ammo_Drop"||
+			_LootSelect == "Mission_Ammo_45"||
+			_LootSelect == "Mission_Ammo_545"||
+			_LootSelect == "Mission_Ammo_556"||
+			_LootSelect == "Mission_Ammo_58"||
+			_LootSelect == "Mission_Ammo_65"||
+			_LootSelect == "Mission_Ammo_762"||
+			_LootSelect == "Mission_Ammo_338"||
+			_LootSelect == "Mission_Ammo_93"||
+			_LootSelect == "Mission_Ammo_408"||
+			_LootSelect == "Mission_Ammo_127"||
+			_LootSelect == "Mission_Ammo_50"||
+			_LootSelect == "Mission_Ammo_3GL"||
+			_LootSelect == "Mission_Ammo_UGL"
 		) then
 		{
 			switch (_faction) do
@@ -410,7 +642,25 @@ private _LootSelect = "";
 	//Equipment Crate
 		if 
 		(
-			_LootSelect == "General_supplies"
+			_LootSelect == "General_supplies"||
+			_LootSelect == "Mission_IDAP_MedDrone"||
+			_LootSelect == "Mission_IDAP_DeMineDrone"||
+			_LootSelect == "Mission_IDAP_UtilityDrone"||
+			_LootSelect == "Mission_IDAP_Darter"||
+			_LootSelect == "Mission_AAF_MedDrone"||
+			_LootSelect == "Mission_AAF_UtilityDrone"||
+			_LootSelect == "Mission_AAF_Darter"||
+			_LootSelect == "Mission_NATO_MedDrone"||
+			_LootSelect == "Mission_NATO_UtilityDrone"||
+			_LootSelect == "Mission_NATO_Darter"||
+			_LootSelect == "Mission_CSAT_MedDrone"||
+			_LootSelect == "Mission_CSAT_UtilityDrone"||
+			_LootSelect == "Mission_CSAT_Darter"||
+			_LootSelect == "SniperGear_NATO"||
+			_LootSelect == "CTRG"||
+			_LootSelect == "SniperGear_CSAT"||
+			_LootSelect == "Viper"||
+			_LootSelect == "SniperGear_AAF"
 		) then
 		{
 			switch (_faction) do

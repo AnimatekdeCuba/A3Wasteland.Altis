@@ -33,8 +33,11 @@ _setupObjects =
 	_box1 = [_BoxPos1, "GEN", "1", 0, 0] call createrandomlootcrate;
 	private _BoxPos2 = [_missionPos, 3, 10,1,0,0,0] call findSafePos;
 	_box2 = [_BoxPos2, "GEN", "2", 0, 0] call createrandomlootcrate;
-
-	{ _x setVariable ["R3F_LOG_disabled", true, true] } forEach [_box1, _box2];
+	private _BoxPos3 = [_missionPos, 3, 10,1,0,0,0] call findSafePos;
+	_box3 = [_BoxPos3, "GEN", "2", 0, 0] call createrandomlootcrate;
+	private _BoxPos4 = [_missionPos, 3, 10,1,0,0,0] call findSafePos;
+	_box4 = [_BoxPos4, "GEN", "2", 0, 0] call createrandomlootcrate;
+	{ _x setVariable ["R3F_LOG_disabled", true, true] } forEach [_box1, _box2, _box3, _box4];
 	// create some atmosphere around the crates 8)
 	_tent1 = createVehicle ["Land_cargo_addon02_V2_F", _missionPos, [], 3, "None"];
 	_tent1 setDir random 360;
@@ -47,37 +50,33 @@ _setupObjects =
 
 	// spawn some rebels/enemies :)
 	_aiGroup1 = createGroup CIVILIAN;
-	for "_i" from 1 to 6 do
+	for "_i" from 1 to 10 do
 	{
-		private _soldierType = selectrandom ["Rifleman","Rifleman","Rifleman","Rifleman","Rifleman","Rifleman","Rifleman","Rifleman","Rifleman","Rifleman","AT","AT","AT","Grenedier","Grenedier","Grenedier","Grenedier","Grenedier"];
-		[_aiGroup1, _missionPos, "GEN", _soldierType] call createsoldier;
+		[_aiGroup1, _missionPos, "GEN", "Rifleman"] call createsoldier;
 
 	};
 	_aiGroup1 setCombatMode "RED";
 	
 	_aiGroup2 = createGroup CIVILIAN;
-	for "_i" from 1 to 6 do
+	for "_i" from 1 to 10 do
 	{
-		private _soldierType = selectrandom ["Rifleman","Rifleman","Rifleman","Rifleman","Rifleman","Rifleman","Rifleman","Rifleman","Rifleman","Rifleman","AT","AT","AT","Grenedier","Grenedier","Grenedier","Grenedier","Grenedier"];
-		_soldier = [_aiGroup2, _missionPos, "GEN", _soldierType] call createsoldier;
+		[_aiGroup2, _missionPos, "GEN", "Rifleman"] call createsoldier;
 
 	};
 	_aiGroup2 setCombatMode "RED";
 	
 	_aiGroup3 = createGroup CIVILIAN;
-	for "_i" from 1 to 6 do
+	for "_i" from 1 to 10 do
 	{
-		private _soldierType = selectrandom ["Rifleman","Rifleman","Rifleman","Rifleman","Rifleman","Rifleman","Rifleman","Rifleman","Rifleman","Rifleman","AT","AT","AT","Grenedier","Grenedier","Grenedier","Grenedier","Grenedier"];
-		_soldier = [_aiGroup3, _missionPos, "GEN", _soldierType] call createsoldier;
+		[_aiGroup3, _missionPos, "GEN", "Rifleman"] call createsoldier;
 
 	};
 	_aiGroup3 setCombatMode "RED";
 	
 	_aiGroup4 = createGroup CIVILIAN;
-	for "_i" from 1 to 6 do
+	for "_i" from 1 to 10 do
 	{
-		private _soldierType = selectrandom ["Rifleman","Rifleman","Rifleman","Rifleman","Rifleman","Rifleman","Rifleman","Rifleman","Rifleman","Rifleman","AT","AT","AT","Grenedier","Grenedier","Grenedier","Grenedier","Grenedier"];
-		_soldier = [_aiGroup4, _missionPos, "GEN", _soldierType] call createsoldier;
+		[_aiGroup4, _missionPos, "GEN", "Rifleman"] call createsoldier;
 
 	};
 	// move them into buildings
@@ -99,15 +98,15 @@ _waitUntilCondition = nil;
 _failedExec =
 {
 	// Mission failed
-	{ deleteVehicle _x } forEach [_box1, _box2, _tent1, _chair1, _chair2, _cFire1];
+	{ deleteVehicle _x } forEach [_box1, _box2, _box3, _box4, _tent1, _chair1, _chair2, _cFire1];
 };
 
 _successExec =
 {
 	// Mission completed
-	{ _x setVariable ["R3F_LOG_disabled", false, true] } forEach [_box1, _box2];
-	{ _x setVariable ["Moveable", true, true] } forEach [_box1, _box2];
-	{ _x setVariable ["cmoney",ceil (5000 + random 15000), true] } forEach [_box1, _box2];
+	{ _x setVariable ["R3F_LOG_disabled", false, true] } forEach [_box1, _box2, _box3, _box4];
+	{ _x setVariable ["Moveable", true, true] } forEach [_box1, _box2, _box3, _box4];
+	{ _x setVariable ["cmoney",ceil (5000 + random 15000), true] } forEach [_box1, _box2, _box3, _box4];
 
 	_successHintMessage = format ["Nice work!<br/><br/><t color='%1'>%2</t><br/>is a safe place again!<br/>Their belongings are now yours to take!", GENMissionColor, _townName];
 	{ deleteVehicle _x } forEach [_tent1, _chair1, _chair2, _cFire1];

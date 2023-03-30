@@ -16,7 +16,54 @@ waitUntil {!isNull player};
 player createDiarySubject ["infos", "Infos and Help"];
 player createDiarySubject ["changelog", "Changelog"];
 player createDiarySubject ["credits", "Credits"];
+player createDiarySubject ["features", "Features"];
 
+player createDiaryRecord 
+[
+	"features",
+	["Base Management",
+		"
+		<br/> BIB Base Management
+		<br/> Base Managers are purchased from the Base Parts Store
+		<br/> Base managers start at Level 1 and can be upgraded to Level 5
+		<br/> There is a backer reward for a free upgrade to level 3
+		<br/> 
+		<br/> 
+		<br/> 
+		<br/>
+		<br/>
+		<br/>
+		<br/>
+		<br/>
+		<br/>
+		<br/>
+		<br/>
+		"
+	]
+];
+player createDiaryRecord 
+[
+	"features",
+	["Attach to Vehicle",
+		"
+		<br/> Allows players to attach static weapons and crates to certain vehicles
+		<br/> 
+		<br/> Currently supported:
+		<br/> Offroad: All attachment options
+		<br/> HEMMT tractor: SAM turrets
+		<br/> Stomper Drone: SAM turrets
+		<br/> 
+		<br/>
+		<br/> More vehicle will be added in future patches.
+		<br/>
+		<br/>
+		<br/>
+		<br/>
+		<br/>
+		<br/>
+		"
+	]
+];
 player createDiaryRecord ["changelog",
 [
 "1.4D.0.4 Animatek's version",
@@ -634,7 +681,6 @@ player createDiaryRecord ["infos",
 <br/>
 <br/>" + NKEYNAME(41) + " (open player menu)
 <br/>Ctrl + " + AKEYNAME("GetOut") + " (emergency eject)
-<br/>" + AKEYNAME("GetOver") + " (open parachute) NO DISPONIBLE EN ESTA VERSIÓN
 <br/>Shift + " + NKEYNAME(201) + " / " + NKEYNAME(209) + " (adjust nightvision)
 <br/>" + NKEYNAME(22) + " (admin menu)
 "
@@ -642,53 +688,51 @@ player createDiaryRecord ["infos",
 
 player createDiaryRecord ["infos",
 [
-"Pistas y consejos",
+"Hints and Tips",
 "
 <br/><font size='18'>HardCore A3Wasteland</font>
 <br/>
-<br/>* Al iniciar el juego, busca provisiones antes de establecer una base. Los suministros son lo más importante.
+<br/>* At the start of the game, spread out and find supplies before worrying about where to establish a meeting place or a base, supplies are important and very valuable.
 <br/>
-<br/>* Cuando eligas un lugar para establecerte, recomiendo evitar lugares muy evidentes, como aeropuertos, bases militares o cerca de las Tiendas. Recuerda, los jugadores harán respawn en los pueblos, y podrían hallar fácilmente tu base por accidente.
+<br/>* When picking a base location, it is best advised to pick a place that is out of the way and not so obvious such as airports, cities, map-bound bases, etc. remember, players randomly spawn in and around towns and could even spawn inside your base should you set it up in a town.
 <br/>
-<br/>* Si apareces en un área aparentemente sin vehículos, NO TE SUICIDES para reaparecer en otro lugar. Te garantizo que hallarás lo que necesitas a pocos metros de tu posición.
+<br/>* If you spawn in an area with no vehicles or supplies in the immediate area, DO NOT just click respawn from the pause menu, chances are if you search an area of a few hundred meters, you will find something.
 <br/>
-<br/>* Procura hacerte de unas gafas de visión nocturna (NVG). Éstas se hallan en cajas de munición, suministros, o vehículos en los pueblos. Puedes además comprarlas en la General Store. La noche APESTA sin ellas. Hay varios tipos, aprende cuáles son las mejores.
+<br/>* Always be on the lookout for nightvision. they are located in the ammo crates, and there are pairs scattered throughout vehicles. You can also purchase them from the gunstores. Nighttime without them SUCKS, and if you have them, you can conduct stealth raids on enemy bases under the cover of complete darkness.
 <br/>
-<br/>* Cuando te hagas una base, no la dejes sin protección. Un vigía será suficiente, al menos para dar la alarma, pero se recomienda más de 2 jugadores de guardia.
+<br/>* When you set up a base, never leave your supplies unguarded, one guard will suffice, but it is recommended you have at least 2, maybe 3 guards at base at all times.
 <br/>
-<br/>* La comunicación es imprescindible en AC W3Wasteland. Mantén contacto todo el tiempo con tu equipo por radio. Los hay de diferentes capacidades y tamaños.
-<br/>
-<br/>* Los NPCs están en su máximo de dificultad (humánamente jugable) y son extremadamente agresivos, cuídate de ellos.
+<br/>* There are very aggressive AI characters that spawn with most missions and will protect the mission objectives with deadly force, be aware of them.
 "
 ]];
 
 player createDiaryRecord ["infos",
 [
-"Sobre HardCore A3Wasteland",
+"About HardCore A3Wasteland",
 "
-<br/>Wasteland es un sandbox militar Team vs Team vs Enviroment vs Players con un agradable sabor a Survival. El objetivo es, unido a una facción, o como Independiente, buscar recursos, armas y vehículos; destruir a tus enemigos y no dejarlos levantar cabeza; procurando el control y dominación de la isla. Es un Survival casi como cualquier otro; pero único en su clase! Ten en cuenta que es un trabajo en proceso, por favor, reporte a la administración de ArmA III en SNET, o en su defecto a http://forums.a3wasteland.com/
+<br/>Wasteland is a team versus team versus team sandbox survival experience. The objective of this mission is to rally your faction, scavenge supplies, weapons, and vehicles, and destroy the other factions. It is survival at its best! Keep in mind this is a work in progress, please direct your reports to http://forums.a3wasteland.com/
 <br/>
 <br/>FAQ:
 <br/>
-<br/>Q. Qué se supone que hago aquí?
-<br/>A. Lea la descripción de arriba
+<br/>Q. What am I supposed to do here?
+<br/>A. See the above description
 <br/>
-<br/>Q. Dónde puedo obtener un arma?
-<br/>A. En tres lugares y formas, primero en las cajas obtenidas en las misiones, en algunos vehículos que aparecer aleatoriamente en los pueblos del mapa. En último lugar es en las Tiendas de Armas (Gun Stores). Además, puedes lootear los cuerpos de los enemigos.
+<br/>Q. Where can I get a gun?
+<br/>A. Weapons are found in one of three places, first in ammo crates that come as rewards from missions, inside and outside buildings, and second, in the gear section of the vehicles, which also randomly spawn around the map. The last place to find a gun would be at the gunshops located throughout the map. You can also find them on dead players whose bodies have not yet been looted.
 <br/>
-<br/>Q. Qué son los círculos azules en el mapa?
-<br/>A. Representan los límites de los pueblos. Si un soldado aliado se encuentra dentro de uno de éstos, puedes aparecer cerca de él en el menú de Spawn; por otro lado, si hay enemigos dentro de ese círculo, puede que no puedas spawnear allí.
+<br/>Q. What are the blue circles on the map?
+<br/>A. The circles represent town limits. If friendly soldiers are in a town, you can spawn there from the re-spawn menu; however if there is an enemy presence, you will not be able to spawn there.
 <br/>
-<br/>Q. Por qué está tan oscuro? no puedo ver nada.
-<br/>A. Éste servidor tiene una rotación de Días y Noches, y como tal, la noche forma parte de tu experiencia de supervivencia. Te recomendamos que busques una fuente de luz, o dispositivos de visión noctura.
+<br/>Q. Why is it so dark, I cant see.
+<br/>A. The server has a day/night cycle just like in the real world, and as such, night time is a factor in your survival. It is recommended that you find sources of light or use your Nightvision Goggles as the darkness sets in.
 <br/>
-<br/>Q. Está bien que le dispare a los de mi equipo?
-<br/>A. Si eres miembro de una de las facciones, Blufor u Opfor, entonces NO tienes permitido disparar, robar objetos o vehículos a los de tu equipo. Si juegas como Independiente, eres libre de atacar o robar a cualquiera.
+<br/>Q. Is it ok for me to shoot my team mates?
+<br/>A. If you are member of BLUFOR or OPFOR teams, then you are NOT allowed to shoot or steal items and vehicles from other players. If you play as Independent, you are free to engage anyone as well as team up with anyone you want.
 <br/>
-<br/>Q. Qué son las canistras, canastas o cestas?
-<br/>A. Este juego cuenta con un sistema de Agua y Comida en el cual debes de estar alerta si quieres sobrevivir. Puedes acopiar agua y comida de los sacos y tanques de agura y resguardarlos en tu base; así como lootear a otros jugadores botellas de agua y carne enlatada.
+<br/>Q. Whats with the canisters, baskets and big bags?
+<br/>A. This game has a food and water system that you must stay on top of if you hope to survive. You can collect food and water from food sacks and wells, or baskets and plastic canisters dropped by dead players. Food and water will also randomly spawn around the map.
 <br/>
-<br/>Q. Vi a alguien rompiendo las reglas. Qué hago?
-<br/>A. Simplemente, recave información sobre la indisciplina y contacte a un administrador en el TS, y reporte el incidente si es grave.
+<br/>Q. I saw someone breaking a rule, what do I do?
+<br/>A. Simply go into global chat and get the attention of one of the admins or visit our forums, and make a report if the offense is serious.
 "
 ]];

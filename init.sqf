@@ -27,8 +27,8 @@ X_JIP = false;
 
 CHVD_allowNoGrass = false;
 CHVD_allowTerrain = false; // terrain option has been disabled out from the menu due to terrible code, this variable has currently no effect
-CHVD_maxView = 3500; // Set maximum view distance (default: 12000)
-CHVD_maxObj = 3500; // Set maximimum object view distance (default: 12000)
+CHVD_maxView = 12000; // Set maximum view distance (default: 12000)
+CHVD_maxObj = 12000; // Set maximimum object view distance (default: 12000)
 
 if (isServer) then { X_Server = true };
 if (!isDedicated) then { X_Client = true };
@@ -98,7 +98,7 @@ if (hasInterface || isServer) then
 	[] execVM "addons\R3F_LOG\init.sqf";
 	[] execVM "addons\AF_Keypad\AF_KP_vars.sqf";
 	[] execVM "addons\JumpMF\init.sqf";
-	[] execVM "addons\outlw_magrepack\MagRepack_init.sqf";
+	//[] execVM "addons\outlw_magrepack\MagRepack_init.sqf";
 	[] execVM "addons\lsd_nvg\init.sqf";
 	[] execVM "addons\stickyCharges\init.sqf";
 	[] execVM "addons\laptop\init.sqf";							// Addon for hack laptop mission
@@ -107,9 +107,7 @@ if (hasInterface || isServer) then
 	[] execVM "addons\Crater_Cleaner\cratercleaner.sqf";
 	//[] execVM "addons\VCOMAI\init.sqf";
 	[] execVM "addons\scripts\intro.sqf";						// Show intro text
-	// [] execVM "addons\Grenades\ToxicGas.sqf"; 					// Toxic Gas Addon
 	[] execVM "addons\HvT\HvT.sqf"; 							// High Value Target
-	[] execVM "addons\statusBar\statusbar.sqf"; 				// Status Bar
 	[] execVM "addons\JTS_PM\Functions.sqf";					// JTS Personal Messages
 };
 

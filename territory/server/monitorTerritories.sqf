@@ -170,14 +170,14 @@ _onCaptureFinished =
 	// _msgWinners = format ["Tu equipo ha capturado satisfactoriamente %1 y has recibido $%2. Tropas de apoyo arrivarán en breve.", _captureDescription, _captureValue];
 	
 	if (_captureTeam in [BLUFOR,OPFOR]) then {
-		_msgWinners = format ["Tu equipo ha capturado %1 y has recibido $%2. Tropas de refuerzo ya están en camino.", _captureDescription, _captureValue];
+		_msgWinners = format ["Your team has successfully captured %1 and you've received $%2. Reinforcements are on the way.", _captureDescription, _captureValue];
 	}else{
-		_msgWinners = format ["Tu equipo ha capturado %1 y has recibido $%2.", _captureDescription, _captureValue];
+		_msgWinners = format ["Your group has successfully captured %1 and you've received $%2.", _captureDescription, _captureValue];
 	};
 	
 	["pvar_territoryActivityHandler", [_captureTeam, [_msgWinners, _captureValue]]] call fn_publicVariableAll;
 
-	_msgOthers = format ["%1 ha capturado %2", _descriptiveTeamName, _captureDescription];
+	_msgOthers = format ["%1 has captured %2", _descriptiveTeamName, _captureDescription];
 	["pvar_territoryActivityHandler", [_otherTeams, [_msgOthers]]] call fn_publicVariableAll;
 	
 	//Militarize this territory

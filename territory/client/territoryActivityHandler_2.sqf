@@ -33,7 +33,7 @@ if (typeName _this == "ARRAY" && {count _this >= 1}) then
 			private _markerPOS = getMarkerPos _marker;
 			private _distance = _playerPOS distance2D _markerPOS;
 			// player globalChat format ["Distance to cap point %1", _distance];
-			if (_distance <= 7000) then
+			if (_distance <= 3000) then
 			{
 				_canPayout = true;
 			};
@@ -85,8 +85,8 @@ if (typeName _this == "ARRAY" && {count _this >= 1}) then
 		OutOfRangeTime = time;
 		if ((OutOfRangeTime - _TerritoryLoopTime) >= 30) then
 		{
-			titletext ["Estás a más de 7km de distancia del territorio. Pago imposible", "PLAIN DOWN"];
-			player setvariable ["_TerritoryLoopTime", time, true];
+			titletext ["Your are more then 3km from the closest territory. Payout impossible", "PLAIN DOWN"];
+			TerritoryLoopTime =  time;
 		};
 	};
 };

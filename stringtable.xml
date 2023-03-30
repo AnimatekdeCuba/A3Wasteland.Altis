@@ -87,6 +87,7 @@
 		<Key ID="STR_WL_ShopDescriptions_RepairKit">
 			<English>With this kit, you won't need an engineer! It includes all the necessary tools and spare parts to fix any vehicle issues on your own.</English>
 			<Spanish>¡Con este kit, no necesitarás a un ingeniero! Incluye todas las herramientas y piezas de repuesto necesarias para solucionar cualquier problema del vehículo por tu cuenta.</Spanish>
+		</Key>
 		<Key ID="STR_WL_ShopDescriptions_MedKit">
 			<English>With this kit, you won't need a medic! It includes all the necessary medical supplies to treat injuries and ailments on your own.</English>
 			<Spanish>¡Con este kit, no necesitarás un médico! Incluye todos los suministros médicos necesarios para tratar lesiones y dolencias por tu cuenta.</Spanish>

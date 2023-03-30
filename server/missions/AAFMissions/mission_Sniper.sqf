@@ -8,6 +8,8 @@
 #include "AAFMissionDefines.sqf";
 private _box1 = "";
 private _box2 = "";
+private _box3 = "";
+private _box4 = "";
 
 _setupVars =
 {
@@ -22,7 +24,11 @@ _setupObjects =
 	_box1 = [_BoxPos1, "AAF", "1", 0, 0] call createrandomlootcrate;
 	private _BoxPos2 = [_missionPos, 3, 10,1,0,0,0] call findSafePos;
 	_box2 = [_BoxPos2, "AAF", "2", 0, 0] call createrandomlootcrate;
-	{ _x setVariable ["R3F_LOG_disabled", true, true] } forEach [_box1, _box2];
+	private _BoxPos3 = [_missionPos, 3, 10,1,0,0,0] call findSafePos;
+	_box3 = [_BoxPos3, "AAF", "2", 0, 0] call createrandomlootcrate;
+	private _BoxPos4 = [_missionPos, 3, 10,1,0,0,0] call findSafePos;
+	_box4 = [_BoxPos4, "AAF", "3", 0, 0] call createrandomlootcrate;
+	{ _x setVariable ["R3F_LOG_disabled", true, true] } forEach [_box1, _box2, _box3, _box4];
 	_aiGroup1 = createGroup CIVILIAN;
 	_aiGroup2 = createGroup CIVILIAN;
 	for "_i" from 1 to 6 do
@@ -54,15 +60,15 @@ _waitUntilCondition = nil;
 _failedExec =
 {
 	// Mission failed
-	{ deleteVehicle _x } forEach [_box1, _box2];
+	{ deleteVehicle _x } forEach [_box1, _box2, _box3, _box4];
 };
 
 _successExec =
 {
 	// Mission completed
-	{ _x setVariable ["R3F_LOG_disabled", false, true] } forEach [_box1, _box2];
-	{ _x setVariable ["Moveable", true, true] } forEach [_box1, _box2];
-	{ _x setVariable ["cmoney",ceil (5000 + random 15000), true] } forEach [_box1, _box2];
+	{ _x setVariable ["R3F_LOG_disabled", false, true] } forEach [_box1, _box2, _box3, _box4];
+	{ _x setVariable ["Moveable", true, true] } forEach [_box1, _box2, _box3, _box4];
+	{ _x setVariable ["cmoney",ceil (5000 + random 15000), true] } forEach [_box1, _box2, _box3, _box4];
 	_successHintMessage = format ["The snipers are dead! Well Done!"];
 };
 

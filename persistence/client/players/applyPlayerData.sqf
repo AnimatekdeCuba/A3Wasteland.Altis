@@ -6,12 +6,11 @@
 
 // This is where you load player status & inventory data which will be wiped upon death, for persistent variables use c_applyPlayerInfo.sqf instead
 
-private ["_data", "_removal", "_name", "_value", "_maxMoney"];
+private ["_data", "_removal", "_name", "_value", "_maxMoney", "_uid"];
 
 _data = _this;
-_maxMoney = ["A3W_maxMoney", 5000000] call getPublicVar;
+_maxMoney = ["A3W_maxMoney", 16000000] call getPublicVar;
 _removal = param [1, true];
-
 
 if (_removal isEqualTo false) then
 {
@@ -386,12 +385,18 @@ else
 		case "BackpackOnChestMags": { { ([player] + _x) call zade_boc_fnc_addMagToChestpack } forEach _value };
 		// ACE3 PLAYER'S HEALTH STATUS
 		case "ACEPain": { player setVariable ["ace_medical_pain", _value, true] };
+		case "ACEPainSuppress": { player setVariable ["ace_medical_painSupp", _value, true] };
+		case "ACEPainMedication": { player setVariable ["ace_medical_Medications", _value, true] };
 		case "ACEbloodVolume": { player setVariable ["ace_medical_bloodVolume", _value, true] };
-		case "ACEBloodLoss": { player setVariable ["ace_medical_hasLostBlood", _value, true] };
-		case "ACEtourniquets": { player setVariable ["ace_medical_tourniquets", _value, true] };
+		case "ACEBloodPressure": { player setVariable ["ace_medical_BloodPress", _value, true] };
+		case "ACEBloodLoss": { player setVariable ["ace_medical_woundBleeding", _value, true] };
+		case "ACEhemorrhage": { player setVariable ["ace_medical_hemorrhage", _value, true] };
+		case "ACEtourniquets": { player setVariable ["ace_medical_tourniquet", _value, true] };
+		case "ACEFractures": { player setVariable ["ace_medical_Fractures", _value, true] };
 		case "ACEopenWounds": { player setVariable ["ace_medical_openWounds", _value, true] };
+		case "ACEbandagedWounds": { player setVariable ["ace_medical_bandagedWounds", _value, true] };
 		case "ACEheartRate": { player setVariable ["ace_medical_heartRate", _value, true] };
-		case "ACEbodyPartStatus": { player setVariable ["ace_medical_bodyPartStatus", _value, true] };
+		case "ACEbodyPartStatus": { player setVariable ["ace_medical_bodyPartDamage", _value, true] };
 		// ACTUAL PLAYER SIDE
 		case "ActualPlayerSide" : // applys lastplayerside and forces switchteam to last side played (still WIP)
 		{	if !(["A3W_LastPlayedSideSaving"] call isConfigOn) exitWith {};
@@ -400,7 +405,9 @@ else
 				if (_value != "") then {
 					if (_value != playerSide) exitWith
 					{
-						pvar_teamSwitchLock = [_uid, _value]; // Force faction from DB
+						pvar_teamSwitchUnlock = _uid;
+						publicVariableServer "pvar_teamSwitchUnlock";
+						pvar_teamSwitchLock = [_uid, _value, true]; // Force faction from DB
 						publicVariableServer "pvar_teamSwitchLock";
 						// Back to lobby
 						player allowDamage false;
@@ -427,6 +434,9 @@ else
             cutText ["You have used your admin to join the enemy team. Only do this for admin duties.", "PLAIN DOWN", 1];
 			};
 		};
+		case "ACE_EarPlug" : 
+		{
+			if !isNil (_value) then {player setVariable ["ACE_hasEarPlugsin", _value, true]};
+		};
 	};
 } forEach _data;
-

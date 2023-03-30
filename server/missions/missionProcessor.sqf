@@ -2,21 +2,24 @@
 // * This project is licensed under the GNU Affero GPL v3. Copyright © 2014 A3Wasteland.com *
 // ******************************************************************************************
 //	@file Name: missionProcessor.sqf
-//	@file Author: AgentRev
+//	@file Author: AgentRev, BIB_Monkey
 
-if (!isServer) exitwith {};
+if (!isServer) exitWith {};
 
 #define MISSION_LOCATION_COOLDOWN (10*60)
 #define MISSION_TIMER_EXTENSION (15*60)
 
-private ["_controllerSuffix", "_missionTimeout", "_availableLocations", "_missionLocation", "_leader", "_marker", "_failed", "_complete", "_startTime", "_oldAiCount", "_leaderTemp", "_newAiCount", "_adjustTime", "_lastPos", "_floorHeight", "_startAiCount", "_reinforcementsCalled", "_reinforceChanceRoll", "_reinforcementsToCall", "_aiGroup2"];
+private ["_controllerSuffix", "_missionTimeout", "_availableLocations", "_missionLocation", "_leader", "_marker", "_failed", "_complete", "_startTime", "_oldAiCount", "_leaderTemp1","_leaderTemp2","_leaderTemp3","_leaderTemp4", "_newAiCount", "_adjustTime", "_lastPos", "_floorHeight", "_startAiCount", "_reinforcementsCalled", "_reinforceChanceRoll", "_reinforcementsToCall"];
 
 // Variables that can be defined in the mission script :
-private ["_missionType", "_locationsArray", "_aiGroup", "_missionPos", "_missionPicture", "_missionHintText", "_successHintMessage", "_failedHintMessage", "_reinforceChance", "_minReinforceGroups","_maxReinforceGroups"];
+private ["_missionType", "_locationsArray", "_aiGroup1", "_aiGroup2", "_aiGroup3", "_aiGroup4", "_missionPos", "_missionPicture", "_missionHintText", "_successHintMessage", "_failedHintMessage", "_reinforceChance", "_minReinforceGroups","_maxReinforceGroups"];
 
 _controllerSuffix = param [0, "", [""]];
-_aiGroup = grpNull;
+_aiGroup1 = grpNull;
 _aiGroup2 = grpNull;
+_aiGroup3 = grpNull;
+_aiGroup4 = grpNull;
+_minefield = [];
 
 if (!isNil "_setupVars") then { call _setupVars };
 
@@ -41,9 +44,9 @@ if (!isNil "_locationsArray") then
 
 if (!isNil "_setupObjects") then { call _setupObjects };
 
-_leader = leader _aiGroup;
+_leader = leader _aiGroup1;
 _marker = [_missionType, _missionPos] call createMissionMarker;
-_aiGroup setVariable ["A3W_missionMarkerName", _marker, true];
+_aiGroup1 setVariable ["A3W_missionMarkerName", _marker, true];
 
 if (isNil "_missionPicture") then { _missionPicture = "" };
 
@@ -84,31 +87,92 @@ waitUntil
 {
 	uiSleep 1;
 
-	_leaderTemp = leader _aiGroup;
+	_leaderTemp1 = leader _aiGroup1;
+	_leaderTemp2 = leader _aiGroup2;
+	_leaderTemp3 = leader _aiGroup3;
+	_leaderTemp4 = leader _aiGroup4;
 
 	// Force immediate leader change if current one is dead
-	if (!alive _leaderTemp) then
+	if (!alive _leaderTemp1) then
 	{
 		{
 			if (alive _x) exitWith
 			{
-				_aiGroup selectLeader _x;
-				_leaderTemp = _x;
+				_aiGroup1 selectLeader _x;
+				_leaderTemp1 = _x;
 			};
-		} forEach units _aiGroup;
+		} forEach units _aiGroup1;
+	};
+	if (!alive _leaderTemp2) then
+	{
+		{
+			if (alive _x) exitWith
+			{
+				_aiGroup2 selectLeader _x;
+				_leaderTemp2 = _x;
+			};
+		} forEach units _aiGroup2;
+	};
+	if (!alive _leaderTemp3) then
+	{
+		{
+			if (alive _x) exitWith
+			{
+				_aiGroup3 selectLeader _x;
+				_leaderTemp3 = _x;
+			};
+		} forEach units _aiGroup3;
+	};
+	if (!alive _leaderTemp4) then
+	{
+		{
+			if (alive _x) exitWith
+			{
+				_aiGroup4 selectLeader _x;
+				_leaderTemp4 = _x;
+			};
+		} forEach units _aiGroup4;
 	};
 
-	_newAiCount = count units _aiGroup;
+	_newAiCount1 = count units _aiGroup1;
+	_newAiCount2 = count units _aiGroup2;
+	_newAiCount3 = count units _aiGroup3;
+	_newAiCount4 = count units _aiGroup4;
+	_AICount = (_newAiCount1 + _newAiCount2 + _newAiCount3 + _newAiCount4);
 
-	if (_newAiCount < _oldAiCount) then
+	if (_AICount < _oldAiCount) then
 	{
 		// some units were killed, mission expiry will be reset to 15 mins if it's currently lower than that
 		_adjustTime = if (_missionTimeout < MISSION_TIMER_EXTENSION) then { MISSION_TIMER_EXTENSION - _missionTimeout } else { 0 };
 		_startTime = _startTime max (diag_tickTime - ((MISSION_TIMER_EXTENSION - _adjustTime) max 0));
 	};
-	_oldAiCount = _newAiCount;
-
-	if (!isNull _leaderTemp) then { _leader = _leaderTemp }; // Update current leader
+	_oldAiCount = _AICount;
+	// Update current leader
+	if (!isNull _leaderTemp1) then 
+	{ 
+		_leader = _leaderTemp1 
+	}
+	else
+	{
+		if (!isNull _leaderTemp2) then
+		{
+			_leader = _leaderTemp2
+		}
+		else
+		{
+			if (!isNull _leaderTemp3) then
+			{
+				_leader = _leaderTemp3
+			}
+			else
+			{
+				if (!isNull _leaderTemp4) then
+				{
+					_leader = _leaderTemp4
+				};
+			};
+		};
+	}; 
 
 	if (!isNil "_waitUntilMarkerPos") then { _marker setMarkerPos (call _waitUntilMarkerPos) };
 	if (!isNil "_waitUntilExec") then { call _waitUntilExec };
@@ -121,19 +185,17 @@ waitUntil
 		_complete = true;
 	};
 
-	(_failed || _complete || (!_ignoreAiDeaths && {alive _x} count units _aiGroup == 0))
+	(_failed || _complete || (!_ignoreAiDeaths && ({alive _x} count units _aiGroup1 == 0) && ({alive _x} count units _aiGroup2 == 0) && ({alive _x} count units _aiGroup3 == 0) && ({alive _x} count units _aiGroup4 == 0)))
 };
 
 if (_failed) then
 {
 	// Mission failed
 
-	{ moveOut _x; deleteVehicle _x } forEach units _aiGroup;
-
-	if (count units _aiGroup2 > 0) then
-	{
-		{ moveOut _x; deleteVehicle _x } forEach units _aiGroup2; //This group only exists if attack heli reinforcement is called upon
-	};
+	{ moveOut _x; deleteVehicle _x } forEach units _aiGroup1;
+	{ moveOut _x; deleteVehicle _x } forEach units _aiGroup2;
+	{ moveOut _x; deleteVehicle _x } forEach units _aiGroup3;
+	{ moveOut _x; deleteVehicle _x } forEach units _aiGroup4;
 
 	if (!isNil "_failedExec") then { call _failedExec };
 
@@ -151,7 +213,15 @@ if (_failed) then
 			};
 		} forEach _vehicles;
 	};
-
+	if (!isNil "_minefield" && {typeName _minefield == "ARRAY"}) then
+	{
+		{
+			if (!isNil "_x" && {typeName _x == "OBJECT"}) then
+			{
+				deleteVehicle _x;
+			};
+		} forEach _minefield;
+	};
 	[
 		"Objective Failed",
 		_missionType,
@@ -206,7 +276,15 @@ else
 			};
 		} forEach _vehicles;
 	};
-
+	if (!isNil "_minefield" && {typeName _minefield == "ARRAY"}) then
+	{
+		{
+			if (!isNil "_x" && {typeName _x == "OBJECT"}) then
+			{
+				deleteVehicle _x;
+			};
+		} forEach _minefield;
+	};
 	[
 		"Objective Complete",
 		_missionType,
@@ -217,16 +295,12 @@ else
 	call missionHint;
 
 	diag_log format ["WASTELAND SERVER - %1 Mission%2 complete: %3", MISSION_PROC_TYPE_NAME, _controllerSuffix, _missionType];
-
-	if (count units _aiGroup2 > 0) then
-	{
-		sleep 60; //delay to give heli a chance to track down the victors
-		{ moveOut _x; deleteVehicle _x } forEach units _aiGroup2; //This group only exists if attack heli reinforcement is called upon
-	};
 };
 
-deleteGroup _aiGroup;
+deleteGroup _aiGroup1;
 deleteGroup _aiGroup2;
+deleteGroup _aiGroup3;
+deleteGroup _aiGroup4;
 deleteMarker _marker;
 
 if (!isNil "_locationsArray") then

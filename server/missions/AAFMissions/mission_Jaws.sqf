@@ -27,8 +27,11 @@ _setupObjects =
 	_box1 = [_BoxPos1, "AAF", "1", 0, 0] call createrandomlootcrate;
 	private _BoxPos2 = [_missionPos, 3, 10,1,0,0,0] call findSafePos;
 	_box2 = [_BoxPos2, "AAF", "2", 0, 0] call createrandomlootcrate;
-
-	{ _x setVariable ["R3F_LOG_disabled", true, true] } forEach [_box1, _box2];
+	private _BoxPos3 = [_missionPos, 3, 10,1,0,0,0] call findSafePos;
+	_box3 = [_BoxPos3, "AAF", "2", 0, 0] call createrandomlootcrate;
+	private _BoxPos4 = [_missionPos, 3, 10,1,0,0,0] call findSafePos;
+	_box4 = [_BoxPos4, "AAF", "3", 0, 0] call createrandomlootcrate;
+	{ _x setVariable ["R3F_LOG_disabled", true, true] } forEach [_box1, _box2, _box3, _box4];
 
 	{
 		_boxPos = getPosASL _x;
@@ -102,7 +105,7 @@ _waitUntilCondition = nil;
 _failedExec =
 {
 	// Mission failed
-	{ deleteVehicle _x } forEach [_box1, _box2, _wreck];
+	{ deleteVehicle _x } forEach [_box1, _box2, _box3, _box4, _wreck];
 };
 
 // _vehicle is automatically deleted or unlocked in missionProcessor depending on the outcome
@@ -110,10 +113,10 @@ _failedExec =
 _successExec =
 {
 
-	{ _x setVariable ["R3F_LOG_disabled", false, true] } forEach [_box1, _box2];
-	{ _x setVariable ["Moveable", true, true] } forEach [_box1, _box2];
+	{ _x setVariable ["R3F_LOG_disabled", false, true] } forEach [_box1, _box2, _box3, _box4];
+	{ _x setVariable ["Moveable", true, true] } forEach [_box1, _box2, _box3, _box4];
 	{ deleteVehicle _x } forEach [_wreck];
-	{ _x setVariable ["cmoney",ceil (5000 + random 15000), true] } forEach [_box1, _box2];
+	{ _x setVariable ["cmoney",ceil (5000 + random 15000), true] } forEach [_box1, _box2, _box3, _box4];
 
 	_successHintMessage = "The sunken loot and money has been captured, well done.";
 };

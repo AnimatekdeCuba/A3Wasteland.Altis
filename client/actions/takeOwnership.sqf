@@ -17,7 +17,7 @@ private _checks =
 
 	if (_text isEqualTo "") then
 	{
-		_text = format ["Adquiriendo %1%2 completado", round (100 * _progress), "%"];
+		_text = format ["Acquiring %1%2 complete", round (100 * _progress), "%"];
 		_failed = false;
 	};
 

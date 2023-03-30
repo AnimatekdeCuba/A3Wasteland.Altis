@@ -48,6 +48,7 @@ _vehicle addEventHandler ["Killed", fn_vehicleKilledServer];
 //Setup Vpin
 _vehicle setVariable ["vPin", true, true];
 _vehicle setVariable ["password", 0000, true];
+
 if ({_class isKindOf _x} count ["Air","UGV_01_base_F"] > 0) then
 {
 	_vehicle remoteExec ["A3W_fnc_setupAntiExplode", 0, _vehicle];
@@ -59,6 +60,7 @@ if (_vehicle getVariable ["A3W_resupplyTruck", false] || getNumber (configFile >
 };
 
 [_vehicle, _brandNew] call A3W_fnc_setVehicleLoadout;
+[_vehicle, _brandNew] call A3W_fnc_StatictLockPoss; // mio
 
 // Vehicle customization
 switch (true) do

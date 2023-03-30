@@ -152,33 +152,33 @@ _setupObjects =
 		case ({_vehicleClass isKindOf _x} count ["rhsgref_cdf_bmd1p", "rhsgref_cdf_bmd2", "rhsgref_cdf_bmp2d"] > 0):
 		{
 			_squad1 = call _createsquad1;
-			//_squad2 = call _createsquad2;
+			_squad2 = call _createsquad2;
 		};
 		case ({_vehicleClass isKindOf _x} count ["rhsgref_cdf_t72bb_tv", "rhsgref_cdf_t80bv_tv"] > 0):
 		{
 			_squad1 = call _createsquad1;
 			_squad2 = call _createsquad2;
-			//_squad3 = call _createsquad3;
+			_squad3 = call _createsquad3;
 		};	
 		case ({_vehicleClass isKindOf _x} count ["rhs_l159_CDF", "rhsgref_cdf_su25", "rhssaf_airforce_l_18"] > 0):
 		{
 			_squad1 = call _createsquad1;
 			_squad2 = call _createsquad2;
-			//_squad3 = call _createsquad3;
-			//_squad4 = call _createsquad4;
+			_squad3 = call _createsquad3;
+			_squad4 = call _createsquad4;
 		};
 		case (_vehicleClass isKindOf "I_UAV_02_dynamicLoadout_F"):
 		{
 			_squad1 = call _createsquad1;
 			_squad2 = call _createsquad2;
 			_squad3 = call _createsquad3;
-			//_squad4 = call _createsquad4;
+			_squad4 = call _createsquad4;
 		};
 		case ({_vehicleClass isKindOf _x} count ["rhsgref_cdf_Mi35", "rhsgref_mi24g_CAS", "rhsgref_cdf_Mi24D"] > 0):
 		{
 			_squad1 = call _createsquad1;
 			_squad2 = call _createsquad2;
-			//_squad3 = call _createsquad3;
+			_squad3 = call _createsquad3;
 		};
 	};
 	_aiGroup1 setCombatMode "RED";

@@ -17,7 +17,7 @@
 #define FAR_EnableDeathMessages true
 
 // If enabled, unconscious units will not be able to use ACRE radio, hear other people or use proximity chat
-#define FAR_MuteACRE true
+#define FAR_MuteACRE false
 
 /*
 	0 = Only medics can revive

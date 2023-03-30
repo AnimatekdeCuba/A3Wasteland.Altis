@@ -56,7 +56,7 @@ if (_variant != "") then { _variant = "variant_" + _variant };
 if (_price > _playerMoney) exitWith
 {
 	playSound "FD_CP_Not_Clear_F";
-	[format [' You need $%1 for the %2 title.', [_price - _playerMoney] call fn_numbersText, _objname], "Error"] call  BIS_fnc_guiMessage;
+	[format [' You need $%1 in the bank account for the %2 title.', [_price - _playerMoney] call fn_numbersText, _objname], "Error"] call  BIS_fnc_guiMessage;
 };
 
 if (!isNil "_price") then

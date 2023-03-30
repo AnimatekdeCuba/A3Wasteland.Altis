@@ -58,5 +58,5 @@ while {alive _unit} do
 		};
 	};
 
-	sleep 3;
+	sleep 600;
 };

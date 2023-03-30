@@ -145,4 +145,5 @@ class enableSimulationGlobal { allowedTargets = 0;jip = 1; };
 class VCM_fnc_KnowAbout { allowedTargets = 0;jip = 1; };
 
 //GMG Stuff
-class GMG_fnc_AttachObject { allowwedTargets=0; };
+class GMG_fnc_AttachObject { allowedTargets=0; };
+class gom_fnc_handleresources { allowedTargets=0; };

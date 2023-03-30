@@ -40,7 +40,7 @@ _setupObjects =
 		{
 			for "_i" from 1 to _drivers do
 			{
-				private _Driver = [_aiGroup1, _missionPos, "NATO", "CTRG"] call createsoldier;
+				private _Driver = [_aiGroup1, _missionPos, "NATO", "Crew"] call createsoldier;
 				_Driver moveInDriver _vehicle;
 			};
 		};
@@ -48,20 +48,20 @@ _setupObjects =
 		{
 			for "_i" from 1 to _Commanders do
 			{
-				private _Commander = [_aiGroup1, _missionPos, "NATO", "CTRG"] call createsoldier;
+				private _Commander = [_aiGroup1, _missionPos, "NATO", "Crew"] call createsoldier;
 				_Commander moveInCommander _vehicle;
 			};
 		};
 		if (_Gunners > 0) then
 		{
-			private _gunner = [_aiGroup1, _missionPos, "NATO", "CTRG"] call createsoldier;
+			private _gunner = [_aiGroup1, _missionPos, "NATO", "Crew"] call createsoldier;
 			_gunner moveInGunner _vehicle;
 		};
 		if (_Passangers > 0) then
 		{
 			for "_i" from 1 to _Passangers do
 			{
-				private _soldierType = selectrandom ["Rifleman","Rifleman","Rifleman","Rifleman","Rifleman","Rifleman","Rifleman","Rifleman","Rifleman","Rifleman","AT","AA","SAW","SAW","SAW","AT","Medic","Grenedier","AA","Medic","Grenedier","Marksman","Marksman","Marksman"];
+				private _soldierType = selectrandom ["Rifleman","Rifleman","Rifleman","Rifleman","Rifleman","Rifleman","Rifleman","Rifleman","Rifleman","Rifleman","AT","AA","SAW","SAW","SAW","Engineer","Medic","Grenedier","Engineer","Medic","Grenedier","Marksman","Marksman","Marksman"];
 				_soldier = [_aiGroup1, _missionPos, "NATO", _soldierType] call createsoldier;
 
 				_soldier moveInCargo _vehicle;

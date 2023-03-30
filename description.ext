@@ -17,7 +17,6 @@ forceRotorLibSimulation = 0; // if you set this to 1, you deny freedom of choice
 weaponPool = 0;
 unsafeCVL = 1; // required for store selling bins and private storage
 corpseManagerMode = 1;
-corpseManagerMode = 1;
 corpseRemovalMinTime = 30*60;
 corpseRemovalMaxTime = 30*60;
 wreckManagerMode = 1;
@@ -34,7 +33,7 @@ class Header
 	minPlayers=1;
 	maxPlayers=146; // 144 players, 2 headless clients
 };
-author="AgentRev - HC A3Wasteland.com"; // it would be great if you could keep "A3Wasteland.com" in the name, like "YourName and A3Wasteland.com" :)
+author="AgentRev|A3Wasteland.com"; // it would be great if you could keep "A3Wasteland.com" in the name, like "YourName and A3Wasteland.com" :)
 onLoadName = "HC A3Wasteland Altis"; // it would be great if you could keep "A3" in the name, like "ABC A3Wasteland" instead of "ABC Wasteland" :)
 onLoadMission = "HardCore A3Wasteland. Dos facciones y grupos mercenarios luchan por el control total.";
 overviewText = "HardCore A3Wasteland. Dos facciones y grupos mercenarios luchan por el control total.";
@@ -79,7 +78,7 @@ briefing = 0; // if 0, skip Continue button
 #include "client\systems\playerMenu\dialog\respawn_dialog.hpp"
 #include "client\systems\playerMenu\dialog\teamkill_dialog.hpp"
 #include "client\systems\killFeed\killFeedMenu_gui.hpp"
-#include "addons\outlw_magrepack\config.hpp"
+//#include "addons\outlw_magrepack\config.hpp"
 #include "addons\BoS\dialog\BoS_mainMenu.hpp"
 #include "addons\gui\gui.hpp"
 #include "addons\parking\list_simple_menu.hpp"
@@ -129,7 +128,6 @@ class RscTitles
 	#include "client\systems\scoreboard\score_gui.hpp"
 	#include "client\systems\killFeed\killFeed_gui.hpp"
 	//#include "addons\far_revive\revive_gui.hpp"
-	#include "addons\statusBar\statusBar.hpp"
 };
 
 class CfgFunctions
@@ -225,7 +223,7 @@ class CfgDebriefingSections
         variable = "acex_killTracker_outputText";
     };
 };
-
+/*
 class ForceTFAR
 {
 	//Settings for TFAR
@@ -239,3 +237,4 @@ class ForceTFAR
 	ftfar_server_password = ""; //Server password.
 	ftfar_wait_for_action_time = 60; //Time in seconds.
 };
+*/

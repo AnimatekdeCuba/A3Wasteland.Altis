@@ -27,37 +27,37 @@ _setupObjects =
 	_aiGroup1 = createGroup CIVILIAN;
 	_aiGroup2 = createGroup CIVILIAN;
 	_aiGroup3 = createGroup CIVILIAN;
-	//_aiGroup4 = createGroup CIVILIAN;
+	_aiGroup4 = createGroup CIVILIAN;
 
 	for "_i" from 1 to 5 do
 	{
-		private _soldierType = selectrandom ["Rifleman","Rifleman","Rifleman","Rifleman","Rifleman","Rifleman","Rifleman","Rifleman","Rifleman","Rifleman","AT","AA","SAW","SAW","SAW","AT","Medic","Grenedier","AA","Medic","Grenedier","Marksman","Marksman","Marksman"];
+		private _soldierType = selectrandom ["Rifleman","Rifleman","Rifleman","Rifleman","Rifleman","Rifleman","Rifleman","Rifleman","Rifleman","Rifleman","AT","AA","SAW","SAW","SAW","Engineer","Medic","Grenedier","Engineer","Medic","Grenedier","Marksman","Marksman","Marksman"];
 		[_aiGroup1, _missionPos, "NATO", _soldierType] call createsoldier;
 	};
 	_aiGroup1 setCombatMode "RED";
 	for "_i" from 1 to 5 do
 	{
-		private _soldierType = selectrandom ["Rifleman","Rifleman","Rifleman","Rifleman","Rifleman","Rifleman","Rifleman","Rifleman","Rifleman","Rifleman","AT","AA","SAW","SAW","SAW","AT","Medic","Grenedier","AA","Medic","Grenedier","Marksman","Marksman","Marksman"];
+		private _soldierType = selectrandom ["Rifleman","Rifleman","Rifleman","Rifleman","Rifleman","Rifleman","Rifleman","Rifleman","Rifleman","Rifleman","AT","AA","SAW","SAW","SAW","Engineer","Medic","Grenedier","Engineer","Medic","Grenedier","Marksman","Marksman","Marksman"];
 		[_aiGroup2, _missionPos, "NATO", _soldierType] call createsoldier;
 	};
 	_aiGroup2 setCombatMode "RED";
 	for "_i" from 1 to 5 do
 	{
-		private _soldierType = selectrandom ["Rifleman","Rifleman","Rifleman","Rifleman","Rifleman","Rifleman","Rifleman","Rifleman","Rifleman","Rifleman","AT","AA","SAW","SAW","SAW","AT","Medic","Grenedier","AA","Medic","Grenedier","Marksman","Marksman","Marksman"];
+		private _soldierType = selectrandom ["Rifleman","Rifleman","Rifleman","Rifleman","Rifleman","Rifleman","Rifleman","Rifleman","Rifleman","Rifleman","AT","AA","SAW","SAW","SAW","Engineer","Medic","Grenedier","Engineer","Medic","Grenedier","Marksman","Marksman","Marksman"];
 		[_aiGroup3, _missionPos, "NATO", _soldierType] call createsoldier;
 	};
 	_aiGroup3 setCombatMode "RED";
-	/*for "_i" from 1 to 5 do
+	for "_i" from 1 to 5 do
 	{
 		private _soldierType = selectrandom ["Rifleman","Rifleman","Rifleman","Rifleman","Rifleman","Rifleman","Rifleman","Rifleman","Rifleman","Rifleman","AT","AA","SAW","SAW","SAW","AT","Medic","Grenedier","AA","Medic","Grenedier","Marksman","Marksman","Marksman"];
 		[_aiGroup4, _missionPos, "NATO", _soldierType] call createsoldier;
 	};
-	_aiGroup4 setCombatMode "RED";*/
+	_aiGroup4 setCombatMode "RED";
 	_missionHintText = format ["An armed <t color='%1'>outpost</t> containing weapon crates has been spotted near the marker, go capture it!", NATOMissionColor];
 	_turrets = nearestObjects [_missionPos, ["RHS_M2StaticMG_D"], 50, true];
 	{
 		private _turret = _x;
-		private _group = selectRandom [_aiGroup1, _aiGroup2, _aiGroup3];
+		private _group = selectRandom [_aiGroup1, _aiGroup2, _aiGroup3, _aiGroup4];
 		private _troops = units _group;
 		private _gunner = _troops select _foreachindex;
 		_gunner moveingunner _turret;

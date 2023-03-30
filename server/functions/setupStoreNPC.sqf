@@ -47,11 +47,10 @@ if (hasInterface) then
 		{
 			_npc addAction ["<img image='client\icons\store.paa'/> Open Vehicle Store", "client\systems\vehicleStore\loadVehicleStore.sqf", [], 1, true, true, "", STORE_ACTION_CONDITION];
 		};
-		case (["BaseStore", _npcName] call _startsWith): 
-		{ 
-			_npc addAction ["<img image='client\icons\store.paa'/> Open Base Store", "client\systems\BasePartsStore\loadBaseStore.sqf", [], 1, true, true, "", STORE_ACTION_CONDITION]; 
-		}; 
-
+		case (["BaseStore", _npcName] call _startsWith):
+		{
+			_npc addAction ["<img image='client\icons\store.paa'/> Open Base Store", "client\systems\BasePartsStore\loadBaseStore.sqf", [], 1, true, true, "", STORE_ACTION_CONDITION];
+		};
 	};
 
 	_npc addAction ["<img image='client\icons\money.paa'/> Sell crate", "client\systems\selling\sellCrateItems.sqf", [false, false, true], 0.99, false, true, "", STORE_ACTION_CONDITION + " && " + SELL_CRATE_CONDITION];
@@ -59,7 +58,7 @@ if (hasInterface) then
 	_npc addAction ["<img image='client\icons\money.paa'/> Sell last vehicle contents", "client\systems\selling\sellVehicleItems.sqf", [], 0.97, false, true, "", STORE_ACTION_CONDITION + " && " + SELL_VEH_CONTENTS_CONDITION];
 	_npc addAction ["<img image='client\icons\money.paa'/> Sell last vehicle", "client\systems\selling\sellVehicle.sqf", [], 0.96, false, true, "", STORE_ACTION_CONDITION + " && " + SELL_VEH_CONTENTS_CONDITION];
 	_npc addAction ["<img image='client\icons\repair.paa'/> Paint vehicle", { createDialog "A3W_vehPaintMenu" }, [], 0.95, false, true, "", STORE_ACTION_CONDITION + " && " + SELL_VEH_CONTENTS_CONDITION];
-	_npc addAction ["<img image='client\icons\r3f_unlock.paa'/> Comprar propiedad del último vehículo", "client\systems\selling\acquireVehicle.sqf", [], 0.95, false, true, "", STORE_ACTION_CONDITION + " && " + SELL_VEH_CONTENTS_CONDITION];
+	_npc addAction ["<img image='client\icons\r3f_unlock.paa'/> Acquire last vehicle title", "client\systems\selling\acquireVehicle.sqf", [], 0.95, false, true, "", STORE_ACTION_CONDITION + " && " + SELL_VEH_CONTENTS_CONDITION];
 };
 
 if (isServer) then

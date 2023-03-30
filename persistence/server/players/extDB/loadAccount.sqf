@@ -75,10 +75,15 @@ else
 		"BackpackOnChestMags",
 		
 		"ACEPain",
+		"ACEPainSuppress",
+		"ACEPainMedication",
 		"ACEbloodVolume",
+		"ACEBloodPressure",
 		"ACEBloodLoss",
+		"ACEhemorrhage",
 		"ACEtourniquets",
 		"ACEopenWounds",
+		"ACEbandagedWounds",
 		"ACEheartRate",
 		"ACEbodyPartStatus",
 		
