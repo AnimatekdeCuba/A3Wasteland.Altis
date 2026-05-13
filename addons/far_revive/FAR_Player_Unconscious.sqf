@@ -13,16 +13,42 @@ private ["_unit", "_killer", "_names"];
 _unit = _this select 0;
 //_killer = _this select 1;
 
-if (alive _unit) then
+FAR_Player_Unconscious =
 {
-	_unit setCaptive true;
-	_unit setUnconscious true;
+	params ["_unit", "_killer"];
 
-	if (_unit == player) then
+	if (alive _unit) then
 	{
-		a3w_actions_mutex = false; // prevent revive dance
+		_unit setCaptive true;
+		_unit setUnconscious true;
+		_unit setVariable ["FAR_isUnconscious", true, true]; // Translator: sync FAR state for A3W compatibility
+
+		if (_unit == player) then
+		{
+			a3w_actions_mutex = false; // prevent revive dance
+			
+			// Initialize LastResort key handler via ACE3-compatible method
+			// Since ACE3 blocks action menus when unconscious, we use a global key handler
+			if (isNil "FAR_lastResort_keyHandler") then {
+				FAR_lastResort_keyHandler = [] spawn {
+					waitUntil {!isNull player};
+					
+					while {true} do {
+						// Check for Backspace key (default 14) when unconscious
+						if (UNCONSCIOUS(player) && alive player && {(inputAction "LastResort" > 0 || {14 in (pressedKeys)})}) then {
+							// Only trigger if player has explosives
+							_availableBombs = (magazines player) arrayIntersect ["SatchelCharge_Remote_Mag", "IEDUrbanBig_Remote_Mag", "IEDLandBig_Remote_Mag", "DemoCharge_Remote_Mag", "IEDUrbanSmall_Remote_Mag", "IEDLandSmall_Remote_Mag"];
+							if !(_availableBombs isEqualTo []) then {
+								call compile preprocessFileLineNumbers "addons\\far_revive\\FAR_lastResort.sqf";
+							};
+							sleep 0.5; // Cooldown to prevent spam
+						};
+						sleep 0.1;
+					};
+				};
+			};
+		};
 	};
-};
 
 private _unitWeapon = currentWeapon _unit;
 
@@ -282,8 +308,8 @@ if (isPlayer _unit) then
 		};*/
 	};
 
-	// Mute ACRE
-	_unit setVariable ["ace_sys_wounds_uncon", true];
+	// Mute ACRE - removed ace_sys_wounds_uncon (ACE2 obsolete variable)
+	// ACE3 handles audio muting natively when unconscious
 };
 
 _unit spawn
@@ -378,8 +404,8 @@ while {UNCONSCIOUS(_unit) && diag_tickTime < _bleedOut} do
 
 			if (isPlayer _unit) then
 			{
-				//Unit has been stabilized. Disregard bleedout timer and umute player
-				_unit setVariable ["ace_sys_wounds_uncon", false];
+				//Unit has been stabilized. Disregard bleedout timer
+				// ACE3 handles audio natively, removed ace_sys_wounds_uncon (ACE2 obsolete)
 			};
 		};
 

@@ -23,6 +23,7 @@ FAR_Debugging = true;
 FAR_Reset_Unit =
 {
 	_this setVariable ["FAR_isUnconscious", 0, true];
+	_this setVariable ["ACE_isUnconscious", false, true]; // Sync with ACE3
 	_this setVariable ["FAR_isStabilized", 0, true];
 	_this setVariable ["FAR_iconBlink", nil, true];
 	_this setVariable ["FAR_draggedBy", nil, true];
@@ -39,7 +40,8 @@ FAR_Reset_Unit =
 
 	if (isPlayer _this) then
 	{
-		_this setVariable ["ace_sys_wounds_uncon", false];
+		// Removed ace_sys_wounds_uncon (ACE2 obsolete variable)
+		// ACE3 handles audio muting natively
 
 		if (_this == player) then
 		{
@@ -88,8 +90,8 @@ FAR_Mute_ACRE =
 	{
 		if (alive player) then
 		{
-			// player getVariable ["ace_sys_wounds_uncon", true/false];
-			if ((player getVariable["ace_sys_wounds_uncon", false])) then
+			// Use ACE3 unconscious state instead of obsolete ace_sys_wounds_uncon
+			if ((player getVariable ["ACE_isUnconscious", false]) || (player getVariable ["FAR_isUnconscious", false])) then
 			{
 				private["_saveVolume"];
 
@@ -107,7 +109,7 @@ FAR_Mute_ACRE =
 						[true] call acre_api_fnc_setSpectator;
 					};
 
-					!(player getVariable["ace_sys_wounds_uncon", false]);
+					!((player getVariable ["ACE_isUnconscious", false]) || (player getVariable ["FAR_isUnconscious", false]));
 				};
 
 				if ((player getVariable["acre_sys_core_isDisabled", false])) then

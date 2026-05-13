@@ -1,4 +1,4 @@
-```
+```markdown
 # Compiled and build artifacts
 *.pyc
 __pycache__/
@@ -37,16 +37,6 @@ Thumbs.db
 coverage/
 htmlcov/
 .coverage
-
-# Build directories
-dist/
-build/
-target/
-.gradle/
-
-# Python specific
-.mypy_cache/
-.pytest_cache/
 
 # Compressed files
 *.zip

@@ -4,6 +4,8 @@
 //	@file Name: FAR_lastResort.sqf
 //	@file Author: AgentRev
 
+#include "FAR_defines.sqf"
+
 if !(player getVariable ["performingDuty", false]) then
 {
 	_availableBombs = (magazines player) arrayIntersect ["SatchelCharge_Remote_Mag", "IEDUrbanBig_Remote_Mag", "IEDLandBig_Remote_Mag", "DemoCharge_Remote_Mag", "IEDUrbanSmall_Remote_Mag", "IEDLandSmall_Remote_Mag"]; // biggest to smallest
@@ -19,7 +21,16 @@ if !(player getVariable ["performingDuty", false]) then
 			titleText [format ["ERROR: invalid class '%1'", _mineType], "PLAIN", 0.5];
 		};
 
-		if (["Perform your duty?", "", true, true] call BIS_fnc_guiMessage) then
+		// Check for nearby enemies who might be looting
+		_nearbyEnemies = [];
+		{
+			if (alive _x && !UNCONSCIOUS(_x) && !([player, _x] call A3W_fnc_isFriendly) && _x distance player <= 15) then {
+				_nearbyEnemies pushBack _x;
+			};
+		} forEach (player nearEntities ["CAManBase", 15]);
+
+		// Confirm action with player
+		if ([format ["Last Resort: Activate explosive (%1)?", _magType], "", true, true] call BIS_fnc_guiMessage) then
 		{
 			player setVariable ["performingDuty", true];
 
@@ -34,6 +45,17 @@ if !(player getVariable ["performingDuty", false]) then
 			_mine = createMine [_mineType, ASLtoAGL ((getPosASL player) vectorAdd [0, 0, 0.5]), [], 0];
 			player addOwnedMine _mine;
 
+			// Get explosion radius based on mine type for body cleanup
+			_explosionRadius = switch (_mineType) do {
+				case "SatchelCharge_F": { 20 };
+				case "IEDUrbanBig_F": { 15 };
+				case "IEDLandBig_F": { 15 };
+				case "DemoCharge_F": { 12 };
+				case "IEDUrbanSmall_F": { 8 };
+				case "IEDLandSmall_F": { 8 };
+				default { 10 };
+			};
+
 			if (alive player) then
 			{
 				player action ["TouchOff", player];
@@ -45,11 +67,28 @@ if !(player getVariable ["performingDuty", false]) then
 
 			{ player addOwnedMine _x } forEach _oldMines;
 
-			if (damage player < 1) then // if check required to prevent "Killed" EH from getting triggered twice
-			{
-				player setVariable ["A3W_deathCause_local", ["suicide"]];
+			// Mark death as lastResort for stats
+			if (damage player < 1) then {
+				player setVariable ["A3W_deathCause_local", ["lastresort"]];
 				player setDamage 1;
 			};
+
+			// Cleanup bodies: delete player and nearby enemies within lethal radius
+			sleep 0.1;
+			{
+				if (alive _x && _x distance player <= _explosionRadius) then {
+					_x setVariable ["A3W_deathCause_local", ["lastresort_victim", player]];
+					_x setDamage 1;
+					// Delete body after short delay to prevent looting
+					[_x] spawn {
+						params ["_body"];
+						sleep 5;
+						if (!isNull _body) then {
+							deleteVehicle _body;
+						};
+					};
+				};
+			} forEach (_nearbyEnemies + [player]);
 
 			player setVariable ["performingDuty", nil];
 		};
