@@ -397,9 +397,53 @@ else
 		case "ACEbandagedWounds": { player setVariable ["ace_medical_bandagedWounds", _value, true] };
 		case "ACEheartRate": { player setVariable ["ace_medical_heartRate", _value, true] };
 		case "ACEbodyPartStatus": { player setVariable ["ace_medical_bodyPartDamage", _value, true] };
-		// ACTUAL PLAYER SIDE
-		case "ActualPlayerSide" : // applys lastplayerside and forces switchteam to last side played (still WIP)
-		{	if !(["A3W_LastPlayedSideSaving"] call isConfigOn) exitWith {};
+		// ACTUAL PLAYER SIDE - Persistent faction lock system
+		case "LastSide":
+		{
+			if (!(["A3W_factionLockPersistence"] call isConfigOn)) exitWith {};
+			
+			_uid = getPlayerUID player;
+			_lockedSide = call compile _value;
+			
+			// Only enforce if player is not admin and has a valid locked side
+			if ((!_uid call isAdmin) && {!isNil "_lockedSide"} && {_lockedSide in [BLUFOR,OPFOR,INDEPENDENT]}) then
+			{
+				// Check if player's current side doesn't match the locked side
+				if (playerSide != _lockedSide) exitWith
+				{
+					// Unlock first to prevent conflicts, then lock to correct side
+					pvar_teamSwitchUnlock = _uid;
+					publicVariableServer "pvar_teamSwitchUnlock";
+					
+					pvar_teamSwitchLock = [_uid, _lockedSide];
+					publicVariableServer "pvar_teamSwitchLock";
+					
+					// Force player back to lobby
+					player allowDamage false;
+					player setUnconscious true;
+					9999 cutText ["", "BLACK", 0.01];
+					0 fadeSound 0;
+					uiNamespace setVariable ["BIS_fnc_guiMessage_status", false];
+
+					_sideName = switch (_lockedSide) do
+					{
+						case BLUFOR: { "BLUFOR" };
+						case OPFOR:  { "OPFOR" };
+						case INDEPENDENT: { "Independent" };
+					};
+
+					_msgBox = [format ["You are locked to %1. You cannot change factions until an admin unlocks you.", _sideName]] spawn BIS_fnc_guiMessage;
+					_time = diag_tickTime;
+
+					waitUntil {scriptDone _msgBox || diag_tickTime - _time >= 20};
+					endMission "LOSER";
+					waitUntil {uiNamespace setVariable ["BIS_fnc_guiMessage_status", false]; closeDialog 0; false};
+				};
+			};
+		};
+		case "ActualPlayerSide" : // Legacy support - deprecated, kept for backwards compatibility
+		{	
+			if !(["A3W_LastPlayedSideSaving"] call isConfigOn) exitWith {};
 			_uid = getPlayerUID player;
 			if ((!_uid call isAdmin) && playerSide in [BLUFOR,OPFOR]) then {
 				if (_value != "") then {

@@ -228,17 +228,21 @@ player addEventHandler ["GetOutMan", { [_this select 2] call getOutVehicle }];
 
 _uid = getPlayerUID player;
 
-if (playerSide in [BLUFOR,OPFOR] && {{_x select 0 == _uid} count pvar_teamSwitchList == 0}) then
+// Apply faction lock after grace period (180 seconds) for ALL sides including IND
+if (playerSide in [BLUFOR,OPFOR,INDEPENDENT] && {{_x select 0 == _uid} count pvar_teamSwitchList == 0}) then
 {
 	_startTime = diag_tickTime;
 	waitUntil {sleep 1; diag_tickTime - _startTime >= 180};
-	pvar_teamSwitchLock = [_uid, playerSide];
+	
+	// Lock player to their current side with persistent save
+	pvar_teamSwitchLock = [_uid, playerSide, true]; // third param true = save to DB
 	publicVariableServer "pvar_teamSwitchLock";
 
 	_side = switch (playerSide) do
 	{
 		case BLUFOR: { "BLUFOR" };
 		case OPFOR:  { "OPFOR" };
+		case INDEPENDENT: { "Independent" };
 	};
 
 	titleText [format ["You have been locked to %1", _side], "PLAIN", 0.5];

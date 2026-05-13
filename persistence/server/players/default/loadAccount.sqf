@@ -33,6 +33,7 @@ _getValue =
 ["BankMoney", "NUMBER", "PlayerInfo"] call _getValue;
 ["Bounty", "NUMBER", "PlayerInfo"] call _getValue;
 ["BountyKills", "ARRAY", "PlayerInfo"] call _getValue;
+["LastSide", "STRING", "PlayerInfo"] call _getValue;
 
 if (["A3W_privateStorage"] call isConfigOn) then
 {
