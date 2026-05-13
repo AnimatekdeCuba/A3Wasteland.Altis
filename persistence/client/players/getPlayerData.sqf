@@ -181,8 +181,7 @@ _ace_getBloodPressure = [_player] call ace_medical_status_fnc_getBloodPressure;
 	["ACEheartRate", _player getVariable ["ace_medical_heartRate", 0]],
 	["ACEbodyPartStatus", _player getVariable ["ace_medical_bodyPartDamage", []]]
 ];
-//saves lastplayerside (still WIP) 
-
+// Saves ActualPlayerSide for persistent faction lock system (deprecated but kept for backwards compatibility)
 { _data pushBack _x } forEach
 [
 	["ActualPlayerSide", str playerSide]
