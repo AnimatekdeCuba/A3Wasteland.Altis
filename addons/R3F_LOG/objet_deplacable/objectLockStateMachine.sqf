@@ -46,8 +46,41 @@ switch (_lockState) do
 			playSound "FD_CP_Not_Clear_F";
 			[format ["You are not allowed to lock objects within %1m of stores and mission spawns, or within Territory Areas and Airfields", _poiDist], 5] call mf_notify_client;
 			R3F_LOG_mutex_local_verrou = false;
-		};
-		//_object remoteExec [A3W_fnc_StatictLockPoss]; //MÁTAME
+                };
+                
+                // SPECIAL CHECK: Autonomous weapons must be locked inside owner base
+                if (_object isKindOf "StaticWeapon") then {
+                        private _isAutonomousStatic = {_object isKindOf _x} count [
+                                "B_SAM_System_02_F",
+                                "B_HMG_01_A_F",
+                                "B_GMG_01_A_F",
+                                "B_SAM_System_01_F",
+                                "B_AAA_System_01_F",
+                                "O_HMG_01_A_F",
+                                "O_GMG_01_A_F",
+                                "I_HMG_01_A_F",
+                                "I_GMG_01_A_F",
+                                "B_SAM_System_03_F",
+                                "O_SAM_System_04_F"
+                        ] > 0;
+                        
+                        private _isDesignator = {_object isKindOf _x} count [
+                                "B_Static_Designator_01_F",
+                                "O_Static_Designator_02_F"
+                        ] > 0;
+                        
+                        // Only check autonomous statics, not designators
+                        if (_isAutonomousStatic && !_isDesignator) then {
+                                // Server-side validation
+                                private _canLock = [_object, player, "checkLock"] call A3W_fnc_StatictLockPoss;
+                                
+                                if (!_canLock) exitWith {
+                                        playSound "FD_CP_Not_Clear_F";
+                                        ["Autonomous weapons can only be locked INSIDE your base perimeter!", 5] call mf_notify_client;
+                                        R3F_LOG_mutex_local_verrou = false;
+                                };
+                        };
+                };
 		_checks =
 		{
 			private ["_progress", "_object", "_failed", "_text", "_reLocker"];
