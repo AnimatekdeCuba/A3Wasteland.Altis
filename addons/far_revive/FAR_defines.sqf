@@ -32,9 +32,14 @@
 // Damage multiplier applied to units when inconscious
 #define FAR_DamageMultiplier 0.005
 
-// Functions
-#define UNCONSCIOUS(UNIT) (UNIT getVariable ["ACE_isUnconscious", false])
-#define STABILIZED(UNIT) (UNIT call ACE_medical_fnc_isInStableCondition)
+// InstaKill configuration
+#define A3W_INSTAKILL_HEADSHOT_THRESHOLD 1.0
+#define A3W_INSTAKILL_EXPLOSION_RADIUS 3.0
+#define A3W_INSTAKILL_GRENADE_DAMAGE 0.5
+
+// Functions - ACE3 integration as translator
+#define UNCONSCIOUS(UNIT) ((UNIT getVariable ["ACE_isUnconscious", false]) || (UNIT getVariable ["FAR_isUnconscious", false]))
+#define STABILIZED(UNIT) ((UNIT getVariable ["ACE_medical_isInStableCondition", false]) || (UNIT getVariable ["FAR_isStabilized", 0]) > 0)
 #define DRAGGED_BY(UNIT) (UNIT getVariable ["FAR_draggedBy", objNull])
 #define DRAGGED(UNIT) (!isNull DRAGGED_BY(UNIT))
 #define TREATED_BY(UNIT) (UNIT getVariable ["FAR_treatedBy", objNull])
