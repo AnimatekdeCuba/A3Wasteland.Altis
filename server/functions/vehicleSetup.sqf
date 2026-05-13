@@ -60,13 +60,52 @@ if (_vehicle getVariable ["A3W_resupplyTruck", false] || getNumber (configFile >
 };
 
 [_vehicle, _brandNew] call A3W_fnc_setVehicleLoadout;
-[_vehicle, _brandNew] call A3W_fnc_StatictLockPoss; // mio
+
+// SPECIAL HANDLING: Autonomous static weapons
+// Spawn with AI disabled but movable via R3F
+if (_vehicle isKindOf "StaticWeapon") then {
+	private _isAutonomousStatic = {_vehicle isKindOf _x} count [
+		"B_SAM_System_02_F",
+		"B_HMG_01_A_F",
+		"B_GMG_01_A_F",
+		"B_SAM_System_01_F",
+		"B_AAA_System_01_F",
+		"O_HMG_01_A_F",
+		"O_GMG_01_A_F",
+		"I_HMG_01_A_F",
+		"I_GMG_01_A_F",
+		"B_SAM_System_03_F",
+		"O_SAM_System_04_F"
+	] > 0;
+	
+	private _isDesignator = {_vehicle isKindOf _x} count [
+		"B_Static_Designator_01_F",
+		"O_Static_Designator_02_F"
+	] > 0;
+	
+	// Only process autonomous statics, not designators
+	if (_isAutonomousStatic && !_isDesignator) then {
+		// Disable AI by default - will be enabled only when locked inside base
+		_vehicle setAutonomous false;
+		_vehicle enableAI false;
+		// Keep R3F movable so player can transport it
+		_vehicle setVariable ["R3F_LOG_disabled", false, true];
+		// No owner yet - ownership will be set when player locks it via R3F
+		diag_log format ["[StaticLock] %1 spawned with AI disabled, movable", typeOf _vehicle];
+	} else {
+		// Non-autonomous static or designator - just disable autonomous mode
+		_vehicle setAutonomous false;
+	};
+} else {
+	// Not a static weapon - run legacy check if needed
+	[_vehicle] call A3W_fnc_StatictLockPoss;
+};
 
 // Vehicle customization
 switch (true) do
 {
-	//Disable Autonomous mode
-	case ({_vehicle iskindof _x} count ['StaticWeapon','B_Radar_System_01_F', 'O_SAM_System_04_F', 'O_Radar_System_02_F', 'B_SAM_System_03_F']>0):
+	//Disable Autonomous mode (legacy fallback for other vehicle types)
+	case ({_vehicle iskindof _x} count ['B_Radar_System_01_F', 'O_SAM_System_04_F', 'O_Radar_System_02_F', 'B_SAM_System_03_F']>0):
 	{
 		_vehicle setAutonomous false;
 	};
