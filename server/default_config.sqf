@@ -112,6 +112,7 @@ A3W_privateParkingCost = 15000;									// Cost to retrieve an individual vehicl
 A3W_vehicleLocking = 1;											// Enable vehicle locking and lockpicking (0 = no, 1 = yes)
 A3W_camoNetSaving = 1;											// Enable camonet savings
 A3W_LastPlayedSideSaving = 1;									// Enable Last Played Side savings
+A3W_factionLockPersistence = 1;																	// Enable persistent faction lock between server restarts (requires A3W_LastPlayedSideSaving = 1)
 
 // iniDB settings
 PDB_PlayerFileID = "A3W_";										// Player savefile prefix (if you run multiple servers, keep it the same for all of them)
