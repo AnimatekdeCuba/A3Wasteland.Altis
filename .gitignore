@@ -1,52 +1,60 @@
 ```
-# Compiled and build artifacts
-*.pyc
-__pycache__/
+# Arma 3/Altis Life specific
+*.sqf
+*.sqm
+*.hpp
+*.h
+
+# Logs and temporary files
+*.log
+*.tmp
+*.temp
+
+# Build artifacts
 *.o
 *.obj
-*.class
 *.exe
 *.dll
 *.so
 *.a
 *.out
 
-# Dependencies
+# Dependencies and packages
 node_modules/
 venv/
 .venv/
+__pycache__/
+.mypy_cache/
+.pytest_cache/
+target/
+.gradle/
+
+# Distribution folders
+dist/
+build/
+release/
+bin/
+
+# Configuration and environment
 .env
 .env.local
 *.env.*
 
-# Logs and temp files
-*.log
-*.tmp
-*.swp
-*.swo
-
-# Editors
+# Editors and IDEs
 .vscode/
 .idea/
+*.swp
+*.swo
 
 # System files
 .DS_Store
 Thumbs.db
+*.tmp
 
-# Coverage
+# Coverage reports
 coverage/
 htmlcov/
 .coverage
-
-# Build directories
-dist/
-build/
-target/
-.gradle/
-
-# Python specific
-.mypy_cache/
-.pytest_cache/
 
 # Compressed files
 *.zip
@@ -67,4 +75,8 @@ target/
 *.Z
 *.lz
 *.lzo
+*.tar.gz
+*.tar.bz2
+*.tar.xz
+*.tar.zst
 ```
