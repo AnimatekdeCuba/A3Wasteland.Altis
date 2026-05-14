@@ -45,7 +45,11 @@ if (hasInterface) then
 		};
 		case (["VehStore", _npcName] call _startsWith):
 		{
-			_npc addAction ["<img image='client\icons\store.paa'/> Open Vehicle Store", "client\systems\vehicleStore\loadVehicleStore.sqf", [], 1, true, true, "", STORE_ACTION_CONDITION];
+			// Legacy Vehicle Store (original)
+			_npc addAction ["<img image='client\icons\store.paa'/> Open Vehicle Store (Legacy)", "client\systems\vehicleStore\loadVehicleStore.sqf", [], 1, true, true, "", STORE_ACTION_CONDITION];
+			
+			// New RHS Vehicle Store
+			_npc addAction ["<img image='client\icons\store.paa'/> Open RHS Vehicle Store (NEW)", "client\systems\vehicleStoreNew\loadVehicleStoreNew.sqf", [], 1.1, true, true, "", STORE_ACTION_CONDITION];
 		};
 		case (["BaseStore", _npcName] call _startsWith):
 		{
